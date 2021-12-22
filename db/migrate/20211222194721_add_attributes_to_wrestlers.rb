@@ -17,7 +17,6 @@ class AddAttributesToWrestlers < ActiveRecord::Migration[7.0]
     add_column :wrestlers, :s4, :string
     add_column :wrestlers, :s5, :string
     add_column :wrestlers, :s6, :string
-    add_column :wrestlers, :s6, :string
     add_column :wrestlers, :prioritys, :string
     add_column :wrestlers, :priorityt, :string
     add_column :wrestlers, :oc02, :string

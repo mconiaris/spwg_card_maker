@@ -19,7 +19,6 @@ class CreateWrestlers < ActiveRecord::Migration[7.0]
       t.string :gc04
       t.string :gc05
       t.string :gc06
-      t.string :string
       t.string :gc07
       t.string :gc08
       t.string :gc09
