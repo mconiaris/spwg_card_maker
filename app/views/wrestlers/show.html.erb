@@ -1,0 +1,71 @@
+<!-- GC02,GC03,GC04,GC05,GC06,GC07,GC08,GC09,GC10,GC11,GC12,DC02,DC03,DC04,DC05,DC06,DC07,DC08,DC09,DC10,DC11,DC12,	Specialty,S1,S2,S3,S4,S5,S6,	SubA, SubB, TagA, TagB,	PriorityS,	PriorityT,OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12,	SetA, TT, Card Rating,oc_prob,total_points,dq_prob,pa_prob,sub_prob,xx_prob,submission,tag_team_save,SubX,SubY,TagX,TagY,,Division -->
+<h1>Make a Wrestler</h1>
+<h2><%= @wrestler.name %></h2>
+<p>Display Name: <%= @wrestler.displayname %></p>
+<p>Set: <%= @wrestler.set %></p>
+<p>GC02: <%= @wrestler.gc02 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC07: <%= @wrestler.gc07 %></p>
+<p>GC03: <%= @wrestler.gc03 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC08: <%= @wrestler.gc08 %></p>
+<p>GC04: <%= @wrestler.gc04 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC09: <%= @wrestler.gc09 %></p>
+<p>GC05: <%= @wrestler.gc05 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC10: <%= @wrestler.gc10 %></p>
+<p>GC06: <%= @wrestler.gc06 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC11: <%= @wrestler.gc11 %></p>
+<p>GC12: <%= @wrestler.gc12 %></p>
+
+<p>DC02: <%= @wrestler.dc02 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC07: <%= @wrestler.dc07 %></p>
+<p>DC03: <%= @wrestler.dc03 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC08: <%= @wrestler.dc08 %></p>
+<p>DC04: <%= @wrestler.dc04 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC09: <%= @wrestler.dc09 %></p>
+<p>DC05: <%= @wrestler.dc05 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC10: <%= @wrestler.dc10 %></p>
+<p>DC06: <%= @wrestler.dc06 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC11: <%= @wrestler.dc11 %></p>
+<p>DC12: <%= @wrestler.dc12 %></p>
+
+<p>Specialty: <%= @wrestler.specialty %></p>
+<p>S1: <%= @wrestler.s1 %></p>
+<p>S2: <%= @wrestler.s2 %></p>
+<p>S3: <%= @wrestler.s3 %></p>
+<p>S4: <%= @wrestler.s4 %></p>
+<p>S5: <%= @wrestler.s5 %></p>
+<p>S6: <%= @wrestler.s6 %></p>
+<p>Sub: <%= @wrestler.subx %>-<%= @wrestler.suby %></p>
+<p>Tag Save: <%= @wrestler.tagx %>-<%= @wrestler.tagy %></p>
+<p>Priority: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
+
+<p>OC02: <%= @wrestler.oc02 %></p>
+<p>OC03: <%= @wrestler.oc03 %></p>
+<p>OC04: <%= @wrestler.oc04 %></p>
+<p>OC05: <%= @wrestler.oc05 %></p>
+<p>OC06: <%= @wrestler.oc06 %></p>
+<p>OC07: <%= @wrestler.oc07 %></p>
+<p>OC08: <%= @wrestler.oc08 %></p>
+<p>OC09: <%= @wrestler.oc09 %></p>
+<p>OC10: <%= @wrestler.oc10 %></p>
+<p>OC11: <%= @wrestler.oc11 %></p>
+<p>OC12: <%= @wrestler.oc12 %></p>
+
+<p>RO02: <%= @wrestler.ro02 %></p>
+<p>RO03: <%= @wrestler.ro03 %></p>
+<p>RO04: <%= @wrestler.ro04 %></p>
+<p>RO05: <%= @wrestler.ro05 %></p>
+<p>RO06: <%= @wrestler.ro06 %></p>
+<p>RO07: <%= @wrestler.ro07 %></p>
+<p>RO08: <%= @wrestler.ro08 %></p>
+<p>RO09: <%= @wrestler.ro09 %></p>
+<p>RO10: <%= @wrestler.ro10 %></p>
+<p>RO11: <%= @wrestler.ro11 %></p>
+<p>RO12: <%= @wrestler.ro12 %></p>
+
+<p>Tag Team %: <%= @wrestler.tt %></p>
+<p>Overall Card Rating: <%= @wrestler.card_rating %></p>
+<p>OC Probability: <%= @wrestler.oc_prob %></p>
+<p>Total Points Per Round: <%= @wrestler.total_points %></p>
+<p>DQ Probability Per Round: <%= @wrestler.dq_prob %></p>
+<p>P/A Probability Per Round: <%= @wrestler.pa_prob %></p>
+<p>Submission Move Probability Per Round: <%= @wrestler.sub_prob %></p>
+<p>XX Roll Probability Per Round: <%= @wrestler.xx_prob %></p>
+<p>Submission Lass Probability: <%= @wrestler.submission %></p>
+<p>Tag Save Probability: <%= @wrestler.tag_team_save %></p>
+<p>Division: <%= @wrestler.division %></p>
+
+<p><p><%= link_to "Wrestlers", wrestlers_path %></p></p>
+<p><%= link_to "Edit", edit_wrestler_path(@wrestler) %></p>
+<p><%= link_to "Destroy", wrestler_path(@wrestler),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></p>
