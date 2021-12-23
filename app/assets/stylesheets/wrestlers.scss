@@ -1,0 +1,30 @@
+// Place all the styles related to the Wrestlers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#wrestlers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+}
+
+#wrestlers td, #wrestlers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#wrestlers tr:nth-child(even){background-color: #f2f2f2;}
+
+#wrestlers tr:hover {background-color: #ddd;}
+
+#wrestlers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2383d5;
+  color: white;
+}
+
+.value {
+	text-align: right;
+}
