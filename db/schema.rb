@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_221406) do
+ActiveRecord::Schema.define(version: 2021_12_23_151704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,9 +85,9 @@ ActiveRecord::Schema.define(version: 2021_12_22_221406) do
     t.string "ro12"
     t.integer "subx"
     t.integer "suby"
-    t.integer "tzgx"
     t.integer "tagy"
     t.string "specialty"
+    t.string "tagx"
   end
 
 end
