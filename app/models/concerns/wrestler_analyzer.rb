@@ -33,6 +33,10 @@ module WrestlerAnalyzer
 	def analyze
 		@statistics = Hash.new
 
+		move_points
+
+		# TODO: Refactor calculate_total_card_rating to work with this app.
+		binding.pry
 		card_points_per_round = calculate_total_card_rating
 
 		# Add values to wrestler's hash
@@ -44,7 +48,6 @@ module WrestlerAnalyzer
 		if wrestler.values[:Set] == nil
 			wrestler.values[:Set] = 'Special'
 		end
-
 		return @statistics
 	end
 
@@ -53,7 +56,7 @@ module WrestlerAnalyzer
 	# MOVE VALUES TO NUMBERS
 	# ======================
 	
-	# Isolate Numbers from Text
+	# Done, but needs refactoring.
 	def move_points
 
 		points = Hash.new
@@ -67,7 +70,6 @@ module WrestlerAnalyzer
 
 		points[:oc_probability] = return_rational(points[:OC_enumerator]).to_f
 		points[:DC] = calculate_gc_dc_roll_probability(points[:OC_enumerator])
-		binding.pry
 
 		# Calculate TT Roll in GC
 		points[:GC_TT_Enumerator] = calculate_gc_tt_roll_probability(hash)
@@ -75,7 +77,7 @@ module WrestlerAnalyzer
 		
 		# Create Symbols for Points
 		for i in 2..12 do
-			dc_points = "DC%02d_points" % i
+			dc_points = "dc%02d_points" % i
 			points[dc_points.to_sym] = 0
 			i += 1
 		end
@@ -84,7 +86,7 @@ module WrestlerAnalyzer
 		points[:Specialty_Roll_Probability_in_OC] = 0
 
  		for i in 1..6 do
-			s_points = "S#{i}_points"
+			s_points = "s#{i}_points"
 			points[s_points.to_sym] = 0
 			i += 1
 		end
@@ -96,35 +98,35 @@ module WrestlerAnalyzer
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			oc_points = "OC%02d_points" % i
+			oc_points = "oc%02d_points" % i
 			points[oc_points.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			oc_dq = "OC%02d_dq" % i
+			oc_dq = "oc%02d_dq" % i
 			points[oc_dq.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			oc_pa = "OC%02d_pa" % i
+			oc_pa = "oc%02d_pa" % i
 			points[oc_pa.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			oc_sub = "OC%02d_sub" % i
+			oc_sub = "oc%02d_sub" % i
 			points[oc_sub.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			oc_xx = "OC%02d_xx" % i
+			oc_xx = "oc%02d_xx" % i
 			points[oc_xx.to_sym] = 0
 			i += 1
 		end
@@ -134,35 +136,35 @@ module WrestlerAnalyzer
 
  		# TODO: Refactor this into one method
  		for i in 2..12 do
-			r_points = "RO%02d_points" % i
+			r_points = "ro%02d_points" % i
 			points[r_points.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			r_dq = "RO%02d_dq" % i
+			r_dq = "ro%02d_dq" % i
 			points[r_dq.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			r_pa = "RO%02d_pa" % i
+			r_pa = "ro%02d_pa" % i
 			points[r_pa.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			r_sub = "RO%02d_sub" % i
+			r_sub = "ro%02d_sub" % i
 			points[r_sub.to_sym] = 0
 			i += 1
 		end
 
 		# TODO: Refactor this into one method
 		for i in 2..12 do
-			r_xx = "RO%02d_xx" % i
+			r_xx = "ro%02d_xx" % i
 			points[r_xx.to_sym] = 0
 			i += 1
 		end
@@ -171,7 +173,7 @@ module WrestlerAnalyzer
 		points[:tag_save_numerator] = 0
 
 		# Determine Points for DC Rolls
-		dc_hash = hash.select { |k,v| k.to_s.include?('DC') }
+		dc_hash = attributes.select { |k,v| k.to_s.include?('dc') }
 		dc_hash.each { | k,v|
 			if v == "A"
 				points["#{k}_points".to_sym] = DC_A
@@ -184,25 +186,26 @@ module WrestlerAnalyzer
 
 		# Calculate Reverse Roll in DC
 		reverse_roll = 0
-		r_hash = hash.select { |k,v| k.to_s.include?('DC') && v.downcase.include?('reverse') }
+		r_hash = attributes.select { |k,v| k.to_s.include?('dc') && v.downcase.include?('reverse') }
 		points[:Reverse] = prob_points(r_hash)
 
 		# Determine (S) Points
-		points[:S1_points] = hash[:S1].split[0].to_i
- 		points[:S2_points] = hash[:S2].split[0].to_i
- 		points[:S3_points] = hash[:S3].split[0].to_i
- 		points[:S4_points] = hash[:S4].split[0].to_i
- 		points[:S5_points] = hash[:S5].split[0].to_i
- 		points[:S6_points] = hash[:S6].split[0].to_i
+		points[:s1_points] = attributes["s1"].split[0].to_i
+ 		points[:s2_points] = attributes["s2"].split[0].to_i
+ 		points[:s3_points] = attributes["s3"].split[0].to_i
+ 		points[:s4_points] = attributes["s4"].split[0].to_i
+ 		points[:s5_points] = attributes["s5"].split[0].to_i
+ 		points[:s6_points] = attributes["s6"].split[0].to_i
 
- 		o_moves = hash.select { |k,v| k.to_s.include?('OC') }
+ 		o_moves = attributes.select { |k,v| k.to_s.include?('oc') }
+ 		o_moves.delete("oc_prob")
  		o_moves.each { |k,v|
  			key = "#{k}_points".to_sym
  			m = remove_move(v)
  			points[key] = m
  		}
 
- 		r_moves = hash.select { |k,v| k.to_s.include?('RO') }
+ 		r_moves = attributes.select { |k,v| k[0..1].to_s.include?('ro') }
  		r_moves.each { |k,v|
  			key = "#{k}_points".to_sym
  			m = remove_move(v)
@@ -210,21 +213,25 @@ module WrestlerAnalyzer
  		}
 
  		# Get Specialty Roll Numerator in OC
- 		s = hash.select { |k,v| k.to_s.include?('OC') && v.include?('(S)') }
+ 		s = attributes.select { |k,v| k.to_s.include?('oc') }
+ 		s.delete("oc_prob")
+ 		s = s.select { |k,v| v.include?('(S)') }
  		points[:Specialty_Roll_Enumerator_in_OC] = prob_points(s)
  		points[:Specialty_Roll_Probability_in_OC] = return_rational(points[:Specialty_Roll_Enumerator_in_OC])
 
  		# Get Specialty Roll Probability-DQ (x/6)
- 		points[:s_roll_prob_dq] = get_s_extra_values(hash, '(DQ)')
- 		points[:s_roll_prob_pa] = get_s_extra_values(hash, 'P/A')
-		points[:s_roll_prob_sub] = get_s_extra_values(hash, '*')
-		points[:s_roll_prob_xx] = get_s_extra_values(hash, '(xx)')
+		spec_array = [ attributes["s1"], attributes["s2"], attributes["s3"],
+			attributes["s4"], attributes["s5"], attributes["s6"] ]
+ 		points[:s_roll_prob_dq] = get_s_extra_values(spec_array, '(DQ)')
+ 		points[:s_roll_prob_pa] = get_s_extra_values(spec_array, 'P/A')
+		points[:s_roll_prob_sub] = get_s_extra_values(spec_array, '*')
+		points[:s_roll_prob_xx] = get_s_extra_values(spec_array, '(xx)')
  			
 		# Find DQ, P/A, * and XX Values in OC and Ropes
- 		dq_hash = create_value_hash(hash, "(DQ)")
- 		pa_hash = create_value_hash(hash, "P/A")
- 		sub_hash = create_value_hash(hash, "*")
- 		xx_hash = create_value_hash(hash, "(xx)")
+ 		dq_hash = create_value_hash(attributes, "(DQ)")
+ 		pa_hash = create_value_hash(attributes, "P/A")
+ 		sub_hash = create_value_hash(attributes, "*")
+ 		xx_hash = create_value_hash(attributes, "(xx)")
 
  		dq_hash.each { |k,v| 
  			key = k.to_s + "_dq"
@@ -247,19 +254,19 @@ module WrestlerAnalyzer
  		}
 
  		# Determine Ropes Roll Enumerator
- 		oc_ropes_hash = hash.select { |k,v| v == 'Ropes' }
+ 		oc_ropes_hash = attributes.select { |k,v| v == 'Ropes' }
 
  		points[:OC_Ropes_Roll_Probability] = prob_points(oc_ropes_hash)
 
  		# Determine Enumerator of (S) rolls in Ropes
- 		ropes_s_hash = hash.select { |k,v| k.to_s.include?("RO") && v.include?('(S)') }
+ 		ropes_s_hash = attributes.select { |k,v| k[0..1].include?("ro") && v.include?('(S)') }
  		points[:Ropes_S_Roll_Probability] = prob_points(ropes_s_hash)
 
- 		points[:PriorityS] = hash[:PriorityS].to_i
- 		points[:PriorityT] = hash[:PriorityT].to_i
+ 		points[:prioritys] = attributes["prioritys"].to_i
+ 		points[:priorityt] = attributes["priorityt"].to_i
 
- 		points[:sub_numerator] = sub_tag_numerator(hash[:Sub])
- 		points[:tag_save_numerator] = sub_tag_numerator(hash[:Tag])
+ 		points[:sub_numerator] = sub_tag_numerator(attributes["subx"], attributes["suby"])
+ 		points[:tag_save_numerator] = sub_tag_numerator(attributes["tagx"], attributes["tagy"])
 
  		points[:Sub_prob] = return_rational(points[:sub_numerator]).to_f
  		points[:Tag_prob] = return_rational(points[:tag_save_numerator]).to_f
@@ -316,6 +323,7 @@ module WrestlerAnalyzer
 	
 
 	def remove_move(move)
+
 		m = move.split
 
 		if m.size == 1
@@ -347,7 +355,18 @@ module WrestlerAnalyzer
 	# Takes in Wrestler Values Array of Sub values, 
 	# converts them to integers and then a range and
 	# determines the probabillity of a submission.
-	def sub_tag_numerator(values)
+	def sub_tag_numerator(x, y)
+
+		values = []
+
+		if x != 0
+			values.push(x)
+		end
+
+		if y != 0
+			values.push(y)
+		end
+
 		num = 0
 
 		if values.size == 2
@@ -368,7 +387,7 @@ module WrestlerAnalyzer
 	# Isolates P/A, DQ, xx or * results in Specialty
 	# Card and returns the number of them.
 	def get_s_extra_values(moves, value)
-		h = moves.select { |k,v| k.to_s.include?('S') && v.include?(value) }
+		h = moves.select { |v| v.include?(value) }
 		return h.size
 	end
 
@@ -377,7 +396,11 @@ module WrestlerAnalyzer
 	# hash of the moves that contain either a P/A, DQ,
 	# * or xx that is passed to it.
 	def create_value_hash(moves, value)
-		return moves.select { |k,v| v.include?(value)}
+		m = moves.select { |k,v| k.include?("oc")}
+		m.delete("oc_prob")
+		r = moves.select { |k,v| k[0..1].include?("ro")}
+		m = m.merge(r)
+		return m.select { |k,v| v.include?(value)}
 	end
 
 
@@ -515,6 +538,8 @@ module WrestlerAnalyzer
 	# Takes in wrestler card hash and searches for OC/TT
 	# rolls and then calculates their probability.
 	def calculate_gc_tt_roll_probability(wrestler_hash)
+		wrestler_hash = attributes
+
 		h = wrestler_hash.select { |k,v| v == 'OC/TT' }
 		prob = 0
 
