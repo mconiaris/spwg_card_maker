@@ -64,10 +64,10 @@ module WrestlerAnalyzer
 		# Calculate OC count to calculate probablity.
 		points[:OC_enumerator] = prob_points(oc_hash)
 
-		binding.pry
 
 		points[:oc_probability] = return_rational(points[:OC_enumerator]).to_f
 		points[:DC] = calculate_gc_dc_roll_probability(points[:OC_enumerator])
+		binding.pry
 
 		# Calculate TT Roll in GC
 		points[:GC_TT_Enumerator] = calculate_gc_tt_roll_probability(hash)
