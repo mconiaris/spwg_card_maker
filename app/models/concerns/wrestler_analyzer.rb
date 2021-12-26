@@ -32,9 +32,8 @@ module WrestlerAnalyzer
 
 	def analyze
 		@statistics = Hash.new
-		binding.pry
 
-		card_points_per_round = calculate_total_card_rating(wrestler)
+		card_points_per_round = calculate_total_card_rating
 
 		# Add values to wrestler's hash
 		@statistics[:oc_probability] = wrestler.points[:oc_probability]
@@ -55,14 +54,18 @@ module WrestlerAnalyzer
 	# ======================
 	
 	# Isolate Numbers from Text
-	def move_points(hash)
+	def move_points
+
 		points = Hash.new
 
-		gc_hash = hash.select { |k,v| k.to_s.include?('GC') }
+		gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
 		oc_hash = gc_hash.select { |k,v| v.include?('OC') }
 
 		# Calculate OC count to calculate probablity.
 		points[:OC_enumerator] = prob_points(oc_hash)
+
+		binding.pry
+
 		points[:oc_probability] = return_rational(points[:OC_enumerator]).to_f
 		points[:DC] = calculate_gc_dc_roll_probability(points[:OC_enumerator])
 
@@ -388,7 +391,7 @@ module WrestlerAnalyzer
 	# ==========================
 
 	# total_card_rating
-	def calculate_total_card_rating(wrestler)
+	def calculate_total_card_rating
 		points_per_round = calculate_card_points_per_round(wrestler.points)
 		dq_probability_per_round = calculate_dq_probability_per_round(wrestler.points)
 		pa_probability_per_round = calculate_pa_probability_per_round(wrestler.points)
@@ -421,11 +424,11 @@ module WrestlerAnalyzer
 
 
 	# card_points_per_round
-	def calculate_card_points_per_round(wrestler)
+	def calculate_card_points_per_round
 
 
 		oc_points_per_round_total = 
-			calculate_oc_points_per_round_total(wrestler)
+			calculate_oc_points_per_round_total
 
 		# DC points per round total
 		dc_points_per_round_total = 
@@ -596,10 +599,10 @@ module WrestlerAnalyzer
 	# ==============
 
 	# OC Points Subtotal + Ropes + Speci
-	def calculate_oc_points_per_round_total(wrestler)
+	def calculate_oc_points_per_round_total
 
 		oc_points_subtotal = 
-			calculate_oc_points_subtotal(wrestler)
+			calculate_oc_points_subtotal
 
 		oc_specialty_points_per_round = 
 			calculate_oc_specialty_points_per_round(wrestler)
@@ -731,7 +734,7 @@ module WrestlerAnalyzer
 
 
 	# OC points per roll total not including (S) or Ropes
-	def calculate_oc_points_subtotal(wrestler)
+	def calculate_oc_points_subtotal
 		oc_prob = wrestler[:oc_probability]
 
 		oc_hash = get_oc_hash(wrestler)
