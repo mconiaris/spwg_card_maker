@@ -28,3 +28,54 @@
 .value {
 	text-align: right;
 }
+
+/*Show Page*/
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.full {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  text-align: center;
+}
+
+.left {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.right {
+  grid-column-start: 2;
+  grid-column-end: 2
+}
+
+.first {
+  grid-row-start: 1;
+}
+
+.second {
+  grid-row-start: 2;
+}
+
+.third {
+  grid-row-start: 3;
+}
+
+.forth {
+  grid-row-start: 4;
+}
+
+.fifth {
+  grid-row-start: 5;
+}
+
+.sixth {
+  grid-row-start: 6;
+}
+
+.seventh {
+  grid-row-start: 7;
+}
+
