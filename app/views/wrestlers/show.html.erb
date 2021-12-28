@@ -2,9 +2,9 @@
 <h1>Make a Wrestler</h1>
 <div class="wrapper">
   <div class=wrapper id="left">
-    <p class="full one"><%= @wrestler.name %></p>
+    <p class="full one title"><%= @wrestler.name %></p>
 
-    <p class="full two">GENERAL CARD</p>
+    <p class="full two title">GENERAL CARD</p>
 
     <p class="left three">GC02: <%= @wrestler.gc02 %></p>
     <p class="left four">GC03: <%= @wrestler.gc03 %></p>
@@ -20,7 +20,7 @@
     
     <p class="full eight">GC12: <%= @wrestler.gc12 %></p>
 
-    <p class="full nine">DEFENSIVE CARD</p>
+    <p class="full nine title">DEFENSIVE CARD</p>
     <p class="left ten">DC02: <%= @wrestler.dc02 %></p>
     <p class="left eleven">DC03: <%= @wrestler.dc03 %></p>
     <p class="left twelve">DC04: <%= @wrestler.dc04 %></p>
@@ -35,8 +35,16 @@
       
     <p class="full fifteen">DC12: <%= @wrestler.dc12 %></p>
 
-    <p class="full sixteen">SPECIALTY:</p>
+    <p class="full sixteen title">SPECIALTY:</p>
 
+    <p class="full seventeen title"><%= @wrestler.specialty %></p>
+
+    <p class="full">1: <%= @wrestler.s1 %></p>
+    <p class="full">2: <%= @wrestler.s2 %></p>
+    <p class="full">3: <%= @wrestler.s3 %></p>
+    <p class="full">4: <%= @wrestler.s4 %></p>
+    <p class="full">5: <%= @wrestler.s5 %></p>
+    <p class="full">6: <%= @wrestler.s6 %></p>
   </div>
   <div class=wrapper id="right">
     <p>Set: <%= @wrestler.set %></p>
@@ -45,13 +53,6 @@
 
 
 
-<p>Specialty: <%= @wrestler.specialty %></p>
-<p>S1: <%= @wrestler.s1 %></p>
-<p>S2: <%= @wrestler.s2 %></p>
-<p>S3: <%= @wrestler.s3 %></p>
-<p>S4: <%= @wrestler.s4 %></p>
-<p>S5: <%= @wrestler.s5 %></p>
-<p>S6: <%= @wrestler.s6 %></p>
 <p>Sub: <%= @wrestler.subx %>-<%= @wrestler.suby %></p>
 <p>Tag Save: <%= @wrestler.tagx %>-<%= @wrestler.tagy %></p>
 <p>Priority: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
