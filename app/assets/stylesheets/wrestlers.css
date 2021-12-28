@@ -51,31 +51,66 @@
   grid-column-end: 2
 }
 
-.first {
+.one {
   grid-row-start: 1;
 }
 
-.second {
+.two {
   grid-row-start: 2;
 }
 
-.third {
+.three {
   grid-row-start: 3;
 }
 
-.forth {
+.four {
   grid-row-start: 4;
 }
 
-.fifth {
+.five {
   grid-row-start: 5;
 }
 
-.sixth {
+.six {
   grid-row-start: 6;
 }
 
-.seventh {
+.seven {
   grid-row-start: 7;
 }
 
+.eight {
+  grid-row-start: 8;
+}
+
+.nine {
+  grid-row-start: 9;
+}
+
+.ten {
+  grid-row-start: 10;
+}
+
+.eleven {
+  grid-row-start: 11;
+}
+
+.twelve {
+  grid-row-start: 12;
+}
+
+.thirteen {
+  grid-row-start: 13;
+}
+
+.fourteen {
+  grid-row-start: 14;
+}
+
+.fifteen {
+  grid-row-start: 15;
+}
+
+.sixteen {
+  grid-row-start: 16;
+}
