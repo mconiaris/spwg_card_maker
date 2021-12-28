@@ -53,69 +53,69 @@
 }
 
 .left {
-  grid-column-start: 1;
+  grid-column: 1;
 }
 
 .right {
-  grid-column-start: 2;
+  grid-column: 2;
 }
 
 .one {
-  grid-row-start: 1;
+  grid-row: 1;
 }
 
 .two {
-  grid-row-start: 2;
+  grid-row: 2;
 }
 
 .three {
-  grid-row-start: 3;
+  grid-row: 3;
 }
 
 .four {
-  grid-row-start: 4;
+  grid-row: 4;
 }
 
 .five {
-  grid-row-start: 5;
+  grid-row: 5;
 }
 
 .six {
-  grid-row-start: 6;
+  grid-row: 6;
 }
 
 .seven {
-  grid-row-start: 7;
+  grid-row: 7;
 }
 
 .eight {
-  grid-row-start: 8;
+  grid-row: 8;
 }
 
 .nine {
-  grid-row-start: 9;
+  grid-row: 9;
 }
 
 .ten {
-  grid-row-start: 10;
+  grid-row: 10;
 }
 
 .eleven {
-  grid-row-start: 11;
+  grid-row: 11;
 }
 
 .twelve {
-  grid-row-start: 12;
+  grid-row: 12;
 }
 
 .thirteen {
-  grid-row-start: 13;
+  grid-row: 13;
 }
 
 .fourteen {
-  grid-row-start: 14;
+  grid-row: 14;
 }
 
 .fifteen {
-  grid-row-start: 15;
+  grid-row: 15;
 }
