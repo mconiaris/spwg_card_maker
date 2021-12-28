@@ -1,10 +1,24 @@
 <%= form_with model: wrestler do |form| %>
+	<div class="wrapper">
+  	<div class=wrapper id="left">
+			
+			<%= form.label :name, class: "full one title" %><br>
+			<%= form.text_field :name, class: "full two title grid-line" %>
+			<% @wrestler.errors.full_messages_for(:name).each do |message| %>
+	      <div><%= message %></div>
+	    <% end %>
+
+	     <p class="full three title grid-line" >GENERAL CARD</p>
+
+			<%= form.label :gc02 %><br>
+			<%= form.text_field :gc02 %>
+			<% @wrestler.errors.full_messages_for(:gc02).each do |message| %>
+	      <div><%= message %></div>
+	    <% end %>
+
+		</div>
+	</div>
 	<div>
-		<%= form.label :name %><br>
-		<%= form.text_field :name %>
-		<% @wrestler.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
 	</div>
 
 	<div>
@@ -16,11 +30,6 @@
 	</div>
 
 	<div>
-		<%= form.label :gc02 %><br>
-		<%= form.text_field :gc02 %>
-		<% @wrestler.errors.full_messages_for(:gc02).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
 	</div>
 
 	<div>
