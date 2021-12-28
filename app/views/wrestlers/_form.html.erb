@@ -1,6 +1,6 @@
 <%= form_with model: wrestler do |form| %>
-	<div class="wrapper">
-  	<div class=form-wrapper id="left">
+	<div class="form-wrapper">
+  	<div class="form-wrapper-left">
 			
 			<%= form.label :name, class: "form-full c1 r1 title" %><br>
 			<%= form.text_field :name, placeholder: "Name", class: "form-full r1 title grid-line" %>
@@ -227,40 +227,28 @@
 
 	</div>
 
-	<div class=form-wrapper id="right">
+	<div class="form-wrapper-right">
 		
-	</div>
+		<p class="form-full r1 title grid-line" >OFFENSIVE CARD</p>
 
-	<div>
-	</div>
-
-	<div>
-		<%= form.label :set %><br>
-		<%= form.text_field :set %>
-		<% @wrestler.errors.full_messages_for(:set).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-	</div>
-	    <p>Note: original came cards had exactly five "A" rolls.</p>
-
-
-
-
-	<div>Offensive Card</div>
-	<div>
-		<%= form.label :oc02 %><br>
-		<%= form.text_field :oc02 %>
+		<%= form.label :oc02, class: "r2 c1" %><br>
+		<%= form.text_field :oc02, class: "r2 c2" %>
 		<% @wrestler.errors.full_messages_for(:oc02).each do |message| %>
       <div><%= message %></div>
     <% end %>
-	</div>
 
-	<div>
-		<%= form.label :oc03 %><br>
-		<%= form.text_field :oc03 %>
+		<%= form.label :oc03, class: "r3 c1" %><br>
+		<%= form.text_field :oc03, class: "r3 c2" %>
 		<% @wrestler.errors.full_messages_for(:oc03).each do |message| %>
       <div><%= message %></div>
     <% end %>
+
+
+
+
+	</div>
+
+	<div>
 	</div>
 
 	<div>
@@ -334,6 +322,26 @@
       <div><%= message %></div>
     <% end %>
 	</div>
+
+
+
+
+
+	<div>
+	</div>
+
+	<div>
+		<%= form.label :set %><br>
+		<%= form.text_field :set %>
+		<% @wrestler.errors.full_messages_for(:set).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+	</div>
+	    <p>Note: original came cards had exactly five "A" rolls.</p>
+
+
+
+
 
 	<div>Ropes</div>
 	<div>For moves with no points, please type "N/A"</div>

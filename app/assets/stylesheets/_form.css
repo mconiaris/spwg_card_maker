@@ -2,8 +2,19 @@
 
 .form-wrapper {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-wrapper-left {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.form-wrapper-right {
+  display: grid;
+  grid-template-columns: 1fr, 3fr;
+}
+
 
 .form-full {
   grid-column-start: 1;
