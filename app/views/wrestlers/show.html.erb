@@ -2,56 +2,69 @@
 <h1>Make a Wrestler</h1>
 <div class="wrapper">
   <div class=wrapper id="left">
-    <p class="full one title"><%= @wrestler.name %></p>
+    <p class="full one title grid-line"><%= @wrestler.name %></p>
 
-    <p class="full two title">GENERAL CARD</p>
+    <p class="full two title grid-line" >GENERAL CARD</p>
 
-    <p class="left three">GC02: <%= @wrestler.gc02 %></p>
-    <p class="left four">GC03: <%= @wrestler.gc03 %></p>
-    <p class="left five">GC04: <%= @wrestler.gc04 %></p>
-    <p class="left six">GC05: <%= @wrestler.gc05 %></p>
-    <p class="left seven">GC06: <%= @wrestler.gc06 %></p>
+    <p class="left three grid-line">GC02: <%= @wrestler.gc02 %></p>
+    <p class="left four grid-line">GC03: <%= @wrestler.gc03 %></p>
+    <p class="left five grid-line">GC04: <%= @wrestler.gc04 %></p>
+    <p class="left six grid-line">GC05: <%= @wrestler.gc05 %></p>
+    <p class="left seven grid-line">GC06: <%= @wrestler.gc06 %></p>
 
-    <p class="right three">GC07: <%= @wrestler.gc07 %></p>
-    <p class="right four">GC08: <%= @wrestler.gc08 %></p>
-    <p class="right five">GC09: <%= @wrestler.gc09 %></p>
-    <p class="right six">GC10: <%= @wrestler.gc10 %></p>
-    <p class="right seven">GC11: <%= @wrestler.gc11 %></p>
+    <p class="right three grid-line">GC07: <%= @wrestler.gc07 %></p>
+    <p class="right four grid-line">GC08: <%= @wrestler.gc08 %></p>
+    <p class="right five grid-line">GC09: <%= @wrestler.gc09 %></p>
+    <p class="right six grid-line">GC10: <%= @wrestler.gc10 %></p>
+    <p class="right seven grid-line">GC11: <%= @wrestler.gc11 %></p>
     
-    <p class="full eight">GC12: <%= @wrestler.gc12 %></p>
+    <p class="full eight grid-line">GC12: <%= @wrestler.gc12 %></p>
 
-    <p class="full nine title">DEFENSIVE CARD</p>
-    <p class="left ten">DC02: <%= @wrestler.dc02 %></p>
-    <p class="left eleven">DC03: <%= @wrestler.dc03 %></p>
-    <p class="left twelve">DC04: <%= @wrestler.dc04 %></p>
-    <p class="left thirteen">DC05: <%= @wrestler.dc05 %></p>
-    <p class="left fourteen">DC06: <%= @wrestler.dc06 %></p>
+    <p class="full nine title grid-line">DEFENSIVE CARD</p>
+    <p class="left ten grid-line">DC02: <%= @wrestler.dc02 %></p>
+    <p class="left eleven grid-line">DC03: <%= @wrestler.dc03 %></p>
+    <p class="left twelve grid-line">DC04: <%= @wrestler.dc04 %></p>
+    <p class="left thirteen grid-line">DC05: <%= @wrestler.dc05 %></p>
+    <p class="left fourteen grid-line">DC06: <%= @wrestler.dc06 %></p>
 
-    <p class="right ten">DC07: <%= @wrestler.dc07 %></p>
-    <p class="right eleven">DC08: <%= @wrestler.dc08 %></p>
-    <p class="right twelve">DC09: <%= @wrestler.dc09 %></p>
-    <p class="right thirteen">DC10: <%= @wrestler.dc10 %></p>
-    <p class="right fourteen">DC11: <%= @wrestler.dc11 %></p>
+    <p class="right ten grid-line">DC07: <%= @wrestler.dc07 %></p>
+    <p class="right eleven grid-line">DC08: <%= @wrestler.dc08 %></p>
+    <p class="right twelve grid-line">DC09: <%= @wrestler.dc09 %></p>
+    <p class="right thirteen grid-line">DC10: <%= @wrestler.dc10 %></p>
+    <p class="right fourteen grid-line">DC11: <%= @wrestler.dc11 %></p>
       
-    <p class="full fifteen">DC12: <%= @wrestler.dc12 %></p>
+    <p class="full fifteen grid-line">DC12: <%= @wrestler.dc12 %></p>
 
-    <p class="full title">SPECIALTY:</p>
+    <p class="full title grid-line">SPECIALTY:</p>
 
-    <p class="full title"><%= @wrestler.specialty %></p>
+    <p class="full title grid-line"><%= @wrestler.specialty %></p>
 
-    <p class="full">1: <%= @wrestler.s1 %></p>
-    <p class="full">2: <%= @wrestler.s2 %></p>
-    <p class="full">3: <%= @wrestler.s3 %></p>
-    <p class="full">4: <%= @wrestler.s4 %></p>
-    <p class="full">5: <%= @wrestler.s5 %></p>
-    <p class="full">6: <%= @wrestler.s6 %></p><br>
+    <p class="full grid-line">1: <%= @wrestler.s1 %></p>
+    <p class="full grid-line">2: <%= @wrestler.s2 %></p>
+    <p class="full grid-line">3: <%= @wrestler.s3 %></p>
+    <p class="full grid-line">4: <%= @wrestler.s4 %></p>
+    <p class="full grid-line">5: <%= @wrestler.s5 %></p>
+    <p class="full grid-line">6: <%= @wrestler.s6 %></p><br>
 
-    <p class="fu]l">SUB: <%= @wrestler.subx %>-<%= @wrestler.suby %></p>
-    <p class="full">TAG TEAM: <%= @wrestler.tagx %>-<%= @wrestler.tagy %></p>
-    <p class="full">PRIORITY: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
+    <p class="fu]l grid-line">SUB: <%= @wrestler.subx %>-<%= @wrestler.suby %></p>
+    <p class="full grid-line">TAG TEAM: <%= @wrestler.tagx %>-<%= @wrestler.tagy %></p>
+    <p class="full grid-line">PRIORITY: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
   </div>
 
   <div class=wrapper id="right">
+    <p class="full one grid-line">OFFENSIVE CARD</p>
+    <p class="full two grid-line">2 <%= @wrestler.oc02 %></p> 
+    <p class="full three grid-line">OC03: <%= @wrestler.oc03 %></p>
+    <p class="full four grid-line">OC04: <%= @wrestler.oc04 %></p>
+    <p class="full five grid-line">OC05: <%= @wrestler.oc05 %></p>
+    <p class="full six grid-line">OC06: <%= @wrestler.oc06 %></p>
+    <p class="full seven grid-line">OC07: <%= @wrestler.oc07 %></p>
+    <p class="full eight grid-line">OC08: <%= @wrestler.oc08 %></p>
+    <p class="full nine grid-line">OC09: <%= @wrestler.oc09 %></p>
+    <p class="full ten grid-line">OC10: <%= @wrestler.oc10 %></p>
+    <p class="full eleven grid-line">OC11: <%= @wrestler.oc11 %></p>
+    <p class="full twelve grid-line">OC12: <%= @wrestler.oc12 %></p>
+    <p></p>
     <p>Set: <%= @wrestler.set %></p>
   </div>
 </div>
@@ -59,17 +72,6 @@
 
 
 
-<p>OC02: <%= @wrestler.oc02 %></p>
-<p>OC03: <%= @wrestler.oc03 %></p>
-<p>OC04: <%= @wrestler.oc04 %></p>
-<p>OC05: <%= @wrestler.oc05 %></p>
-<p>OC06: <%= @wrestler.oc06 %></p>
-<p>OC07: <%= @wrestler.oc07 %></p>
-<p>OC08: <%= @wrestler.oc08 %></p>
-<p>OC09: <%= @wrestler.oc09 %></p>
-<p>OC10: <%= @wrestler.oc10 %></p>
-<p>OC11: <%= @wrestler.oc11 %></p>
-<p>OC12: <%= @wrestler.oc12 %></p>
 
 <p>RO02: <%= @wrestler.ro02 %></p>
 <p>RO03: <%= @wrestler.ro03 %></p>
