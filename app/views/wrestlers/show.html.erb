@@ -35,9 +35,9 @@
       
     <p class="full fifteen">DC12: <%= @wrestler.dc12 %></p>
 
-    <p class="full sixteen title">SPECIALTY:</p>
+    <p class="full title">SPECIALTY:</p>
 
-    <p class="full seventeen title"><%= @wrestler.specialty %></p>
+    <p class="full title"><%= @wrestler.specialty %></p>
 
     <p class="full">1: <%= @wrestler.s1 %></p>
     <p class="full">2: <%= @wrestler.s2 %></p>
@@ -45,6 +45,10 @@
     <p class="full">4: <%= @wrestler.s4 %></p>
     <p class="full">5: <%= @wrestler.s5 %></p>
     <p class="full">6: <%= @wrestler.s6 %></p>
+
+    <p>Sub: <%= @wrestler.subx %>-<%= @wrestler.suby %></p>
+    <p>Tag Save: <%= @wrestler.tagx %>-<%= @wrestler.tagy %></p>
+    <p>Priority: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
   </div>
   <div class=wrapper id="right">
     <p>Set: <%= @wrestler.set %></p>
@@ -53,9 +57,6 @@
 
 
 
-<p>Sub: <%= @wrestler.subx %>-<%= @wrestler.suby %></p>
-<p>Tag Save: <%= @wrestler.tagx %>-<%= @wrestler.tagy %></p>
-<p>Priority: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
 
 <p>OC02: <%= @wrestler.oc02 %></p>
 <p>OC03: <%= @wrestler.oc03 %></p>
