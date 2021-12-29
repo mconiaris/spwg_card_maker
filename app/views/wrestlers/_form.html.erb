@@ -144,7 +144,7 @@
 
     <div class="left-center r16 grid-line">SPECIALTY:</div>
 
-		<%= form.text_field :specialty, class: "left-center r17" %>
+		<%= form.text_field :specialty, class: "left-center r17 grid-line" %>
 		<% @wrestler.errors.full_messages_for(:specialty).each do |message| %>
       <div><%= message %></div>
     <% end %>
