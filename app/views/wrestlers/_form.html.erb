@@ -185,45 +185,52 @@
       <div><%= message %></div>
     <% end %>
 
-    <p class="r24 c1">SUB:</p>
+    <div class="form-sub-wrapper">
+    	<div>SUB:</div>
+    	
+			<%= form.text_field :subx %>
+			<% @wrestler.errors.full_messages_for(:subx).each do |message| %>
+	      <div><%= message %></div>
+	    <% end %>
 
-		<%= form.text_field :subx, class: "r24 c2" %>
-		<% @wrestler.errors.full_messages_for(:subx).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+	    <div class="title">-</div>
 		
-		<%= form.text_field :suby, class: "r24 c3" %>
-		<% @wrestler.errors.full_messages_for(:suby).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+			<%= form.text_field :suby %>
+			<% @wrestler.errors.full_messages_for(:suby).each do |message| %>
+	      <div><%= message %></div>
+	    <% end %>
 
-    <p class="r25 c1">TAG:</p>
+	    <div>TAG TEAM:</div>
 
-		<%= form.text_field :tagx, class: "r25 c2" %>
-		<% @wrestler.errors.full_messages_for(:tagx).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+			<%= form.text_field :tagx %>
+			<% @wrestler.errors.full_messages_for(:tagx).each do |message| %>
+	      <div><%= message %></div>
+	    <% end %>
 
-		<%= form.text_field :tagy, class: "r25 c3" %>
-		<% @wrestler.errors.full_messages_for(:tagy).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+	    <div class="title">-</div>
 
-    <p class="r26 c1">PRIORITY:</p>
+			<%= form.text_field :tagy %>
+			<% @wrestler.errors.full_messages_for(:tagy).each do |message| %>
+	      <div><%= message %></div>
+	    <% end %>
 
-		<%= form.text_field :prioritys, class: "r26 c2" %>
-		<% @wrestler.errors.full_messages_for(:prioritys).each do |message| %>
-    <div><%= message %></div>
-  	<% end %>
+	    <div>PRIORITY:</div>
 
-  	<p class="r26 c3">/</p>
+			<%= form.text_field :prioritys %>
+			<% @wrestler.errors.full_messages_for(:prioritys).each do |message| %>
+	    <div><%= message %></div>
+	  	<% end %>
 
-		<%= form.text_field :priorityt, class: "r26 c4" %>
-		<% @wrestler.errors.full_messages_for(:priorityt).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+	  	<p class="title">/</p>
 
-    <p class="r27 c1">Note: original came cards had exactly five "A" rolls.</p>
+			<%= form.text_field :priorityt %>
+			<% @wrestler.errors.full_messages_for(:priorityt).each do |message| %>
+	      <div><%= message %></div>
+	    <% end %>
+
+    </div>
+
+    <p class="r27 left-note">Note: original came cards had exactly five "A" rolls.</p>
 
 			
 		<p class="right-center r1 grid-line" >OFFENSIVE CARD</p>

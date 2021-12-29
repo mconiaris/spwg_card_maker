@@ -6,6 +6,13 @@
   grid-auto-rows: 1.3em;
 }
 
+.form-sub-wrapper {
+  display: grid;
+  grid-template-columns: 5em 2em 1em 2em;
+  grid-auto-rows: 1.3em;
+  grid-row-start: 24;
+}
+
 .left-center {
   grid-column-start: 1;
   grid-column-end: 5;
@@ -16,6 +23,16 @@
   grid-column-start: 5;
   grid-column-end: 7;
   text-align: center;
+}
+
+.left-note {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.right-note {
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
 
 .spec-input {
