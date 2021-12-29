@@ -2,7 +2,7 @@
 
 .form-wrapper {
   display: grid;
-  grid-template-columns: 2.5em 7.5em 2.5em 7.5em 2.5em 17em;
+  grid-template-columns: 2em 6em 2em 6em 2em 14em 6em;
   grid-auto-rows: 1.3em;
   column-gap: 5px;
 }
@@ -63,6 +63,10 @@
 
 .c6 {
   grid-column: 6;
+}
+
+.c7 {
+  grid-column: 7;
 }
 
 

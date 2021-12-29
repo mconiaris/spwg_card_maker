@@ -386,6 +386,17 @@
 
     <p class="r27 right-note">For Ropes moves with no points, please type "N/A"</p>
 
+    <!-- Third Column -->
+    <p class="r1 c7">Tag Team %: <%= @wrestler.tt %></p>
+		<p class="r2 c7">Overall Card Rating: <%= @wrestler.card_rating %></p>
+		<p class="r4 c7">OC Probability: <%= @wrestler.oc_prob %></p>
+		<p class="r6 c7">Total Points Per Round: <%= @wrestler.total_points %></p>
+		<p class="r8 c7">DQ Probability Per Round: <%= @wrestler.dq_prob %></p>
+		<p class="r11 c7">P/A Probability Per Round: <%= @wrestler.pa_prob %></p>
+		<p class="r14 c7">Submission Move Probability Per Round: <%= @wrestler.sub_prob %></p>
+		<p class="r18 c7">XX Roll Probability Per Round: <%= @wrestler.xx_prob %></p>
+		<p class="r21 c7">Submission Lass Probability: <%= @wrestler.submission %></p>
+		<p class="r24 c7">Tag Save Probability: <%= @wrestler.tag_team_save %></p>
 
 	</div>
 <% end %>
