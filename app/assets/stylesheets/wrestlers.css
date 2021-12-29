@@ -37,7 +37,7 @@ body{
 /*Show Page*/
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
 }
 
 .wrapper p {
@@ -48,21 +48,37 @@ body{
   border: 2px solid green;
 }
 
-.full {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
 .title { 
   text-align: center;
 }
 
 .left {
-  grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .right {
+  grid-column: 3;
+}
+
+.stats {
+  grid-column: 4;
+}
+
+.col1 {
+  grid-column: 1;
+}
+
+.col2 {
   grid-column: 2;
+}
+
+.col3 {
+  grid-column: 3;
+}
+
+.col4 {
+  grid-column: 4;
 }
 
 .one {
@@ -123,4 +139,44 @@ body{
 
 .fifteen {
   grid-row: 15;
+}
+
+.sixteen {
+  grid-row: 16;
+}
+
+.seventeen {
+  grid-row: 17;
+}
+
+.eighteen {
+  grid-row: 18;
+}
+
+.nineteen {
+  grid-row: 19;
+}
+
+.twenty {
+  grid-row: 20;
+}
+
+.twenty-one {
+  grid-row: 21;
+}
+
+.twenty-two {
+  grid-row: 22;
+}
+
+.twenty-three {
+  grid-row: 23;
+}
+
+.twenty-four {
+  grid-row: 24;
+}
+
+.twenty-five {
+  grid-row: 25;
 }
