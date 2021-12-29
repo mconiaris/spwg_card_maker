@@ -7,13 +7,13 @@
 
 .form-wrapper-left {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 2.5em 7.5em 2.5em 7.5em;
   grid-auto-rows: 1.3em;
 }
 
 .form-wrapper-right {
   display: grid;
-  grid-template-columns: 1fr, 3fr;
+  grid-template-columns: 2.5em 17em;
   grid-auto-rows: 1.3em;
 }
 
