@@ -221,7 +221,7 @@
 	    <div><%= message %></div>
 	  	<% end %>
 
-	  	<p class="title">/</p>
+	  	<div class="title">/</div>
 
 			<%= form.text_field :priorityt %>
 			<% @wrestler.errors.full_messages_for(:priorityt).each do |message| %>
@@ -232,8 +232,13 @@
 
     <p class="r27 left-note">Note: original came cards had exactly five "A" rolls.</p>
 
-			
-		<p class="right-center r1 grid-line" >OFFENSIVE CARD</p>
+		<div>
+			<%= form.submit %>
+		</div>
+
+
+		<!-- Right Side of Card -->
+		<div class="right-center r1 grid-line" >OFFENSIVE CARD</div>
 
 		<%= form.label :oc02, class: "r2 c5" %><br>
 		<%= form.text_field :oc02, class: "r2 c6" %>
@@ -301,7 +306,7 @@
       <div><%= message %></div>
     <% end %>
 
-    <p class="right-center r13 grid-line">=ROPES=</p>
+    <div class="right-center r13 grid-line">=ROPES=</div>
 
 		<%= form.label :ro02, class: "r14 c5" %><br>
 		<%= form.text_field :ro02, class: "r14 c6" %>
@@ -369,25 +374,18 @@
       <div><%= message %></div>
     <% end %>
 
-		<%= form.label :set, class: "form-full c1 r25 title" %><br>
-		<%= form.text_field :set, placeholder: "Set", class: "form-full r25 title grid-line" %>
+		<%= form.text_field :set, placeholder: "Set", class: "right-center r25 grid-line" %>
 		<% @wrestler.errors.full_messages_for(:set).each do |message| %>
       <div><%= message %></div>
     <% end %>
 
-    <p class="r27 c1 form-full">For Ropes moves with no points, please type "N/A"</p>
+		<%= form.text_field :division, placeholder: "Division", class: "right-center r26 grid-line" %>
+		<% @wrestler.errors.full_messages_for(:division).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
 
-		<div>
-			<%= form.label :division %><br>
-			<%= form.text_field :division %>
-			<% @wrestler.errors.full_messages_for(:division).each do |message| %>
-	      <div><%= message %></div>
-	    <% end %>
-		</div>
+    <p class="r27 right-note">For Ropes moves with no points, please type "N/A"</p>
 
-		<div>
-			<%= form.submit %>
-		</div>
 
 	</div>
 <% end %>
