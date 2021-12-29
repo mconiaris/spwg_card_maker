@@ -18,6 +18,11 @@
   text-align: center;
 }
 
+.spec-input {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
 .c1 {
   grid-column: 1;
 }
