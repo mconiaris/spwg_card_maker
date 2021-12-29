@@ -1,13 +1,12 @@
 <%= form_with model: wrestler do |form| %>
 	<div class="form-wrapper">
 			
-		<%= form.label :name, class: "left-center c1 r1 title" %><br>
-		<%= form.text_field :name, placeholder: "Name", class: "form-full r1 title grid-line" %>
+		<%= form.text_field :name, placeholder: "Name", class: "left-center r1 grid-line" %>
 		<% @wrestler.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
 
-     <p class="left-center r2 grid-line" >GENERAL CARD</p>
+    <div class="left-center r2 grid-line">GENERAL CARD</div>
 
 		<%= form.label :gc02, class: "r3 c1" %><br>
 		<%= form.text_field :gc02, class: "r3 c2"  %>
@@ -75,7 +74,7 @@
       <div><%= message %></div>
     <% end %>
 
-    <p class="left-center r9 grid-line">DEFENSIVE CARD</p>
+    <div class="left-center r9 grid-line">DEFENSIVE CARD</div>
 
 		<%= form.label :dc02, class: "r10 c1" %><br>
 		<%= form.text_field :dc02, class: "r10 c2" %>
@@ -143,9 +142,9 @@
       <div><%= message %></div>
     <% end %>
 
-    <p class="left-center r16 grid-line">SPECIALTY:</p>
+    <div class="left-center r16 grid-line">SPECIALTY:</div>
 
-		<%= form.text_field :specialty, class: "form-full r17" %>
+		<%= form.text_field :specialty, class: "left-center r17" %>
 		<% @wrestler.errors.full_messages_for(:specialty).each do |message| %>
       <div><%= message %></div>
     <% end %>
