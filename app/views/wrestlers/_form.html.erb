@@ -398,6 +398,8 @@
 		<p class="r22 c7">Submission Lass Probability: <%= @wrestler.submission %></p>
 		<p class="r25 c7">Tag Save Probability: <%= @wrestler.tag_team_save %></p>
 
+		<%= generate_wrestler_stats(@wrestler) %>
+
 		<div class="r30">
 			<%= form.submit %>
 		</div>
