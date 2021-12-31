@@ -387,18 +387,8 @@
     <p class="r27 right-note">For Ropes moves with no points, please type "N/A"</p>
 
     <!-- Third Column -->
-    <p class="r1 c7">Tag Team %: <%= number_to_percentage((@wrestler.tt.to_f) * 100, precision: 0) %></p>
-		<p class="r3 c7">Overall Card Rating: <%= "%.1f" % @wrestler.card_rating %></p>
-		<p class="r5 c7">OC Probability: <%= number_to_percentage((@wrestler.oc_prob.to_f) * 100, precision: 0) %></p>
-		<p class="r7 c7">Total Points Per Round: <%= "%.1f" % @wrestler.total_points %></p>
-		<p class="r9 c7">DQ Probability Per Round: <%= number_to_percentage((@wrestler.dq_prob.to_f) * 100, precision: 0) %></p>
-		<p class="r12 c7">P/A Probability Per Round: <%= number_to_percentage((@wrestler.pa_prob.to_f) * 100, precision: 0) %></p>
-		<p class="r15 c7">Submission Move Probability Per Round: <%= number_to_percentage((@wrestler.sub_prob.to_f) * 100, precision: 0) %></p>
-		<p class="r19 c7">XX Roll Probability Per Round: <%= number_to_percentage((@wrestler.xx_prob.to_f) * 100, precision: 0) %></p>
-		<p class="r22 c7">Submission Loss Probability: <%= number_to_percentage((@wrestler.submission.to_f) * 100, precision: 0) %></p>
-		<p class="r25 c7">Tag Save Probability: <%= number_to_percentage((@wrestler.tag_team_save.to_f) * 100, precision: 0) %></p>
+		<%= render "stats", wrestler: @wrestler %>
 
-		<%= generate_wrestler_stats(@wrestler) %>
 
 		<div class="r30">
 			<%= form.submit %>
