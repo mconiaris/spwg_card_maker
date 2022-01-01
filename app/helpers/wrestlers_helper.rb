@@ -10,8 +10,8 @@ module WrestlersHelper
  		wrestler.pa_prob = stats[:pa_probability_per_round]
  		wrestler.sub_prob = stats[:sub_probability_per_round]
  		wrestler.xx_prob = stats[:xx_probability_per_round]
- 		# wrestler.submission = stats[]
- 		# wrestler.tag_team_save = stats[]
+ 		wrestler.submission = stats[:submission]
+ 		wrestler.tag_team_save = stats[:tag_team_save]
  		wrestler.save
 	end
 

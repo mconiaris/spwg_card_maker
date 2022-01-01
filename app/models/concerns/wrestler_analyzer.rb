@@ -42,10 +42,13 @@ module WrestlerAnalyzer
 		card_points_per_round = calculate_total_card_rating(mv_points)
 
 		# Add values to wrestler's hash
-		@statistics[:oc_probability] = mv_points[:oc_probability]
-		@statistics[:dc_probability] = mv_points[:DC]
-		@statistics[:tt_probability] = mv_points[:GC_TT_Roll].to_f
-		
+		@statistics[:oc_probability] = (mv_points[:oc_probability] * 100)
+		@statistics[:dc_probability] = (mv_points[:DC] * 100)
+		@statistics[:tt_probability] = (mv_points[:GC_TT_Roll].to_f * 100)
+
+		@statistics[:submission] = (mv_points[:Sub_prob].to_f * 100)
+		@statistics[:tag_team_save] = (mv_points[:Tag_prob].to_f * 100)
+
 		# Check for Problems in :Set attribute of hash.
 		if attributes[:set] == nil
 			attributes[:set] = 'Special'
@@ -440,10 +443,10 @@ module WrestlerAnalyzer
 		@statistics[:total_card_rating] = total_card_rating
 		@statistics[:total_card_points] = total_card_points
 		@statistics[:total_card_points_per_round] = points_per_round
-		@statistics[:dq_probability_per_round] = dq_probability_per_round
-		@statistics[:pa_probability_per_round] = pa_probability_per_round
-		@statistics[:sub_probability_per_round] = sub_probability_per_round
-		@statistics[:xx_probability_per_round] = xx_probability_per_round
+		@statistics[:dq_probability_per_round] = dq_probability_per_round * 100
+		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
+		@statistics[:sub_probability_per_round] = sub_probability_per_round * 100
+		@statistics[:xx_probability_per_round] = xx_probability_per_round * 100
 
 		return total_card_rating
 	end
