@@ -28,7 +28,7 @@ class WrestlersController < ApplicationController
 
   def update
     @wrestler = Wrestler.find(params[:id])
-
+                                  
     if @wrestler.update(wrestler_params)
       redirect_to @wrestler
     else
