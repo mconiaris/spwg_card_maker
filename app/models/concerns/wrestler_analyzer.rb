@@ -234,7 +234,7 @@ module WrestlerAnalyzer
  		dq_hash = create_value_hash(attributes, "(DQ)")
  		pa_hash = create_value_hash(attributes, "P/A")
  		sub_hash = create_value_hash(attributes, "*")
- 		xx_hash = create_value_hash(attributes, "(xx)")
+ 		xx_hash = create_value_hash(attributes, "(XX)")
 
  		dq_hash.each { |k,v| 
  			key = k.to_s + "_dq"
@@ -696,6 +696,7 @@ module WrestlerAnalyzer
 	def calculate_oc_xx_per_round_total(wrestler)
 		oc_xx_subtotal = 
 			calculate_oc_xx_subtotal(wrestler)
+
 		oc_specialty_xx_per_round = 
 			calculate_oc_specialty_xx_per_round(wrestler)
 
@@ -813,6 +814,7 @@ module WrestlerAnalyzer
 		oc_prob = wrestler[:oc_probability]
 
 		xx_hash = return_attribute_hash(wrestler, "_xx")
+
 		oc_xx_hash = return_attribute_hash(xx_hash, "oc")
 
 		xx_subtotal = calculate_xx_subtotal(oc_xx_hash, oc_prob)
