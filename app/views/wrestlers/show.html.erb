@@ -45,14 +45,14 @@
     <p class="left grid-line">5: <%= @wrestler.s5 %></p>
     <p class="left grid-line">6: <%= @wrestler.s6 %></p>
 
-    <p class="left grid-line">SUB: <%= @wrestler.subx %>-<%= @wrestler.suby %></p>
-    <p class="left grid-line">TAG TEAM: <%= @wrestler.tagx %>-<%= @wrestler.tagy %></p>
+    <p class="left grid-line">SUB: <%= sub_and_tag_display(@wrestler.subx, @wrestler.suby) %></p>
+    <p class="left grid-line">TAG TEAM: <%= sub_and_tag_display(@wrestler.tagx, @wrestler.tagy) %></p>
     <p class="left grid-line">PRIORITY: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
 
     <!-- Right Side of Card -->
     <p class="right one grid-line title">OFFENSIVE CARD</p>
 
-    <p class="col3 two grid-line">2 <%= @wrestler.oc02 %></p> 
+    <p class="col3 two grid-line">OC02: <%= @wrestler.oc02 %></p> 
     <p class="col3 three grid-line">OC03: <%= @wrestler.oc03 %></p>
     <p class="col3 four grid-line">OC04: <%= @wrestler.oc04 %></p>
     <p class="col3 five grid-line">OC05: <%= @wrestler.oc05 %></p>

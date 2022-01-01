@@ -270,7 +270,6 @@ module WrestlerAnalyzer
 
  		points[:prioritys] = attributes["prioritys"].to_i
  		points[:priorityt] = attributes["priorityt"].to_i
-
  		points[:sub_numerator] = sub_tag_numerator(attributes["subx"], attributes["suby"])
  		points[:tag_save_numerator] = sub_tag_numerator(attributes["tagx"], attributes["tagy"])
 
@@ -365,6 +364,14 @@ module WrestlerAnalyzer
 
 		values = []
 
+		if x == nil
+			x = 0
+		end
+
+		if y == nil
+			y = 0
+		end
+
 		if x != 0
 			values.push(x)
 		end
@@ -383,7 +390,6 @@ module WrestlerAnalyzer
 		elsif values.size == 1
 			x = values[0].to_i
 			num += calculate_probability(x)
-
 		else
 			puts "Sub or Tag numbers are out of range."				
 		end
@@ -410,7 +416,12 @@ module WrestlerAnalyzer
 	end
 
 
-
+	# Check Sub & Tag Inputs for Nil values and remove them.
+	def revmove_nil(x)
+		if x == nil
+			x = 0			
+		end
+	end
 
 
 	
