@@ -237,7 +237,9 @@ module WrestlerAnalyzer
  		dq_hash = create_value_hash(attributes, "(DQ)")
  		pa_hash = create_value_hash(attributes, "P/A")
  		sub_hash = create_value_hash(attributes, "*")
- 		xx_hash = create_value_hash(attributes, "(XX)")
+ 		lc_xx_hash = create_value_hash(attributes, "(xx)")
+ 		uc_xx_hash = create_value_hash(attributes, "(XX)")
+ 		xx_hash = lc_xx_hash.merge(uc_xx_hash)
 
  		dq_hash.each { |k,v| 
  			key = k.to_s + "_dq"
@@ -409,6 +411,7 @@ module WrestlerAnalyzer
 	# * or xx that is passed to it.
 	def create_value_hash(moves, value)
 		m = moves.select { |k,v| k.include?("oc")}
+
 		m.delete("oc_prob")
 		r = moves.select { |k,v| k[0..1].include?("ro")}
 		m = m.merge(r)
@@ -458,7 +461,7 @@ module WrestlerAnalyzer
 		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
 		@statistics[:sub_probability_per_round] = sub_probability_per_round * 100
 		@statistics[:xx_probability_per_round] = xx_probability_per_round * 100
-
+binding.pry
 		return total_card_rating
 	end
 
@@ -1207,6 +1210,7 @@ module WrestlerAnalyzer
 
 	def calculate_specialty_xx_average(wrestler)
 		s_hash = get_specialty_hash(attributes)
+
 		s_xx_hash = s_hash.select { |k,v| v.include?("(XX)")}
 
 		s_xx = s_xx_hash.size

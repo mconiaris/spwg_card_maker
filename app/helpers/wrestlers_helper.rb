@@ -5,7 +5,7 @@ module WrestlersHelper
 		wrestler.tt = stats[:tt_probability]
 		wrestler.card_rating = stats[:total_card_rating]
 		wrestler.oc_prob = stats[:oc_probability]
- 		wrestler.total_points = stats[:total_card_points]
+ 		wrestler.total_points = stats[:total_card_points_per_round]
  		wrestler.dq_prob = stats[:dq_probability_per_round]
  		wrestler.pa_prob = stats[:pa_probability_per_round]
  		wrestler.sub_prob = stats[:sub_probability_per_round]
