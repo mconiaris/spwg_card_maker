@@ -7,7 +7,7 @@ name = '83_06JackBris'
 #    1000 = OC
 #    1001 = OC/TT
 #    1002 = DC
-GeneralCard = [1000, 1000, 1002, 1002, 1000, 1000, 1002, 1001, 1000, 1000, 1002]
+GeneralCard = [1000, 1000, 1002, 1000, 1002, 1000, 1001, 1002, 1002, 1000, 1000]
 
 # Offensive Card Definitions:
 #    1003 = Pin attempt move (P/A)

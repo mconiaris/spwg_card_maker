@@ -11,7 +11,7 @@ module WrestlerPyGenerator
 	module InstanceMethods
 
 		def print_card
-binding.pry
+
 			file = File.new('wrestler.txt', 'w')
 			file.write("# -*- coding: utf-8 -*-\n")
 			file.write("from data.globalConstants import *\n")
@@ -22,7 +22,7 @@ binding.pry
 			file.write("#    1000 = OC\n")
 			file.write("#    1001 = OC/TT\n")
 			file.write("#    1002 = DC\n")
-			file.write("GeneralCard = [1000, 1000, 1002, 1002, 1000, 1000, 1002, 1001, 1000, 1000, 1002]\n")
+			file.write("GeneralCard = #{general_card}\n")
 			file.write("\n")
 			file.write("# Offensive Card Definitions:\n")
 			file.write("#    1003 = Pin attempt move (P/A)\n")
@@ -91,6 +91,24 @@ binding.pry
 			file.write("Priority = (4, 2)\n")
 			file.write("nameSet = 'Rufuscard'")
 			file.close
+		end
+
+		private
+
+		def general_card
+			gc = [ self[:gc02], self[:gc03], self[:gc04], self[:gc05], 
+				self[:gc06], self[:gc07], self[:gc08], self[:gc09], self[:gc10], 
+				self[:gc11], self[:gc12] ]
+
+			gc.map! do |item|
+				if item == "OC"
+					item = 1000
+				elsif item == "OC/TT"
+					item = 1001
+				else item == "DC"
+					item = 1002
+				end
+			end
 		end
 
 	end
