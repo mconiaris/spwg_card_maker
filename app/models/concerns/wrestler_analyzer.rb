@@ -461,7 +461,7 @@ module WrestlerAnalyzer
 		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
 		@statistics[:sub_probability_per_round] = sub_probability_per_round * 100
 		@statistics[:xx_probability_per_round] = xx_probability_per_round * 100
-binding.pry
+
 		return total_card_rating
 	end
 
