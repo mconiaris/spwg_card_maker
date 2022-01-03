@@ -1,5 +1,6 @@
 module WrestlersHelper
 	def generate_wrestler_stats(wrestler)
+
 		stats = wrestler.analyze
 
 		wrestler.tt = stats[:tt_probability]
