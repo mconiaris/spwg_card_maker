@@ -131,35 +131,44 @@ module WrestlerPyGenerator
 					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_TYPE': 1005}"
 				else
 					move = capture_move_name(v.underscore)
-					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_POINTS': 9, 'MOVE_TYPE': 1008}"
+					key = k + "_points"
+					key = key.to_sym
+					move_type = get_move_type(k)
+					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': '#{oc_points_hash[key]}', 'MOVE_TYPE': #{move[1]}}"
 				end
 			}
-			# TODO: This is kind of working, but not quite. Sometimes it does.
-			binding.pry
 		end
 
 		# Just get the move names and not the values
 		def capture_move_name(move)
 
+			m = [0, 1008]
+
 			if move.include?('(xx)')
 				move.gsub!("(xx)","")
+				m[1] = 1009
 			elsif move.include?('p/a')
 				move.gsub!("p/a","")
+				m[1] = 1003
 			elsif move.include?('*')
 				move.gsub!("*","")
+				m[1] = 1004
 			elsif move.include?('(dq)')
 				move.gsub!("(dq)","")
+				m[1] = 1006
 			elsif move.include?('(s)')
 				move.gsub!("(s)","")
+				m[1] = 1005
 			end
-
 			move.gsub!(/\d+/, "")
 			move.strip!
-			move.upcase
+			m[0] = move.upcase
+
+			return m
 		end
 
-
-		def move_type(roll)
+# Delete?
+		def get_move_type(roll)
 			types = Hash.new
 
 			move_points.select { |k,v|
@@ -170,7 +179,6 @@ module WrestlerPyGenerator
 			# Get points, dq, pa, sub & xx values relatet to roll
 			types_hash = types.select { |m| m == 1 }
 
-			binding.pry
 			# Determine Move Type
 			if types_hash.size == 0
 				move_type = 1008
@@ -180,8 +188,8 @@ module WrestlerPyGenerator
 				}
 			end
 		end
-
 	end
+
 
 	def self.included(receiver)
 		receiver.extend         ClassMethods
