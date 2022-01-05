@@ -126,6 +126,8 @@ module WrestlerPyGenerator
 
 				if v.underscore == "ropes"
 					oc_move_array[array_key] = "{   'MOVE_NAME': 'ROPES', 'MOVE_TYPE': 1010}"
+				elsif v.underscore.include?("(s)")
+					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_TYPE': 1005}"
 				else
 					move = capture_move_name(v.underscore)
 					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_POINTS': 9, 'MOVE_TYPE': 1008}"
