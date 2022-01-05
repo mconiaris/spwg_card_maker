@@ -133,7 +133,6 @@ module WrestlerPyGenerator
 					move = capture_move_name(v.underscore)
 					key = k + "_points"
 					key = key.to_sym
-					move_type = get_move_type(k)
 					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': '#{oc_points_hash[key]}', 'MOVE_TYPE': #{move[1]}}"
 				end
 			}
@@ -166,30 +165,7 @@ module WrestlerPyGenerator
 
 			return m
 		end
-
-# Delete?
-		def get_move_type(roll)
-			types = Hash.new
-
-			move_points.select { |k,v|
-				if k.to_s[0..3] == roll
-					types[k] = v
-				end
-			}
-			# Get points, dq, pa, sub & xx values relatet to roll
-			types_hash = types.select { |m| m == 1 }
-
-			# Determine Move Type
-			if types_hash.size == 0
-				move_type = 1008
-			else
-				move_type = types_hash.select {
-
-				}
-			end
-		end
 	end
-
 
 	def self.included(receiver)
 		receiver.extend         ClassMethods
