@@ -127,6 +127,7 @@ module WrestlerPyGenerator
 				if v.underscore == "ropes"
 					oc_move_array[array_key] = "{   'MOVE_NAME': 'ROPES', 'MOVE_TYPE': 1010}"
 				elsif v.underscore.include?("(s)")
+					move = v.underscore.gsub!("(s)","").upcase.strip
 					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_TYPE': 1005}"
 				else
 					move = capture_move_name(v.underscore)
@@ -169,12 +170,12 @@ module WrestlerPyGenerator
 			# Get points, dq, pa, sub & xx values relatet to roll
 			types_hash = types.select { |m| m == 1 }
 
+			binding.pry
 			# Determine Move Type
 			if types_hash.size == 0
 				move_type = 1008
 			else
 				move_type = types_hash.select {
-			binding.pry
 
 				}
 			end
