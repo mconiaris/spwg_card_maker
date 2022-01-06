@@ -34,24 +34,13 @@ module WrestlerPyGenerator
 			file.write("#    1010 = Ropes Move (ROPES)\n")
 			file.write("OffensiveCard = \\\n")
 			make_offensive_card(file)
-			# file.write("[   {   'MOVE_NAME': '#{self[:oc02]}', 'MOVE_POINTS': #{move_points[:oc02_points]}, 'MOVE_TYPE': #{move_type("oc02")}},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc03]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1008},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc04]}', 'MOVE_TYPE': 1005},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc05]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1008},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc06]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1008},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc07]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1008},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc08]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1009},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc09]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1008},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc10]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1003},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc11]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1008},\n")
-			# file.write("    {   'MOVE_NAME': '#{self[:oc12]}', 'MOVE_TYPE': 1010}]\n")
-			# file.write("    \n")
 			file.write("# Defensive Card Definitions:\n")
 			file.write("#    0 = B - No points on defense\n")
 			file.write("#    2 = A - 2 points on defense\n")
 			file.write("#    4 = C - 4 points on defense and neutralize offensive move\n")
 			file.write("#    5 = Reverse - Reverse offensive move\n")
-			file.write("DefensiveCard = [0, 2, 0, 4, 2, 2, 0, 5, 2, 0, 2]\n")
+			make_defensive_card(file)
+			# file.write("DefensiveCard = [0, 2, 0, 4, 2, 2, 0, 5, 2, 0, 2]\n")
 			file.write("\n")
 			file.write("# Specialty Card Definitions:\n")
 			file.write("#    1003 = Pin attempt move (P/A)\n")
@@ -147,6 +136,24 @@ module WrestlerPyGenerator
 					file.write("\t#{move}\]\n\n")
 				end
 			end
+		end
+
+		def make_defensive_card(file)
+			m = move_points.select {|key, value| 
+				key.to_s.include?("dc")
+			}
+
+			# Print to card
+			file.write("DefensiveCard = [")
+			dc = String.new
+
+			m.each { |k, v|
+				dc += "#{v}, "
+			}
+			dc.strip!
+			dc[-1] = "]\n"
+
+			file.write(dc)
 		end
 
 		# Just get the move names and not the values
