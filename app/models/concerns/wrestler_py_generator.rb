@@ -33,7 +33,7 @@ module WrestlerPyGenerator
 			file.write("#    1009 = Grudge Match Move (XX)\n")
 			file.write("#    1010 = Ropes Move (ROPES)\n")
 			file.write("OffensiveCard = \\\n")
-			make_offensive_card
+			make_offensive_card(file)
 			# file.write("[   {   'MOVE_NAME': '#{self[:oc02]}', 'MOVE_POINTS': #{move_points[:oc02_points]}, 'MOVE_TYPE': #{move_type("oc02")}},\n")
 			# file.write("    {   'MOVE_NAME': '#{self[:oc03]}', 'MOVE_POINTS': #{move_points[, 'MOVE_TYPE': 1008},\n")
 			# file.write("    {   'MOVE_NAME': '#{self[:oc04]}', 'MOVE_TYPE': 1005},\n")
@@ -112,7 +112,7 @@ module WrestlerPyGenerator
 			end
 		end
 
-		def make_offensive_card
+		def make_offensive_card(file)
 
 			oc_move_array = Array.new
 
@@ -136,6 +136,17 @@ module WrestlerPyGenerator
 					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': '#{oc_points_hash[key]}', 'MOVE_TYPE': #{move[1]}}"
 				end
 			}
+
+			# Print to card
+			file.write("[   ")
+			oc_move_array.each_with_index do |move, index|
+				if index < (oc_move_array.size - 1)
+					file.write("\t#{move}\,")
+					file.write("\n")
+				else
+					file.write("\t#{move}\]\n\n")
+				end
+			end
 		end
 
 		# Just get the move names and not the values
