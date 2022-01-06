@@ -12,7 +12,7 @@ module WrestlerPyGenerator
 
 		def print_card
 
-			file = File.new('wrestler.txt', 'w')
+			file = File.new("#{self[:name]}_#{self[:set]}.py", 'w')
 			file.write("# -*- coding: utf-8 -*-\n")
 			file.write("from data.globalConstants import *\n")
 			file.write("# #{self[:name]}\n")
