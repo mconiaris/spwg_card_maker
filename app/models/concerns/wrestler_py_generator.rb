@@ -57,17 +57,18 @@ module WrestlerPyGenerator
 			file.write("#    1010 = Ropes Move (ROPES)\n")
 			file.write("#    1014 = No Action (NA)\n")
 			file.write("Ropes = \\\n")
-			file.write("[   {   'MOVE_NAME': 'CHOP OVER TOP ROPE', 'MOVE_TYPE': 1006},\n")
-			file.write("    {   'MOVE_NAME': 'FRONT CRADLE', 'MOVE_POINTS': 8, 'MOVE_TYPE': 1003},\n")
-			file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014},\n")
-			file.write("    {   'MOVE_NAME': 'FIST TO MIDSECTION', 'MOVE_POINTS': 7, 'MOVE_TYPE': 1008},\n")
-			file.write("    {   'MOVE_NAME': 'TOMAHAWK CHOP', 'MOVE_POINTS': 8, 'MOVE_TYPE': 1008},\n")
-			file.write("    {   'MOVE_NAME': 'SHOULDER SMASH', 'MOVE_POINTS': 7, 'MOVE_TYPE': 1008},\n")
-			file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014},\n")
-			file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014},\n")
-			file.write("    {   'MOVE_NAME': 'RAM INTO RINGPOST', 'MOVE_POINTS': 8, 'MOVE_TYPE': 1008},\n")
-			file.write("    {   'MOVE_NAME': 'DBLE TOMAHAWK CHOP', 'MOVE_POINTS': 7, 'MOVE_TYPE': 1008},\n")
-			file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014}]\n")
+			make_ropes_card(file)
+			# file.write("[   {   'MOVE_NAME': 'CHOP OVER TOP ROPE', 'MOVE_TYPE': 1006},\n")
+			# file.write("    {   'MOVE_NAME': 'FRONT CRADLE', 'MOVE_POINTS': 8, 'MOVE_TYPE': 1003},\n")
+			# file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014},\n")
+			# file.write("    {   'MOVE_NAME': 'FIST TO MIDSECTION', 'MOVE_POINTS': 7, 'MOVE_TYPE': 1008},\n")
+			# file.write("    {   'MOVE_NAME': 'TOMAHAWK CHOP', 'MOVE_POINTS': 8, 'MOVE_TYPE': 1008},\n")
+			# file.write("    {   'MOVE_NAME': 'SHOULDER SMASH', 'MOVE_POINTS': 7, 'MOVE_TYPE': 1008},\n")
+			# file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014},\n")
+			# file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014},\n")
+			# file.write("    {   'MOVE_NAME': 'RAM INTO RINGPOST', 'MOVE_POINTS': 8, 'MOVE_TYPE': 1008},\n")
+			# file.write("    {   'MOVE_NAME': 'DBLE TOMAHAWK CHOP', 'MOVE_POINTS': 7, 'MOVE_TYPE': 1008},\n")
+			# file.write("    {   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014}]\n")
 			file.write("    \n")
 			file.write("Sub = (2, 4)\n")
 			file.write("TagTeam = (7, 12)\n")
@@ -162,6 +163,42 @@ module WrestlerPyGenerator
 			file.write("\n")
 		end
 
+		# DRY this with make_oc_card
+		def make_ropes_card(file)
+
+			ropes_move_array = Array.new
+
+			ropes_points_hash = move_points.select { |k,v| k.to_s[0..1] == "ro" }
+			ropes_moves_hash = attributes.select { |k,v| k[0..1] == "ro" }
+
+			ropes_moves_hash.each { |k,v|
+				array_key = (k[2..3].to_i) - 2
+
+				if v.underscore == "n\/a"
+					ropes_move_array[array_key] = "{   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014}"
+				elsif v.underscore.include?("(s)")
+					move = v.underscore.gsub!("(s)","").upcase.strip
+					ropes_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_TYPE': 1005}"
+				else
+					move = capture_move_name(v.underscore)
+					key = k + "_points"
+					key = key.to_sym
+					ropes_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': '#{ropes_points_hash[key]}', 'MOVE_TYPE': #{move[1]}}"
+				end
+			}
+			
+			# Print to card
+			file.write("[   ")
+			ropes_move_array.each_with_index do |move, index|
+				if index < (ropes_move_array.size - 1)
+					file.write("\t#{move}\,")
+					file.write("\n")
+				else
+					file.write("\t#{move}\]\n\n")
+				end
+			end
+		end
+
 		# Just get the move names and not the values
 		def capture_move_name(move)
 
@@ -182,6 +219,9 @@ module WrestlerPyGenerator
 			elsif move.include?('(s)')
 				move.gsub!("(s)","")
 				m[1] = 1005
+			elsif move.include?("N/A")
+				move.gsub!("N/A","")
+				m[1] = 1014
 			end
 			move.gsub!(/\d+/, "")
 			move.strip!
