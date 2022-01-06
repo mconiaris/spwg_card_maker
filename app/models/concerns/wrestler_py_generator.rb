@@ -15,7 +15,7 @@ module WrestlerPyGenerator
 			file = File.new('wrestler.txt', 'w')
 			file.write("# -*- coding: utf-8 -*-\n")
 			file.write("from data.globalConstants import *\n")
-			file.write("# #{self[:name]}l\n")
+			file.write("# #{self[:name]}\n")
 			file.write("name = '#{self[:name]}'\n")
 			file.write("\n")
 			file.write("# General Card Definitions: \n")
