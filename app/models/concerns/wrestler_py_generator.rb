@@ -58,6 +58,7 @@ module WrestlerPyGenerator
 			file.write("#    1014 = No Action (NA)\n")
 			file.write("Ropes = \\\n")
 			make_ropes_card(file)
+			file.write("\n")
 			file.write("Sub = (2, 4)\n")
 			file.write("TagTeam = (7, 12)\n")
 			file.write("Priority = (4, 2)\n")
@@ -147,7 +148,6 @@ module WrestlerPyGenerator
 			file.write("                         {   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
 			file.write("                         {   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
 			file.write("                         {   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\}\]\}\n")
-			file.write("                         \n")
 			file.write("\n")
 		end
 
@@ -182,7 +182,7 @@ module WrestlerPyGenerator
 					file.write("\t#{move}\,")
 					file.write("\n")
 				else
-					file.write("\t#{move}\]\n\n")
+					file.write("\t#{move}\]\n")
 				end
 			end
 		end
