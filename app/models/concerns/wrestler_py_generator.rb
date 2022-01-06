@@ -143,11 +143,11 @@ module WrestlerPyGenerator
 			specialty_move = self["specialty"].upcase
 
 			file.write("Specialty = {   '#{specialty_move}': [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\}\]\}\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s2])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s3])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s4])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s5])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s6])}\}\]\}\n")
 			file.write("\n")
 		end
 
