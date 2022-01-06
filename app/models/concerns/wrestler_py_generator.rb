@@ -40,20 +40,20 @@ module WrestlerPyGenerator
 			file.write("#    4 = C - 4 points on defense and neutralize offensive move\n")
 			file.write("#    5 = Reverse - Reverse offensive move\n")
 			make_defensive_card(file)
-			# file.write("DefensiveCard = [0, 2, 0, 4, 2, 2, 0, 5, 2, 0, 2]\n")
 			file.write("\n")
 			file.write("# Specialty Card Definitions:\n")
 			file.write("#    1003 = Pin attempt move (P/A)\n")
 			file.write("#    1004 = Submission Move (*)\n")
 			file.write("#    1005 = Specialty Move (S)\n")
 			file.write("#    1006 = Disqualification Move (DQ)\n")
-			file.write("Specialty = {   'TOMAHAWK DROP': [   {   'MOVE_POINTS': 9, 'MOVE_TYPE': 1003},\n")
-			file.write("                         {   'MOVE_POINTS': 10, 'MOVE_TYPE': 1005},\n")
-			file.write("                         {   'MOVE_POINTS': 11, 'MOVE_TYPE': 1005},\n")
-			file.write("                         {   'MOVE_POINTS': 11, 'MOVE_TYPE': 1005},\n")
-			file.write("                         {   'MOVE_POINTS': 10, 'MOVE_TYPE': 1003},\n")
-			file.write("                         {   'MOVE_POINTS': 9, 'MOVE_TYPE': 1003}]}\n")
-			file.write("                         \n")
+			make_specialty_card(file)
+			# file.write("Specialty = {   'TOMAHAWK DROP': [   {   'MOVE_POINTS': 9, 'MOVE_TYPE': 1003},\n")
+			# file.write("                         {   'MOVE_POINTS': 10, 'MOVE_TYPE': 1005},\n")
+			# file.write("                         {   'MOVE_POINTS': 11, 'MOVE_TYPE': 1005},\n")
+			# file.write("                         {   'MOVE_POINTS': 11, 'MOVE_TYPE': 1005},\n")
+			# file.write("                         {   'MOVE_POINTS': 10, 'MOVE_TYPE': 1003},\n")
+			# file.write("                         {   'MOVE_POINTS': 9, 'MOVE_TYPE': 1003}]}\n")
+			# file.write("                         \n")
 			file.write("# Ropes Card Definitions:\n")
 			file.write("#    1003 = Pin attempt move (P/A)\n")
 			file.write("#    1004 = Submission Move (*)\n")
@@ -156,6 +156,19 @@ module WrestlerPyGenerator
 			file.write(dc)
 		end
 
+		def make_specialty_card(file)
+			specialty_move = self["specialty"].upcase
+
+			file.write("Specialty = {   '#{specialty_move}': [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\},\n")
+			file.write("                         {   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1])}\}\]\}\n")
+			file.write("                         \n")
+			file.write("\n")
+		end
+
 		# Just get the move names and not the values
 		def capture_move_name(move)
 
@@ -183,6 +196,20 @@ module WrestlerPyGenerator
 
 			return m
 		end
+	end
+
+	def get_specialty_move_type(move)
+		if move.include?('(xx)')
+				return 1009
+			elsif move.include?('p/a')
+				return 1003
+			elsif move.include?('*')
+				return 1004
+			elsif move.include?('(dq)')
+				return 1006
+			else
+				return 1005
+			end
 	end
 
 	def self.included(receiver)
