@@ -59,10 +59,10 @@ module WrestlerPyGenerator
 			file.write("Ropes = \\\n")
 			make_ropes_card(file)
 			file.write("\n")
-			file.write("Sub = (2, 4)\n")
-			file.write("TagTeam = (7, 12)\n")
-			file.write("Priority = (4, 2)\n")
-			file.write("nameSet = 'Rufuscard'")
+			file.write("Sub = (#{check_sub_tag_value(self[:subx])}, #{check_sub_tag_value(self[:suby])})\n")
+			file.write("TagTeam = (#{check_sub_tag_value(self[:tagx])}, #{check_sub_tag_value(self[:tagy])})\n")
+			file.write("Priority = (#{self[:prioritys]}, #{self[:priorityt]})\n")
+			file.write("nameSet = '#{self[:set]}'")
 			file.close
 		end
 
@@ -231,6 +231,14 @@ module WrestlerPyGenerator
 			else
 				return 1005
 			end
+	end
+
+	def check_sub_tag_value(value)
+		if value == 0
+			return " "
+		else
+			return value
+		end
 	end
 
 	def self.included(receiver)
