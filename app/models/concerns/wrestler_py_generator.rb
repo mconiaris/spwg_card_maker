@@ -11,8 +11,7 @@ module WrestlerPyGenerator
 	module InstanceMethods
 
 		def print_card
-
-			file = File.new("#{get_wrestler_file_name}.py", 'w')
+			file = File.new("#{Dir.home}/Downloads/#{get_wrestler_file_name}.py", 'w')
 			file.write("# -*- coding: utf-8 -*-\n")
 			file.write("from data.globalConstants import *\n")
 			file.write("# #{self[:name]}\n")
