@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from data.globalConstants import *
-# Midnight Riker
-name = 'Midnight Riker'
+# Midnight Riker II
+name = 'Midnight Riker II'
 
 # General Card Definitions: 
 #    1000 = OC
@@ -74,4 +74,4 @@ Ropes = \
 Sub = (2, )
 TagTeam = (2, 6)
 Priority = (5, 3)
-nameSet = ''
+nameSet = 'BMM'

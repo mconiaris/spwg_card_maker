@@ -12,8 +12,7 @@ module WrestlerPyGenerator
 
 		def print_card
 
-			file = File.new("#{self[:name]}_#{self[:set]}.txt", 'w')
-			binding.pry
+			file = File.new("#{get_wrestler_file_name}.txt", 'w')
 			file.write("# -*- coding: utf-8 -*-\n")
 			file.write("from data.globalConstants import *\n")
 			file.write("# #{self[:name]}\n")
@@ -240,6 +239,11 @@ module WrestlerPyGenerator
 		else
 			return value
 		end
+	end
+
+	def get_wrestler_file_name
+		card_name = "#{self[:name]}_#{self[:set]}"
+		card_name.gsub(" ", "_")
 	end
 
 	def self.included(receiver)
