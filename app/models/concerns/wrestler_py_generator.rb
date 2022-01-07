@@ -126,6 +126,14 @@ module WrestlerPyGenerator
 				key.to_s.include?("dc")
 			}
 
+			dc_array = attributes.select { |k,v| k.include?("dc") }
+			reverse_array = dc_array.select { |k,v| v.underscore == "reverse" }
+
+			reverse_array.each { |k,v|
+				key = (k + "_points").to_sym
+				m[key] = 5
+			}
+
 			# Print to card
 			file.write("DefensiveCard = [")
 			dc = String.new
