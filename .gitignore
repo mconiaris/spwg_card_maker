@@ -7,6 +7,9 @@
 # Ignore Notes Folder
 notes/*
 
+# Ignore Wrestlers Folder
+public/wrestlers/*
+
 # Ignore Tests Wrestler Output
 wrestler.txt
 
