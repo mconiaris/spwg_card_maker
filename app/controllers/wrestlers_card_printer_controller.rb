@@ -1,0 +1,2 @@
+class WrestlersCardPrinterController < ApplicationController
+end
