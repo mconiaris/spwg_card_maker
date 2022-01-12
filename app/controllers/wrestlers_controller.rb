@@ -4,6 +4,7 @@ class WrestlersController < ApplicationController
   end
 
   def show
+    download_card
     @wrestler = Wrestler.find(params[:id])
   end
 
@@ -41,6 +42,13 @@ class WrestlersController < ApplicationController
     @wrestler.destroy
 
     redirect_to root_path
+  end
+
+  def download_card
+    wrestler = Wrestler.find(params[:id])
+    send_data wrestler.print_card,
+      filename: "Test_File_#{wrestler.name}.txt",
+      type: "text/plain"
   end
 
   private
