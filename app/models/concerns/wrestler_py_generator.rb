@@ -10,59 +10,61 @@ module WrestlerPyGenerator
 	
 	module InstanceMethods
 
+		def print_card_text
+			"This is a card test."
+		end
+
 		def print_card
-			file = File.new("#{Rails.root}/public/wrestlers/#{get_wrestler_file_name}.txt", 'w')
-			file.write("# -*- coding: utf-8 -*-\n")
-			file.write("from data.globalConstants import *\n")
-			file.write("# #{self[:name]}\n")
-			file.write("name = '#{self[:name]}'\n")
-			file.write("\n")
-			file.write("# General Card Definitions: \n")
-			file.write("#    1000 = OC\n")
-			file.write("#    1001 = OC/TT\n")
-			file.write("#    1002 = DC\n")
-			file.write("GeneralCard = #{make_general_card}\n")
-			file.write("\n")
-			file.write("# Offensive Card Definitions:\n")
-			file.write("#    1003 = Pin attempt move (P/A)\n")
-			file.write("#    1004 = Submission Move (*)\n")
-			file.write("#    1005 = Specialty Move (S)\n")
-			file.write("#    1006 = Disqualification Move (DQ)\n")
-			file.write("#    1008 = Regular Offensive Move\n")
-			file.write("#    1009 = Grudge Match Move (XX)\n")
-			file.write("#    1010 = Ropes Move (ROPES)\n")
-			file.write("OffensiveCard = \\\n")
-			make_offensive_card(file)
-			file.write("# Defensive Card Definitions:\n")
-			file.write("#    0 = B - No points on defense\n")
-			file.write("#    2 = A - 2 points on defense\n")
-			file.write("#    4 = C - 4 points on defense and neutralize offensive move\n")
-			file.write("#    5 = Reverse - Reverse offensive move\n")
-			make_defensive_card(file)
-			file.write("\n")
-			file.write("# Specialty Card Definitions:\n")
-			file.write("#    1003 = Pin attempt move (P/A)\n")
-			file.write("#    1004 = Submission Move (*)\n")
-			file.write("#    1005 = Specialty Move (S)\n")
-			file.write("#    1006 = Disqualification Move (DQ)\n")
+			"# -*- coding: utf-8 -*-\n"
+			"from data.globalConstants import *\n"
+			"# #{self[:name]}\n"
+			"name = '#{self[:name]}'\n"
+			"\n"
+			"# General Card Definitions: \n"
+			"#    1000 = OC\n"
+			"#    1001 = OC/TT\n"
+			"#    1002 = DC\n"
+			"GeneralCard = #{make_general_card}\n"
+			"\n"
+			"# Offensive Card Definitions:\n"
+			"#    1003 = Pin attempt move (P/A)\n"
+			"#    1004 = Submission Move (*)\n"
+			"#    1005 = Specialty Move (S)\n"
+			"#    1006 = Disqualification Move (DQ)\n"
+			"#    1008 = Regular Offensive Move\n"
+			"#    1009 = Grudge Match Move (XX)\n"
+			"#    1010 = Ropes Move (ROPES)\n"
+			"OffensiveCard = \\\n"
+			make_offensive_card
+			"# Defensive Card Definitions:\n"
+			"#    0 = B - No points on defense\n"
+			"#    2 = A - 2 points on defense\n"
+			"#    4 = C - 4 points on defense and neutralize offensive move\n"
+			"#    5 = Reverse - Reverse offensive move\n"
+			make_defensive_card
+			"\n"
+			"# Specialty Card Definitions:\n
+			"#    1003 = Pin attempt move (P/A)\n
+			"#    1004 = Submission Move (*)\n
+			"#    1005 = Specialty Move (S)\n
+			"#    1006 = Disqualification Move (DQ)\n
 			make_specialty_card(file)
-			file.write("# Ropes Card Definitions:\n")
-			file.write("#    1003 = Pin attempt move (P/A)\n")
-			file.write("#    1004 = Submission Move (*)\n")
-			file.write("#    1005 = Specialty Move (S)\n")
-			file.write("#    1006 = Disqualification Move (DQ)\n")
-			file.write("#    1008 = Regular Offensive Move\n")
-			file.write("#    1009 = Grudge Match Move (XX)\n")
-			file.write("#    1010 = Ropes Move (ROPES)\n")
-			file.write("#    1014 = No Action (NA)\n")
-			file.write("Ropes = \\\n")
-			make_ropes_card(file)
-			file.write("\n")
-			file.write("Sub = (#{check_sub_tag_value(self[:subx])}, #{check_sub_tag_value(self[:suby])})\n")
-			file.write("TagTeam = (#{check_sub_tag_value(self[:tagx])}, #{check_sub_tag_value(self[:tagy])})\n")
-			file.write("Priority = (#{self[:prioritys]}, #{self[:priorityt]})\n")
-			file.write("nameSet = '#{self[:set]}'")
-			file.close
+			"# Ropes Card Definitions:\n"
+			"#    1003 = Pin attempt move (P/A)\n"
+			"#    1004 = Submission Move (*)\n"
+			"#    1005 = Specialty Move (S)\n"
+			"#    1006 = Disqualification Move (DQ)\n"
+			"#    1008 = Regular Offensive Move\n"
+			"#    1009 = Grudge Match Move (XX)\n"
+			"#    1010 = Ropes Move (ROPES)\n"
+			"#    1014 = No Action (NA)\n"
+			"Ropes = \\\n"
+			make_ropes_card
+			"\n"
+			"Sub = (#{check_sub_tag_value(self[:subx])}, #{check_sub_tag_value(self[:suby])})\n"
+			"TagTeam = (#{check_sub_tag_value(self[:tagx])}, #{check_sub_tag_value(self[:tagy])})\n"
+			"Priority = (#{self[:prioritys]}, #{self[:priorityt]})\n"
+			"nameSet = '#{self[:set]}'"
 		end
 
 		private
@@ -83,7 +85,7 @@ module WrestlerPyGenerator
 			end
 		end
 
-		def make_offensive_card(file)
+		def make_offensive_card
 
 			oc_move_array = Array.new
 
@@ -109,18 +111,18 @@ module WrestlerPyGenerator
 			}
 
 			# Print to card
-			file.write("[   ")
+			("[   ")
 			oc_move_array.each_with_index do |move, index|
 				if index < (oc_move_array.size - 1)
-					file.write("\t#{move}\,")
-					file.write("\n")
+					("\t#{move}\,")
+					("\n")
 				else
-					file.write("\t#{move}\]\n\n")
+					("\t#{move}\]\n\n")
 				end
 			end
 		end
 
-		def make_defensive_card(file)
+		def make_defensive_card
 			m = move_points.select {|key, value| 
 				key.to_s.include?("dc")
 			}
@@ -134,7 +136,7 @@ module WrestlerPyGenerator
 			}
 
 			# Print to card
-			file.write("DefensiveCard = [")
+			("DefensiveCard = [")
 			dc = String.new
 
 			m.each { |k, v|
@@ -143,23 +145,23 @@ module WrestlerPyGenerator
 			dc.strip!
 			dc[-1] = "]\n"
 
-			file.write(dc)
+			return dc
 		end
 
-		def make_specialty_card(file)
+		def make_specialty_card
 			specialty_move = self["specialty"].upcase
 
-			file.write("Specialty = {   '#{specialty_move}': [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1].underscore)}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s2].underscore)}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s3].underscore)}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s4].underscore)}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s5].underscore)}\},\n")
-			file.write("                         {   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s6].underscore)}\}\]\}\n")
-			file.write("\n")
+			"Specialty = {   '#{specialty_move}': [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1].underscore)}\},\n"
+			"                         {   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s2].underscore)}\},\n"
+			"                         {   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s3].underscore)}\},\n"
+			"                         {   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s4].underscore)}\},\n"
+			"                         {   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s5].underscore)}\},\n"
+			"                         {   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s6].underscore)}\}\]\}\n"
+			"\n"
 		end
 
 		# DRY this with make_oc_card
-		def make_ropes_card(file)
+		def make_ropes_card
 
 			ropes_move_array = Array.new
 
@@ -183,13 +185,13 @@ module WrestlerPyGenerator
 			}
 
 			# Print to card
-			file.write("[   ")
+			("[   ")
 			ropes_move_array.each_with_index do |move, index|
 				if index < (ropes_move_array.size - 1)
-					file.write("\t#{move}\,")
-					file.write("\n")
+					"\t#{move}\,"
+					"\n"
 				else
-					file.write("\t#{move}\]\n")
+					"\t#{move}\]\n"
 				end
 			end
 		end
