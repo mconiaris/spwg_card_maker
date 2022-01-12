@@ -5,6 +5,14 @@ class WrestlersController < ApplicationController
 
   def show
     @wrestler = Wrestler.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.text { 
+        send_data @wrestler.print_card,
+        filename: "Test_File_Wrestler_#{@wrestler.name}.txt" 
+      }
+    end
   end
 
   def new

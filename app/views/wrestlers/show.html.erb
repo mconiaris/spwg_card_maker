@@ -1,5 +1,5 @@
 <% generate_wrestler_stats(@wrestler) %>
-<% @wrestler.print_card %>
+<%= link_to "Download Card", wrestler_path(@wrestler, format: :text) %>
 <h1>Existing Wrestler</h1>
 <div class="wrapper">
     <p class="left one title grid-line"><%= @wrestler.name %></p>
