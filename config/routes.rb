@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'wrestlers#index'
 
   resources :wrestlers
+
 end
