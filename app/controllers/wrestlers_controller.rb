@@ -10,7 +10,7 @@ class WrestlersController < ApplicationController
       format.html
       format.text { 
         send_data @wrestler.print_card,
-        filename: "Test_File_Wrestler_#{@wrestler.name}.txt" 
+        filename: "#{@wrestler.name}_#{@wrestler.set}.txt" 
       }
     end
   end

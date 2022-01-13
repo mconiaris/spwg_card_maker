@@ -15,54 +15,54 @@ module WrestlerPyGenerator
 		end
 
 		def print_card
-			"# -*- coding: utf-8 -*-\n"
-			"from data.globalConstants import *\n"
-			"# #{self[:name]}\n"
-			"name = '#{self[:name]}'\n"
-			"\n"
-			"# General Card Definitions: \n"
-			"#    1000 = OC\n"
-			"#    1001 = OC/TT\n"
-			"#    1002 = DC\n"
-			"GeneralCard = #{make_general_card}\n"
-			"\n"
-			"# Offensive Card Definitions:\n"
-			"#    1003 = Pin attempt move (P/A)\n"
-			"#    1004 = Submission Move (*)\n"
-			"#    1005 = Specialty Move (S)\n"
-			"#    1006 = Disqualification Move (DQ)\n"
-			"#    1008 = Regular Offensive Move\n"
-			"#    1009 = Grudge Match Move (XX)\n"
-			"#    1010 = Ropes Move (ROPES)\n"
-			"OffensiveCard = \\\n"
-			make_offensive_card
-			"# Defensive Card Definitions:\n"
-			"#    0 = B - No points on defense\n"
-			"#    2 = A - 2 points on defense\n"
-			"#    4 = C - 4 points on defense and neutralize offensive move\n"
-			"#    5 = Reverse - Reverse offensive move\n"
-			make_defensive_card
-			"\n"
-			"# Specialty Card Definitions:\n
-			"#    1003 = Pin attempt move (P/A)\n
-			"#    1004 = Submission Move (*)\n
-			"#    1005 = Specialty Move (S)\n
-			"#    1006 = Disqualification Move (DQ)\n
-			make_specialty_card(file)
-			"# Ropes Card Definitions:\n"
-			"#    1003 = Pin attempt move (P/A)\n"
-			"#    1004 = Submission Move (*)\n"
-			"#    1005 = Specialty Move (S)\n"
-			"#    1006 = Disqualification Move (DQ)\n"
-			"#    1008 = Regular Offensive Move\n"
-			"#    1009 = Grudge Match Move (XX)\n"
-			"#    1010 = Ropes Move (ROPES)\n"
-			"#    1014 = No Action (NA)\n"
-			"Ropes = \\\n"
-			make_ropes_card
-			"\n"
-			"Sub = (#{check_sub_tag_value(self[:subx])}, #{check_sub_tag_value(self[:suby])})\n"
-			"TagTeam = (#{check_sub_tag_value(self[:tagx])}, #{check_sub_tag_value(self[:tagy])})\n"
+			"# -*- coding: utf-8 -*-\n" +
+			"from data.globalConstants import *\n" +
+			"# #{self[:name]}\n" +
+			"name = '#{self[:name]}'\n" +
+			"\n" +
+			"# General Card Definitions: \n" +
+			"#    1000 = OC\n" +
+			"#    1001 = OC/TT\n" +
+			"#    1002 = DC\n" +
+			"GeneralCard = #{make_general_card}\n" +
+			"\n" +
+			"# Offensive Card Definitions:\n" +
+			"#    1003 = Pin attempt move (P/A)\n" +
+			"#    1004 = Submission Move (*)\n" +
+			"#    1005 = Specialty Move (S)\n" +
+			"#    1006 = Disqualification Move (DQ)\n" +
+			"#    1008 = Regular Offensive Move\n" +
+			"#    1009 = Grudge Match Move (XX)\n" +
+			"#    1010 = Ropes Move (ROPES)\n" +
+			"OffensiveCard = \\\n" +
+			"#{make_offensive_card}" +
+			"# Defensive Card Definitions:\n" +
+			"#    0 = B - No points on defense\n" +
+			"#    2 = A - 2 points on defense\n" +
+			"#    4 = C - 4 points on defense and neutralize offensive move\n" +
+			"#    5 = Reverse - Reverse offensive move\n" +
+			"#{make_defensive_card}" +
+			"\n" +
+			"# Specialty Card Definitions:\n" +
+			"#    1003 = Pin attempt move (P/A)\n" +
+			"#    1004 = Submission Move (*)\n" +
+			"#    1005 = Specialty Move (S)\n" +
+			"#    1006 = Disqualification Move (DQ)\n" +
+			"#{make_specialty_card}" +
+			"# Ropes Card Definitions:\n" +
+			"#    1003 = Pin attempt move (P/A)\n" +
+			"#    1004 = Submission Move (*)\n" +
+			"#    1005 = Specialty Move (S)\n" +
+			"#    1006 = Disqualification Move (DQ)\n" +
+			"#    1008 = Regular Offensive Move\n" +
+			"#    1009 = Grudge Match Move (XX)\n" +
+			"#    1010 = Ropes Move (ROPES)\n" +
+			"#    1014 = No Action (NA)\n" +
+			"Ropes = \\\n" +
+			"#{make_ropes_card}" +
+			"\n" + 
+			"Sub = (#{check_sub_tag_value(self[:subx])}, #{check_sub_tag_value(self[:suby])})\n" +
+			"TagTeam = (#{check_sub_tag_value(self[:tagx])}, #{check_sub_tag_value(self[:tagy])})\n" +
 			"Priority = (#{self[:prioritys]}, #{self[:priorityt]})\n" +
 			"nameSet = '#{self[:set]}'"
 		end
@@ -106,20 +106,20 @@ module WrestlerPyGenerator
 					move = capture_move_name(v.underscore)
 					key = k + "_points"
 					key = key.to_sym
-					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': '#{oc_points_hash[key]}', 'MOVE_TYPE': #{move[1]}}"
+					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': #{oc_points_hash[key]}, 'MOVE_TYPE': #{move[1]}}"
 				end
 			}
 
 			# Print to card
-			("[   ")
+			oc_string = "["
 			oc_move_array.each_with_index do |move, index|
 				if index < (oc_move_array.size - 1)
-					("\t#{move}\,")
-					("\n")
+					oc_string += "\t#{move}\,\n"
 				else
-					("\t#{move}\]\n\n")
+					oc_string += "\t#{move}\]\n\n"
 				end
 			end
+			oc_string
 		end
 
 		def make_defensive_card
@@ -136,7 +136,7 @@ module WrestlerPyGenerator
 			}
 
 			# Print to card
-			("DefensiveCard = [")
+			defensive_card = "DefensiveCard = ["
 			dc = String.new
 
 			m.each { |k, v|
@@ -145,19 +145,23 @@ module WrestlerPyGenerator
 			dc.strip!
 			dc[-1] = "]\n"
 
-			return dc
+			defensive_card += dc
+
+			return defensive_card
 		end
 
 		def make_specialty_card
 			specialty_move = self["specialty"].upcase
 
-			"Specialty = {   '#{specialty_move}': [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1].underscore)}\},\n"
-			"                         {   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s2].underscore)}\},\n"
-			"                         {   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s3].underscore)}\},\n"
-			"                         {   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s4].underscore)}\},\n"
-			"                         {   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s5].underscore)}\},\n"
-			"                         {   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s6].underscore)}\}\]\}\n"
-			"\n"
+			specialty_card = "Specialty = {\t'#{specialty_move}': [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1].underscore)}\},\n"
+			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s2].underscore)}\},\n"
+			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s3].underscore)}\},\n"
+			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s4].underscore)}\},\n"
+			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s5_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s5].underscore)}\},\n"
+			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s6_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s6].underscore)}\}\]\}\n"
+			specialty_card += "\n"
+
+			specialty_card
 		end
 
 		# DRY this with make_oc_card
@@ -180,20 +184,21 @@ module WrestlerPyGenerator
 					move = capture_move_name(v.underscore)
 					key = k + "_points"
 					key = key.to_sym
-					ropes_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': '#{ropes_points_hash[key]}', 'MOVE_TYPE': #{move[1]}}"
+					ropes_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': #{ropes_points_hash[key]}, 'MOVE_TYPE': #{move[1]}}"
 				end
 			}
 
 			# Print to card
-			("[   ")
+			ropes_card = ("[")
 			ropes_move_array.each_with_index do |move, index|
 				if index < (ropes_move_array.size - 1)
-					"\t#{move}\,"
+					ropes_card += "   #{move}\,\n"
 					"\n"
 				else
-					"\t#{move}\]\n"
+					ropes_card += "   #{move}\]\n"
 				end
 			end
+			ropes_card
 		end
 
 		# Just get the move names and not the values
