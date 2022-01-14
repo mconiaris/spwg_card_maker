@@ -15,7 +15,7 @@ module WrestlerPyGenerator
 		end
 
 		def print_card
-			"# -*- coding: utf-8 -*-\n" +
+			wrestler_card = "# -*- coding: utf-8 -*-\n" +
 			"from data.globalConstants import *\n" +
 			"# #{self[:name]}\n" +
 			"name = '#{self[:name]}'\n" +
@@ -64,7 +64,7 @@ module WrestlerPyGenerator
 			"Sub = (#{check_sub_tag_value(self[:subx])}, #{check_sub_tag_value(self[:suby])})\n" +
 			"TagTeam = (#{check_sub_tag_value(self[:tagx])}, #{check_sub_tag_value(self[:tagy])})\n" +
 			"Priority = (#{self[:prioritys]}, #{self[:priorityt]})\n" +
-			"nameSet = '#{self[:set]}'"
+			"nameSet = \"#{self[:set]}\""
 		end
 
 		private
@@ -101,12 +101,12 @@ module WrestlerPyGenerator
 					oc_move_array[array_key] = "{   'MOVE_NAME': 'ROPES', 'MOVE_TYPE': 1010}"
 				elsif v.underscore.include?("(s)")
 					move = v.underscore.gsub!("(s)","").upcase.strip
-					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_TYPE': 1005}"
+					oc_move_array[array_key] = "{   'MOVE_NAME': \"#{move}\", 'MOVE_TYPE': 1005}"
 				else
 					move = capture_move_name(v.underscore)
 					key = k + "_points"
 					key = key.to_sym
-					oc_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': #{oc_points_hash[key]}, 'MOVE_TYPE': #{move[1]}}"
+					oc_move_array[array_key] = "{   'MOVE_NAME': \"#{move[0]}\", 'MOVE_POINTS': #{oc_points_hash[key]}, 'MOVE_TYPE': #{move[1]}}"
 				end
 			}
 
@@ -153,7 +153,7 @@ module WrestlerPyGenerator
 		def make_specialty_card
 			specialty_move = self["specialty"].upcase
 
-			specialty_card = "Specialty = {\t'#{specialty_move}': [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1].underscore)}\},\n"
+			specialty_card = "Specialty = {\t\"#{specialty_move}\": [   {   'MOVE_POINTS': #{move_points[:s1_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s1].underscore)}\},\n"
 			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s2_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s2].underscore)}\},\n"
 			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s3_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s3].underscore)}\},\n"
 			specialty_card += "\t\t\t{   'MOVE_POINTS': #{move_points[:s4_points]}, 'MOVE_TYPE': #{get_specialty_move_type(self[:s4].underscore)}\},\n"
@@ -179,12 +179,12 @@ module WrestlerPyGenerator
 					ropes_move_array[array_key] = "{   'MOVE_NAME': 'NA', 'MOVE_POINTS': 0, 'MOVE_TYPE': 1014}"
 				elsif v.underscore.include?("(s)")
 					move = v.underscore.gsub!("(s)","").upcase.strip
-					ropes_move_array[array_key] = "{   'MOVE_NAME': '#{move}', 'MOVE_TYPE': 1005}"
+					ropes_move_array[array_key] = "{   'MOVE_NAME': \"#{move}\", 'MOVE_TYPE': 1005}"
 				else
 					move = capture_move_name(v.underscore)
 					key = k + "_points"
 					key = key.to_sym
-					ropes_move_array[array_key] = "{   'MOVE_NAME': '#{move[0]}', 'MOVE_POINTS': #{ropes_points_hash[key]}, 'MOVE_TYPE': #{move[1]}}"
+					ropes_move_array[array_key] = "{   'MOVE_NAME': \"#{move[0]}\", 'MOVE_POINTS': #{ropes_points_hash[key]}, 'MOVE_TYPE': #{move[1]}}"
 				end
 			}
 

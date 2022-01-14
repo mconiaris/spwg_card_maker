@@ -10,7 +10,11 @@ class WrestlersController < ApplicationController
       format.html
       format.text { 
         send_data @wrestler.print_card,
-        filename: "#{@wrestler.name}_#{@wrestler.set}.txt" 
+        filename: "#{@wrestler.name.gsub("\'","")} #{@wrestler.set}.txt"
+      }
+      format.py { 
+        send_data @wrestler.print_card,
+        filename: "#{@wrestler.name.gsub("\'","")} #{@wrestler.set}.py"
       }
     end
   end
