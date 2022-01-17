@@ -386,6 +386,11 @@
 
     <p class="r27 right-note">For Ropes moves with no points, please type "N/A"</p>
 
+    <%= form.text_field :promotion, placeholder: "Division", class: "right-center r26 grid-line" %>
+		<% @wrestler.errors.full_messages_for(:promotion).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
     <!-- Third Column -->
     <!-- TODO: DRY stats presentation with show view. -->
     <%= render "form_stats", wrestler: @wrestler %>
