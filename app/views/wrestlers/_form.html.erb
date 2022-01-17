@@ -379,17 +379,17 @@
       <div><%= message %></div>
     <% end %>
 
-		<%= form.text_field :division, placeholder: "Division", class: "right-center r26 grid-line" %>
+		<%= form.text_field :division, placeholder: "Promotion", class: "right-center r26 grid-line" %>
 		<% @wrestler.errors.full_messages_for(:division).each do |message| %>
       <div><%= message %></div>
     <% end %>
 
-    <p class="r27 right-note">For Ropes moves with no points, please type "N/A"</p>
-
-    <%= form.text_field :promotion, placeholder: "Division", class: "right-center r26 grid-line" %>
+    <%= form.text_field :promotion, placeholder: "Division", class: "right-center r27 grid-line" %>
 		<% @wrestler.errors.full_messages_for(:promotion).each do |message| %>
       <div><%= message %></div>
     <% end %>
+
+    <p class="right-note r28">For Ropes moves with no points, please type "N/A"</p>
 
     <!-- Third Column -->
     <!-- TODO: DRY stats presentation with show view. -->
