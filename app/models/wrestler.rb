@@ -16,4 +16,10 @@ class Wrestler < ApplicationRecord
 		:gc11, :gc12, inclusion: { in: %w(OC OC/TT DC),
 		message: "%{value} cannot be entered as a GC value. You only use 'OC', 'DC' or 'OC\/TT'"
 	}
+
+	validates :dc02, :dc03, :dc04, :dc05, :dc06, :dc07, :dc08, :dc09, :dc10, 
+		:dc11, :dc12, inclusion: { in: %w(A B C Reverse REVERSE),
+		message: "%{value} cannot be entered as a DC value. You only use 'A' 'B' 'C' 'Reverse' 'REVERSE'"
+	}
+
 end
