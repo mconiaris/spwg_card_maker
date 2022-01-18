@@ -256,8 +256,8 @@ module WrestlerPyGenerator
 	end
 
 	def get_wrestler_file_name
-		card_name = "#{self[:name]}_#{self[:set]}"
-		card_name.gsub(" ", "_")
+		card_name = "#{self[:name]} #{self[:set]}"
+		card_name.gsub(".", "")
 	end
 
 	def self.included(receiver)

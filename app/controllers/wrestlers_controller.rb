@@ -14,7 +14,7 @@ class WrestlersController < ApplicationController
       }
       format.py { 
         send_data @wrestler.print_card,
-        filename: "#{@wrestler.name.gsub("\'","")} #{@wrestler.set}.py"
+        filename: "#{@wrestler.get_wrestler_file_name}.py"
       }
     end
   end
