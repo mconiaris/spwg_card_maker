@@ -22,4 +22,6 @@ class Wrestler < ApplicationRecord
 		message: "%{value} cannot be entered as a DC value. You only use 'A' 'B' 'C' 'Reverse' 'REVERSE'"
 	}
 
+	validates :s1, :s2, :s3, :s4, :s5, :s6, format: { with: /(\d{1,2}|DQ)|(\sP\/A|\*|\s\(XX\))/ }
+
 end
