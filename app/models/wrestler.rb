@@ -2,6 +2,8 @@ class Wrestler < ApplicationRecord
 	include WrestlerAnalyzer
 	include WrestlerPyGenerator
 
+	validates_with WrestlerValidator
+
 	# TODO: Figure out name and wrestler moves maximum character limit.
 
 	validates :name, :set, :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08,
@@ -23,5 +25,7 @@ class Wrestler < ApplicationRecord
 	}
 
 	validates :s1, :s2, :s3, :s4, :s5, :s6, format: { with: /(\d{1,2}|DQ)|(\sP\/A|\*|\s\(XX\))/ }
+
+	validates :s1, :s2, :s3, :s4, :s5, :s6, wrestler_validator: { type: true }
 
 end

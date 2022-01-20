@@ -67,5 +67,4 @@ class WrestlersController < ApplicationController
       :ro11, :ro12, :division, :promotion)
   end
 
-
 end
