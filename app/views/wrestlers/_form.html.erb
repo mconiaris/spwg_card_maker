@@ -393,8 +393,12 @@
 
     <!-- Third Column -->
     <!-- TODO: DRY stats presentation with show view. -->
-    <%= render "form_stats", wrestler: @wrestler %>
 
+    <% if @wrestler.errors %>
+    	<p class="r1 c7">You've got errors.</p>
+    <% else %>
+    	<%= render "form_stats", wrestler: @wrestler %>
+    <% end %>
 
 		<div class="r30">
 			<%= form.submit %>
