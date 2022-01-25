@@ -397,10 +397,7 @@
     <!-- # TODO: Find out why errors are not triggering this if statement. -->
     <div class="c7 r1">
 	    <% if @wrestler.errors.any? %>
-	    	<p>You've got errors.</p>
-	    	<% @wrestler.errors.full_messages.each do |message| %>
-	    		<p><%= message %></p>
-	    	<% end %>
+	    	<%= render "form_errors", wrestler: @wrestler %>
 	    <% else %>
 	    	<%= render "form_stats", wrestler: @wrestler %>
 	    <% end %>

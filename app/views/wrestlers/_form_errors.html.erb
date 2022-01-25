@@ -1,0 +1,6 @@
+<% if @wrestler.errors.any? %>
+	<p>You've got errors.</p>
+	 	<% @wrestler.errors.full_messages.each do |message| %>
+	  	<p><%= message %></p>
+	<% end %>	  	
+<% end %>
