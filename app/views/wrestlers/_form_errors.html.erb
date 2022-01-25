@@ -1,6 +1,11 @@
-<% if @wrestler.errors.any? %>
-	<p>You've got errors.</p>
-	 	<% @wrestler.errors.full_messages.each do |message| %>
-	  	<p><%= message %></p>
-	<% end %>	  	
-<% end %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@wrestler.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+    <ul>
+      <% @wrestler.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+        puts error.full_message
+      <% end %>
+    </ul>
+  </div>
+  
