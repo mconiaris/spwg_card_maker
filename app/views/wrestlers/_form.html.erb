@@ -11,7 +11,7 @@
 		<%= form.label :gc02, class: "r3 c1" %><br>
 		<%= form.text_field :gc02, class: "r3 c2"  %>
 		<% @wrestler.errors.full_messages_for(:gc02).each do |message| %>
-      <div><%= message %></div>
+      <div class="r3 c7"><%= message %></div>
     <% end %>
 
 		<%= form.label :gc03, class: "r4 c1" %><br>
@@ -395,15 +395,16 @@
     <!-- TODO: DRY stats presentation with show view. -->
 
     <!-- # TODO: Find out why errors are not triggering this if statement. -->
-    <% if @wrestler.errors.any? %>
-    	<p class="c7">You've got errors.</p>
-    	<% @wrestler.errors.full_messages.each do |message| %>
-    		<p><%= message %>
-    	<% end %>
-    		</p>
-    <% else %>
-    	<%= render "form_stats", wrestler: @wrestler %>
-    <% end %>
+    <div class="c7 r1">
+	    <% if @wrestler.errors.any? %>
+	    	<p>You've got errors.</p>
+	    	<% @wrestler.errors.full_messages.each do |message| %>
+	    		<p><%= message %></p>
+	    	<% end %>
+	    <% else %>
+	    	<%= render "form_stats", wrestler: @wrestler %>
+	    <% end %>
+    </div>
 
 		<div class="r30 c1">
 			<%= form.submit %>
