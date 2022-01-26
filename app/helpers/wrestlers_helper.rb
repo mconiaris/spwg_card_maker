@@ -13,7 +13,6 @@ module WrestlersHelper
  		wrestler.xx_prob = stats[:xx_probability_per_round]
  		wrestler.submission = stats[:submission]
  		wrestler.tag_team_save = stats[:tag_team_save]
- 		wrestler.save
 	end
 
 	def initial_stats(wrestler)
@@ -37,5 +36,19 @@ module WrestlersHelper
 		else
 			return "#{x}-#{y}"
 		end
+	end
+
+	def print_out_wrestler_errors(wrestler)
+		# <div id="error_explanation">
+  #   <h2><%= pluralize(@wrestler.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+  #   <ul>
+  #     <% @wrestler.errors.each do |error| %>
+  #       <li><%= error.full_message %></li>
+  #       puts error.full_message
+  #     <% end %>
+  #   </ul>
+  # </div>
+  "These are errors."
 	end
 end
