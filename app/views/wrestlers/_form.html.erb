@@ -231,11 +231,7 @@
     </div>
 
     <p class="r27 left-note">Note: original came cards had exactly five "A" rolls.</p>
-
-
-
-
-
+    
 
 		<!-- Right Side of Card -->
 		<div class="right-center r1 grid-line" >OFFENSIVE CARD</div>
@@ -391,19 +387,21 @@
 
     <p class="right-note r28">For Ropes moves with no points, please type "N/A"</p>
 
-    <!-- Third Column -->
-    <!-- TODO: DRY stats presentation with show view. -->
-
-    <!-- # TODO: Find out why errors are not triggering this if statement. -->
-    <div class="c7 r1">
-
-	    <%= render 'form_errors', wrestler: wrestler %>
-	    <%= render 'form_stats', wrestler: wrestler %>
-    </div>
 
 		<div class="r30 c1">
 			<%= form.submit %>
 		</div>
 
+    <!-- Third Column -->
+    <!-- TODO: DRY stats presentation with show view. -->
+
+    <!-- # TODO: Find out why errors are not triggering this if statement. -->
+    <div class="c7 r1">
+    	<% if wrestler.errors.any? %>
+	    	<%= render 'form_errors', wrestler: wrestler %>
+	    <% else %>
+	    	<%= render 'form_stats', wrestler: wrestler %>
+	    <% end %>
+    </div>
 	</div>
 <% end %>
