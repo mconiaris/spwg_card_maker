@@ -1,10 +1,8 @@
   <div id="error_explanation">
-    <h2><%= pluralize(@wrestler.errors.count, "error") %> prohibited this article from being saved:</h2>
-
+    <h2><%= pluralize(wrestler.errors.count, "error") %> prohibited this article from being saved:</h2>
     <ul>
-      <% @wrestler.errors.each do |error| %>
+      <% wrestler.errors.each do |error| %>
         <li><%= error.full_message %></li>
-        puts error.full_message
       <% end %>
     </ul>
   </div>
