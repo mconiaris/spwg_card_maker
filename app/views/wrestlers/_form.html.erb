@@ -2,232 +2,124 @@
 	<div class="form-wrapper">
 			
 		<%= form.text_field :name, placeholder: "Name", class: "left-center r1 grid-line" %>
-		<% wrestler.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
     <div class="left-center r2 grid-line">GENERAL CARD</div>
 
 		<%= form.label :gc02, class: "r3 c1" %><br>
 		<%= form.text_field :gc02, class: "r3 c2"  %>
-		<% wrestler.errors.full_messages_for(:gc02).each do |message| %>
-      <div class="r3 c7"><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc03, class: "r4 c1" %><br>
 		<%= form.text_field :gc03, class: "r4 c2" %>
-		<% wrestler.errors.full_messages_for(:gc03).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc04, class: "r5 c1" %><br>
 		<%= form.text_field :gc04, class: "r5 c2" %>
-		<% wrestler.errors.full_messages_for(:gc04).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc05, class: "r6 c1" %><br>
 		<%= form.text_field :gc05, class: "r6 c2" %>
-		<% wrestler.errors.full_messages_for(:gc05).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc06, class: "r7 c1" %><br>
 		<%= form.text_field :gc06, class: "r7 c2" %>
-		<% wrestler.errors.full_messages_for(:gc06).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc07, class: "r3 c3" %><br>
 		<%= form.text_field :gc07, class: "r3 c4" %>
-		<% wrestler.errors.full_messages_for(:gc07).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc08, class: "r4 c3" %><br>
 		<%= form.text_field :gc08, class: "r4 c4" %>
-		<% wrestler.errors.full_messages_for(:gc08).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc09, class: "r5 c3" %><br>
 		<%= form.text_field :gc09, class: "r5 c4" %>
-		<% wrestler.errors.full_messages_for(:gc09).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc10, class: "r6 c3" %><br>
 		<%= form.text_field :gc10, class: "r6 c4" %>
-		<% wrestler.errors.full_messages_for(:gc10).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc11, class: "r7 c3" %><br>
 		<%= form.text_field :gc11, class: "r7 c4" %>
-		<% wrestler.errors.full_messages_for(:gc11).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :gc12, class: "r8 c2" %><br>
 		<%= form.text_field :gc12, class: "r8 c3" %>
-		<% wrestler.errors.full_messages_for(:gc12).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
     <div class="left-center r9 grid-line">DEFENSIVE CARD</div>
 
 		<%= form.label :dc02, class: "r10 c1" %><br>
 		<%= form.text_field :dc02, class: "r10 c2" %>
-		<% wrestler.errors.full_messages_for(:dc02).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc03, class: "r11 c1" %><br>
 		<%= form.text_field :dc03, class: "r11 c2" %>
-		<% wrestler.errors.full_messages_for(:dc03).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc04, class: "r12 c1" %><br>
 		<%= form.text_field :dc04, class: "r12 c2" %>
-		<% wrestler.errors.full_messages_for(:dc04).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc05, class: "r13 c1" %><br>
 		<%= form.text_field :dc05, class: "r13 c2" %>
-		<% wrestler.errors.full_messages_for(:dc05).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
 		
 		<%= form.label :dc06, class: "r14 c1" %><br>
 		<%= form.text_field :dc06, class: "r14 c2" %>
-		<% wrestler.errors.full_messages_for(:dc06).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc07, class: "r10 c3" %><br>
 		<%= form.text_field :dc07, class: "r10 c4" %>
-		<% wrestler.errors.full_messages_for(:dc07).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc08, class: "r11 c3" %><br>
 		<%= form.text_field :dc08, class: "r11 c4" %>
-		<% wrestler.errors.full_messages_for(:dc08).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc09, class: "r12 c3" %><br>
 		<%= form.text_field :dc09, class: "r12 c4" %>
-		<% wrestler.errors.full_messages_for(:dc09).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc10, class: "r13 c3" %><br>
 		<%= form.text_field :dc10, class: "r13 c4" %>
-		<% wrestler.errors.full_messages_for(:dc10).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc11, class: "r14 c3" %><br>
 		<%= form.text_field :dc11, class: "r14 c4" %>
-		<% wrestler.errors.full_messages_for(:dc11).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :dc12, class: "r15 c2" %><br>
 		<%= form.text_field :dc12, class: "r15 c3" %>
-		<% wrestler.errors.full_messages_for(:dc12).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
     <div class="left-center r16 grid-line">SPECIALTY:</div>
 
 		<%= form.text_field :specialty, class: "left-center r17 grid-line" %>
-		<% wrestler.errors.full_messages_for(:specialty).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :s1, class: "r18 c1" %><br>
 		<%= form.text_field :s1, class: "r18 spec-input" %>
-		<% wrestler.errors.full_messages_for(:s1).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :s2, class: "r19 c1" %><br>
 		<%= form.text_field :s2, class: "r19 spec-input" %>
-		<% wrestler.errors.full_messages_for(:s2).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :s3, class: "r20 c1" %><br>
 		<%= form.text_field :s3, class: "r20 spec-input" %>
-		<% wrestler.errors.full_messages_for(:s3).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :s4, class: "r21 c1" %><br>
 		<%= form.text_field :s4, class: "r21 spec-input" %>
-		<% wrestler.errors.full_messages_for(:s4).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :s5, class: "r22 c1" %><br>
 		<%= form.text_field :s5, class: "r22 spec-input" %>
-		<% wrestler.errors.full_messages_for(:s5).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :s6, class: "r23 c1" %><br>
 		<%= form.text_field :s6, class: "r23 spec-input" %>
-		<% wrestler.errors.full_messages_for(:s6).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
     <div class="form-sub-wrapper">
     	<div>SUB:</div>
     	
 			<%= form.text_field :subx %>
-			<% wrestler.errors.full_messages_for(:subx).each do |message| %>
-	      <div><%= message %></div>
-	    <% end %>
-
+		
 	    <div class="title">-</div>
 		
 			<%= form.text_field :suby %>
-			<% wrestler.errors.full_messages_for(:suby).each do |message| %>
-	      <div><%= message %></div>
-	    <% end %>
-
+		
 	    <div>TAG TEAM:</div>
 
 			<%= form.text_field :tagx %>
-			<% wrestler.errors.full_messages_for(:tagx).each do |message| %>
-	      <div><%= message %></div>
-	    <% end %>
-
+		
 	    <div class="title">-</div>
 
 			<%= form.text_field :tagy %>
-			<% wrestler.errors.full_messages_for(:tagy).each do |message| %>
-	      <div><%= message %></div>
-	    <% end %>
-
+		
 	    <div>PRIORITY:</div>
 
 			<%= form.text_field :prioritys %>
-			<% wrestler.errors.full_messages_for(:prioritys).each do |message| %>
-	    <div><%= message %></div>
-	  	<% end %>
-
+		
 	  	<div class="title">/</div>
 
 			<%= form.text_field :priorityt %>
-			<% wrestler.errors.full_messages_for(:priorityt).each do |message| %>
-	      <div><%= message %></div>
-	    <% end %>
-
+		
     </div>
 
     <p class="r27 left-note">Note: original came cards had exactly five "A" rolls.</p>
@@ -238,153 +130,78 @@
 
 		<%= form.label :oc02, class: "r2 c5" %><br>
 		<%= form.text_field :oc02, class: "r2 c6" %>
-		<% wrestler.errors.full_messages_for(:oc02).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc03, class: "r3 c5" %><br>
 		<%= form.text_field :oc03, class: "r3 c6" %>
-		<% wrestler.errors.full_messages_for(:oc03).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc04, class: "r4 c5" %><br>
 		<%= form.text_field :oc04, class: "r4 c6" %>
-		<% wrestler.errors.full_messages_for(:oc04).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc05, class: "r5 c5" %><br>
 		<%= form.text_field :oc05, class: "r5 c6" %>
-		<% wrestler.errors.full_messages_for(:oc05).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc06, class: "r6 c5" %><br>
 		<%= form.text_field :oc06, class: "r6 c6" %>
-		<% wrestler.errors.full_messages_for(:oc06).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc07, class: "r7 c5" %><br>
 		<%= form.text_field :oc07, class: "r7 c6" %>
-		<% wrestler.errors.full_messages_for(:oc07).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc08, class: "r8 c5" %><br>
 		<%= form.text_field :oc08, class: "r8 c6" %>
-		<% wrestler.errors.full_messages_for(:oc08).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc09, class: "r9 c5" %><br>
 		<%= form.text_field :oc09, class: "r9 c6" %>
-		<% wrestler.errors.full_messages_for(:oc09).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc10, class: "r10 c5" %><br>
 		<%= form.text_field :oc10, class: "r10 c6" %>
-		<% wrestler.errors.full_messages_for(:oc10).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc11, class: "r11 c5" %><br>
 		<%= form.text_field :oc11, class: "r11 c6" %>
-		<% wrestler.errors.full_messages_for(:oc11).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :oc12, class: "r12 c5" %><br>
 		<%= form.text_field :oc12, class: "r12 c6" %>
-		<% wrestler.errors.full_messages_for(:oc12).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
     <div class="right-center r13 grid-line">=ROPES=</div>
 
 		<%= form.label :ro02, class: "r14 c5" %><br>
 		<%= form.text_field :ro02, class: "r14 c6" %>
-		<% wrestler.errors.full_messages_for(:ro02).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro03, class: "r15 c5" %><br>
 		<%= form.text_field :ro03, class: "r15 c6" %>
-		<% wrestler.errors.full_messages_for(:ro03).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro04, class: "r16 c5" %><br>
 		<%= form.text_field :ro04, class: "r16 c6" %>
-		<% wrestler.errors.full_messages_for(:ro04).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro05, class: "r17 c5" %><br>
 		<%= form.text_field :ro05, class: "r17 c6" %>
-		<% wrestler.errors.full_messages_for(:ro05).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro06, class: "r18 c5" %><br>
 		<%= form.text_field :ro06, class: "r18 c6" %>
-		<% wrestler.errors.full_messages_for(:ro06).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro07, class: "r19 c5" %><br>
 		<%= form.text_field :ro07, class: "r19 c6" %>
-		<% wrestler.errors.full_messages_for(:ro07).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro08, class: "r20 c5" %><br>
 		<%= form.text_field :ro08, class: "r20 c6" %>
-		<% wrestler.errors.full_messages_for(:ro08).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro09, class: "r21 c5" %><br>
 		<%= form.text_field :ro09, class: "r21 c6" %>
-		<% wrestler.errors.full_messages_for(:ro09).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro10, class: "r22 c5" %><br>
 		<%= form.text_field :ro10, class: "r22 c6" %>
-		<% wrestler.errors.full_messages_for(:ro10).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro11, class: "r23 c5" %><br>
 		<%= form.text_field :ro11, class: "r23 c6" %>
-		<% wrestler.errors.full_messages_for(:ro11).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.label :ro12, class: "r24 c5" %><br>
 		<%= form.text_field :ro12, class: "r24 c6" %>
-		<% wrestler.errors.full_messages_for(:ro12).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.text_field :set, placeholder: "Set", class: "right-center r25 grid-line" %>
-		<% wrestler.errors.full_messages_for(:set).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
 		<%= form.text_field :division, placeholder: "Promotion", class: "right-center r26 grid-line" %>
-		<% wrestler.errors.full_messages_for(:division).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
     <%= form.text_field :promotion, placeholder: "Division", class: "right-center r27 grid-line" %>
-		<% wrestler.errors.full_messages_for(:promotion).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
+		
     <p class="right-note r28">For Ropes moves with no points, please type "N/A"</p>
 
 
@@ -394,12 +211,11 @@
 
     <!-- Third Column -->
     <!-- TODO: DRY stats presentation with show view. -->
-
-    <!-- # TODO: Find out why errors are not triggering this if statement. -->
     <div class="c7 r1">
-	    <%= render 'form_stats', wrestler: wrestler %>
     	<% if wrestler.errors.any? %>
 	    	<%= render 'form_errors', wrestler: wrestler %>
+	    <% else %>
+	    	<%= render 'form_stats', wrestler: wrestler %>
 	    <% end %>
     </div>
 	</div>
