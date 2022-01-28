@@ -10,10 +10,6 @@ module WrestlerPyGenerator
 	
 	module InstanceMethods
 
-		def print_card_text
-			"This is a card test."
-		end
-
 		def print_card
 			wrestler_card = "# -*- coding: utf-8 -*-\n" +
 			"from data.globalConstants import *\n" +
