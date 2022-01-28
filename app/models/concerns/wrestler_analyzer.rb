@@ -516,18 +516,6 @@ module WrestlerAnalyzer
 	end
 
 
-	# wrestler.values[:PriorityS].to_f
-	def calculate_submission_loss_probability
-		
-	end
-
-
-	# 		sub_tag_probability(wrestler.values[:Sub])
-	def calculate_tag_team_save_probability
-		
-	end
-
-
 	# =========
 	# UTILITIES
 	# =========	
