@@ -22,7 +22,7 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
   end
 
   def special_value?(value)
-    if value != "P/A" || value != "*" || value != "(XX)" || value != "(DQ)"
+    if value == "P/A" || value == "*" || value == "(XX)" || value == "(DQ)"
       true
     else
       false
