@@ -37,18 +37,4 @@ module WrestlersHelper
 			return "#{x}-#{y}"
 		end
 	end
-
-	def print_out_wrestler_errors(wrestler)
-		# <div id="error_explanation">
-  #   <h2><%= pluralize(@wrestler.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-  #   <ul>
-  #     <% @wrestler.errors.each do |error| %>
-  #       <li><%= error.full_message %></li>
-  #       puts error.full_message
-  #     <% end %>
-  #   </ul>
-  # </div>
-  "These are errors."
-	end
 end
