@@ -14,6 +14,10 @@
   grid-row-start: 24;
 }
 
+.field_with_errors .spec-input {
+  background-color: red;
+}
+
 .left-center {
   grid-column-start: 1;
   grid-column-end: 5;
