@@ -1,5 +1,5 @@
 <!-- TODO: Research Turbo (see development notes) to see if this can be presented using it asynchronously. -->
-<% if wrestler.id != nil %>
+<% if !wrestler.new_record? %>
 	<% generate_wrestler_stats(wrestler) %>
 <% end %>
 <p>Tag Team %: <%= number_to_percentage((wrestler.tt.to_f), precision: 0) %></p>
