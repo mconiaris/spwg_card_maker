@@ -1,5 +1,7 @@
 <!-- TODO: Research Turbo (see development notes) to see if this can be presented using it asynchronously. -->
-<% generate_wrestler_stats(wrestler) %>
+<% if wrestler.id != nil %>
+	<% generate_wrestler_stats(wrestler) %>
+<% end %>
 <p>Tag Team %: <%= number_to_percentage((wrestler.tt.to_f), precision: 0) %></p>
 <p>Overall Card Rating: <%= "%.1f" % wrestler.card_rating %></p>
 <p>OC Probability: <%= number_to_percentage((wrestler.oc_prob.to_f), precision: 0) %></p>
