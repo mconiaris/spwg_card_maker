@@ -1,5 +1,7 @@
 class WrestlerMovesValidator < ActiveModel::EachValidator
-  
+
+  # TODO: boolean for points_valid? and move_value_valid? both must return
+  # TODO: Dynamic errors.
   def validate_each(record, attribute, value)
     valid_move_values = options.fetch(:valid_move_values, %w{P/A * (DQ) (XX})
     unless is_move_value_valid?(attribute, value)
