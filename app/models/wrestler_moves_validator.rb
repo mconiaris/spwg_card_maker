@@ -1,17 +1,16 @@
 class WrestlerMovesValidator < ActiveModel::EachValidator
   
   def validate_each(record, attribute, value)
-  	unless is_move_value?(attribute, value)
-      record.errors.add attribute, (options[:message] || 
-        "move must end with ROPES, a points value, P/A, *, (DQ) or (XX).")
+    valid_move_values = options.fetch(:valid_move_values, %w{P/A * (DQ) (XX})
+    unless is_move_value_valid?(attribute, value)
+      record.errors.add(attribute, (options[:message] || 
+        "move must end with #{valid_move_values} or a points value"))
     end
-
   end
-
 
   private
 
-  def is_move_value?(attribute, value)
+  def is_move_value_valid?(attribute, value)
     move = value.split
 
     if move.size < 2
@@ -32,4 +31,5 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
   def points_value?(value)
     Integer(value) rescue false
   end
+
 end
