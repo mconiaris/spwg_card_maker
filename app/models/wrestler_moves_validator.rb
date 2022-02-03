@@ -6,7 +6,7 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
     valid_move_values = options.fetch(:valid_move_values, %w{P/A * (DQ) (XX})
     unless is_move_value_valid?(attribute, value)
       record.errors.add(attribute, (options[:message] || 
-        "move must end with #{valid_move_values} or a points value"))
+        "move must end with #{valid_move_values} or a points value of 0-25"))
     end
   end
 
