@@ -22,6 +22,11 @@ class Wrestler < ApplicationRecord
 		message: "%{value} cannot be entered as a DC value. You only use 'A' 'B' 'C' 'Reverse' 'REVERSE'"
 	}
 
-	validates :s1, :s2, :s3, :s4, :s5, :s6, wrestler_moves: { valid_move_values: %w{ P/A * (DQ) (XX) }, message: "must end with P/A, *, (DQ), (XX) or a points value of 0-25" }
+	validates :s1, :s2, :s3, :s4, :s5, :s6, 
+		wrestler_moves: { valid_move_values: %w{ P/A * (DQ) (XX) }, message: "must end with P/A, *, (DQ), (XX) or a points value of 0-25" }
+
+	validates :oc02, :oc03, :oc04, :oc05, :oc06, :oc07, :oc08, :oc09, :oc10, 
+		:oc11, :oc12, 
+		wrestler_moves: { valid_move_values: %w{ Ropes ROPES (S) P/A * (DQ) (XX) }, message: "must end with Ropes, ROPES, (S), P/A, *, (DQ), (XX) or a points value of 0-25" }
 
 end
