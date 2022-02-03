@@ -15,11 +15,17 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
   def is_move_value_valid?(record, attribute, value, valid_move_values)
     move = value.split
 
-    if move.last.present? && valid_move_values.include?(move.last) && move.last != "(DQ)"
+    # Checks for valid point range for moves ending in P/A, *, etc.
+    if move.present? && valid_move_values.include?(move.last) && move.last != "(DQ)"
       points_value?(move[-2]) && valid_points_number(move[-2]) ||
-        record.errors.add(attribute, message: "Incorrect entry.")
-    else
-      true
+        record.errors.add(attribute, message: "Move points cannot be higher than 25.")
+    # Checks to see if move values ending in points only are within range.
+    elsif move.present? && points_value?(move.last)
+      (0..25).include?(value.to_i) || record.errors.add(attribute, message: "Move points cannot be higher than 25.")
+    # Moves ending in * are checked against valid_move_values seperately
+    # because of the way split works.
+    elsif move.last.include?("*")
+      valid_move_values.include?("*") || record.errors.add(attribute, message: "This cannot be a submission move.")
     end
   end
 
