@@ -16,7 +16,7 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
     move = value.split
 
     # Checks for valid point range for moves ending in P/A, *, etc.
-    if move.present? && valid_move_values.include?(move.last.upcase) && move.last.upcase != "(DQ)" && move.last.upcase != "ROPES" && move.last.upcase != "(S)"
+    if move.present? && valid_move_values.include?(move.last.upcase) && move.last.upcase != "(DQ)" && move.last.upcase != "ROPES" && move.last.upcase != "(S)" && move.last.upcase != "N/A"
 
       points_value?(move[-2]) && valid_points_number(move[-2]) ||
         record.errors.add(attribute, message: "Move points cannot be higher than 25.")
@@ -29,8 +29,12 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
       valid_move_values.include?("*") || record.errors.add(attribute, message: "This cannot be a submission move.")
     elsif move.last.upcase == "ROPES"
       valid_move_values.include?(move.last) || record.errors.add(attribute, message: "Ropes cannot be called in this card.")
-      elsif move.last.upcase == "(S)"
+    elsif move.last.upcase == "(S)"
       valid_move_values.include?(move.last) || record.errors.add(attribute, message: "(S) cannot be called in this card.")
+    elsif move.last.upcase == "(DQ)"
+      valid_move_values.include?(move.last) || record.errors.add(attribute, message: "(DQ) cannot be called in this card.")
+    elsif move.last.upcase == "N/A"
+      valid_move_values.include?(move.last) || record.errors.add(attribute, message: "N/A cannot be called in this card.")
     end
   end
 
