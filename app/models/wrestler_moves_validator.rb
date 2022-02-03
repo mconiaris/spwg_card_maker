@@ -25,15 +25,15 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
       (0..25).include?(move.last.to_i) || record.errors.add(attribute, message: "Move points cannot be higher than 25.")
     # Moves ending in * are checked against valid_move_values seperately
     # because of the way split works.
-    elsif move.last.include?("*")
+    elsif move.present? && move.last.include?("*")
       valid_move_values.include?("*") || record.errors.add(attribute, message: "This cannot be a submission move.")
-    elsif move.last.upcase == "ROPES"
+    elsif move.present? && move.last.upcase == "ROPES"
       valid_move_values.include?(move.last) || record.errors.add(attribute, message: "Ropes cannot be called in this card.")
-    elsif move.last.upcase == "(S)"
+    elsif move.present? && move.last.upcase == "(S)"
       valid_move_values.include?(move.last) || record.errors.add(attribute, message: "(S) cannot be called in this card.")
-    elsif move.last.upcase == "(DQ)"
+    elsif move.present? && move.last.upcase == "(DQ)"
       valid_move_values.include?(move.last) || record.errors.add(attribute, message: "(DQ) cannot be called in this card.")
-    elsif move.last.upcase == "N/A"
+    elsif move.present? && move.last.upcase == "N/A"
       valid_move_values.include?(move.last) || record.errors.add(attribute, message: "N/A cannot be called in this card.")
     end
   end
