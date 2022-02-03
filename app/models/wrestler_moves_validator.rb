@@ -4,7 +4,7 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
   # TODO: Dynamic errors.
   def validate_each(record, attribute, value)
     valid_move_values = options.fetch(:valid_move_values, %w{P/A * (DQ) (XX})
-    unless is_move_value_valid?(attribute, value)
+    unless is_move_value_valid?(attribute, value, valid_move_values)
       record.errors.add(attribute, (options[:message] || 
         "move must end with #{valid_move_values} or a points value of 0-25"))
     end
@@ -12,26 +12,23 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
 
   private
 
-  def is_move_value_valid?(attribute, value)
+  def is_move_value_valid?(attribute, value, valid_move_values)
     move = value.split
 
-    if move.size < 2
-      points_value?(move[0])
+    if valid_move_values.include?(move.last) && move.last != "(DQ)"
+      points_value?(move[-2]) && valid_points_number(move[-2]) ||
+        record.errors.add(attribute, "Incorrect entry.")
     else
-      points_value?(move[-2]) && special_value?(move[-1])
-    end
-  end
-
-  def special_value?(value)
-    if value == "P/A" || value == "*" || value == "(XX)" || value == "(DQ)"
       true
-    else
-      false
-    end    
+    end
   end
 
   def points_value?(value)
     Integer(value) rescue false
+  end
+
+  def valid_points_number(value)
+    (0..25).include?(value.to_i)
   end
 
 end
