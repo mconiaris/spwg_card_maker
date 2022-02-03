@@ -22,7 +22,7 @@ class WrestlerMovesValidator < ActiveModel::EachValidator
         record.errors.add(attribute, message: "Move points cannot be higher than 25.")
     # Checks to see if move values ending in points only are within range.
     elsif move.present? && points_value?(move.last)
-      (0..25).include?(value.to_i) || record.errors.add(attribute, message: "Move points cannot be higher than 25.")
+      (0..25).include?(move.last.to_i) || record.errors.add(attribute, message: "Move points cannot be higher than 25.")
     # Moves ending in * are checked against valid_move_values seperately
     # because of the way split works.
     elsif move.last.include?("*")
