@@ -1206,7 +1206,7 @@ module WrestlerAnalyzer
 		if s_xx == 0
 			av = 0
 		else
-			av = s_pa/6.to_f
+			av = s_xx/6.to_f
 		end
 
 		return av
