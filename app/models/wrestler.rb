@@ -2,7 +2,7 @@ class Wrestler < ApplicationRecord
 	include WrestlerAnalyzer
 	include WrestlerPyGenerator
 
-	belongs_to :division
+	belongs_to :division, optional: true
 
 	# TODO: Figure out name and wrestler moves maximum character limit.
 
