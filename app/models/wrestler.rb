@@ -30,8 +30,8 @@ class Wrestler < ApplicationRecord
 		wrestler_moves: { valid_move_values: %w{ Ropes ROPES (S) P/A * (DQ) (XX) }, 
 		message: "must end with Ropes, ROPES, (S), P/A, *, (DQ), (XX) or a points value of 0-25" }
 
-		validates :ro02, :ro03, :ro04, :ro05, :ro06, :ro07, :ro08, :ro09, 
-			:ro10, :ro11, :ro12, wrestler_moves: { valid_move_values: %w{ (S) P/A * (DQ) (XX) N/A }, 
-			message: "must end with (S), P/A, *, (DQ), (XX), N/A or a points value of 0-25" }
+	validates :ro02, :ro03, :ro04, :ro05, :ro06, :ro07, :ro08, :ro09, 
+		:ro10, :ro11, :ro12, wrestler_moves: { valid_move_values: %w{ (S) P/A * (DQ) (XX) N/A }, 
+		message: "must end with (S), P/A, *, (DQ), (XX), N/A or a points value of 0-25" }
 
 end
