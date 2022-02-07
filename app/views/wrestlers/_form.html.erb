@@ -202,9 +202,7 @@
 		
 		<!-- TODO: Investigate This
 		https://stackoverflow.com/questions/17131395/ruby-on-rails-two-models-in-one-form#17131774 -->
-		<% fields_for :division_id, @division do |u| %>
-		<%= u.text_field :name, placeholder: "Division", class: "right-center r26 grid-line" %>
-		<% end %>
+		<%= form.select :division, Division.all, :prompt => "Select One", class: "right-center r26 grid-line" %>
 		
     <%= form.text_field :promotion, placeholder: "Promotion", class: "right-center r27 grid-line" %>
 		
