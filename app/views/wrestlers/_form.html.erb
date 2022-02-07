@@ -203,10 +203,10 @@
 		<!-- TODO: Investigate This
 		https://stackoverflow.com/questions/17131395/ruby-on-rails-two-models-in-one-form#17131774 -->
 		<% fields_for(@division) do |u| %>
-		<%= u.text_field :division, placeholder: "Promotion", class: "right-center r26 grid-line" %>
+		<%= u.text_field :division, placeholder: "Division", class: "right-center r26 grid-line" %>
 		<% end %>
 		
-    <%= form.text_field :promotion, placeholder: "Division", class: "right-center r27 grid-line" %>
+    <%= form.text_field :promotion, placeholder: "Promotion", class: "right-center r27 grid-line" %>
 		
     <p class="right-note r28">For Ropes moves with no points, please type "N/A"</p>
 
