@@ -202,7 +202,7 @@
 		
 		<!-- TODO: Investigate This
 		https://stackoverflow.com/questions/17131395/ruby-on-rails-two-models-in-one-form#17131774 -->
-		<% fields_for :division_id, @wrestler.division_id do |u| %>
+		<% fields_for :division_id, @division do |u| %>
 		<%= u.text_field :name, placeholder: "Division", class: "right-center r26 grid-line" %>
 		<% end %>
 		
