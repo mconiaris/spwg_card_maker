@@ -1,0 +1,11 @@
+<h1>Divisions</h1>
+<table id="divisions">
+  <tr>
+    <th>Division</th>
+  </tr>
+  <% @divisions.each do |division| %>
+    <tr>
+        <td><%= link_to division.name, division %></td>
+    </tr>
+  <% end %>
+</table>
