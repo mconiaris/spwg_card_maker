@@ -94,8 +94,7 @@
     <p class="stats nine">XX Roll Probability Per Round: <%= number_to_percentage((@wrestler.xx_prob.to_f), precision: 0) %></p>
     <p class="stats ten">Submission Loss Probability: <%= number_to_percentage((@wrestler.submission.to_f), precision: 0) %></p>
     <p class="stats eleven">Tag Save Probability: <%= number_to_percentage((@wrestler.tag_team_save.to_f), precision: 0) %></p>
-    <p class="stats twelve">Division: <%= @wrestler.division %></p>
-
+    <p class="stats twelve">Division: <%= @wrestler.division.name %></p>
 </div>
 
 
