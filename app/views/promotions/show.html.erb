@@ -1,0 +1,10 @@
+<h1>Promotion Page</h1>
+<div class="wrapper">
+    <p><%= @promotion.name %></p>
+</div>
+
+
+<p><%= link_to "Edit", edit_promotion_path(@promotion) %></p>
+<p><%= link_to "Destroy", promotion_path(@promotion),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></p>
