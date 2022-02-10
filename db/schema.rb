@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_10_134926) do
+ActiveRecord::Schema.define(version: 2022_02_10_141503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_134926) do
   end
 
   create_table "promotions", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "None"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -100,8 +100,11 @@ ActiveRecord::Schema.define(version: 2022_02_10_134926) do
     t.string "specialty"
     t.string "tagx"
     t.bigint "division_id"
+    t.bigint "promotion_id"
     t.index ["division_id"], name: "index_wrestlers_on_division_id"
+    t.index ["promotion_id"], name: "index_wrestlers_on_promotion_id"
   end
 
   add_foreign_key "wrestlers", "divisions"
+  add_foreign_key "wrestlers", "promotions"
 end
