@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_202659) do
+ActiveRecord::Schema.define(version: 2022_02_10_133207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_202659) do
     t.float "xx_prob"
     t.float "submission"
     t.float "tag_team_save"
-    t.string "division"
     t.string "gc02"
     t.string "gc03"
     t.string "gc04"
@@ -94,7 +93,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_202659) do
     t.integer "tagy"
     t.string "specialty"
     t.string "tagx"
-    t.string "promotion"
     t.bigint "division_id"
     t.index ["division_id"], name: "index_wrestlers_on_division_id"
   end
