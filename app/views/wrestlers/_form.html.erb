@@ -203,8 +203,10 @@
 		<div class="right-center r26 grid-line">
 			<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
 		</div>
-		
-    <%= form.text_field :promotion, placeholder: "Promotion", class: "right-center r27 grid-line" %>
+
+		<div class="right-center r27 grid-line">
+			<%= form.collection_select :division_id, Promotion.order(:name), :id, :name, :prompt => "Promotion" %>
+		</div>
 		
     <p class="right-note r28">For Ropes moves with no points, please type "N/A"</p>
 
