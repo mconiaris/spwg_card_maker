@@ -200,9 +200,6 @@
 		
 		<%= form.text_field :set, placeholder: "Set", class: "right-center r25 grid-line" %>
 		
-		<!-- TODO: Investigate This
-		https://stackoverflow.com/questions/17131395/ruby-on-rails-two-models-in-one-form#17131774 -->
-		<!-- https://stackoverflow.com/questions/17758401/how-to-create-categories-in-rails -->
 		<div class="right-center r26 grid-line">
 			<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
 		</div>
