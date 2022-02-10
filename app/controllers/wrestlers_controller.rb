@@ -21,6 +21,12 @@ class WrestlersController < ApplicationController
 
   def new
     @wrestler = Wrestler.new
+    
+    # @division = Division.new
+    # @wrestler.division = @division
+
+    # @promotion = Promotion.new
+    # @wrestler.promotion = @promotion
   end
 
   # TODO: Add dummy values
