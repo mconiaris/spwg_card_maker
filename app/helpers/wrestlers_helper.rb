@@ -13,6 +13,8 @@ module WrestlersHelper
  		wrestler.xx_prob = stats[:xx_probability_per_round]
  		wrestler.submission = stats[:submission]
  		wrestler.tag_team_save = stats[:tag_team_save]
+
+ 		wrestler.save
 	end
 
 	def initial_stats(wrestler)
