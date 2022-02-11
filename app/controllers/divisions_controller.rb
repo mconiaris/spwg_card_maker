@@ -6,6 +6,7 @@ class DivisionsController < ApplicationController
 
   def show
     @division = Division.find(params[:id])
+    @wrestlers = division_filter(@division)
   end
 
   def new
@@ -47,5 +48,10 @@ class DivisionsController < ApplicationController
 
   def division_params
     params.require(:division).permit(:name)
+  end
+
+  def division_filter(division)
+    @wrestlers = Wrestler.all
+    @wrestlers.select { |w| w.division == division }
   end
 end
