@@ -7,25 +7,31 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'csv'
 
-Divisions.destroy_all
-Promotions.destroy_all
+Division.destroy_all
+Promotion.destroy_all
 Wrestler.destroy_all
 
 promotions = [ "AWA", "Florida", "Georgia", "Memphis", "Mid Atlantic", 
   "Mid South", "None", "NWA", "Southwest", "World Class", "Women", "WWC", 
   "WWF" ]
 
- promotions.each { |p| Promotions.create(p) }
+promotions.each { |p| Promotion.create(name: p) }
 
 
 divisions = [ "Cruiserweight", "Legend", "Midcard", "None", "Preliminary",
   "Regional Champion", "Super Heavyweight", "Veteran", "Women",
   "World Champion", "Young Star" ]
 
-divisions.each { |d| Division.create(d) }
+divisions.each { |d| Division.create(name: d) }
 
 
 CSV.foreach(Rails.root.join('lib/seed_file.csv'), headers: true, header_converters: :symbol) do |row|
-  
+  # Convert text from csv into id of object.
+  div = row[:division]
+  row[:division] = Division.find_by name: div
+
+  prom = row[:promotion]
+  row[:promotion] = Promotion.find_by name: prom
+
   Wrestler.create(row.to_hash)
 end
