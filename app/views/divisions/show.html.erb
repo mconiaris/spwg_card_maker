@@ -3,6 +3,10 @@
     <p><%= @division.name %></p>
 </div>
 
+<p><%= link_to "Divisions", divisions_path %></p>
+<p><%= link_to "New Division", new_division_path %></p>
+
+<!-- # TODO: Replace with index partial for DRY -->
 <div>
     <% @wrestlers.each do |w| %>
         <p><%= w.name %></p>
