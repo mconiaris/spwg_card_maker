@@ -5,6 +5,7 @@ class PromotionsController < ApplicationController
 
   def show
     @promotion = Promotion.find(params[:id])
+    @wrestlers = promotion_filter(@promotion)
   end
 
   def new
@@ -46,5 +47,10 @@ class PromotionsController < ApplicationController
 
   def promotion_params
     params.require(:promotion).permit(:name)
+  end
+
+  def promotion_filter(promotion)
+    @wrestlers = Wrestler.all
+    @wrestlers.select { |w| w.promotion == promotion }
   end
 end
