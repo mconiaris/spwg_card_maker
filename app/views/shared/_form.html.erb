@@ -219,9 +219,9 @@
     <!-- TODO: DRY stats presentation with show view. -->
     <div class="c7 r1">
     	<% if wrestler.errors.any? %>
-	    	<%= render 'form_errors', wrestler: wrestler %>
+	    	<%= render 'shared/form_errors', wrestler: wrestler %>
 	    <% else %>
-	    	<%= render 'form_stats', wrestler: wrestler %>
+	    	<%= render 'shared/form_stats', wrestler: wrestler %>
 	    <% end %>
     </div>
 	</div>
