@@ -1,0 +1,36 @@
+<table id="wrestlers">
+  <tr>
+    <th>Wrestler</th>
+    <th>Set</th>
+    <th>PRI (S)</th>
+    <th>PRI (TT)</th>
+    <th>Tag %</th>
+    <th>Card Rating</th>
+    <th>OC Prob</th>
+    <th>Points Per Round</th>
+    <th>DQ Prob</th>
+    <th>P/A Prob</th>
+    <th>Sub Prob</th>
+    <th>XX Prob</th>
+    <th>Sub Loss Prob</th>
+    <th>Tag Save Prob</th>
+  </tr>
+  <% @wrestlers.each do |wrestler| %>
+    <tr>
+        <td><%= link_to wrestler.name, wrestler %></td>
+        <td><%= wrestler.set %></td>
+        <td><%= wrestler.prioritys %></td>
+        <td><%= wrestler.priorityt %></td>
+        <td class="value"><%= "%.0f" % wrestler.tt %>%</td>
+        <td class="value"><%= "%.1f" % wrestler.card_rating %></td>
+        <td class="value"><%= "%.0f" % wrestler.oc_prob %>%</td>
+        <td class="value"><%= "%.3f" % wrestler.total_points %></td>
+        <td class="value"><%= "%.0f" % wrestler.dq_prob %>%</td>
+        <td class="value"><%= "%.0f" % wrestler.pa_prob %>%</td>
+        <td class="value"><%= "%.0f" % wrestler.sub_prob %>%</td>
+        <td class="value"><%= "%.0f" % wrestler.xx_prob %>%</td>
+        <td class="value"><%= "%.0f" % wrestler.submission %>%</td>
+        <td class="value"><%= "%.0f" % wrestler.tag_team_save %>%</td>
+    </tr>
+  <% end %>
+</table>
