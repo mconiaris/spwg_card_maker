@@ -5,6 +5,8 @@
   grid-template-columns: 2em 6em 2em 6em 2em 14em 10em;
   grid-auto-rows: 1.3em;
   column-gap: 5px;
+  justify-content: center;
+  border: 5px;
 }
 
 .form-sub-wrapper {
