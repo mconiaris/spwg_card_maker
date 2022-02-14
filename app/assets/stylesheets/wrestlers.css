@@ -6,6 +6,12 @@ body{
   width:100%;
 }
 
+.wrestler-list {
+  max-height: 30em;
+  overflow-x:auto;
+  overflow-y: scroll;
+}
+
 #wrestlers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -13,12 +19,19 @@ body{
   font-size: 15px;
 }
 
+th {
+  position: sticky;
+  top: 0;
+}
+
 #wrestlers td, #wrestlers th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#wrestlers tr:nth-child(even){background-color: #f2f2f2;}
+#wrestlers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 #wrestlers tr:hover {background-color: #ddd;}
 
