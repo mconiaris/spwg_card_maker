@@ -6,7 +6,9 @@
   grid-auto-rows: 1.3em;
   column-gap: 5px;
   justify-content: center;
-  border: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border:5px solid green;
 }
 
 .form-sub-wrapper {
