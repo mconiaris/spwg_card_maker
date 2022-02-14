@@ -11,8 +11,7 @@
   </head>
 
   <body>
-    <p><%= link_to "Wrestlers", wrestlers_path %></p>
-    <p><%= link_to "New Wrestler", new_wrestler_path %></p>
+    <%= render "layouts/navbar" %>
     <%= yield %>
   </body>
 </html>
