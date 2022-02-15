@@ -1,9 +1,33 @@
+<!-- TODO: DRY these links with a helper method. -->
 <div class="container">
     <nav>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" id="template-navbar">
           <li><%=link_to "ALL WRESTLERS", new_wrestler_path %></li>
           <li><%=link_to "SEARCH BY CATEGORY", wrestlers_path %></li>
-          <li><%=link_to "SEARCH BY PROMOTION", welcome_about_path %></li>
+          <li>
+            <div class="dropdown">
+                <button class="dropbtn">SEARCH BY PROMOTION
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="<%= (Promotion.find_by name: 'AWA').id %>">AWA</a>
+                  <a href="<%= (Promotion.find_by name: 'Florida').id %>">Florida</a>
+                  <a href="<%= (Promotion.find_by name: 'Georgia').id %>">Georgia</a>
+                  <a href="<%= (Promotion.find_by name: 'Memphis').id %>">Memphis</a>
+                  <a href="<%= (Promotion.find_by name: 'Mid Atlantic').id %>">Mid Atlantic</a>
+                  <a href="<%= (Promotion.find_by name: 'Mid South').id %>">Mid South</a>
+                  <a href="<%= (Promotion.find_by name: 'NWA').id %>">NWA</a>
+                  <a href="<%= (Promotion.find_by name: 'Southwest').id %>">Southwest</a>
+                  <a href="<%= (Promotion.find_by name: 'World Class').id %>">World Class</a>
+                  <a href="<%= (Promotion.find_by name: 'Women').id %>">Women</a>
+                  <a href="<%= (Promotion.find_by name: 'WWC').id %>">WWC</a>
+                  <a href="<%= (Promotion.find_by name: 'WWF').id %>">WWF</a>
+                </div>
+              </div>
+            </li>
         </ul>
   </nav>
 </div>
+
+
+
