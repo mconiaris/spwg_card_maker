@@ -10,18 +10,18 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="<%= (Promotion.find_by name: 'AWA').id %>">AWA</a>
-                  <a href="<%= (Promotion.find_by name: 'Florida').id %>">Florida</a>
-                  <a href="<%= (Promotion.find_by name: 'Georgia').id %>">Georgia</a>
-                  <a href="<%= (Promotion.find_by name: 'Memphis').id %>">Memphis</a>
-                  <a href="<%= (Promotion.find_by name: 'Mid Atlantic').id %>">Mid Atlantic</a>
-                  <a href="<%= (Promotion.find_by name: 'Mid South').id %>">Mid South</a>
-                  <a href="<%= (Promotion.find_by name: 'NWA').id %>">NWA</a>
-                  <a href="<%= (Promotion.find_by name: 'Southwest').id %>">Southwest</a>
-                  <a href="<%= (Promotion.find_by name: 'World Class').id %>">World Class</a>
-                  <a href="<%= (Promotion.find_by name: 'Women').id %>">Women</a>
-                  <a href="<%= (Promotion.find_by name: 'WWC').id %>">WWC</a>
-                  <a href="<%= (Promotion.find_by name: 'WWF').id %>">WWF</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'AWA').id %>">AWA</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Florida').id %>">Florida</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Georgia').id %>">Georgia</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Memphis').id %>">Memphis</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Mid Atlantic').id %>">Mid Atlantic</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Mid South').id %>">Mid South</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'NWA').id %>">NWA</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Southwest').id %>">Southwest</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'World Class').id %>">World Class</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Women').id %>">Women</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'WWC').id %>">WWC</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'WWF').id %>">WWF</a>
                 </div>
               </div>
             </li>
