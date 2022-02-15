@@ -12,6 +12,21 @@ body{
   margin-right: auto;
 }
 
+.wrestler-download-wrapper {
+  height: 50px;
+}
+
+.wrestler-download {
+  background-color: #008000cf;
+  color: white;
+  margin: 5px;
+  height: 40px;
+  align-content: center;
+  padding: 5px;
+  border: 5px solid black;
+  font-size: 1.1em;
+}
+
 .wrestler-form {
   max-width: 45em;
   margin-left: auto;

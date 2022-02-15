@@ -1,7 +1,9 @@
 <% generate_wrestler_stats(@wrestler) %>
-<%= link_to "Download Card (Text)", wrestler_path(@wrestler, format: :text) %>
-<%= link_to "Download Card (py)", wrestler_path(@wrestler, format: :py) %>
-<h1>Existing Wrestler</h1>
+<h1 class="title">Current Wrestler Card Values & Stats</h1>
+<div class="title wrestler-download-wrapper">
+    <%= link_to "Download Card (Text)", wrestler_path(@wrestler, format: :text), class: "wrestler-download" %>
+    <%= link_to "Download Card (py)", wrestler_path(@wrestler, format: :py), class: "wrestler-download" %>
+</div>
 <div class="wrapper">
     <p class="left one title grid-line"><%= @wrestler.name %></p>
 
