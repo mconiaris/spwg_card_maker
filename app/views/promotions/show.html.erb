@@ -1,17 +1,13 @@
 <%= render "layouts/template_navbar" %>
-<h1>Promotion Page</h1>
-<div class="wrapper">
-    <p><%= @promotion.name %></p>
-</div>
+<h1 class="title"><%= @promotion.name %></h1>
 
-<p><%= link_to "Promotions", promotions_path %></p>
-<p><%= link_to "New Promotion", new_promotion_path %></p>
 
-<!-- # TODO: Replace with index partial for DRY -->
 <div>
     <%= render "shared/index" %>
 </div>
 
+<p><%= link_to "Promotions", promotions_path %></p>
+<p><%= link_to "New Promotion", new_promotion_path %></p>
 <p><%= link_to "Edit", edit_promotion_path(@promotion) %></p>
 <p><%= link_to "Destroy", promotion_path(@promotion),
                   method: :delete,
