@@ -6,6 +6,25 @@
           <li><%=link_to "SEARCH BY CATEGORY", wrestlers_path %></li>
           <li>
             <div class="dropdown">
+                <button class="dropbtn">SEARCH BY CATEGORY
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="<%= division_path (Division.find_by name: 'Cruiserweight').id %>">Cruiserweights</a>
+                  <a href="<%= division_path (Division.find_by name: 'Legend').id %>">Legends</a>
+                  <a href="<%= division_path (Division.find_by name: 'Midcard').id %>">Midcarders</a>
+                  <a href="<%= division_path (Division.find_by name: 'Preliminary').id %>">Jobbers</a>
+                  <a href="<%= division_path (Division.find_by name: 'Regional Champion').id %>">Regional Champions</a>
+                  <a href="<%= division_path (Division.find_by name: 'Super Heavyweight').id %>">Super Heavyweights</a>
+                  <a href="<%= division_path (Division.find_by name: 'Veteran').id %>">Veterans</a>
+                  <a href="<%= division_path (Division.find_by name: 'Women').id %>">Women</a>
+                  <a href="<%= division_path (Division.find_by name: 'World Champion').id %>">World Champions</a>
+                  <a href="<%= division_path (Division.find_by name: 'Young Star').id %>">Young Stars</a>
+                </div>
+              </div>
+            </li>
+            <li>
+            <div class="dropdown">
                 <button class="dropbtn">SEARCH BY PROMOTION
                   <i class="fa fa-caret-down"></i>
                 </button>
