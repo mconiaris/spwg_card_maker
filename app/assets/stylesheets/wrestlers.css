@@ -50,10 +50,15 @@ th {
 #wrestlers td, #wrestlers th {
   border: 1px solid #ddd;
   padding: 8px;
+  color: black;
 }
 
 #wrestlers tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+#wrestlers tr:nth-child(odd) {
+  background-color: #a2a2cd;
 }
 
 #wrestlers tr:hover {background-color: #ddd;}
