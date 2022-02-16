@@ -1,0 +1,2 @@
+module WrestlerTemplateHelper
+end
