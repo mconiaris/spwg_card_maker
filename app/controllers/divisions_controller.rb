@@ -51,7 +51,7 @@ class DivisionsController < ApplicationController
   end
 
   def division_filter(division)
-    @wrestlers = Wrestler.all
+    @wrestlers = Wrestler.all.order(card_rating: :desc)
     @wrestlers.select { |w| w.division == division }
   end
 end

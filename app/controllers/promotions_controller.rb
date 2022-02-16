@@ -50,7 +50,7 @@ class PromotionsController < ApplicationController
   end
 
   def promotion_filter(promotion)
-    @wrestlers = Wrestler.all
+    @wrestlers = Wrestler.all.order(card_rating: :desc)
     @wrestlers.select { |w| w.promotion == promotion }
   end
 end
