@@ -8,6 +8,11 @@
   margin-right: auto;
 }
 
+#wrestler-show {
+  background-color: white;
+  color: black;
+}
+
 .wrestler-download-wrapper {
   height: 50px;
 }

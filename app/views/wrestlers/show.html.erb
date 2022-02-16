@@ -4,7 +4,7 @@
     <%= link_to "Download Card (Text)", wrestler_path(@wrestler, format: :text), class: "wrestler-download" %>
     <%= link_to "Download Card (py)", wrestler_path(@wrestler, format: :py), class: "wrestler-download" %>
 </div>
-<div class="wrapper">
+<div class="wrapper" id="wrestler-show">
     <p class="left one title grid-line"><%= @wrestler.name %></p>
 
     <p class="left two title grid-line" >GENERAL CARD</p>
