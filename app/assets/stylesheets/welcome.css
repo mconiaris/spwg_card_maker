@@ -17,3 +17,13 @@
 	vertical-align:middle;
 	width: 25em;
 }
+
+.home-banner:hover {
+	background-color: #d32626;
+	text-decoration: none;
+}
+
+.home-banner a {
+	color: white;
+	text-decoration: none;
+}
