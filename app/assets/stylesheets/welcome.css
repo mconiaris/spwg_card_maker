@@ -1,0 +1,19 @@
+.home-banner-wrapper {
+	margin-top: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.home-banner {
+	background-color: brown;
+	border: 1px solid white;
+	height: 2.5em;
+	margin-left: auto;
+	margin-right: auto;
+
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+	width: 25em;
+}
