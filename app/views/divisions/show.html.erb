@@ -3,11 +3,3 @@
 <div>
     <%= render "shared/index" %>
 </div>
-
-<p><%= link_to "Divisions", divisions_path %></p>
-<p><%= link_to "New Division", new_division_path %></p>
-
-<p><%= link_to "Edit", edit_division_path(@division) %></p>
-<p><%= link_to "Destroy", division_path(@division),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></p>

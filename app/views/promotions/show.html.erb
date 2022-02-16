@@ -4,10 +4,3 @@
 <div>
     <%= render "shared/index" %>
 </div>
-
-<p><%= link_to "Promotions", promotions_path %></p>
-<p><%= link_to "New Promotion", new_promotion_path %></p>
-<p><%= link_to "Edit", edit_promotion_path(@promotion) %></p>
-<p><%= link_to "Destroy", promotion_path(@promotion),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></p>
