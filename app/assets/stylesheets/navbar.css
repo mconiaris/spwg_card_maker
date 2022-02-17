@@ -2,7 +2,7 @@ header {
 	background-color: black;
 	color: yellow;
 	text-align: center;
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 nav {
@@ -22,7 +22,7 @@ nav ul {
 
 nav li {
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 10px;
 	padding-top: 35px;
 	padding-bottom: 10px;
 }
