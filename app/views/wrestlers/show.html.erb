@@ -1,11 +1,11 @@
 <% generate_wrestler_stats(@wrestler) %>
 <h1 class="title">Current Wrestler Card Values & Stats</h1>
 <div class="title wrestler-download-wrapper">
+    <%= link_to "New Card From Template", dup_wrestler_path, :action => "dup_wrestler", :id => @wrestler.id, class: "wrestler-download" %>
     <%= link_to "Download Card (Text)", wrestler_path(@wrestler, format: :text), class: "wrestler-download" %>
     <%= link_to "Download Card (py)", wrestler_path(@wrestler, format: :py), class: "wrestler-download" %>
 </div>
 
-<p><%= link_to "New From Template", dup_wrestler_path, :action => "dup_wrestler", :id => @wrestler.id, class: "btn btn-outline-primary" %></p>
 
 <div class="wrapper" id="wrestler-show">
     <p class="left one title grid-line"><%= @wrestler.name %></p>
@@ -100,9 +100,12 @@
     <p class="stats ten">Submission Loss Probability: <%= number_to_percentage((@wrestler.submission.to_f), precision: 0) %></p>
     <p class="stats eleven">Tag Save Probability: <%= number_to_percentage((@wrestler.tag_team_save.to_f), precision: 0) %></p>
     
+    <!-- TODO: Why does division need an if statement and not promotion? -->
+    <% if @wrestler.division.name.nil? %>
+            <p class="stats twelve">Division: None</p>
+    <% else %>
     <p class="stats twelve">Division: <%= @wrestler.division.name %></p>
+    <% end %>
+
     <p class="stats thirteen">Promotion: <%= @wrestler.promotion.name %></p>
 </div>
-
-
-<p><%= link_to "Edit", edit_wrestler_path(@wrestler) %></p>
