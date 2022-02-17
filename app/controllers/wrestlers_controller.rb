@@ -58,7 +58,8 @@ class WrestlersController < ApplicationController
   # https://stackoverflow.com/questions/48266905/duplicate-an-entry-in-rails-from-show-page
   def dup_wrestler
     @wrestler = Wrestler.find(params[:id]).dup
-    @wrestler.name = "blank"
+    @wrestler.name = "New Wrestler"
+    @wrestler.set = "None"
     @wrestler.promotion_id = 7
     @wrestler.division_id = 4
 
