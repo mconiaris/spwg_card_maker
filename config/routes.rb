@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   resources :divisions
   resources :promotions
 
-
-
+  get 'wrestlers/:id/dup_wrestler', to: 'wrestlers#dup_wrestler', as: :dup_wrestler
 end

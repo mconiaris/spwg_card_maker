@@ -23,7 +23,6 @@ class WrestlersController < ApplicationController
     @wrestler = Wrestler.new
   end
 
-  # TODO: Add dummy values
   def create
     @wrestler = Wrestler.new(wrestler_params)
 
@@ -53,6 +52,17 @@ class WrestlersController < ApplicationController
     @wrestler.destroy
 
     redirect_to root_path
+  end
+
+  # TODO: Explore how this works. Review Routes and Custom Methods
+  # https://stackoverflow.com/questions/48266905/duplicate-an-entry-in-rails-from-show-page
+  def dup_wrestler
+    @wrestler = Wrestler.find(params[:id]).dup
+    @wrestler.name = "blank"
+    @wrestler.promotion_id = 7
+    @wrestler.division_id = 4
+
+    render :new
   end
 
   private
