@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sort_wrestlers/index'
   
   # Defines the root path route ("/")
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,4 +12,5 @@ Rails.application.routes.draw do
   resources :promotions, only: [:index, :show ]
 
   get 'wrestlers/:id/dup_wrestler', to: 'wrestlers#dup_wrestler', as: :dup_wrestler
+
 end
