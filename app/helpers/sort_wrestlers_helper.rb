@@ -1,0 +1,2 @@
+module SortWrestlersHelper
+end

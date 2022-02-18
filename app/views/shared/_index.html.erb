@@ -1,20 +1,20 @@
 <div class="wrestler-list">
   <table id="wrestlers">
     <tr>
-      <th>Wrestler</th>
-      <th>Set</th>
-      <th>PRI (S)</th>
-      <th>PRI (TT)</th>
-      <th>Tag %</th>
-      <th>Card Rating</th>
-      <th>OC Prob</th>
-      <th>Points Per Round</th>
-      <th>DQ Prob</th>
-      <th>P/A Prob</th>
-      <th>Sub Prob</th>
-      <th>XX Prob</th>
-      <th>Sub Loss Prob</th>
-      <th>Tag Save Prob</th>
+      <th><%= link_to "Wrestler", :sort => "name" %></th>
+      <th><%= link_to "Set", :sort => "set" %></th>
+      <th><%= link_to "Set", :sort => "set" %><%= link_to "PRI (S)", :sort => "prioritys" %></th>
+      <th><%= link_to "PRI (TT)", :sort => "priorityt" %></th>
+      <th><%= link_to "Tag %", :sort => "tt" %></th>
+      <th><%= link_to "Card Rating", :sort => "card_rating" %></th>
+      <th><%= link_to "OC Prob", :sort => "oc_prob" %></th>
+      <th><%= link_to "Points Per Round", :sort => "total_points" %></th>
+      <th><%= link_to "DQ Prob", :sort => "dq_prob" %></th>
+      <th><%= link_to "P/A Prob", :sort => "pa_prob" %></th>
+      <th><%= link_to "Sub Prob", :sort => "sub_prob" %></th>
+      <th><%= link_to "XX Prob", :sort => "xx_prob" %></th>
+      <th><%= link_to "Sub Loss Prob", :sort => "submission" %></th>
+      <th><%= link_to "Tag Save Prob", :sort => "tag_team_save" %></th>
     </tr>
     <% @wrestlers.each do |wrestler| %>
       <tr>

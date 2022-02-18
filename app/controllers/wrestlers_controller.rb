@@ -1,5 +1,6 @@
 class WrestlersController < ApplicationController
   def index
+    @wrestlers = Wrestler.all.order(params[:sort])
     @wrestlers = Wrestler.all.order(card_rating: :desc)
   end
 
