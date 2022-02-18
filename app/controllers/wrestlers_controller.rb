@@ -1,8 +1,8 @@
 class WrestlersController < ApplicationController
   def index
     @wrestlers = Wrestler.all.order(params[:sort])
-    binding.pry
-    @wrestlers = Wrestler.all.order(card_rating: :desc)
+    # @wrestlers = Wrestler.all.order(card_rating: :desc)
+    # binding.pry
   end
 
   def show
