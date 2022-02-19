@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'welcome/about'
 
-  resources :wrestlers, only: [:new, :index, :edit, :show, :create ]
+  resources :wrestlers
   resources :divisions, only: [:index, :show ]
   resources :promotions, only: [:index, :show ]
 
