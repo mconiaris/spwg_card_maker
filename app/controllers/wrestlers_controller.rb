@@ -18,6 +18,10 @@ class WrestlersController < ApplicationController
         send_data @wrestler.print_card,
         filename: "#{@wrestler.get_wrestler_file_name}.py"
       }
+      format.csv {
+        send_data @wrestler.print_card_values,
+        filename: "#{@wrestler.name.gsub("\'","")} #{@wrestler.set}.csv"
+      }
     end
   end
 

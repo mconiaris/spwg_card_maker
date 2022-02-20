@@ -5,6 +5,7 @@
     <%= link_to "New Card From Template", dup_wrestler_path, :action => "dup_wrestler", :id => @wrestler.id, class: "wrestler-download" %>
     <%= link_to "Download Card (Text)", wrestler_path(@wrestler, format: :text), class: "wrestler-download" %>
     <%= link_to "Download Card (py)", wrestler_path(@wrestler, format: :py), class: "wrestler-download" %>
+    <%= link_to "Download Values as CSV", wrestler_path(@wrestler, format: :csv), class: "wrestler-download" %>
 </div>
 
 

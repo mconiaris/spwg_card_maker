@@ -1,6 +1,7 @@
 class Wrestler < ApplicationRecord
 	include WrestlerAnalyzer
 	include WrestlerPyGenerator
+	include WrestlerPrintValues
 
 	belongs_to :division, optional: true
 	belongs_to :promotion, optional: true
