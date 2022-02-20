@@ -15,7 +15,7 @@ module WrestlerPrintValues
 			CSV.generate do |csv|
  			
 	 			csv << [ "Name", "Set", "PRI-S", "PRI-TT", "TT%", "Card Rating", "OC Prob", "Total Points Per Round", "DQ Prob", "P/A Prob", "Sub Prob", "XX Prob",	"Sumission Loss",	"Tag Team Save"	]
-				csv << [ "#{self.name}", "#{self.set}", "#{self.prioritys}", "#{self.priorityt}", "#{self.tt}", "#{self.card_rating}", "#{self.oc_prob}", "#{self.total_points}", "#{self.dq_prob}", "#{self.pa_prob}", "#{self.sub_prob}", "#{self.xx_prob}", "#{self.submission}", "#{self.tag_team_save}" ]
+				csv << [ "#{self.name}", "#{self.set}", "#{self.prioritys}", "#{self.priorityt}", "#{self.tt/100}", "#{self.card_rating}", "#{self.oc_prob/100}", "#{self.total_points}", "#{self.dq_prob/100}", "#{self.pa_prob/100}", "#{self.sub_prob/100}", "#{self.xx_prob/100}", "#{self.submission/100}", "#{self.tag_team_save/100}" ]
 				csv << [ "" ]
 				
 				csv << ["Name:", "#{self.name}"]
@@ -24,11 +24,13 @@ module WrestlerPrintValues
 				csv << [ "gc04:", "#{self.gc04}"]
 				csv << [ "gc05:", "#{self.gc05}"]
 				csv << [ "gc06:", "#{self.gc06}"]
+				csv << [ "" ]
 				csv << [ "gc07:", "#{self.gc07}"]
 				csv << [ "gc08:", "#{self.gc08}"]
 				csv << [ "gc09:", "#{self.gc09}"]
 				csv << [ "gc10:", "#{self.gc10}"]
 				csv << [ "gc11:", "#{self.gc11}"]
+				csv << [ "" ]
 				csv << [ "gc12:", "#{self.gc12}"]
 				csv << [ "" ]
 				
@@ -37,16 +39,18 @@ module WrestlerPrintValues
  				csv << [ "dc04", "#{self.dc04}" ]
  				csv << [ "dc05", "#{self.dc05}" ]
  				csv << [ "dc06", "#{self.dc06}" ]
+ 				csv << [ "" ]
  				csv << [ "dc07", "#{self.dc07}" ]
  				csv << [ "dc08", "#{self.dc08}" ]
  				csv << [ "dc09", "#{self.dc09}" ]
  				csv << [ "dc10", "#{self.dc10}" ]
  				csv << [ "dc11", "#{self.dc11}" ]
+ 				csv << [ "" ]
  				csv << [ "dc12", "#{self.dc12}" ]
  				csv << [ "" ]
 
  				csv << [ "Specialty", "#{specialty}" ]
-
+ 				csv << [ "" ]
  				csv << [ "s1:", "#{self.s1}" ]
  				csv << [ "s2:", "#{self.s2}" ]
  				csv << [ "s3:", "#{self.s3}" ]
@@ -58,7 +62,7 @@ module WrestlerPrintValues
  				csv << [ "Tag:", "#{self.tagx}-#{self.tagy}" ]
  				csv << [ "Priority:", "#{self.prioritys}/#{self.priorityt}" ]
  				csv << [ "" ]
- 				
+
  				csv << [ "oc02", "#{self.oc02}"]
  				csv << [ "oc03", "#{self.oc03}"]
  				csv << [ "oc04", "#{self.oc04}"]
