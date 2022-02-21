@@ -1,11 +1,19 @@
 <% generate_wrestler_stats(@wrestler) %>
 <h1 class="title">Current Wrestler Card Values & Stats</h1>
+
 <div class="title wrestler-download-wrapper">
-    <!-- TODO: Experiment with this using the link_to doc. -->
-    <%= link_to "New Card From Template", dup_wrestler_path, :action => "dup_wrestler", :id => @wrestler.id, class: "wrestler-download" %>
-    <%= link_to "Download Card (Text)", wrestler_path(@wrestler, format: :text), class: "wrestler-download" %>
-    <%= link_to "Download Card (py)", wrestler_path(@wrestler, format: :py), class: "wrestler-download" %>
-    <%= link_to "Download Values as CSV", wrestler_path(@wrestler, format: :csv), class: "wrestler-download" %>
+    <% if @wrestler.template == true %>
+        <%= link_to "New Card From Template", dup_wrestler_path, :action => "dup_wrestler", :id => @wrestler.id, class: "wrestler-download" %>
+    <% else %>
+        <%= link_to "Edit This Card", edit_wrestler_path, class: "wrestler-download" %>
+    <% end %>
+
+    <p class="wrestler-download" id="downloads">Download Card:
+        <%= link_to "py", wrestler_path(@wrestler, format: :py) %>
+        <%= link_to "Text", wrestler_path(@wrestler, format: :text) %>
+        <%= link_to "CSV", wrestler_path(@wrestler, format: :csv) %>
+    </p>
+    
 </div>
 
 
