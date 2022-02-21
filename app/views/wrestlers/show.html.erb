@@ -111,7 +111,7 @@
     <p class="stats eleven">Tag Save Probability: <%= number_to_percentage((@wrestler.tag_team_save.to_f), precision: 0) %></p>
     
     <!-- TODO: Why does division need an if statement and not promotion? -->
-    <% if @wrestler.template %>
+    <% if @wrestler.template == true %>
         <p class="stats twelve">Division: <%= @wrestler.division.name %></p>
         <p class="stats thirteen">Promotion: <%= @wrestler.promotion.name %></p>
     <% end %>
