@@ -33,6 +33,8 @@ CSV.foreach(Rails.root.join('lib/seed_file.csv'), headers: true, header_converte
   prom = row[:promotion]
   row[:promotion] = Promotion.find_by name: prom
 
+  row[:template] = true
+
   Wrestler.create(row.to_hash)
 end
 
