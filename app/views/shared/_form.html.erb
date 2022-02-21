@@ -202,15 +202,17 @@
 		
 		<%= form.text_field :set, placeholder: "Set", class: "right-center r25 grid-line" %>
 		
-		<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
-		<!-- TODO: Remove this from the current site. -->
-		<div class="right-center r26 grid-line">
-			<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
-		</div>
+		<% if @wrestler.template == true %>
+			<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
+			<!-- TODO: Remove this from the current site. -->
+			<div class="right-center r26 grid-line">
+				<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
+			</div>
 
-		<div class="right-center r27 grid-line">
-			<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion" %>
-		</div>
+			<div class="right-center r27 grid-line">
+				<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion" %>
+			</div>
+		<% end %>
 		
     <p class="right-note r28">For Ropes moves with no points, please type "N/A"</p>
 
