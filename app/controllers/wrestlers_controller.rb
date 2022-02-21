@@ -66,6 +66,7 @@ class WrestlersController < ApplicationController
     @wrestler = Wrestler.find(params[:id]).dup
     @wrestler.name = "New Wrestler"
     @wrestler.set = "Your Set Name Here"
+    @wrestler.template = false
     @wrestler.promotion_id = 7
     @wrestler.division_id = 4
 
