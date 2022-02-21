@@ -57,7 +57,8 @@ module WrestlerPrintValues
  				csv << [ "s4:", "#{self.s4}" ]
  				csv << [ "s5:", "#{self.s5}" ]
  				csv << [ "s6:", "#{self.s6}" ]
-
+ 				csv << [ "" ]
+ 				
  				csv << [ "Sub:", "#{self.subx}-#{self.suby}" ]
  				csv << [ "Tag:", "#{self.tagx}-#{self.tagy}" ]
  				csv << [ "Priority:", "#{self.prioritys}/#{self.priorityt}" ]
