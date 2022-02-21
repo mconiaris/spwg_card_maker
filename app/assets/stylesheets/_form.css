@@ -12,7 +12,10 @@
   background-color: white;
   color: black;
   font-size: 0.8em;
-  min-inline-size: fit-content;
+}
+
+input {
+  min-height: fit-content;
 }
 
 .form-sub-wrapper {
