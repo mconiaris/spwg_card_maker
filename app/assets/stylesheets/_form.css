@@ -15,7 +15,7 @@
 }
 
 input {
-  min-height: fit-content;
+  line-height: 12px;
 }
 
 .form-sub-wrapper {
