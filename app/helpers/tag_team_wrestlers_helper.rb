@@ -1,0 +1,2 @@
+module TagTeamWrestlersHelper
+end
