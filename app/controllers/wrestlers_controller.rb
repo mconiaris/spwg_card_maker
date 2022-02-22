@@ -1,8 +1,13 @@
 class WrestlersController < ApplicationController
+
+  @@sort_order = "ASC"
+
   def index
-    @wrestlers = Wrestler.all.order(params[:sort])
-    # @wrestlers = Wrestler.all.order(card_rating: :desc)
-    # binding.pry
+    if params[:sort] == nil
+      @wrestlers = Wrestler.all.order(card_rating: :desc)
+    else
+      @wrestlers = sort_wrestler_index
+    end
   end
 
   def show
@@ -75,6 +80,8 @@ class WrestlersController < ApplicationController
 
   private
 
+  sort_parameter = ""
+
   def wrestler_params
     params.require(:wrestler).permit(:name, :set, :gc02, :gc03, :gc04, 
       :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, :gc11, :gc12, :dc02, :dc03, 
@@ -83,6 +90,16 @@ class WrestlersController < ApplicationController
       :priorityt, :oc02, :oc03, :oc04, :oc05, :oc06, :oc07, :oc08, :oc09, :oc10, 
       :oc11, :oc12, :ro02, :ro03, :ro04, :ro05, :ro06, :ro07, :ro08, :ro09, :ro10,
       :ro11, :ro12, :division_id, :promotion_id)
+  end
+
+  def sort_wrestler_index
+    if @@sort_order == "ASC"
+      @@sort_order = "DESC"
+      Wrestler.order(params[:sort])
+    else
+      @@sort_order = "ASC"
+      Wrestler.order("#{params[:sort]} DESC")
+    end
   end
 
 end
