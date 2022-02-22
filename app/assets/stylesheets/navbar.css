@@ -1,8 +1,12 @@
 header {
-	background-color: black;
-	color: yellow;
 	text-align: center;
 	font-size: 2.5em;
+}
+
+header a {
+	background-color: black;
+	color: yellow;
+	text-decoration: none;
 }
 
 nav {
