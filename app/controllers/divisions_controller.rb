@@ -1,5 +1,8 @@
 class DivisionsController < ApplicationController
 
+  # DRY This among controllers. Concern?
+  @@sort_order = "ASC"
+
 	def index
     @divisions = Division.all
   end
@@ -51,7 +54,21 @@ class DivisionsController < ApplicationController
   end
 
   def division_filter(division)
-    @wrestlers = Wrestler.all.order(card_rating: :desc)
+    if params[:sort] == nil
+      @wrestlers = Wrestler.all.order(card_rating: :desc)
+    else
+      @wrestlers = sort_wrestler_index
+    end
     @wrestlers.select { |w| w.division == division }
+  end
+
+  def sort_wrestler_index
+    if @@sort_order == "ASC"
+      @@sort_order = "DESC"
+      Wrestler.order(params[:sort])
+    else
+      @@sort_order = "ASC"
+      Wrestler.order("#{params[:sort]} DESC")
+    end
   end
 end
