@@ -5,6 +5,15 @@
 	width: 80%;
 }
 
+a {
+	color: #72c7e3;
+	text-decoration: none;
+}
+
+h1 {
+	color: #e14343;
+}
+
 .home-banner {
 	background-color: brown;
 	border: 1px solid white;

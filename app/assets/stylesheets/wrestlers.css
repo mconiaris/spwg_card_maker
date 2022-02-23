@@ -69,6 +69,14 @@ th {
   color: black;
 }
 
+th a {
+  color: white;
+}
+
+td a {
+  color: blue;
+}
+
 #wrestlers tr:nth-child(even) {
   background-color: #f2f2f2;
 }
