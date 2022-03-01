@@ -1,2 +1,5 @@
-<h1>WrestlerTemplates#new</h1>
-<p>Find me in app/views/wrestler_templates/new.html.erb</p>
+<% initial_stats(@wrestler) %>
+<h1 class="title">Make a New Wrestler From Scratch</h1>
+<div class="wrestler-form">
+	<%= render "shared/form", wrestler: @wrestler %>
+</div>

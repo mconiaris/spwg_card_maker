@@ -4,6 +4,18 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">HOME</a></li>
           <li><%=link_to "CREATE A NEW WRESTLER", new_wrestler_path %></li>
+          <li><%=link_to "CREATE A NEW WRESTLER Template", wrestler_templates_new_path %>
+            <div class="dropdown">
+                <button class="dropbtn">CARDS BY CATEGORY
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <%=link_to "BLANK FORM", new_wrestler_path %>
+                  <%=link_to "OC 6%", wrestler_templates_new_path %>
+                  <a href="<%= division_path (Division.find_by name: 'Young Star').id %>">Young Stars</a>
+                </div>
+              </div>
+          </li>
           <li>
             <div class="dropdown">
                 <button class="dropbtn">CARDS BY CATEGORY
