@@ -10,6 +10,8 @@
                 </button>
                 <div class="dropdown-content">
                   <%= link_to "BLANK FORM", new_wrestler_path %>
+                  <%= link_to "SET OC AT 13%", wrestler_templates_new_path(oc: "13") %>
+                  <%= link_to "SET OC AT 11%", wrestler_templates_new_path(oc: "11") %>
                   <%= link_to "SET OC AT 8%", wrestler_templates_new_path(oc: "8") %>
                   <%= link_to "SET OC AT 6%", wrestler_templates_new_path(oc: "6") %>
                 </div>
