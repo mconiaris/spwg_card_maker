@@ -1,0 +1,3 @@
+module WrestlerTemplatesHelper
+
+end

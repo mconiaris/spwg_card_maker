@@ -1,4 +1,5 @@
 module WrestlersHelper
+
 	def generate_wrestler_stats(wrestler)
 
 		stats = wrestler.analyze
