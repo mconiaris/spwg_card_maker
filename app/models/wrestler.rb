@@ -1,10 +1,13 @@
 class Wrestler < ApplicationRecord
+	include ActiveModel::Validations
 	include WrestlerAnalyzer
 	include WrestlerPyGenerator
 	include WrestlerPrintValues
 
 	belongs_to :division, optional: true
 	belongs_to :promotion, optional: true
+
+	validates_with WrestlersTagValidator
 
 	# TODO: Figure out name and wrestler moves maximum character limit.
 
