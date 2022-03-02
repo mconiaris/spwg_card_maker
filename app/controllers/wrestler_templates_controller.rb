@@ -48,6 +48,11 @@ class WrestlerTemplatesController < ApplicationController
         gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
         gc08: "DC", gc09: "OC", gc10: "DC", gc11: "DC", 
         gc12: "DC" })
+    when "31"
+      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
+        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
+        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
+        gc12: "DC" })
     else
       @wrestler = Wrestler.new
     end
