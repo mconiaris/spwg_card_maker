@@ -39,4 +39,8 @@ class Wrestler < ApplicationRecord
 		:ro10, :ro11, :ro12, wrestler_moves: { valid_move_values: %w{ (S) P/A * (DQ) (XX) N/A }, 
 		message: "must end with (S), P/A, *, (DQ), (XX), N/A or a points value of 0-25" }
 
+	validates :prioritys, inclusion: { in: %w(1 2 3 4 5 5+ 6), 
+		message: "of %{value} is out of range. It can only be 1 to 5 or 5+/6"
+	}
+
 end
