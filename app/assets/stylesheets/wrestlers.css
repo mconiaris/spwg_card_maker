@@ -2,45 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+/*Index View*/
+/*TODO: Move to it's own CSS document.*/
 .wrestler-list {
   max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#wrestler-show {
-  background-color: white;
-  color: black;
-  font-size: 0.8em;
-}
-
-#downloads {
-  max-width: 20em;
-}
-
-.wrestler-download-wrapper {
-  height: 60px;
-}
-
-.wrestler-download {
-  display: inline-block;
-  background-color: #008000cf;
-  color: white;
-  margin: 5px;
-  align-content: center;
-  padding: 5px;
-  border: 5px solid black;
-  font-size: 1.1em;
-  list-style: none;
-}
-
-.wrestler-download a {
-  color: white;
-  padding-left: 10px;
-}
-
-.wrestler-form {
-  max-width: 45em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -99,25 +65,10 @@ td a {
 	text-align: right;
 }
 
-/*Show Page*/
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr 2fr;
-  max-width: 45em;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.wrapper p {
-  margin: 1px;
-}
-
+/*Columns and rows for Show and Forms*/
 .grid-line {
-  border: 2px solid green;
-}
-
-.title { 
-  text-align: center;
+  border: 3px solid green;
 }
 
 .left {
@@ -129,122 +80,154 @@ td a {
   grid-column: 3;
 }
 
-.stats {
-  grid-column: 4;
-}
 
-.col1 {
+/*columns*/
+.c1 {
   grid-column: 1;
 }
 
-.col2 {
+.c2 {
   grid-column: 2;
 }
 
-.col3 {
+.c3 {
   grid-column: 3;
 }
 
-.col4 {
+.c4 {
   grid-column: 4;
 }
 
-.one {
+.c5 {
+  grid-column: 5;
+}
+
+.c6 {
+  grid-column: 6;
+}
+
+.c7 {
+  grid-column: 7;
+}
+
+
+/*Grid rows*/
+.r1 {
   grid-row: 1;
 }
 
-.two {
+.r2 {
   grid-row: 2;
 }
 
-.three {
+.r3 {
   grid-row: 3;
 }
 
-.four {
+.r4 {
   grid-row: 4;
 }
 
-.five {
+.r5 {
   grid-row: 5;
 }
 
-.six {
+.r6 {
   grid-row: 6;
 }
 
-.seven {
+.r7 {
   grid-row: 7;
 }
 
-.eight {
+.r8 {
   grid-row: 8;
 }
 
-.nine {
+.r9 {
   grid-row: 9;
 }
 
-.ten {
+.r10 {
   grid-row: 10;
 }
 
-.eleven {
+.r11 {
   grid-row: 11;
 }
 
-.twelve {
+.r12 {
   grid-row: 12;
 }
 
-.thirteen {
+.r13 {
   grid-row: 13;
 }
 
-.fourteen {
+.r14 {
   grid-row: 14;
 }
 
-.fifteen {
+.r15 {
   grid-row: 15;
 }
 
-.sixteen {
+.r16 {
   grid-row: 16;
 }
 
-.seventeen {
+.r17 {
   grid-row: 17;
 }
 
-.eighteen {
+.r18 {
   grid-row: 18;
 }
 
-.nineteen {
+.r19 {
   grid-row: 19;
 }
 
-.twenty {
+.r20 {
   grid-row: 20;
 }
 
-.twenty-one {
+.r21 {
   grid-row: 21;
 }
 
-.twenty-two {
+.r22 {
   grid-row: 22;
 }
 
-.twenty-three {
+.r23 {
   grid-row: 23;
 }
 
-.twenty-four {
+.r24 {
   grid-row: 24;
 }
 
-.twenty-five {
+.r25 {
   grid-row: 25;
+}
+
+.r26 {
+  grid-row: 26;
+}
+
+.r27 {
+  grid-row: 27;
+}
+
+.r28 {
+  grid-row: 28;
+}
+
+.r29 {
+  grid-row: 29;
+}
+
+.r30 {
+  grid-row: 30;
 }
