@@ -15,10 +15,10 @@
     </p>
 </div>
 
-<div class="container">
+<div class="show-container">
     <%= render "shared/show_wrestler", wrestler: @wrestler %>
 
-    <div class="stats one">
+    <div class="stats">
         <p class="title grid-line">STATS</p>
         <p>Tag Team %: <%= number_to_percentage((@wrestler.tt.to_f), precision: 0) %></p>
         <p>Overall Card Rating: <%= "%.1f" % @wrestler.card_rating %></p>
