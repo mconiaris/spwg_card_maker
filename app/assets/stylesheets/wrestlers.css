@@ -64,3 +64,174 @@ td a {
 .value {
 	text-align: right;
 }
+
+
+/*Columns and rows for Show and Forms*/
+.grid-line {
+  border: 3px solid green;
+}
+
+.left {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.right {
+  grid-column: 3;
+}
+
+.stats {
+  grid-column: 4;
+}
+
+
+/*columns*/
+.c1 {
+  grid-column: 1;
+}
+
+.c2 {
+  grid-column: 2;
+}
+
+.c3 {
+  grid-column: 3;
+}
+
+.c4 {
+  grid-column: 4;
+}
+
+.c5 {
+  grid-column: 5;
+}
+
+.c6 {
+  grid-column: 6;
+}
+
+.c7 {
+  grid-column: 7;
+}
+
+
+/*Grid rows*/
+.r1 {
+  grid-row: 1;
+}
+
+.r2 {
+  grid-row: 2;
+}
+
+.r3 {
+  grid-row: 3;
+}
+
+.r4 {
+  grid-row: 4;
+}
+
+.r5 {
+  grid-row: 5;
+}
+
+.r6 {
+  grid-row: 6;
+}
+
+.r7 {
+  grid-row: 7;
+}
+
+.r8 {
+  grid-row: 8;
+}
+
+.r9 {
+  grid-row: 9;
+}
+
+.r10 {
+  grid-row: 10;
+}
+
+.r11 {
+  grid-row: 11;
+}
+
+.r12 {
+  grid-row: 12;
+}
+
+.r13 {
+  grid-row: 13;
+}
+
+.r14 {
+  grid-row: 14;
+}
+
+.r15 {
+  grid-row: 15;
+}
+
+.r16 {
+  grid-row: 16;
+}
+
+.r17 {
+  grid-row: 17;
+}
+
+.r18 {
+  grid-row: 18;
+}
+
+.r19 {
+  grid-row: 19;
+}
+
+.r20 {
+  grid-row: 20;
+}
+
+.r21 {
+  grid-row: 21;
+}
+
+.r22 {
+  grid-row: 22;
+}
+
+.r23 {
+  grid-row: 23;
+}
+
+.r24 {
+  grid-row: 24;
+}
+
+.r25 {
+  grid-row: 25;
+}
+
+.r26 {
+  grid-row: 26;
+}
+
+.r27 {
+  grid-row: 27;
+}
+
+.r28 {
+  grid-row: 28;
+}
+
+.r29 {
+  grid-row: 29;
+}
+
+.r30 {
+  grid-row: 30;
+}
