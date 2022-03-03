@@ -2,39 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+/*Index View*/
+/*TODO: Move to it's own CSS document.*/
 .wrestler-list {
   max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#downloads {
-  max-width: 20em;
-}
-
-.wrestler-download-wrapper {
-  height: 60px;
-}
-
-.wrestler-download {
-  display: inline-block;
-  background-color: #008000cf;
-  color: white;
-  margin: 5px;
-  align-content: center;
-  padding: 5px;
-  border: 5px solid black;
-  font-size: 1.1em;
-  list-style: none;
-}
-
-.wrestler-download a {
-  color: white;
-  padding-left: 10px;
-}
-
-.wrestler-form {
-  max-width: 45em;
   margin-left: auto;
   margin-right: auto;
 }

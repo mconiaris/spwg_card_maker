@@ -14,6 +14,12 @@
   /*font-size: 0.8em;*/
 }
 
+.wrestler-form {
+  max-width: 45em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 input {
   line-height: 0.9em;
 }
