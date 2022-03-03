@@ -2,11 +2,12 @@
 .wrestler_show_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  max-width: 45em;
+  max-width: 35em;
   margin-left: auto;
   margin-right: auto;
   color: black;
   background-color: white;
+  font-size: 0.9em;
 }
 
 .wrestler_show_wrapper p {
@@ -15,13 +16,6 @@
 
 .grid-line {
   border: 3px solid green;
-}
-
-
-#wrestler-show {
-  background-color: white;
-  color: black;
-  font-size: 0.8em;
 }
 
 .title { 
