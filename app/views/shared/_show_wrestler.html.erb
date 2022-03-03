@@ -1,80 +1,82 @@
+<!-- TODO: Replace the tabs with better HTML & CSS -->
 <div class="wrestler_show_wrapper">
     <p class="left one title grid-line"><%= @wrestler.name %></p>
 
     <p class="left two title grid-line" >GENERAL CARD</p>
 
-    <p class="col1 three grid-line">GC02: <%= @wrestler.gc02 %></p>
-    <p class="col1 four grid-line">GC03: <%= @wrestler.gc03 %></p>
-    <p class="col1 five grid-line">GC04: <%= @wrestler.gc04 %></p>
-    <p class="col1 six grid-line">GC05: <%= @wrestler.gc05 %></p>
-    <p class="col1 seven grid-line">GC06: <%= @wrestler.gc06 %></p>
+    <p class="col1 three grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.gc02 %></p>
+    <p class="col1 four grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.gc03 %></p>
+    <p class="col1 five grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.gc04 %></p>
+    <p class="col1 six grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.gc05 %></p>
+    <p class="col1 seven grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.gc06 %></p>
 
-    <p class="col2 three grid-line">GC07: <%= @wrestler.gc07 %></p>
-    <p class="col2 four grid-line">GC08: <%= @wrestler.gc08 %></p>
-    <p class="col2 five grid-line">GC09: <%= @wrestler.gc09 %></p>
-    <p class="col2 six grid-line">GC10: <%= @wrestler.gc10 %></p>
-    <p class="col2 seven grid-line">GC11: <%= @wrestler.gc11 %></p>
+    <p class="col2 three grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.gc07 %></p>
+    <p class="col2 four grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.gc08 %></p>
+    <p class="col2 five grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.gc09 %></p>
+    <p class="col2 six grid-line">&nbsp;10&nbsp;<%= @wrestler.gc10 %></p>
+    <p class="col2 seven grid-line">&nbsp;11&nbsp;<%= @wrestler.gc11 %></p>
     
-    <p class="left eight title grid-line">GC12: <%= @wrestler.gc12 %></p>
+    <p class="left eight title grid-line">12&nbsp;&nbsp;<%= @wrestler.gc12 %></p>
 
     <p class="left nine title grid-line">DEFENSIVE CARD</p>
-    <p class="col1 ten grid-line">DC02: <%= @wrestler.dc02 %></p>
-    <p class="col1 eleven grid-line">DC03: <%= @wrestler.dc03 %></p>
-    <p class="col1 twelve grid-line">DC04: <%= @wrestler.dc04 %></p>
-    <p class="col1 thirteen grid-line">DC05: <%= @wrestler.dc05 %></p>
-    <p class="col1 fourteen grid-line">DC06: <%= @wrestler.dc06 %></p>
+    <p class="col1 ten grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.dc02 %></p>
+    <p class="col1 eleven grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.dc03 %></p>
+    <p class="col1 twelve grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.dc04 %></p>
+    <p class="col1 thirteen grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.dc05 %></p>
+    <p class="col1 fourteen grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.dc06 %></p>
 
-    <p class="col2 ten grid-line">DC07: <%= @wrestler.dc07 %></p>
-    <p class="col2 eleven grid-line">DC08: <%= @wrestler.dc08 %></p>
-    <p class="col2 twelve grid-line">DC09: <%= @wrestler.dc09 %></p>
-    <p class="col2 thirteen grid-line">DC10: <%= @wrestler.dc10 %></p>
-    <p class="col2 fourteen grid-line">DC11: <%= @wrestler.dc11 %></p>
+    <p class="col2 ten grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.dc07 %></p>
+    <p class="col2 eleven grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.dc08 %></p>
+    <p class="col2 twelve grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.dc09 %></p>
+    <p class="col2 thirteen grid-line">&nbsp;10&nbsp;&nbsp;<%= @wrestler.dc10 %></p>
+    <p class="col2 fourteen grid-line">&nbsp;11&nbsp;&nbsp;<%= @wrestler.dc11 %></p>
       
-    <p class="left fifteen title grid-line">DC12: <%= @wrestler.dc12 %></p>
+    <p class="left fifteen title grid-line">12&nbsp;&nbsp;<%= @wrestler.dc12 %></p>
 
     <p class="left title grid-line">SPECIALTY:</p>
 
     <p class="left title grid-line"><%= @wrestler.specialty %></p>
 
-    <p class="left grid-line">1: <%= @wrestler.s1 %></p>
-    <p class="left grid-line">2: <%= @wrestler.s2 %></p>
-    <p class="left grid-line">3: <%= @wrestler.s3 %></p>
-    <p class="left grid-line">4: <%= @wrestler.s4 %></p>
-    <p class="left grid-line">5: <%= @wrestler.s5 %></p>
-    <p class="left grid-line">6: <%= @wrestler.s6 %></p>
+    <p class="left grid-line">&nbsp;1&nbsp;&nbsp;<%= @wrestler.s1 %></p>
+    <p class="left grid-line">&nbsp;2&nbsp;&nbsp;<%= @wrestler.s2 %></p>
+    <p class="left grid-line">&nbsp;3&nbsp;&nbsp;<%= @wrestler.s3 %></p>
+    <p class="left grid-line">&nbsp;4&nbsp;&nbsp;<%= @wrestler.s4 %></p>
+    <p class="left grid-line">&nbsp;5&nbsp;&nbsp;<%= @wrestler.s5 %></p>
+    <p class="left grid-line">&nbsp;6&nbsp;&nbsp;<%= @wrestler.s6 %></p>
 
-    <p class="left grid-line">SUB: <%= sub_and_tag_display(@wrestler.subx, @wrestler.suby) %></p>
-    <p class="left grid-line">TAG TEAM: <%= sub_and_tag_display(@wrestler.tagx, @wrestler.tagy) %></p>
-    <p class="left grid-line">PRIORITY: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
+    <p class="left grid-line">&nbsp;SUB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub_and_tag_display(@wrestler.subx, @wrestler.suby) %></p>
+    <p class="left grid-line">&nbsp;TAG TEAM:&nbsp;<%= sub_and_tag_display(@wrestler.tagx, @wrestler.tagy) %></p>
+    <p class="left grid-line">&nbsp;PRIORITY:&nbsp;&nbsp;<%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
 
     <!-- Right Side of Card -->
     <p class="right one grid-line title">OFFENSIVE CARD</p>
 
-    <p class="col3 two grid-line">OC02: <%= @wrestler.oc02 %></p> 
-    <p class="col3 three grid-line">OC03: <%= @wrestler.oc03 %></p>
-    <p class="col3 four grid-line">OC04: <%= @wrestler.oc04 %></p>
-    <p class="col3 five grid-line">OC05: <%= @wrestler.oc05 %></p>
-    <p class="col3 six grid-line">OC06: <%= @wrestler.oc06 %></p>
-    <p class="col3 seven grid-line">OC07: <%= @wrestler.oc07 %></p>
-    <p class="col3 eight grid-line">OC08: <%= @wrestler.oc08 %></p>
-    <p class="col3 nine grid-line">OC09: <%= @wrestler.oc09 %></p>
-    <p class="col3 ten grid-line">OC10: <%= @wrestler.oc10 %></p>
-    <p class="col3 eleven grid-line">OC11: <%= @wrestler.oc11 %></p>
-    <p class="col3 twelve grid-line">OC12: <%= @wrestler.oc12 %></p>
+    <p class="col3 two grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.oc02 %></p> 
+    <p class="col3 three grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.oc03 %></p>
+    <p class="col3 four grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.oc04 %></p>
+    <p class="col3 five grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.oc05 %></p>
+    <p class="col3 six grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.oc06 %></p>
+    <p class="col3 seven grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.oc07 %></p>
+    <p class="col3 eight grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.oc08 %></p>
+    <p class="col3 nine grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.oc09 %></p>
+    <p class="col3 ten grid-line">&nbsp;10&nbsp;&nbsp;<%= @wrestler.oc10 %></p>
+    <p class="col3 eleven grid-line">&nbsp;11&nbsp;&nbsp;<%= @wrestler.oc11 %></p>
+    <p class="col3 twelve grid-line">&nbsp;12&nbsp;&nbsp;<%= @wrestler.oc12 %></p>
 
     <p class="right thirteen grid-line title">=ROPES=</p>
 
-    <p class="col3 fourteen grid-line">2 <%= @wrestler.ro02 %></p>
-    <p class="col3 fifteen grid-line">3 <%= @wrestler.ro03 %></p>
-    <p class="col3 sixteen grid-line">4 <%= @wrestler.ro04 %></p>
-    <p class="col3 seventeen grid-line">5 <%= @wrestler.ro05 %></p>
-    <p class="col3 eighteen grid-line">6 <%= @wrestler.ro06 %></p>
-    <p class="col3 nineteen grid-line">7 <%= @wrestler.ro07 %></p>
-    <p class="col3 twenty grid-line">8 <%= @wrestler.ro08 %></p>
-    <p class="col3 twenty-one grid-line">9 <%= @wrestler.ro09 %></p>
-    <p class="col3 twenty-two grid-line">10 <%= @wrestler.ro10 %></p>
-    <p class="col3 twenty-three grid-line">11 <%= @wrestler.ro11 %></p>
-    <p class="col3 twenty-four grid-line">12 <%= @wrestler.ro12 %></p>
+    <p class="col3 fourteen grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.ro02 %></p>
+    <p class="col3 fifteen grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.ro03 %></p>
+    <p class="col3 sixteen grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.ro04 %></p>
+    <p class="col3 seventeen grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.ro05 %></p>
+    <p class="col3 eighteen grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.ro06 %></p>
+    <p class="col3 nineteen grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.ro07 %></p>
+    <p class="col3 twenty grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.ro08 %></p>
+    <p class="col3 twenty-one grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.ro09 %></p>
+    <p class="col3 twenty-two grid-line">&nbsp;10&nbsp;&nbsp;<%= @wrestler.ro10 %></p>
+    <p class="col3 twenty-three grid-line">&nbsp;11&nbsp;&nbsp;<%= @wrestler.ro11 %></p>
+    <p class="col3 twenty-four grid-line">&nbsp;12&nbsp;&nbsp;<%= @wrestler.ro12 %></p>
 
     <p class="col3 twenty-five grid-line title"><%= @wrestler.set %></p>
+    <p class="co13 twenty-six grid-line title">SPWG Card Maker</p>
 </div>
