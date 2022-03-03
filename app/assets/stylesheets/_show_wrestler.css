@@ -1,13 +1,15 @@
 /*Show Page*/
 .wrestler_show_wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr 2fr;
+  grid-template-columns: 1fr 1fr 2fr;
   max-width: 45em;
   margin-left: auto;
   margin-right: auto;
+  color: black;
+  background-color: white;
 }
 
-.wrapper p {
+.wrestler_show_wrapper p {
   margin: 1px;
 }
 
