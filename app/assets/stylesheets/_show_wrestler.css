@@ -10,11 +10,11 @@
 }
 
 .wrestler_show_wrapper p {
-  margin: 1px;
+  margin: 0px;
 }
 
 .grid-line {
-  border: 2px solid green;
+  border: 3px solid green;
 }
 
 
