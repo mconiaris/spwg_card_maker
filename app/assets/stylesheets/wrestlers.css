@@ -68,8 +68,30 @@ td a {
 
 /*Columns and rows for Show and Forms*/
 .grid-line {
+  border: 1px solid green;
+}
+
+.grid-line-bold {
   border: 2px solid green;
 }
+
+
+.left-grid-line-bold {
+  border: 2px solid green;
+}
+
+.right-grid-line-bold {
+  border: 2px solid green;
+}
+
+.top-grid-line-bold {
+  border: 2px solid green;
+}
+
+.bottom-grid-line-bold {
+  border: 2px solid green;
+}
+
 
 .left {
   grid-column-start: 1;

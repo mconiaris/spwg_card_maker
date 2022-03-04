@@ -10,7 +10,7 @@
 }
 
 .stats {
-  max-width: 20em;
+  max-width: 19em;
   padding-left: 10px;
 }
 
@@ -57,4 +57,22 @@
 
 .wrestler_show_wrapper p {
   margin: 0px;
+}
+
+
+/*Print Version of Wrestler Card*/
+.print_wrestler {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  max-width: 32em;
+  color: black;
+  background-color: white;
+}
+
+.print_wrestler p {
+  margin: 0px;
+  padding: 2px;
 }
