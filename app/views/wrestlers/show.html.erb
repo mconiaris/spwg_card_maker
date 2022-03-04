@@ -19,7 +19,7 @@
     <%= render "shared/show_wrestler", wrestler: @wrestler %>
 
     <div class="stats">
-        <p class="title grid-line">STATS</p>
+        <p class="title grid-line" #stats-title>STATS</p>
         <p>Tag Team %: <%= number_to_percentage((@wrestler.tt.to_f), precision: 0) %></p>
         <p>Overall Card Rating: <%= "%.1f" % @wrestler.card_rating %></p>
         <p>OC Probability: <%= number_to_percentage((@wrestler.oc_prob.to_f), precision: 0) %></p>
