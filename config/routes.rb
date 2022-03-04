@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'wrestlers_printer/show'
   get 'wrestler_templates/new'
   get 'tag_team_wrestlers/index'
   
