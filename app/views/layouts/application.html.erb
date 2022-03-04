@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
+    <!-- Find a better way to do this through a controller. -->
+    <% unless action_name == "print_wrestler" %>
+      <%= render "layouts/navbar" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

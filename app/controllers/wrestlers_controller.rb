@@ -78,6 +78,12 @@ class WrestlersController < ApplicationController
     render :new
   end
 
+  def print_wrestler
+    @wrestler = Wrestler.find(params[:id])
+
+    render 'shared/print_wrestler'
+  end
+
   private
 
   sort_parameter = ""

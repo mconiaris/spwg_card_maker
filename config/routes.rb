@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   get 'wrestlers/:id/dup_wrestler', to: 'wrestlers#dup_wrestler', as: :dup_wrestler
 
+  get 'wrestlers/:id/print_wrestler', to: 'wrestlers#print_wrestler', as: :print_wrestler
+
 end
