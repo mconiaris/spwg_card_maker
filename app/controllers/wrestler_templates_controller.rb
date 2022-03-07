@@ -4,135 +4,148 @@ class WrestlerTemplatesController < ApplicationController
   def new
     case params[:oc]
     when "6"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC", 
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "DC", 
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC" })
+      # 2/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc12: "OC" }))
     when "8"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "OC", 
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "DC",
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC/TT" })
+      # 3/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc11: "OC" }))
     when "11"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "OC", gc05: "DC", gc06: "DC", gc07: "DC",
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC/TT" })
+      # 4/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc10: "OC" }))
     when "14"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "OC", gc06: "DC", gc07: "DC",
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC/TT" })
+      # 5/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc09: "OC" }))
     when "17"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "DC",
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC/TT" })
+      # 6/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc08: "OC" }))
     when "19"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC/TT" })
+      # 7/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc07: "OC" }))
     when "22"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC" })
+      # 8/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc07: "OC", gc12: "OC" }))
     when "25"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "OC", 
-        gc12: "DC" })
+      # 9/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc07: "OC", gc11: "OC" }))
     when "28"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "DC",
-        gc08: "DC", gc09: "OC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 10/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc07: "OC", gc10: "OC" }))
     when "31"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "DC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 11/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc07: "OC", gc09: "OC" }))
     when "33"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 12/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc07: "OC", gc08: "OC" }))
     when "36"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC" })
+      # 13/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc07: "OC", gc10: "OC", gc12: "OC" }))
     when "39"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "OC",
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 14/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc10: "OC", 
+          gc12: "OC" }))
     when "42"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "OC", gc05: "DC", gc06: "DC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 15/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC" }))
     when "44"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "OC", gc06: "DC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 16/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc12: "OC" }))
     when "47"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC",
-        gc04: "DC", gc05: "OC", gc06: "DC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC" })
+      # 17/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc11: "OC" }))
     when "50"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "DC", gc11: "OC", 
-        gc12: "DC" })
+      # 18/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc10: "OC" }))
     when "53"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "DC", gc10: "OC", gc11: "DC", 
-        gc12: "DC" })
+      # 19/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc09: "OC" }))
     when "56"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 20/36
+      @wrestler = Wrestler.new(
+        get_initial_jobber_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc08: "OC" }))
     when "58"
-      @wrestler = Wrestler.new({ gc02: "OC", gc03: "DC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 21/36
+      @wrestler = Wrestler.new(
+        get_initial_wrestler_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc07: "OC" }))
     when "61"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "OC",
-        gc04: "DC", gc05: "DC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 22/36
+      @wrestler = Wrestler.new(
+        get_initial_wrestler_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc07: "OC", gc12: "OC" }))
     when "64"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "OC", gc05: "DC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 23/36
+      @wrestler = Wrestler.new(
+        get_initial_wrestler_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc07: "OC", gc11: "OC" }))
     when "67"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "OC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "DC", gc11: "DC", 
-        gc12: "DC" })
+      # 24/36
+      @wrestler = Wrestler.new(
+        get_initial_wrestler_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc07: "OC", gc10: "OC" }))
     when "69"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "OC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "DC", gc11: "DC", 
-        gc12: "OC" })
+      # 25/36
+      @wrestler = Wrestler.new(
+        get_initial_wrestler_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc07: "OC", gc09: "OC" }))
     when "72"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "OC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "DC", gc11: "OC", 
-        gc12: "DC" })
+      # 26/36
+      @wrestler = Wrestler.new(
+        get_initial_wrestler_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc07: "OC", gc08: "OC" }))
     when "75"
-      @wrestler = Wrestler.new({ gc02: "DC", gc03: "DC",
-        gc04: "DC", gc05: "OC", gc06: "OC", gc07: "OC",
-        gc08: "OC", gc09: "OC", gc10: "OC", gc11: "DC", 
-        gc12: "DC" })
+      # 27/36
+      @wrestler = Wrestler.new(
+        get_initial_wrestler_values({ gc02: "OC/TT", 
+          gc03: "OC", gc04: "OC", gc05: "OC", gc06: "OC", 
+          gc07: "OC", gc08: "OC", gc12: "OC" }))
     else
       @wrestler = Wrestler.new
     end
@@ -140,4 +153,38 @@ class WrestlerTemplatesController < ApplicationController
 
   private
 
+
+  def get_initial_wrestler_values(hash)
+    wrestler_values = get_gc_values
+
+    return wrestler_values.merge(hash, get_midcard_dc_values)
+  end
+
+  def get_initial_jobber_values(hash)
+    wrestler_values = get_gc_values
+
+    return wrestler_values.merge(hash, get_jobber_dc_values)
+  end
+
+
+  def get_gc_values
+    gc_values = { gc02: "DC", gc03: "DC", gc04: "DC", 
+      gc05: "DC", gc06: "DC", gc07: "DC", gc08: "DC", 
+      gc09: "DC", gc10: "DC", gc11: "DC", gc12: "DC" 
+    }
+  end
+
+  def get_jobber_dc_values
+    dc_values = { dc02: "Reverse", dc03: "A", dc04: "A", 
+      dc05: "B", dc06: "B", dc07: "B", dc08: "B", 
+      dc09: "A", dc10: "A", dc11: "A", dc12: "C" 
+    }
+  end
+
+  def get_midcard_dc_values
+    dc_values = { dc02: "B", dc03: "A", dc04: "Reverse", 
+      dc05: "B", dc06: "A", dc07: "A", dc08: "B", 
+      dc09: "C", dc10: "A", dc11: "B", dc12: "A" 
+    }
+  end
 end
