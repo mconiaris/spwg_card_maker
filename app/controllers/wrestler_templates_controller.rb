@@ -4,10 +4,7 @@ class WrestlerTemplatesController < ApplicationController
   def new
     case params[:oc]
     when "6"
-      @wrestler = Wrestler.new({ gc02: "OC/TT", gc03: "DC", 
-        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "DC", 
-        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
-        gc12: "OC" })
+      @wrestler = Wrestler.new(get_initial_wrestler_values({ gc02: "OC/TT", gc12: "OC" }))
     when "8"
       @wrestler = Wrestler.new({ gc02: "DC", gc03: "OC", 
         gc04: "DC", gc05: "DC", gc06: "DC", gc07: "DC",
@@ -140,4 +137,13 @@ class WrestlerTemplatesController < ApplicationController
 
   private
 
+
+  def get_initial_wrestler_values(hash)
+    wrestler_values = { gc02: "OC/TT", gc03: "DC", 
+        gc04: "DC", gc05: "DC", gc06: "DC", gc07: "DC", 
+        gc08: "DC", gc09: "DC", gc10: "DC", gc11: "DC", 
+        gc12: "OC" }
+
+    return wrestler_values.merge(hash)
+  end
 end
