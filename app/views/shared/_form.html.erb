@@ -1,218 +1,221 @@
 <!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
 <div class="wrestler-container">
 		
-	<div class="wrestler-wrapper grid-line">
+	<div class="wrestler-wrapper grid-line-bold">
 			<%= form_with model: wrestler, local: true, data: { turbo: false } do |form| %>
 				
-				<%= form.text_field :name, placeholder: "Name", class: "half-line grid-line-bold" %>
-				
-		    <div class="half-line grid-line-bold">GENERAL CARD</div>
+				<div class="form-container">
+					
+					<%= form.text_field :name, placeholder: "Name", class: "half-line grid-line-bold" %>
+					
+			    <div class="half-line grid-line-bold">GENERAL CARD</div>
 
-				<%= form.label 2, class: "r3" %><br>
-				<%= form.text_field :gc02, class: "r3 quarter-line-left"  %>
-				
-				<%= form.label 3, class: "r4" %><br>
-				<%= form.text_field :gc03, class: "r4" %>
-				
-				<%= form.label 4, class: "r5" %><br>
-				<%= form.text_field :gc04, class: "r5" %>
-				
-				<%= form.label 5, class: "r6" %><br>
-				<%= form.text_field :gc05, class: "r6" %>
-				
-				<%= form.label 6, class: "r7" %><br>
-				<%= form.text_field :gc06, class: "r7" %>
-				
-				<%= form.label 7, class: "r3" %><br>
-				<%= form.text_field :gc07, class: "r3" %>
-				
-				<%= form.label 8, class: "r4" %><br>
-				<%= form.text_field :gc08, class: "r4" %>
-				
-				<%= form.label 9, class: "r5" %><br>
-				<%= form.text_field :gc09, class: "r5" %>
-				
-				<%= form.label 10, class: "r6" %><br>
-				<%= form.text_field :gc10, class: "r6" %>
-				
-				<%= form.label 11, class: "r7" %><br>
-				<%= form.text_field :gc11, class: "r7" %>
-				
-				<%= form.label 12, class: "r8 c2" %><br>
-				<%= form.text_field :gc12, class: "r8 c3" %>
-				
-		    <div class="left-center r9 grid-line">DEFENSIVE CARD</div>
+					<%= form.label 2, class: "r3" %><br>
+					<%= form.text_field :gc02, class: "r3 quarter-line-left"  %>
+					
+					<%= form.label 3, class: "r4" %><br>
+					<%= form.text_field :gc03, class: "r4" %>
+					
+					<%= form.label 4, class: "r5" %><br>
+					<%= form.text_field :gc04, class: "r5" %>
+					
+					<%= form.label 5, class: "r6" %><br>
+					<%= form.text_field :gc05, class: "r6" %>
+					
+					<%= form.label 6, class: "r7" %><br>
+					<%= form.text_field :gc06, class: "r7" %>
+					
+					<%= form.label 7, class: "r3" %><br>
+					<%= form.text_field :gc07, class: "r3" %>
+					
+					<%= form.label 8, class: "r4" %><br>
+					<%= form.text_field :gc08, class: "r4" %>
+					
+					<%= form.label 9, class: "r5" %><br>
+					<%= form.text_field :gc09, class: "r5" %>
+					
+					<%= form.label 10, class: "r6" %><br>
+					<%= form.text_field :gc10, class: "r6" %>
+					
+					<%= form.label 11, class: "r7" %><br>
+					<%= form.text_field :gc11, class: "r7" %>
+					
+					<%= form.label 12, class: "r8 c2" %><br>
+					<%= form.text_field :gc12, class: "r8 c3" %>
+					
+			    <div class="left-center r9 grid-line">DEFENSIVE CARD</div>
 
-				<%= form.label 2, class: "r10 c1" %><br>
-				<%= form.text_field :dc02, class: "r10 c2" %>
-				
-				<%= form.label 3, class: "r11 c1" %><br>
-				<%= form.text_field :dc03, class: "r11 c2" %>
-				
-				<%= form.label 4, class: "r12 c1" %><br>
-				<%= form.text_field :dc04, class: "r12 c2" %>
-				
-				<%= form.label 5, class: "r13 c1" %><br>
-				<%= form.text_field :dc05, class: "r13 c2" %>
-				
-				<%= form.label 6, class: "r14 c1" %><br>
-				<%= form.text_field :dc06, class: "r14 c2" %>
-				
-				<%= form.label 7, class: "r10 c3" %><br>
-				<%= form.text_field :dc07, class: "r10 c4" %>
-				
-				<%= form.label 8, class: "r11 c3" %><br>
-				<%= form.text_field :dc08, class: "r11 c4" %>
-				
-				<%= form.label 9, class: "r12 c3" %><br>
-				<%= form.text_field :dc09, class: "r12 c4" %>
-				
-				<%= form.label 10, class: "r13 c3" %><br>
-				<%= form.text_field :dc10, class: "r13 c4" %>
-				
-				<%= form.label 11, class: "r14 c3" %><br>
-				<%= form.text_field :dc11, class: "r14 c4" %>
-				
-				<%= form.label 12, class: "r15 c2" %><br>
-				<%= form.text_field :dc12, class: "r15 c3" %>
-				
-		    <div class="left-center r16 grid-line">SPECIALTY:</div>
+					<%= form.label 2, class: "r10 c1" %><br>
+					<%= form.text_field :dc02, class: "r10 c2" %>
+					
+					<%= form.label 3, class: "r11 c1" %><br>
+					<%= form.text_field :dc03, class: "r11 c2" %>
+					
+					<%= form.label 4, class: "r12 c1" %><br>
+					<%= form.text_field :dc04, class: "r12 c2" %>
+					
+					<%= form.label 5, class: "r13 c1" %><br>
+					<%= form.text_field :dc05, class: "r13 c2" %>
+					
+					<%= form.label 6, class: "r14 c1" %><br>
+					<%= form.text_field :dc06, class: "r14 c2" %>
+					
+					<%= form.label 7, class: "r10 c3" %><br>
+					<%= form.text_field :dc07, class: "r10 c4" %>
+					
+					<%= form.label 8, class: "r11 c3" %><br>
+					<%= form.text_field :dc08, class: "r11 c4" %>
+					
+					<%= form.label 9, class: "r12 c3" %><br>
+					<%= form.text_field :dc09, class: "r12 c4" %>
+					
+					<%= form.label 10, class: "r13 c3" %><br>
+					<%= form.text_field :dc10, class: "r13 c4" %>
+					
+					<%= form.label 11, class: "r14 c3" %><br>
+					<%= form.text_field :dc11, class: "r14 c4" %>
+					
+					<%= form.label 12, class: "r15 c2" %><br>
+					<%= form.text_field :dc12, class: "r15 c3" %>
+					
+			    <div class="left-center r16 grid-line">SPECIALTY:</div>
 
-				<%= form.text_field :specialty, class: "left-center r17 grid-line" %>
-				
-				<%= form.label 1, class: "r18 c1" %><br>
-				<%= form.text_field :s1, class: "r18 spec-input" %>
-				
-				<%= form.label 2, class: "r19 c1" %><br>
-				<%= form.text_field :s2, class: "r19 spec-input" %>
-				
-				<%= form.label 3, class: "r20 c1" %><br>
-				<%= form.text_field :s3, class: "r20 spec-input" %>
-				
-				<%= form.label 4, class: "r21 c1" %><br>
-				<%= form.text_field :s4, class: "r21 spec-input" %>
-				
-				<%= form.label 5, class: "r22 c1" %><br>
-				<%= form.text_field :s5, class: "r22 spec-input" %>
-				
-				<%= form.label 6, class: "r23 c1" %><br>
-				<%= form.text_field :s6, class: "r23 spec-input" %>
-				
-		    <div class="form-sub-wrapper">
-		    	<div>SUB:</div>
-					<%= form.text_field :subx %>
-			    <div class="title">-</div>
-					<%= form.text_field :suby %>
-				
-			    <div>TAG TEAM:</div>
-					<%= form.text_field :tagx %>
-			    <div class="title">-</div>
-					<%= form.text_field :tagy %>
-				
-					<!-- TODO: Automate Pri-T value based on TT% -->
-			    <div>PRIORITY:</div>
-					<%= form.text_field :prioritys %>
-			  	<div class="title">/</div>
-					<%= form.text_field :priorityt %>
-				
-		    </div>
+					<%= form.text_field :specialty, class: "left-center r17 grid-line" %>
+					
+					<%= form.label 1, class: "r18 c1" %><br>
+					<%= form.text_field :s1, class: "r18 spec-input" %>
+					
+					<%= form.label 2, class: "r19 c1" %><br>
+					<%= form.text_field :s2, class: "r19 spec-input" %>
+					
+					<%= form.label 3, class: "r20 c1" %><br>
+					<%= form.text_field :s3, class: "r20 spec-input" %>
+					
+					<%= form.label 4, class: "r21 c1" %><br>
+					<%= form.text_field :s4, class: "r21 spec-input" %>
+					
+					<%= form.label 5, class: "r22 c1" %><br>
+					<%= form.text_field :s5, class: "r22 spec-input" %>
+					
+					<%= form.label 6, class: "r23 c1" %><br>
+					<%= form.text_field :s6, class: "r23 spec-input" %>
+					
+			    <div class="form-sub-wrapper">
+			    	<div>SUB:</div>
+						<%= form.text_field :subx %>
+				    <div class="title">-</div>
+						<%= form.text_field :suby %>
+					
+				    <div>TAG TEAM:</div>
+						<%= form.text_field :tagx %>
+				    <div class="title">-</div>
+						<%= form.text_field :tagy %>
+					
+						<!-- TODO: Automate Pri-T value based on TT% -->
+				    <div>PRIORITY:</div>
+						<%= form.text_field :prioritys %>
+				  	<div class="title">/</div>
+						<%= form.text_field :priorityt %>
+					
+			    </div>
 
-		    <p class="r27 left-note">Note: original came cards had exactly five "A" rolls.</p>
+			    <p class="r27 left-note">Note: original came cards had exactly five "A" rolls.</p>
 
 
-				<!-- Right Side of Card -->
-				<div class="right-center r1 grid-line" >OFFENSIVE CARD</div>
+					<!-- Right Side of Card -->
+					<div class="grid-line" >OFFENSIVE CARD</div>
 
-				<%= form.label 2, class: "r2 c5" %><br>
-				<%= form.text_field :oc02, class: "r2 c6" %>
-				
-				<%= form.label 3, class: "r3 c5" %><br>
-				<%= form.text_field :oc03, class: "r3 c6" %>
-				
-				<%= form.label 4, class: "r4 c5" %><br>
-				<%= form.text_field :oc04, class: "r4 c6" %>
-				
-				<%= form.label 5, class: "r5 c5" %><br>
-				<%= form.text_field :oc05, class: "r5 c6" %>
-				
-				<%= form.label 6, class: "r6 c5" %><br>
-				<%= form.text_field :oc06, class: "r6 c6" %>
-				
-				<%= form.label 7, class: "r7 c5" %><br>
-				<%= form.text_field :oc07, class: "r7 c6" %>
-				
-				<%= form.label 8, class: "r8 c5" %><br>
-				<%= form.text_field :oc08, class: "r8 c6" %>
-				
-				<%= form.label 9, class: "r9 c5" %><br>
-				<%= form.text_field :oc09, class: "r9 c6" %>
-				
-				<%= form.label 10, class: "r10 c5" %><br>
-				<%= form.text_field :oc10, class: "r10 c6" %>
-				
-				<%= form.label 11, class: "r11 c5" %><br>
-				<%= form.text_field :oc11, class: "r11 c6" %>
-				
-				<%= form.label 12, class: "r12 c5" %><br>
-				<%= form.text_field :oc12, class: "r12 c6" %>
-				
-		    <div class="right-center r13 grid-line">=ROPES=</div>
+					<%= form.label 2 %><br>
+					<%= form.text_field :oc02 %>
+					
+					<%= form.label 3 %><br>
+					<%= form.text_field :oc03 %>
+					
+					<%= form.label 4 %><br>
+					<%= form.text_field :oc04 %>
+					
+					<%= form.label 5 %><br>
+					<%= form.text_field :oc05 %>
+					
+					<%= form.label 6 %><br>
+					<%= form.text_field :oc06 %>
+					
+					<%= form.label 7 %><br>
+					<%= form.text_field :oc07 %>
+					
+					<%= form.label 8 %><br>
+					<%= form.text_field :oc08 %>
+					
+					<%= form.label 9 %><br>
+					<%= form.text_field :oc09 %>
+					
+					<%= form.label 10 %><br>
+					<%= form.text_field :oc10 %>
+					
+					<%= form.label 11 %><br>
+					<%= form.text_field :oc11 %>
+					
+					<%= form.label 12 %><br>
+					<%= form.text_field :oc12%>
+					
+			    <div class="grid-line">=ROPES=</div>
 
-				<%= form.label 2, class: "r14 c5" %><br>
-				<%= form.text_field :ro02, class: "r14 c6" %>
-				
-				<%= form.label 3, class: "r15 c5" %><br>
-				<%= form.text_field :ro03, class: "r15 c6" %>
-				
-				<%= form.label 4, class: "r16 c5" %><br>
-				<%= form.text_field :ro04, class: "r16 c6" %>
-				
-				<%= form.label 5, class: "r17 c5" %><br>
-				<%= form.text_field :ro05, class: "r17 c6" %>
-				
-				<%= form.label 6, class: "r18 c5" %><br>
-				<%= form.text_field :ro06, class: "r18 c6" %>
-				
-				<%= form.label 7, class: "r19 c5" %><br>
-				<%= form.text_field :ro07, class: "r19 c6" %>
-				
-				<%= form.label 8, class: "r20 c5" %><br>
-				<%= form.text_field :ro08, class: "r20 c6" %>
-				
-				<%= form.label 9, class: "r21 c5" %><br>
-				<%= form.text_field :ro09, class: "r21 c6" %>
-				
-				<%= form.label 10, class: "r22 c5" %><br>
-				<%= form.text_field :ro10, class: "r22 c6" %>
-				
-				<%= form.label 11, class: "r23 c5" %><br>
-				<%= form.text_field :ro11, class: "r23 c6" %>
-				
-				<%= form.label 12, class: "r24 c5" %><br>
-				<%= form.text_field :ro12, class: "r24 c6" %>
-				
-				<%= form.text_field :set, placeholder: "Set", class: "right-center r25 grid-line" %>
-				
-				<% if @wrestler.template == true %>
-					<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
-					<!-- TODO: Remove this from the current site. -->
-					<div class="right-center r26 grid-line">
-						<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
-					</div>
+					<%= form.label 2 %><br>
+					<%= form.text_field :ro02 %>
+					
+					<%= form.label 3 %><br>
+					<%= form.text_field :ro03 %>
+					
+					<%= form.label 4 %><br>
+					<%= form.text_field :ro04 %>
+					
+					<%= form.label 5 %><br>
+					<%= form.text_field :ro05 %>
+					
+					<%= form.label 6 %><br>
+					<%= form.text_field :ro06 %>
+					
+					<%= form.label 7 %><br>
+					<%= form.text_field :ro07 %>
+					
+					<%= form.label 8 %><br>
+					<%= form.text_field :ro08 %>
+					
+					<%= form.label 9 %><br>
+					<%= form.text_field :ro09 %>
+					
+					<%= form.label 10 %><br>
+					<%= form.text_field :ro10 %>
+					
+					<%= form.label 11 %><br>
+					<%= form.text_field :ro11 %>
+					
+					<%= form.label 12 %><br>
+					<%= form.text_field :ro12 %>
+					
+					<%= form.text_field :set, placeholder: "Set", class: "grid-line" %>
+					
+					<% if @wrestler.template == true %>
+						<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
+						<!-- TODO: Remove this from the current site. -->
+						<div class="grid-line">
+							<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
+						</div>
 
-					<div class="right-center r27 grid-line">
-						<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion" %>
-					</div>
-			<% end %>
+						<div class="grid-line">
+							<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion" %>
+						</div>
+				<% end %>
+				</div>
 			
-	    <p class="right-note r28">For Ropes moves with no points, please type "N/A"</p>
+	    <p>For Ropes moves with no points, please type "N/A"</p>
 
 
-			<div class="r30 c1">
+			<div>
 				<%= form.submit %>
 			</div>
 
-			<div class="r30 c4" id="cancel" >
+			<div id="cancel" >
 				<%= link_to 'Cancel', :back %>
 			</div>
 		<% end %>

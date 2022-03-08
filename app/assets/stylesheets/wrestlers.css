@@ -20,13 +20,13 @@
   background-color: white;
   color: black;*/
   /*font-size: 0.8em;*/
+  
 }
 
-.form {
+.form-container {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: auto;
-  
 }
 
 /*.wrestler-form {
