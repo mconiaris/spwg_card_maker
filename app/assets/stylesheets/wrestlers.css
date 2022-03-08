@@ -1,72 +1,40 @@
-// Place all the styles related to the Wrestlers controller here.
+/*// Place all the styles related to the Wrestlers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*/
 
 
-/*Index View*/
-/*TODO: Move to it's own CSS document.*/
-
-/*TODO: this empty CSS section needs to be here even though it's blank. I have no idea why.*/
-.wrestler-list {
-
+/*Wrestler Form and Show Views*/
+.wrestler-container {
+  display: inline-grid;
+  grid-template-columns: 2fr 1fr;
 }
 
-.wrestler-list {
-  max-height: 30em;
-  overflow-x:auto;
-  overflow-y: scroll;
+.wrestler-wrapper {
+  /*
+  column-gap: 5px;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border:5px solid green;
+  background-color: white;
+  color: black;*/
+  /*font-size: 0.8em;*/
+}
 
-  max-width: 60em;
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto;
+  
+}
+
+/*.wrestler-form {
+  max-width: 45em;
   margin-left: auto;
   margin-right: auto;
 }
-
-#wrestlers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  font-size: 15px;
-}
-
-th {
-  position: sticky;
-  top: 0;
-}
-
-#wrestlers td, #wrestlers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  color: black;
-}
-
-th a {
-  color: white;
-}
-
-td a {
-  color: blue;
-}
-
-#wrestlers tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-#wrestlers tr:nth-child(odd) {
-  background-color: #a2a2cd;
-}
-
-#wrestlers tr:hover {background-color: #ddd;}
-
-#wrestlers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #2383d5;
-  color: white;
-}
-
-.value {
-	text-align: right;
-}
+*/
 
 
 /*Columns and rows for Show and Forms*/
@@ -79,32 +47,27 @@ td a {
 }
 
 
-.left-grid-line-bold {
-  border: 2px solid green;
-}
-
-.right-grid-line-bold {
-  border: 2px solid green;
-}
-
-.top-grid-line-bold {
-  border: 2px solid green;
-}
-
-.bottom-grid-line-bold {
-  border: 2px solid green;
-}
-
-
-.left {
+.half-line {
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
+.quarter-line-left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.quarter-line-right {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+/*
+
 .right {
   grid-column: 3;
 }
-
+*/
 
 /*columns*/
 .c1 {
@@ -118,7 +81,7 @@ td a {
 .c3 {
   grid-column: 3;
 }
-
+/*
 .c4 {
   grid-column: 4;
 }
@@ -134,7 +97,7 @@ td a {
 .c7 {
   grid-column: 7;
 }
-
+*/
 
 /*Grid rows*/
 .r1 {
@@ -256,3 +219,70 @@ td a {
 .r30 {
   grid-row: 30;
 }
+
+/*Index View*/
+/*TODO: Move to it's own CSS document.*/
+
+/*TODO: this empty CSS section needs to be here even though it's blank. I have no idea why.*/
+.wrestler-list {
+
+}
+
+.wrestler-list {
+  max-height: 30em;
+  overflow-x:auto;
+  overflow-y: scroll;
+
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wrestlers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+th {
+  position: sticky;
+  top: 0;
+}
+
+#wrestlers td, #wrestlers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: black;
+}
+
+th a {
+  color: white;
+}
+
+td a {
+  color: blue;
+}
+
+#wrestlers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#wrestlers tr:nth-child(odd) {
+  background-color: #a2a2cd;
+}
+
+#wrestlers tr:hover {background-color: #ddd;}
+
+#wrestlers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2383d5;
+  color: white;
+}
+
+.value {
+	text-align: right;
+}
+
+
