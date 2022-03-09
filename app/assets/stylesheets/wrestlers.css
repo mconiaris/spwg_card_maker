@@ -27,6 +27,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: auto;
+  background-color: white;
+  color: black;
 }
 
 /*.wrestler-form {
@@ -50,14 +52,42 @@
 .half-line {
   grid-column-start: 1;
   grid-column-end: 3;
+  text-align: center;
 }
 
 .quarter-line-left {
   grid-column-start: 1;
   grid-column-end: 2;
+
+  display: inline-grid;
+  grid-template-columns: 1fr, 3fr;
 }
 
 .quarter-line-right {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  
+  display: inline-grid;
+  grid-template-columns: 1fr, 3fr;
+}
+
+
+.gcdc-left-number {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.gcdc-left-value {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.gcdc-right-number {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.gcdc-right-value {
   grid-column-start: 2;
   grid-column-end: 3;
 }
