@@ -5,13 +5,29 @@ input {
   line-height: 1em;
 }
 
-#cancel {
+
+/*Submit & Cancel Buttons*/
+.submit-cancel-container {
+  display: grid;
+  grid-template-columns: 1em, 1em;
+}
+
+#submit_button {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cancel-button {
   background-color: rgb(239, 239, 239);
   border: 1px solid black;
   text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
-#cancel a {
+#cancel-button a {
   padding-left:  5px;
   padding-right: 5px;
   color: black;

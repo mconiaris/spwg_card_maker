@@ -145,12 +145,7 @@
 						<%= form.text_field :prioritys %>
 				  	<div class="title">/</div>
 						<%= form.text_field :priorityt %>
-					
 			    </div>
-
-			    <p class="r27">Note: original came cards had exactly five "A" rolls.</p>
-
-
 
 					<!-- Right Side of Card -->
 					<div class="r1 oc-ropes grid-line-bold" >OFFENSIVE CARD</div>
@@ -200,69 +195,85 @@
 						<%= form.text_field :oc12, class: "r11" %>
 					</div>
 					
-					
-			    <div class="grid-line">=ROPES=</div>
+			    <div class="r13 oc-ropes grid-line-bold">=ROPES=</div>
 
-					<%= form.label 2 %><br>
-					<%= form.text_field :ro02 %>
+			    <div class="r14 oc-ropes grid-line">
+						<%= form.label 2, class: "r14" %>
+						<%= form.text_field :ro02, class: "r14" %>
+			    </div>
+			    <div class="r15 oc-ropes grid-line">
+						<%= form.label 3, class: "r15" %>
+						<%= form.text_field :ro03, class: "r15" %>
+			    </div>
+					<div class="r16 oc-ropes grid-line">
+						<%= form.label 4, class: "r16" %>
+						<%= form.text_field :ro04, class: "r16" %>
+					</div>
+					<div class="r17 oc-ropes grid-line">
+						<%= form.label 5, class: "r17" %>
+						<%= form.text_field :ro05, class: "r17" %>
+					</div>
+					<div class="r18 oc-ropes grid-line">
+						<%= form.label 6, class: "r18" %>
+						<%= form.text_field :ro06, class: "r18" %>
+					</div>
+					<div class="r19 oc-ropes grid-line">
+						<%= form.label 7, class: "r19" %>
+						<%= form.text_field :ro07, class: "r19" %>
+					</div>
+					<div class="r20 oc-ropes grid-line">
+						<%= form.label 8, class: "r20" %>
+						<%= form.text_field :ro08, class: "r20" %>
+					</div>
+					<div class="r21 oc-ropes grid-line">
+						<%= form.label 9, class: "r21" %>
+						<%= form.text_field :ro09, class: "r21" %>
+					</div>
+					<div class="r22 oc-ropes grid-line">
+						<%= form.label 10, class: "r22" %>
+						<%= form.text_field :ro10, class: "r22" %>
+					</div>
+					<div class="r23 oc-ropes grid-line">
+						<%= form.label 11, class: "r23" %>
+						<%= form.text_field :ro11, class: "r23" %>
+					</div>
+					<div class="r24 oc-ropes grid-line">
+						<%= form.label 12, class: "r24" %>
+						<%= form.text_field :ro12, class: "r24" %>
+					</div>
 					
-					<%= form.label 3 %><br>
-					<%= form.text_field :ro03 %>
-					
-					<%= form.label 4 %><br>
-					<%= form.text_field :ro04 %>
-					
-					<%= form.label 5 %><br>
-					<%= form.text_field :ro05 %>
-					
-					<%= form.label 6 %><br>
-					<%= form.text_field :ro06 %>
-					
-					<%= form.label 7 %><br>
-					<%= form.text_field :ro07 %>
-					
-					<%= form.label 8 %><br>
-					<%= form.text_field :ro08 %>
-					
-					<%= form.label 9 %><br>
-					<%= form.text_field :ro09 %>
-					
-					<%= form.label 10 %><br>
-					<%= form.text_field :ro10 %>
-					
-					<%= form.label 11 %><br>
-					<%= form.text_field :ro11 %>
-					
-					<%= form.label 12 %><br>
-					<%= form.text_field :ro12 %>
-					
-					<%= form.text_field :set, placeholder: "Set", class: "grid-line" %>
+					<%= form.text_field :set, placeholder: "Set", class: "r25 oc-ropes grid-line" %>
 					
 					<% if @wrestler.template == true %>
 						<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
 						<!-- TODO: Remove this from the current site. -->
 						<div class="grid-line">
-							<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
+							<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division", class: "r26 oc-ropes grid-line" %>
 						</div>
 
 						<div class="grid-line">
-							<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion" %>
+							<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion", class: "r27 oc-ropes grid-line" %>
 						</div>
 				<% end %>
 				</div>
+
+				<div class="r27 submit-cancel-container">
+					<div id="submit_button">
+						<%= form.submit %>
+					</div>
+
+					<div id="cancel-button" >
+						<%= link_to 'Cancel', :back %>
+					</div>
+				</div>
 			
-	    <p>For Ropes moves with no points, please type "N/A"</p>
-
-
-			<div>
-				<%= form.submit %>
-			</div>
-
-			<div id="cancel" >
-				<%= link_to 'Cancel', :back %>
-			</div>
 		<% end %>
 	</div> <!-- wrestler-wrapper -->
+
+  <p>Note: original came cards had exactly five "A" rolls.</p>
+  <p>For Ropes moves with no points, please type "N/A"</p>
+
+
 
   <!-- Third Column -->
   <!-- TODO: DRY stats presentation with show view. -->
