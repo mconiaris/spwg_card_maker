@@ -118,14 +118,15 @@
   grid-row-start: 24;
 }
 
+/*OC & Ropes*/
+.oc-ropes {
+  grid-column-start: 3;
+  grid-column-end: 3;
 
-
-/*
-
-.right {
-  grid-column: 3;
+  display: inline-grid;
+  grid-template-columns: 1fr, 5fr;
 }
-*/
+
 
 /*columns*/
 .c1 {
