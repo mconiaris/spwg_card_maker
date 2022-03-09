@@ -1,5 +1,13 @@
 /*This styles the wrestler form into specific rows and columns.*/
 
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto;
+  background-color: white;
+  color: black;
+}
+
 
 input {
   line-height: 1em;

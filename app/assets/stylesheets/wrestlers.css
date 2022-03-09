@@ -7,28 +7,11 @@
 /*Wrestler Form and Show Views*/
 .wrestler-container {
   display: inline-grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr, 1fr;
 }
 
 .wrestler-wrapper {
-  /*
-  column-gap: 5px;
-  justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border:5px solid green;
-  background-color: white;
-  color: black;*/
-  /*font-size: 0.8em;*/
   
-}
-
-.form-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: auto;
-  background-color: white;
-  color: black;
 }
 
 /*.wrestler-form {
