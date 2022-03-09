@@ -107,26 +107,27 @@
 					</div>
 					
 			    <div class="half-line r16 grid-line-bold">SPECIALTY:</div>
+					<%= form.text_field :specialty, class: "half-line r17 grid-line" %>
 
-					<%= form.text_field :specialty, class: "left-center r17 grid-line" %>
+					<div class="specialty-wrapper half-line">
+						<%= form.label 1, class: "specialty-number r18" %>
+						<%= form.text_field :s1, class: "specialty-value r18" %>
 					
-					<%= form.label 1, class: "r18 c1" %><br>
-					<%= form.text_field :s1, class: "r18 spec-input" %>
-					
-					<%= form.label 2, class: "r19 c1" %><br>
-					<%= form.text_field :s2, class: "r19 spec-input" %>
-					
-					<%= form.label 3, class: "r20 c1" %><br>
-					<%= form.text_field :s3, class: "r20 spec-input" %>
-					
-					<%= form.label 4, class: "r21 c1" %><br>
-					<%= form.text_field :s4, class: "r21 spec-input" %>
-					
-					<%= form.label 5, class: "r22 c1" %><br>
-					<%= form.text_field :s5, class: "r22 spec-input" %>
-					
-					<%= form.label 6, class: "r23 c1" %><br>
-					<%= form.text_field :s6, class: "r23 spec-input" %>
+						<%= form.label 2, class: "r19 specialty-number" %><br>
+						<%= form.text_field :s2, class: "r19 specialty-value" %>
+						
+						<%= form.label 3, class: "r20 specialty-number" %><br>
+						<%= form.text_field :s3, class: "r20 specialty-value" %>
+						
+						<%= form.label 4, class: "r21 specialty-number" %><br>
+						<%= form.text_field :s4, class: "r21 specialty-value" %>
+						
+						<%= form.label 5, class: "r22 specialty-number" %><br>
+						<%= form.text_field :s5, class: "r22 specialty-value" %>
+						
+						<%= form.label 6, class: "r23 specialty-number" %><br>
+						<%= form.text_field :s6, class: "r23 specialty-value" %>
+					</div>
 					
 			    <div class="form-sub-wrapper">
 			    	<div>SUB:</div>
