@@ -25,12 +25,7 @@ input {
 }
 
 
-/*.form-sub-wrapper {
-  display: grid;
-  grid-template-columns: 5.5em 2em 1em 2em;
-  grid-auto-rows: 1.3em;
-  grid-row-start: 24;
-}
+/*
 
 .left-center {
   grid-column-start: 1;
@@ -54,7 +49,4 @@ input {
   grid-column-end: 7;
 }
 
-.spec-input {
-  grid-column-start: 2;
-  grid-column-end: 5;
 }*/
