@@ -14,13 +14,6 @@
   
 }
 
-/*.wrestler-form {
-  max-width: 45em;
-  margin-left: auto;
-  margin-right: auto;
-}
-*/
-
 
 /*Columns and rows for Show and Forms*/
 .grid-line {
@@ -30,7 +23,6 @@
 .grid-line-bold {
   border: 2px solid green;
 }
-
 
 .half-line {
   grid-column-start: 1;
@@ -76,6 +68,7 @@
   grid-column-end: 3;
 }
 
+
 /*Specialty*/
 .specialty-wrapper {
   display: inline-grid;
@@ -101,6 +94,7 @@
   grid-row-start: 24;
 }
 
+
 /*OC & Ropes*/
 .oc-ropes {
   grid-column-start: 3;
@@ -123,23 +117,7 @@
 .c3 {
   grid-column: 3;
 }
-/*
-.c4 {
-  grid-column: 4;
-}
 
-.c5 {
-  grid-column: 5;
-}
-
-.c6 {
-  grid-column: 6;
-}
-
-.c7 {
-  grid-column: 7;
-}
-*/
 
 /*Grid rows*/
 .r1 {
@@ -261,6 +239,7 @@
 .r30 {
   grid-row: 30;
 }
+
 
 /*Index View*/
 /*TODO: Move to it's own CSS document.*/

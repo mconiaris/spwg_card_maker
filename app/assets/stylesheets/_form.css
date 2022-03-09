@@ -47,30 +47,3 @@ input {
   /*background-color: grey;*/
   background-color: #e9e3e3
 }
-
-
-/*
-
-.left-center {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  text-align: center;
-}
-
-.right-center {
-  grid-column-start: 5;
-  grid-column-end: 7;
-  text-align: center;
-}
-
-.left-note {
-  grid-column-start: 1;
-  grid-column-end: 5;
-}
-
-.right-note {
-  grid-column-start: 5;
-  grid-column-end: 7;
-}
-
-}*/
