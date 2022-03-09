@@ -27,7 +27,6 @@
 .half-line {
   grid-column-start: 1;
   grid-column-end: 3;
-  text-align: center;
 }
 
 
@@ -74,7 +73,7 @@
 /*Specialty*/
 .specialty-wrapper {
   display: inline-grid;
-  grid-template-columns: 1fr, 5fr;
+  grid-template-columns: 1em, 5fr;
 }
 
 .specialty-number {
