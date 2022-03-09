@@ -57,22 +57,30 @@
 							<%= form.text_field :gc12 %>
 						</div>
 					
-			    <div class="left-center r9 grid-line">DEFENSIVE CARD</div>
+			    <div class="half-line r9 grid-line-bold">DEFENSIVE CARD</div>
 
-					<%= form.label 2, class: "r10 c1" %><br>
-					<%= form.text_field :dc02, class: "r10 c2" %>
+			    <div class="r10 quarter-line-left">
+						<%= form.label 2, class: "r10 gcdc-left-number" %>
+						<%= form.text_field :dc02, class: "r10 gcdc-left-value" %>
+			    </div>
+			    <div class="r11 quarter-line-left">
+						<%= form.label 3, class: "r11 gcdc-left-number" %><br>
+						<%= form.text_field :dc03, class: "r11 gcdc-left-value" %>
+			    </div>
+			    <div class="r12 quarter-line-left">
+						<%= form.label 4, class: "r12 gcdc-left-number" %><br>
+						<%= form.text_field :dc04, class: "r12 gcdc-left-value" %>
+			    </div>
+					<div class="r13 quarter-line-left">
+						<%= form.label 5, class: "r13 gcdc-left-number" %><br>
+						<%= form.text_field :dc05, class: "r13 gcdc-left-value" %>
+					</div>
+					<div class="r14 quarter-line-left">
+						<%= form.label 6, class: "r14 gcdc-left-number" %><br>
+						<%= form.text_field :dc06, class: "r14 gcdc-left-value" %>
+					</div>
 					
-					<%= form.label 3, class: "r11 c1" %><br>
-					<%= form.text_field :dc03, class: "r11 c2" %>
 					
-					<%= form.label 4, class: "r12 c1" %><br>
-					<%= form.text_field :dc04, class: "r12 c2" %>
-					
-					<%= form.label 5, class: "r13 c1" %><br>
-					<%= form.text_field :dc05, class: "r13 c2" %>
-					
-					<%= form.label 6, class: "r14 c1" %><br>
-					<%= form.text_field :dc06, class: "r14 c2" %>
 					
 					<%= form.label 7, class: "r10 c3" %><br>
 					<%= form.text_field :dc07, class: "r10 c4" %>
