@@ -210,8 +210,8 @@
 						<%= form.text_field :ro04, class: "r1" %>
 					</div>
 					<div class="r17 oc-ropes grid-line">
-						<%= form.label 5, class: "r1" %>
-						<%= form.text_field :ro05, class: "r1" %>
+						<%= form.label 5, class: "r1 c1" %>
+						<%= form.text_field :ro05, class: "r1 c2" %>
 					<div>
 					<div class="r18 oc-ropes grid-line">
 						<%= form.label 6, class: "r1" %>
@@ -277,7 +277,305 @@
 
   <!-- Third Column -->
   <!-- TODO: DRY stats presentation with show view. -->
-  <div class="wrestler-stats c2">
+  <div class="wrestler-stats r1 c3">
+  	<% if wrestler.errors.any? %>
+    	<%= render 'shared/form_errors', wrestler: wrestler %>
+    <% else %>
+    	<%= render 'shared/form_stats', wrestler: wrestler %>
+    <% end %> <!-- form-with -->
+	</div> <!-- wrestler-stats -->
+
+</div> <!-- wrestler-container -->
+
+
+
+
+
+
+
+
+
+
+<!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
+<div class="wrestler-container">
+		
+	<div class="wrestler-wrapper grid-line-bold">
+			<%= form_with model: wrestler, local: true, data: { turbo: false } do |form| %>
+				
+				<div class="form-container">
+					
+					<%= form.text_field :name, placeholder: "Name", class: "half-line title grid-line-bold" %>
+					
+			    <div class="half-line title grid-line-bold">GENERAL CARD</div>
+
+						<div class="r3 quarter-line-left">
+							<%= form.label 2, class: "r1 gcdc-left-number" %>
+							<%= form.text_field :gc02, class: "r1 gcdc-left-value" %>
+						</div>
+						<div class="r4 quarter-line-left">
+							<%= form.label 3, class: "r1 gcdc-left-number" %>
+							<%= form.text_field :gc03, class: "r1 gcdc-left-value" %>
+						</div>
+						<div class="r5 quarter-line-left">
+							<%= form.label 4, class: "r1 gcdc-left-number" %>
+							<%= form.text_field :gc04, class: "r1 gcdc-left-value" %>
+						</div>
+						<div class="r6 quarter-line-left">
+							<%= form.label 5, class: "r gcdc-left-number" %>
+							<%= form.text_field :gc05, class: "r1 gcdc-left-value" %>
+						</div>
+						<div class="r7 quarter-line-left">
+							<%= form.label 6, class: "r1 gcdc-left-number" %>
+							<%= form.text_field :gc06, class: "r1 gcdc-left-value" %>
+						</div>
+
+						<div class="r3 quarter-line-right">
+							<%= form.label 7, class: "r1 gcdc-right-number" %>
+							<%= form.text_field :gc07, class: "r1 gcdc-right-value" %>
+						</div>
+						<div class="r4 quarter-line-right">
+							<%= form.label 8, class: "r1 gcdc-right-number" %>
+							<%= form.text_field :gc08, class: "r1 gcdc-right-value" %>
+						</div>
+						<div class="r5 quarter-line-right">
+							<%= form.label 9, class: "r1 gcdc-right-number" %>
+							<%= form.text_field :gc09, class: "r1 gcdc-right-value" %>
+						</div>
+						<div class="r6 quarter-line-right">
+							<%= form.label 10, class: "r1 gcdc-right-number" %>
+							<%= form.text_field :gc10, class: "r1 gcdc-right-value" %>
+						</div>
+						<div class="r7 quarter-line-right">
+							<%= form.label 11, class: "r1 gcdc-right-number" %>
+							<%= form.text_field :gc11, class: "r1 gcdc-right-number" %>
+						</div>
+					
+						<div class="r8 half-line">
+							<%= form.label 12 %>
+							<%= form.text_field :gc12 %>
+						</div>
+					
+			    <div class="half-line r9 title grid-line-bold">DEFENSIVE CARD</div>
+
+			    <div class="r10 quarter-line-left">
+						<%= form.label 2, class: "r1 gcdc-left-number" %>
+						<%= form.text_field :dc02, class: "r1 gcdc-left-value" %>
+			    </div>
+			    <div class="r11 quarter-line-left">
+						<%= form.label 3, class: "r1 gcdc-left-number" %>
+						<%= form.text_field :dc03, class: "r1 gcdc-left-value" %>
+			    </div>
+			    <div class="r12 quarter-line-left">
+						<%= form.label 4, class: "r1 gcdc-left-number" %>
+						<%= form.text_field :dc04, class: "r1 gcdc-left-value" %>
+			    </div>
+					<div class="r13 quarter-line-left">
+						<%= form.label 5, class: "r1 gcdc-left-number" %>
+						<%= form.text_field :dc05, class: "r1 gcdc-left-value" %>
+					</div>
+					<div class="r14 quarter-line-left">
+						<%= form.label 6, class: "r1 gcdc-left-number" %>
+						<%= form.text_field :dc06, class: "r1 gcdc-left-value" %>
+					</div>
+					
+					<div class="r10 quarter-line-right">
+						<%= form.label 7, class: "r1 gcdc-right-number" %>
+						<%= form.text_field :dc07, class: "r1 gcdc-right-value" %>
+					</div>
+					<div class="r11 quarter-line-right">
+						<%= form.label 8, class: "r1 gcdc-right-number" %>
+						<%= form.text_field :dc08, class: "r1 gcdc-right-value" %>
+					</div>
+					<div class="r12 quarter-line-right">
+						<%= form.label 9, class: "r1 gcdc-right-number" %>
+						<%= form.text_field :dc09, class: "r1 gcdc-right-value" %>
+					</div>
+					<div class="r13 quarter-line-right">
+						<%= form.label 10, class: "r1 gcdc-right-number" %>
+						<%= form.text_field :dc10, class: "r1 gcdc-right-value" %>
+					</div>
+					<div class="r14 quarter-line-right">
+						<%= form.label 11, class: "r1 gcdc-right-number" %>
+						<%= form.text_field :dc11, class: "r1 gcdc-right-number" %>
+					</div>
+					
+					<div class="r15 half-line">
+						<%= form.label 12 %>
+						<%= form.text_field :dc12 %>
+					</div>
+					
+			    <div class="half-line r16 title grid-line-bold">SPECIALTY:</div>
+					<%= form.text_field :specialty, class: "half-line r17 title grid-line" %>
+
+					<div class="specialty-wrapper half-line">
+						<%= form.label 1, class: "specialty-number r1" %>
+						<%= form.text_field :s1, class: "specialty-value r1" %>
+					
+						<%= form.label 2, class: "r2 specialty-number" %><br>
+						<%= form.text_field :s2, class: "r2 specialty-value" %>
+						
+						<%= form.label 3, class: "r3 specialty-number" %><br>
+						<%= form.text_field :s3, class: "r3 specialty-value" %>
+						
+						<%= form.label 4, class: "r4 specialty-number" %><br>
+						<%= form.text_field :s4, class: "r4 specialty-value" %>
+						
+						<%= form.label 5, class: "r5 specialty-number" %><br>
+						<%= form.text_field :s5, class: "r5 specialty-value" %>
+						
+						<%= form.label 6, class: "r6 specialty-number" %><br>
+						<%= form.text_field :s6, class: "r6 specialty-value" %>
+					</div>
+					
+			    <div class="r24 form-sub-wrapper">
+			    	<div>SUB:</div>
+						<%= form.text_field :subx %>
+				    <div class="title">-</div>
+						<%= form.text_field :suby %>
+					
+				    <div>TAG TEAM:</div>
+						<%= form.text_field :tagx %>
+				    <div class="title">-</div>
+						<%= form.text_field :tagy %>
+					
+						<!-- TODO: Automate Pri-T value based on TT% -->
+				    <div>PRIORITY:</div>
+						<%= form.text_field :prioritys %>
+				  	<div class="title">/</div>
+						<%= form.text_field :priorityt %>
+			    </div>
+
+					<!-- Right Side of Card -->
+					<div class="r1 oc-ropes title grid-line-bold" >OFFENSIVE CARD</div>
+
+					<div class="r2 oc-ropes grid-line">
+						<%= form.label 2, class: "r1" %>
+						<%= form.text_field :oc02, class: "r1" %>
+					</div>
+					<div class="r3 oc-ropes grid-line">
+						<%= form.label 3, class: "r1" %>
+						<%= form.text_field :oc03, class: "r1" %>
+					</div>
+					<div class="r4 oc-ropes grid-line">
+						<%= form.label 4, class: "r1" %>
+						<%= form.text_field :oc04, class: "r1" %>
+					</div>
+					<div class="r5 oc-ropes grid-line">
+						<%= form.label 5, class: "r1" %>
+						<%= form.text_field :oc05, class: "r1" %>
+					</div>
+					<div class="r6 oc-ropes grid-line">
+						<%= form.label 6, class: "r1" %>
+						<%= form.text_field :oc06, class: "r1" %>
+					</div>
+					<div class="r7 oc-ropes grid-line">
+						<%= form.label 7, class: "r1" %>
+						<%= form.text_field :oc07, class: "r1" %>
+					</div>
+					<div class="r8 oc-ropes grid-line">
+						<%= form.label 8, class: "r1" %>
+						<%= form.text_field :oc08, class: "r1" %>
+					</div>
+					<div class="r9 oc-ropes grid-line">
+						<%= form.label 9, class: "r1" %>
+						<%= form.text_field :oc09, class: "r1" %>
+					</div>
+					<div class="r10 oc-ropes grid-line">
+						<%= form.label 10, class: "r1" %>
+						<%= form.text_field :oc10, class: "r1" %>
+					</div>
+					<div class="r11 oc-ropes grid-line">
+						<%= form.label 11, class: "r1" %>
+						<%= form.text_field :oc11, class: "r1" %>
+					</div>
+					<div class="r12 oc-ropes grid-line">
+						<%= form.label 12, class: "r1" %>
+						<%= form.text_field :oc12, class: "r1" %>
+					</div>
+					
+			    <div class="r13 oc-ropes title grid-line-bold">=ROPES=</div>
+
+			    <div class="r14 oc-ropes grid-line">
+						<%= form.label 2, class: "r1" %>
+						<%= form.text_field :ro02, class: "r1" %>
+			    </div>
+			    <div class="r15 oc-ropes grid-line">
+						<%= form.label 3, class: "r1" %>
+						<%= form.text_field :ro03, class: "r1" %>
+			    </div>
+					<div class="r16 oc-ropes grid-line">
+						<%= form.label 4, class: "r1" %>
+						<%= form.text_field :ro04, class: "r1" %>
+					</div>
+					<div class="r17 oc-ropes grid-line">
+						<%= form.label 5, class: "r1 c1" %>
+						<%= form.text_field :ro05, class: "r1 c2" %>
+					<div>
+					<div class="r18 oc-ropes grid-line">
+						<%= form.label 6, class: "r1" %>
+						<%= form.text_field :ro06, class: "r1" %>
+					</div>
+					<div class="r19 oc-ropes grid-line">
+						<%= form.label 7, class: "r1" %>
+						<%= form.text_field :ro07, class: "r1" %>
+					<div>
+					<div class="r20 oc-ropes grid-line">
+						<%= form.label 8, class: "r1" %>
+						<%= form.text_field :ro08, class: "r1" %>
+					</div>
+					<div class="r21 oc-ropes grid-line">
+						<%= form.label 9, class: "r1" %>
+						<%= form.text_field :ro09, class: "r1" %>
+					</div>
+					<div class="r22 oc-ropes grid-line">
+						<%= form.label 10, class: "r1" %>
+						<%= form.text_field :ro10, class: "r1" %>
+					</div>
+					<div class="r23 oc-ropes grid-line">
+						<%= form.label 11, class: "r1" %>
+						<%= form.text_field :ro11, class: "r1" %>
+					</div>
+					<div class="r24 oc-ropes grid-line">
+						<%= form.label 12, class: "r1" %>
+						<%= form.text_field :ro12, class: "r1" %>
+					</div>
+					
+					<%= form.text_field :set, placeholder: "Set", class: "r25 oc-ropes title grid-line" %>
+					
+					<% if @wrestler.template == true %>
+						<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
+						<!-- TODO: Remove this from the current site. -->
+						<div class="grid-line">
+							<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division", class: "r26 oc-ropes grid-line" %>
+						</div>
+
+						<div class="grid-line">
+							<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion", class: "r27 oc-ropes grid-line" %>
+						</div>
+				<% end %>
+				</div>
+
+				<div class="r27 submit-cancel-container">
+					<div id="submit_button">
+						<%= form.submit %>
+					</div>
+
+					<div id="cancel-button" >
+						<%= link_to 'Cancel', :back %>
+					</div>
+				</div>
+			
+		<% end %>
+	</div> <!-- wrestler-wrapper -->
+
+  <p>Note: original came cards had exactly five "A" rolls.</p>
+  <p>For Ropes moves with no points, please type "N/A"</p>
+
+
+
+  <!-- Third Column -->
+  <!-- TODO: DRY stats presentation with show view. -->
+  <div class="wrestler-stats r1 c3">
   	<% if wrestler.errors.any? %>
     	<%= render 'shared/form_errors', wrestler: wrestler %>
     <% else %>
