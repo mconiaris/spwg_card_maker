@@ -4,16 +4,6 @@
 */
 
 
-/*Wrestler Form and Show Views*/
-.wrestler-container {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr, 1fr;
-}
-
-.wrestler-wrapper {
-  
-}
-
 
 /*Columns and rows for Show and Forms*/
 .grid-line {
@@ -24,86 +14,6 @@
   border: 2px solid green;
 }
 
-.half-line {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
-
-/*GC & DC*/
-.quarter-line-left {
-  grid-column-start: 1;
-  grid-column-end: 2;
-
-  display: inline-grid;
-  grid-template-columns: 1fr, 3fr;
-  grid-column-gap: 5px;
-}
-
-.quarter-line-right {
-  grid-column-start: 2;
-  grid-column-end: 3;
-
-  display: inline-grid;
-  grid-template-columns: 1fr, 3fr;
-  grid-column-gap: 5px;
-}
-
-.gcdc-left-number {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-
-.gcdc-left-value {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-.gcdc-right-number {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-
-.gcdc-right-value {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-
-/*Specialty*/
-.specialty-wrapper {
-  display: inline-grid;
-  grid-template-columns: 1em, 5fr;
-}
-
-.specialty-number {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-
-.specialty-value {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-
-/*Sub, Tag & Priority*/
-.form-sub-wrapper {
-  display: grid;
-  grid-template-columns: 5.5em 2em 1em 2em;
-  grid-auto-rows: 1.3em;
-  grid-row-start: 24;
-}
-
-
-/*OC & Ropes*/
-.oc-ropes {
-  grid-column-start: 3;
-  grid-column-end: 3;
-
-  display: inline-grid;
-  grid-template-columns: 1fr, 5fr;
-}
 
 
 /*columns*/
