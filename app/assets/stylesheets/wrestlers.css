@@ -3,6 +3,22 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 */
 
+/*Form/Show and Stats*/
+.wrestler-display-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.wrestler-form-wrapper {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.wrestler-stats-wrapper {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
 
 
 /*Columns and rows for Show and Forms*/

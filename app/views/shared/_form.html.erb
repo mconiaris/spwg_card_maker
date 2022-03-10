@@ -1,287 +1,288 @@
 <!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
-<%= form_with model: wrestler, local: true, data: { turbo: false } do |form| %>
-		
-	<%= form.text_field :name, placeholder: "Name" %>
-	
-  <div>GENERAL CARD</div>
+<div class="wrestler-display-container">
+	<div class="wrestler-form-wrapper">
+		<%= form_with model: wrestler, class: "wrestler-form-wrapper", local: true, data: { turbo: false } do |form| %>
+				
+			<%= form.text_field :name, placeholder: "Name" %>
+			
+		  <div>GENERAL CARD</div>
 
-	<div>
-		<%= form.label 2 %>
-		<%= form.text_field :gc02 %>
+			<div>
+				<%= form.label 2 %>
+				<%= form.text_field :gc02 %>
+			</div>
+			<div>
+				<%= form.label 3 %>
+				<%= form.text_field :gc03 %>
+			</div>
+			<div>
+				<%= form.label 4 %>
+				<%= form.text_field :gc04 %>
+			</div>
+			<div>
+				<%= form.label 5 %>
+				<%= form.text_field :gc05 %>
+			</div>
+			<div>
+				<%= form.label 6 %>
+				<%= form.text_field :gc06 %>
+			</div>
+
+			<div>
+				<%= form.label 7 %>
+				<%= form.text_field :gc07 %>
+			</div>
+			<div>
+				<%= form.label 8 %>
+				<%= form.text_field :gc08 %>
+			</div>
+			<div>
+				<%= form.label 9 %>
+				<%= form.text_field :gc09 %>
+			</div>
+			<div>
+				<%= form.label 10 %>
+				<%= form.text_field :gc10 %>
+			</div>
+			<div>
+				<%= form.label 11 %>
+				<%= form.text_field :gc11 %>
+			</div>
+
+			<div>
+				<%= form.label 12 %>
+				<%= form.text_field :gc12 %>
+			</div>
+			
+		  <div>DEFENSIVE CARD</div>
+
+		  <div>
+				<%= form.label 2 %>
+				<%= form.text_field :dc02 %>
+		  </div>
+		  <div>
+				<%= form.label 3 %>
+				<%= form.text_field :dc03 %>
+		  </div>
+		  <div>
+				<%= form.label 4 %>
+				<%= form.text_field :dc04 %>
+		  </div>
+			<div>
+				<%= form.label 5%>
+				<%= form.text_field :dc05 %>
+			</div>
+			<div>
+				<%= form.label 6 %>
+				<%= form.text_field :dc06 %>
+			</div>
+			
+			<div>
+				<%= form.label 7 %>
+				<%= form.text_field :dc07 %>
+			</div>
+			<div>
+				<%= form.label 8 %>
+				<%= form.text_field :dc08 %>
+			</div>
+			<div>
+				<%= form.label 9 %>
+				<%= form.text_field :dc09 %>
+			</div>
+			<div>
+				<%= form.label 10 %>
+				<%= form.text_field :dc10 %>
+			</div>
+			<div>
+				<%= form.label 11 %>
+				<%= form.text_field :dc11 %>
+			</div>
+			
+			<div>
+				<%= form.label 12 %>
+				<%= form.text_field :dc12 %>
+			</div>
+			
+		  <div>SPECIALTY:</div>
+			<%= form.text_field :specialty %>
+
+			<div>
+				<%= form.label 1 %>
+				<%= form.text_field :s1 %>
+			</div>	
+			<div>
+				<%= form.label 2 %>
+				<%= form.text_field :s2 %>
+			</div>
+			<div>
+				<%= form.label 3 %>
+				<%= form.text_field :s3 %>
+			</div>
+			<div>
+				<%= form.label 4 %>
+				<%= form.text_field :s4 %>
+			</div>
+			<div>
+				<%= form.label 5 %>
+				<%= form.text_field :s5 %>
+			</div>
+			<div>
+				<%= form.label 6 %>
+				<%= form.text_field :s6 %>
+			</div>
+				
+		  <div>
+		  	<div>SUB:</div>
+				<%= form.text_field :subx %>
+		    <div class="title">-</div>
+				<%= form.text_field :suby %>
+			
+		    <div>TAG TEAM:</div>
+				<%= form.text_field :tagx %>
+		    <div class="title">-</div>
+				<%= form.text_field :tagy %>
+			
+				<!-- TODO: Automate Pri-T value based on TT% -->
+		    <div>PRIORITY:</div>
+				<%= form.text_field :prioritys %>
+		  	<div class="title">/</div>
+				<%= form.text_field :priorityt %>
+		  </div>
+
+			<!-- Right Side of Card -->
+			<div>OFFENSIVE CARD</div>
+
+			<div>
+				<%= form.label 2 %>
+				<%= form.text_field :oc02 %>
+			</div>
+			<div>
+				<%= form.label 3 %>
+				<%= form.text_field :oc03 %>
+			</div>
+			<div>
+				<%= form.label 4 %>
+				<%= form.text_field :oc04 %>
+			</div>
+			<div>
+				<%= form.label 5 %>
+				<%= form.text_field :oc05 %>
+			</div>
+			<div>
+				<%= form.label 6 %>
+				<%= form.text_field :oc06 %>
+			</div>
+			<div>
+				<%= form.label 7 %>
+				<%= form.text_field :oc07 %>
+			</div>
+			<div>
+				<%= form.label 8 %>
+				<%= form.text_field :oc08 %>
+			</div>
+			<div>
+				<%= form.label 9 %>
+				<%= form.text_field :oc09 %>
+			</div>
+			<div>
+				<%= form.label 10 %>
+				<%= form.text_field :oc10 %>
+			</div>
+			<div>
+				<%= form.label 11 %>
+				<%= form.text_field :oc11 %>
+			</div>
+			<div>
+				<%= form.label 12 %>
+				<%= form.text_field :oc12 %>
+			</div>
+			
+		  <div>=ROPES=</div>
+
+		  <div>
+				<%= form.label 2 %>
+				<%= form.text_field :ro02 %>
+		  </div>
+		  <div>
+				<%= form.label 3 %>
+				<%= form.text_field :ro03 %>
+		  </div>
+			<div>
+				<%= form.label 4 %>
+				<%= form.text_field :ro04 %>
+			</div>
+			<div>
+				<%= form.label 5 %>
+				<%= form.text_field :ro05 %>
+			<div>
+			<div>
+				<%= form.label 6 %>
+				<%= form.text_field :ro06 %>
+			</div>
+			<div>
+				<%= form.label 7 %>
+				<%= form.text_field :ro07 %>
+			<div>
+			<div>
+				<%= form.label 8 %>
+				<%= form.text_field :ro08 %>
+			</div>
+			<div>
+				<%= form.label 9 %>
+				<%= form.text_field :ro09 %>
+			</div>
+			<div>
+				<%= form.label 10 %>
+				<%= form.text_field :ro10 %>
+			</div>
+			<div>
+				<%= form.label 11 %>
+				<%= form.text_field :ro11 %>
+			</div>
+			<div>
+				<%= form.label 12 %>
+				<%= form.text_field :ro12 %>
+			</div>
+			
+			<%= form.text_field :set, placeholder: "Set" %>
+			
+			<% if @wrestler.template == true %>
+				<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
+				<!-- TODO: Remove this from the current site. -->
+				<div class="grid-line">
+					<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division", class: "r26 oc-ropes grid-line" %>
+				</div>
+
+				<div class="grid-line">
+					<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion", class: "grid-line" %>
+				</div>
+			<% end %>
+
+			<div>
+				<div id="submit_button">
+					<%= form.submit %>
+				</div>
+
+				<div id="cancel-button" >
+					<%= link_to 'Cancel', :back %>
+				</div>
+			</div>
+
+		<% end %>
+		<p>Note: original came cards had exactly five "A" rolls.</p>
+		<p>For Ropes moves with no points, please type "N/A"</p>
 	</div>
-	<div>
-		<%= form.label 3 %>
-		<%= form.text_field :gc03 %>
-	</div>
-	<div>
-		<%= form.label 4 %>
-		<%= form.text_field :gc04 %>
-	</div>
-	<div>
-		<%= form.label 5 %>
-		<%= form.text_field :gc05 %>
-	</div>
-	<div>
-		<%= form.label 6 %>
-		<%= form.text_field :gc06 %>
 	</div>
 
-	<div>
-		<%= form.label 7 %>
-		<%= form.text_field :gc07 %>
-	</div>
-	<div>
-		<%= form.label 8 %>
-		<%= form.text_field :gc08 %>
-	</div>
-	<div>
-		<%= form.label 9 %>
-		<%= form.text_field :gc09 %>
-	</div>
-	<div>
-		<%= form.label 10 %>
-		<%= form.text_field :gc10 %>
-	</div>
-	<div>
-		<%= form.label 11 %>
-		<%= form.text_field :gc11 %>
-	</div>
+	<!-- Third Column -->
+	<!-- TODO: DRY stats presentation with show view. -->
+	<div class="wrestler-stats-wrapper">
+		<div>WRESTLER STATS</div>
+		<% if wrestler.errors.any? %>
+	  	<%= render 'shared/form_errors', wrestler: wrestler %>
+	  <% else %>
+	  	<%= render 'shared/form_stats', wrestler: wrestler %>
+	  <% end %> <!-- form-with -->
+	</div> <!-- wrestler-stats -->
 
-	<div>
-		<%= form.label 12 %>
-		<%= form.text_field :gc12 %>
-	</div>
-	
-  <div>DEFENSIVE CARD</div>
-
-  <div>
-		<%= form.label 2 %>
-		<%= form.text_field :dc02 %>
-  </div>
-  <div>
-		<%= form.label 3 %>
-		<%= form.text_field :dc03 %>
-  </div>
-  <div>
-		<%= form.label 4 %>
-		<%= form.text_field :dc04 %>
-  </div>
-	<div>
-		<%= form.label 5%>
-		<%= form.text_field :dc05 %>
-	</div>
-	<div>
-		<%= form.label 6 %>
-		<%= form.text_field :dc06 %>
-	</div>
-	
-	<div>
-		<%= form.label 7 %>
-		<%= form.text_field :dc07 %>
-	</div>
-	<div>
-		<%= form.label 8 %>
-		<%= form.text_field :dc08 %>
-	</div>
-	<div>
-		<%= form.label 9 %>
-		<%= form.text_field :dc09 %>
-	</div>
-	<div>
-		<%= form.label 10 %>
-		<%= form.text_field :dc10 %>
-	</div>
-	<div>
-		<%= form.label 11 %>
-		<%= form.text_field :dc11 %>
-	</div>
-	
-	<div>
-		<%= form.label 12 %>
-		<%= form.text_field :dc12 %>
-	</div>
-	
-  <div>SPECIALTY:</div>
-	<%= form.text_field :specialty %>
-
-	<div>
-		<%= form.label 1 %>
-		<%= form.text_field :s1 %>
-	</div>	
-	<div>
-		<%= form.label 2 %>
-		<%= form.text_field :s2 %>
-	</div>
-	<div>
-		<%= form.label 3 %>
-		<%= form.text_field :s3 %>
-	</div>
-	<div>
-		<%= form.label 4 %>
-		<%= form.text_field :s4 %>
-	</div>
-	<div>
-		<%= form.label 5 %>
-		<%= form.text_field :s5 %>
-	</div>
-	<div>
-		<%= form.label 6 %>
-		<%= form.text_field :s6 %>
-	</div>
-		
-  <div>
-  	<div>SUB:</div>
-		<%= form.text_field :subx %>
-    <div class="title">-</div>
-		<%= form.text_field :suby %>
-	
-    <div>TAG TEAM:</div>
-		<%= form.text_field :tagx %>
-    <div class="title">-</div>
-		<%= form.text_field :tagy %>
-	
-		<!-- TODO: Automate Pri-T value based on TT% -->
-    <div>PRIORITY:</div>
-		<%= form.text_field :prioritys %>
-  	<div class="title">/</div>
-		<%= form.text_field :priorityt %>
-  </div>
-
-	<!-- Right Side of Card -->
-	<div>OFFENSIVE CARD</div>
-
-	<div>
-		<%= form.label 2 %>
-		<%= form.text_field :oc02 %>
-	</div>
-	<div>
-		<%= form.label 3 %>
-		<%= form.text_field :oc03 %>
-	</div>
-	<div>
-		<%= form.label 4 %>
-		<%= form.text_field :oc04 %>
-	</div>
-	<div>
-		<%= form.label 5 %>
-		<%= form.text_field :oc05 %>
-	</div>
-	<div>
-		<%= form.label 6 %>
-		<%= form.text_field :oc06 %>
-	</div>
-	<div>
-		<%= form.label 7 %>
-		<%= form.text_field :oc07 %>
-	</div>
-	<div>
-		<%= form.label 8 %>
-		<%= form.text_field :oc08 %>
-	</div>
-	<div>
-		<%= form.label 9 %>
-		<%= form.text_field :oc09 %>
-	</div>
-	<div>
-		<%= form.label 10 %>
-		<%= form.text_field :oc10 %>
-	</div>
-	<div>
-		<%= form.label 11 %>
-		<%= form.text_field :oc11 %>
-	</div>
-	<div>
-		<%= form.label 12 %>
-		<%= form.text_field :oc12 %>
-	</div>
-	
-  <div>=ROPES=</div>
-
-  <div>
-		<%= form.label 2 %>
-		<%= form.text_field :ro02 %>
-  </div>
-  <div>
-		<%= form.label 3 %>
-		<%= form.text_field :ro03 %>
-  </div>
-	<div>
-		<%= form.label 4 %>
-		<%= form.text_field :ro04 %>
-	</div>
-	<div>
-		<%= form.label 5 %>
-		<%= form.text_field :ro05 %>
-	<div>
-	<div>
-		<%= form.label 6 %>
-		<%= form.text_field :ro06 %>
-	</div>
-	<div>
-		<%= form.label 7 %>
-		<%= form.text_field :ro07 %>
-	<div>
-	<div>
-		<%= form.label 8 %>
-		<%= form.text_field :ro08 %>
-	</div>
-	<div>
-		<%= form.label 9 %>
-		<%= form.text_field :ro09 %>
-	</div>
-	<div>
-		<%= form.label 10 %>
-		<%= form.text_field :ro10 %>
-	</div>
-	<div>
-		<%= form.label 11 %>
-		<%= form.text_field :ro11 %>
-	</div>
-	<div>
-		<%= form.label 12 %>
-		<%= form.text_field :ro12 %>
-	</div>
-	
-	<%= form.text_field :set, placeholder: "Set" %>
-	
-	<% if @wrestler.template == true %>
-		<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
-		<!-- TODO: Remove this from the current site. -->
-		<div class="grid-line">
-			<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division", class: "r26 oc-ropes grid-line" %>
-		</div>
-
-		<div class="grid-line">
-			<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion", class: "grid-line" %>
-		</div>
-	<% end %>
-
-	<div>
-		<div id="submit_button">
-			<%= form.submit %>
-		</div>
-
-		<div id="cancel-button" >
-			<%= link_to 'Cancel', :back %>
-		</div>
-	</div>
-
-<% end %>
-
-
-
-
-<p>Note: original came cards had exactly five "A" rolls.</p>
-<p>For Ropes moves with no points, please type "N/A"</p>
-
-
-
-<!-- Third Column -->
-<!-- TODO: DRY stats presentation with show view. -->
-<div>
-	<% if wrestler.errors.any? %>
-  	<%= render 'shared/form_errors', wrestler: wrestler %>
-  <% else %>
-  	<%= render 'shared/form_stats', wrestler: wrestler %>
-  <% end %> <!-- form-with -->
-</div> <!-- wrestler-stats -->
+</div>
