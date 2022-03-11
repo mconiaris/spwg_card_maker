@@ -69,6 +69,26 @@
 }
 
 
+.wrestler-specialty-header {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 16;
+  text-align: center;
+}
+
+.wrestler-specialty-move {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 17;
+  text-align: center;
+}
+
+.wrestler-specialty-value {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
 /*Look and Feel of Wrestler Show & Form*/
 .grid-line {
   border: 1px solid green;
@@ -79,7 +99,6 @@
 }
 
 
-.wrestler-dc-header
 
 
 /*columns*/
