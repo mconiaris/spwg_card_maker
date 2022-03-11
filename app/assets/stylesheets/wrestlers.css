@@ -125,6 +125,13 @@
   text-align: center;
 }
 
+.wrestler-submit-cancel {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 27;
+  text-align: center;
+  display: inline-flex;
+}
 
 
 /*Look and Feel of Wrestler Show & Form*/

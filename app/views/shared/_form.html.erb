@@ -275,27 +275,23 @@
 				<% end %>
 
 
+				<div class="wrestler-submit-cancel">
+					<div id="submit_button">
+						<%= form.submit %>
+					</div>
+
+					<div id="cancel-button" >
+						<%= link_to 'Cancel', :back %>
+					</div>
+				</div>
+
+				<p class="r28">Note: original came cards had exactly five "A" rolls.</p>
+				<p class="r29">For Ropes moves with no points, please type "N/A"</p>
+
 			</div> <!-- End of wrestler-form-wrapper -->
 	
-
-			
-
-			
-			
-
-			<div>
-				<div id="submit_button">
-					<%= form.submit %>
-				</div>
-
-				<div id="cancel-button" >
-					<%= link_to 'Cancel', :back %>
-				</div>
-			</div>
-
 		<% end %>
-		<p>Note: original came cards had exactly five "A" rolls.</p>
-		<p>For Ropes moves with no points, please type "N/A"</p>
+
 	</div> <!-- End of wrestler-form -->
 
 	<!-- Third Column -->
