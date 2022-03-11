@@ -111,6 +111,20 @@
   text-align: center;
 }
 
+.wrestler-division {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row: 26;
+  text-align: center;
+}
+
+.wrestler-promotion {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row: 27;
+  text-align: center;
+}
+
 
 
 /*Look and Feel of Wrestler Show & Form*/
