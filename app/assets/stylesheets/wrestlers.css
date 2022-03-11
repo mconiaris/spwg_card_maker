@@ -6,7 +6,7 @@
 /*Form/Show and Stats Layout*/
 .wrestler-display-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 3fr, 1fr;
 }
 
 .wrestler-form {
