@@ -88,6 +88,12 @@
   grid-column-end: 3;
 }
 
+.sub-tag-priority {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+}
+
 
 /*Look and Feel of Wrestler Show & Form*/
 .grid-line {

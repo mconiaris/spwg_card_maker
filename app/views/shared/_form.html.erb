@@ -139,7 +139,32 @@
 				</div>
 
 
+				<div class="sub-tag-priority">
+			  	<div class="r24">SUB:</div>
+					<%= form.text_field :subx, class: "r24" %>
+			    <div class="r24 title">-</div>
+					<%= form.text_field :suby, class: "r24" %>
+				</div>
 
+				<div class="sub-tag-priority">
+			    <div>TAG TEAM:</div>
+					<%= form.text_field :tagx %>
+			    <div class="title">-</div>
+					<%= form.text_field :tagy %>
+				</div>
+
+				<div class="sub-tag-priority">
+					<!-- TODO: Automate Pri-T value based on TT% -->
+			    <div>PRIORITY:</div>
+					<%= form.text_field :prioritys %>
+			  	<div class="title">/</div>
+					<%= form.text_field :priorityt %>
+				</div>
+
+
+				
+				
+			  
 
 
 		  	<!-- Right Side of Card -->
@@ -155,23 +180,6 @@
 
 			
 				
-		  <div>
-		  	<div>SUB:</div>
-				<%= form.text_field :subx %>
-		    <div class="title">-</div>
-				<%= form.text_field :suby %>
-			
-		    <div>TAG TEAM:</div>
-				<%= form.text_field :tagx %>
-		    <div class="title">-</div>
-				<%= form.text_field :tagy %>
-			
-				<!-- TODO: Automate Pri-T value based on TT% -->
-		    <div>PRIORITY:</div>
-				<%= form.text_field :prioritys %>
-		  	<div class="title">/</div>
-				<%= form.text_field :priorityt %>
-		  </div>
 
 			<!-- Right Side of Card -->
 			<!-- <div class="wrestler-oc-Header">OFFENSIVE CARD</div> -->
