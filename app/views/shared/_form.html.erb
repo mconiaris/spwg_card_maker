@@ -1,7 +1,7 @@
 <!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
 <div class="wrestler-display-container">
 	<div class="wrestler-form-wrapper">
-		<%= form_with model: wrestler, class: "wrestler-form-wrapper", local: true, data: { turbo: false } do |form| %>
+		<%= form_with model: wrestler, local: true, data: { turbo: false } do |form| %>
 				
 			<%= form.text_field :name, placeholder: "Name" %>
 			
@@ -214,7 +214,7 @@
 			<div>
 				<%= form.label 5 %>
 				<%= form.text_field :ro05 %>
-			<div>
+			</div>
 			<div>
 				<%= form.label 6 %>
 				<%= form.text_field :ro06 %>
@@ -222,7 +222,7 @@
 			<div>
 				<%= form.label 7 %>
 				<%= form.text_field :ro07 %>
-			<div>
+			</div>
 			<div>
 				<%= form.label 8 %>
 				<%= form.text_field :ro08 %>
@@ -271,7 +271,6 @@
 		<% end %>
 		<p>Note: original came cards had exactly five "A" rolls.</p>
 		<p>For Ropes moves with no points, please type "N/A"</p>
-	</div>
 	</div>
 
 	<!-- Third Column -->
