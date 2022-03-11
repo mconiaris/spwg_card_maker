@@ -40,7 +40,11 @@
 
 
 
-
+.wrestler-oc-Header {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row: 1;
+}
 
 
 /*Look and Feel of Wrestler Show & Form*/
