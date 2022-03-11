@@ -212,61 +212,58 @@
 				</div>
 
 		  	
-		  	<div class="wrestler-ropes-header grid-line-bold">=ROPES=</div>
+		  	<div class="wrestler-ropes-header grid-line-bold title">=ROPES=</div>
 
+			  <div class="wrestler-oc-ropes-move r14">
+					<%= form.label 2 %>
+					<%= form.text_field :ro02 %>
+			  </div>
+			  <div class="wrestler-oc-ropes-move r15">
+					<%= form.label 3 %>
+					<%= form.text_field :ro03 %>
+			  </div>
+				<div class="wrestler-oc-ropes-move r16">
+					<%= form.label 4 %>
+					<%= form.text_field :ro04 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r17">
+					<%= form.label 5 %>
+					<%= form.text_field :ro05 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r18">
+					<%= form.label 6 %>
+					<%= form.text_field :ro06 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r19">
+					<%= form.label 7 %>
+					<%= form.text_field :ro07 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r20">
+					<%= form.label 8 %>
+					<%= form.text_field :ro08 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r21">
+					<%= form.label 9 %>
+					<%= form.text_field :ro09 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r22">
+					<%= form.label 10 %>
+					<%= form.text_field :ro10 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r23">
+					<%= form.label 11 %>
+					<%= form.text_field :ro11 %>
+				</div>
+				<div class="wrestler-oc-ropes-move r2">
+					<%= form.label 12 %>
+					<%= form.text_field :ro12 %>
+				</div>
 
-			</div>
+			</div> <!-- End of wrestler-form-wrapper -->
 	
-
-			<!-- Right Side of Card -->
-			<!-- <div class="wrestler-oc-Header">OFFENSIVE CARD</div> -->
 
 			
 
-		  <div>
-				<%= form.label 2 %>
-				<%= form.text_field :ro02 %>
-		  </div>
-		  <div>
-				<%= form.label 3 %>
-				<%= form.text_field :ro03 %>
-		  </div>
-			<div>
-				<%= form.label 4 %>
-				<%= form.text_field :ro04 %>
-			</div>
-			<div>
-				<%= form.label 5 %>
-				<%= form.text_field :ro05 %>
-			</div>
-			<div>
-				<%= form.label 6 %>
-				<%= form.text_field :ro06 %>
-			</div>
-			<div>
-				<%= form.label 7 %>
-				<%= form.text_field :ro07 %>
-			</div>
-			<div>
-				<%= form.label 8 %>
-				<%= form.text_field :ro08 %>
-			</div>
-			<div>
-				<%= form.label 9 %>
-				<%= form.text_field :ro09 %>
-			</div>
-			<div>
-				<%= form.label 10 %>
-				<%= form.text_field :ro10 %>
-			</div>
-			<div>
-				<%= form.label 11 %>
-				<%= form.text_field :ro11 %>
-			</div>
-			<div>
-				<%= form.label 12 %>
-				<%= form.text_field :ro12 %>
-			</div>
 			
 			<%= form.text_field :set, placeholder: "Set" %>
 			
@@ -295,7 +292,7 @@
 		<% end %>
 		<p>Note: original came cards had exactly five "A" rolls.</p>
 		<p>For Ropes moves with no points, please type "N/A"</p>
-	</div>
+	</div> <!-- End of wrestler-form -->
 
 	<!-- Third Column -->
 	<!-- TODO: DRY stats presentation with show view. -->
@@ -306,6 +303,6 @@
 	  <% else %>
 	  	<%= render 'shared/form_stats', wrestler: wrestler %>
 	  <% end %> <!-- form-with -->
-	</div> <!-- wrestler-stats -->
+	</div> <!-- End of wrestler-stats-wrapper -->
 
-</div>
+</div> <!-- End of wrestler-display-container -->
