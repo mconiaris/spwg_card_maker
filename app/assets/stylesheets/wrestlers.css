@@ -40,7 +40,7 @@
 
 
 
-.wrestler-oc-Header {
+.wrestler-oc-header {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row: 1;
@@ -54,7 +54,7 @@
 }
 
 
-.wrestler-dc-Header {
+.wrestler-dc-header {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row: 9;
@@ -78,6 +78,8 @@
   border: 2px solid green;
 }
 
+
+.wrestler-dc-header
 
 
 /*columns*/
