@@ -46,10 +46,25 @@
   grid-row: 1;
 }
 
-.gc-12 {
+.gc12 {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row: 8;
+  text-align: center;
+}
+
+
+.wrestler-dc-Header {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 9;
+  text-align: center;
+}
+
+.dc12 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 15;
   text-align: center;
 }
 
