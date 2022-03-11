@@ -102,9 +102,14 @@
 .wrestler-oc-ropes-move {
   grid-column-start: 3;
   grid-column-end: 4;
-  text-align: center;
 }
 
+.wrestler-set {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row: 25;
+  text-align: center;
+}
 
 
 

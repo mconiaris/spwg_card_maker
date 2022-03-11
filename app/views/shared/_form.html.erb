@@ -254,10 +254,14 @@
 					<%= form.label 11 %>
 					<%= form.text_field :ro11 %>
 				</div>
-				<div class="wrestler-oc-ropes-move r2">
+				<div class="wrestler-oc-ropes-move r24">
 					<%= form.label 12 %>
 					<%= form.text_field :ro12 %>
 				</div>
+
+				<%= form.text_field :set, class: "wrestler-set", placeholder: "Set" %>
+
+
 
 			</div> <!-- End of wrestler-form-wrapper -->
 	
@@ -265,7 +269,6 @@
 			
 
 			
-			<%= form.text_field :set, placeholder: "Set" %>
 			
 			<% if @wrestler.template == true %>
 				<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
