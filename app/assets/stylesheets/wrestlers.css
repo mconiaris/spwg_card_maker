@@ -3,14 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 */
 
-/*Form/Show and Stats*/
+/*Form/Show and Stats Layout*/
 .wrestler-display-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-
-.wrestler-form-wrapper {
+.wrestler-form {
   grid-column-start: 1;
   grid-column-end: 2;
 }
@@ -21,7 +20,23 @@
 }
 
 
-/*Columns and rows for Show and Forms*/
+/*Show and Forms Grid Layouts*/
+.wrestler-form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 2fr;
+}
+
+.wrestler-name {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
+
+
+
+
+/*Look and Feel of Wrestler Show & Form*/
 .grid-line {
   border: 1px solid green;
 }

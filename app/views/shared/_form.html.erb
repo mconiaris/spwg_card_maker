@@ -1,9 +1,14 @@
 <!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
 <div class="wrestler-display-container">
-	<div class="wrestler-form-wrapper grid-line-bold">
+	<div class="wrestler-form grid-line-bold">
 		<%= form_with model: wrestler, local: true, data: { turbo: false } do |form| %>
+
+			<div class="wrestler-form-wrapper">
 				
-			<%= form.text_field :name, placeholder: "Name" %>
+				<%= form.text_field :name, class: "wrestler-name", placeholder: "Name" %>
+
+			</div>
+				
 			
 		  <div>GENERAL CARD</div>
 
