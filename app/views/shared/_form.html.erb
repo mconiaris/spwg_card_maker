@@ -1,6 +1,6 @@
 <!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
-<div>
-	<%= form_with model: wrestler,local: true, data: { turbo: false } do |form| %>
+<div class="wrestler-display-container">
+	<%= form_with model: wrestler, class: "wrestler-form",local: true, data: { turbo: false } do |form| %>
 
 		<!-- Left Side of Card -->
 		<%= form.text_field :name, placeholder: "Name" %>
@@ -19,7 +19,7 @@
 
 	<!-- Third Column -->
 	<!-- TODO: DRY stats presentation with show view. -->
-	<div>
+	<div class="wrestler-stats">
 		<div>WRESTLER STATS</div>
 		<% if wrestler.errors.any? %>
 	  	<%= render 'shared/form_errors', wrestler: wrestler %>

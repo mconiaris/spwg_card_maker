@@ -4,7 +4,18 @@
 */
 
 /*Form/Show and Stats Layout*/
+.wrestler-display-container {
+  display: grid;
+  grid-template-columns: auto;
+}
 
+.wrestler-form {
+  grid-column: 1;
+}
+
+.wrestler-stats {
+  grid-column: 2;
+}
 
 /*Index View*/
 /*TODO: Move to it's own CSS document.*/
