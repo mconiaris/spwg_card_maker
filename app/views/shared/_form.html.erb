@@ -2,18 +2,27 @@
 <div class="wrestler-display-container">
 	<%= form_with model: wrestler, class: "wrestler-form",local: true, data: { turbo: false } do |form| %>
 
-		<!-- Left Side of Card -->
-		<%= form.text_field :name, placeholder: "Name" %>
+		<div class="wrestler-form-container">
+			<!-- Left Side of Card -->
+			<%= form.text_field :name, class: "wrestler-name", placeholder: "Name" %>
+			
 
-		<div>
-				<div>
-					<%= form.submit %>
-				</div>
+			<!-- Right Side of Card -->
 
-				<div>
-					<%= link_to 'Cancel', :back %>
+
+
+			<!-- Submit and Cancel buttons -->
+			<div class="submit-cancel">
+					<div>
+						<%= form.submit %>
+					</div>
+
+					<div>
+						<%= link_to 'Cancel', :back %>
+					</div>
 				</div>
-			</div>
+		</div> <!-- End of wrestler-form-container -->
+
 
 	<% end %> <!-- End of wrestler-form -->
 

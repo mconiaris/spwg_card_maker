@@ -17,6 +17,24 @@
   grid-column: 2;
 }
 
+
+/*Wrestler Form Container*/
+.wrestler-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.wrestler-name {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+
+.submit-cancel {
+  grid-row: 28;
+}
+
+
 /*Index View*/
 /*TODO: Move to it's own CSS document.*/
 
