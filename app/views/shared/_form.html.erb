@@ -1,16 +1,16 @@
 <!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
-<div class="wrestler-display-container">
-	<%= form_with model: wrestler, class: "wrestler-form",local: true, data: { turbo: false } do |form| %>
+<div>
+	<%= form_with model: wrestler,local: true, data: { turbo: false } do |form| %>
 
 		<!-- Left Side of Card -->
 		<%= form.text_field :name, placeholder: "Name" %>
 
 		<div>
-				<div id="submit_button">
+				<div>
 					<%= form.submit %>
 				</div>
 
-				<div id="cancel-button" >
+				<div>
 					<%= link_to 'Cancel', :back %>
 				</div>
 			</div>
