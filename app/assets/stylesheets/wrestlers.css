@@ -4,11 +4,20 @@
 */
 
 /*Form/Show and Stats Layout*/
+.wrestler-display-container {
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: auto;
+}
 
 
+.wrestler-form {
+  grid-column: 1;
+}
 
-
-
+.wrestler-stats {
+  grid-column: 2;
+}
 
 
 
