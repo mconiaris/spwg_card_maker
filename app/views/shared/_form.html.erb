@@ -1,297 +1,297 @@
 <!-- TODO: Check to see if there is a way to get errors to work with Turbo on. -->
-<div class="wrestler-display-container">
-	<div class="wrestler-form grid-line-bold">
+<div>
+	<div>
 		<%= form_with model: wrestler, local: true, data: { turbo: false } do |form| %>
 
-			<div class="wrestler-form-wrapper">
+			<div>
 				
 				<!-- Left Side of Card -->
-				<%= form.text_field :name, class: "wrestler-name grid-line-bold title", placeholder: "Name" %>
+				<%= form.text_field :name, placeholder: "Name" %>
 
-		  	<div class="wrestler-gc-header grid-line-bold title">GENERAL CARD</div>
+		  	<div>GENERAL CARD</div>
 
 				<!-- Left Side of GC -->
-				<div class="c1 r3">
+				<div>
 					<%= form.label 2 %>
 					<%= form.text_field :gc02 %>
 				</div>
-				<div class="c1 r4">
+				<div>
 					<%= form.label 3 %>
 					<%= form.text_field :gc03 %>
 				</div>
-				<div class="c1 r5">
+				<div>
 					<%= form.label 4 %>
 					<%= form.text_field :gc04 %>
 				</div>
-				<div class="c1 r6">
+				<div>
 					<%= form.label 5 %>
 					<%= form.text_field :gc05 %>
 				</div>
-				<div class="c1 r7">
+				<div>
 					<%= form.label 6 %>
 					<%= form.text_field :gc06 %>
 				</div>
 
 				<!-- Right Side of GC -->
-				<div class="c2 r3">
+				<div>
 					<%= form.label 7 %>
 					<%= form.text_field :gc07 %>
 				</div>
-				<div class="c2 r4">
+				<div>
 					<%= form.label 8 %>
 					<%= form.text_field :gc08 %>
 				</div>
-				<div class="c2 r5">
+				<div>
 					<%= form.label 9 %>
 					<%= form.text_field :gc09 %>
 				</div>
-				<div class="c2 r6">
+				<div>
 					<%= form.label 10 %>
 					<%= form.text_field :gc10 %>
 				</div>
-				<div class="c2 r7">
+				<div>
 					<%= form.label 11 %>
 					<%= form.text_field :gc11 %>
 				</div>
 
-				<div class="gc12">
+				<div>
 					<%= form.label 12 %>
 					<%= form.text_field :gc12 %>
 				</div>
 
 
-		  	<div class="wrestler-dc-header grid-line-bold">DEFENSIVE CARD</div>
+		  	<div>DEFENSIVE CARD</div>
 
-			  <div class="c1 r10">
+			  <div>
 					<%= form.label 2 %>
 					<%= form.text_field :dc02 %>
 			  </div>
-			  <div class="c1 r11">
+			  <div>
 					<%= form.label 3 %>
 					<%= form.text_field :dc03 %>
 			  </div>
-			  <div class="c1 r12">
+			  <div>
 					<%= form.label 4 %>
 					<%= form.text_field :dc04 %>
 			  </div>
-				<div class="c1 r13">
+				<div>
 					<%= form.label 5%>
 					<%= form.text_field :dc05 %>
 				</div>
-				<div class="c1 r14">
+				<div>
 					<%= form.label 6 %>
 					<%= form.text_field :dc06 %>
 				</div>
 				
-				<div class="c2 r10">
+				<div>
 					<%= form.label 7 %>
 					<%= form.text_field :dc07 %>
 				</div>
-				<div class="c2 r11">
+				<div>
 					<%= form.label 8 %>
 					<%= form.text_field :dc08 %>
 				</div>
-				<div class="c2 r12">
+				<div>
 					<%= form.label 9 %>
 					<%= form.text_field :dc09 %>
 				</div>
-				<div class="c2 r13">
+				<div>
 					<%= form.label 10 %>
 					<%= form.text_field :dc10 %>
 				</div>
-				<div class="c2 r14">
+				<div>
 					<%= form.label 11 %>
 					<%= form.text_field :dc11 %>
 				</div>
 				
-				<div class="dc12">
+				<div>
 					<%= form.label 12 %>
 					<%= form.text_field :dc12 %>
 				</div>
 
 
-			  <div class="wrestler-specialty-header grid-line-bold">SPECIALTY:</div>
-				<%= form.text_field :specialty, class: "wrestler-specialty-move" %>
+			  <div>SPECIALTY:</div>
+				<%= form.text_field :specialty %>
 
-				<div class="wrestler-specialty-value r18">
+				<div>
 					<%= form.label 1 %>
 					<%= form.text_field :s1 %>
 				</div>	
-				<div class="wrestler-specialty-value r19">
+				<div>
 					<%= form.label 2 %>
 					<%= form.text_field :s2 %>
 				</div>
-				<div class="wrestler-specialty-value r20">
+				<div>
 					<%= form.label 3 %>
 					<%= form.text_field :s3 %>
 				</div>
-				<div class="wrestler-specialty-value r21">
+				<div>
 					<%= form.label 4 %>
 					<%= form.text_field :s4 %>
 				</div>
-				<div class="wrestler-specialty-value r22">
+				<div>
 					<%= form.label 5 %>
 					<%= form.text_field :s5 %>
 				</div>
-				<div class="wrestler-specialty-value r23">
+				<div>
 					<%= form.label 6 %>
 					<%= form.text_field :s6 %>
 				</div>
 
 
-				<div class="sub-tag-priority r24">
+				<div>
 			  	<div>SUB:</div>
 					<%= form.text_field :subx %>
-			    <div class="title">-</div>
+			    <div>-</div>
 					<%= form.text_field :suby %>
 				</div>
 
-				<div class="sub-tag-priority r25">
+				<div>
 			    <div>TAG TEAM:</div>
 					<%= form.text_field :tagx %>
-			    <div class="title">-</div>
+			    <div>-</div>
 					<%= form.text_field :tagy %>
 				</div>
 
-				<div class="sub-tag-priority r26">
+				<div>
 					<!-- TODO: Automate Pri-T value based on TT% -->
 			    <div>PRIORITY:</div>
 					<%= form.text_field :prioritys %>
-			  	<div class="title">/</div>
+			  	<div>/</div>
 					<%= form.text_field :priorityt %>
 				</div>
 
 
 		  	<!-- Right Side of Card -->
-		  	<div class="wrestler-oc-header">OFFENSIVE CARD</div>
+		  	<div>OFFENSIVE CARD</div>
 
-				<div class="wrestler-oc-ropes-move r2">
+				<div>
 					<%= form.label 2 %>
 					<%= form.text_field :oc02 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r3">
+				<div>
 					<%= form.label 3 %>
 					<%= form.text_field :oc03 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r4">
+				<div>
 					<%= form.label 4 %>
 					<%= form.text_field :oc04 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r5">
+				<div>
 					<%= form.label 5 %>
 					<%= form.text_field :oc05 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r6">
+				<div>
 					<%= form.label 6 %>
 					<%= form.text_field :oc06 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r7">
+				<div>
 					<%= form.label 7 %>
 					<%= form.text_field :oc07 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r8">
+				<div>
 					<%= form.label 8 %>
 					<%= form.text_field :oc08 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r9">
+				<div>
 					<%= form.label 9 %>
 					<%= form.text_field :oc09 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r10">
+				<div>
 					<%= form.label 10 %>
 					<%= form.text_field :oc10 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r11">
+				<div>
 					<%= form.label 11 %>
 					<%= form.text_field :oc11 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r12">
+				<div>
 					<%= form.label 12 %>
 					<%= form.text_field :oc12 %>
 				</div>
 
 		  	
-		  	<div class="wrestler-ropes-header grid-line-bold title">=ROPES=</div>
+		  	<div>=ROPES=</div>
 
-			  <div class="wrestler-oc-ropes-move r14">
+			  <div>
 					<%= form.label 2 %>
 					<%= form.text_field :ro02 %>
 			  </div>
 
-			  <div class="wrestler-oc-ropes-move r15">
+			  <div>
 					<%= form.label 3 %>
 					<%= form.text_field :ro03 %>
 			  </div>
 
-				<div class="wrestler-oc-ropes-move r16">
+				<div>
 					<%= form.label 4 %>
 					<%= form.text_field :ro04 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r17">
+				<div>
 					<%= form.label 5 %>
 					<%= form.text_field :ro05 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r18">
+				<div>
 					<%= form.label 6 %>
 					<%= form.text_field :ro06 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r19">
+				<div>
 					<%= form.label 7 %>
 					<%= form.text_field :ro07 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r20">
+				<div>
 					<%= form.label 8 %>
 					<%= form.text_field :ro08 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r21">
+				<div>
 					<%= form.label 9 %>
 					<%= form.text_field :ro09 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r22">
+				<div>
 					<%= form.label 10 %>
 					<%= form.text_field :ro10 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r23">
+				<div>
 					<%= form.label 11 %>
 					<%= form.text_field :ro11 %>
 				</div>
 
-				<div class="wrestler-oc-ropes-move r24">
+				<div>
 					<%= form.label 12 %>
 					<%= form.text_field :ro12 %>
 				</div>
 
 
-				<%= form.text_field :set, class: "wrestler-set", placeholder: "Set" %>
+				<%= form.text_field :set, placeholder: "Set" %>
 
 				<% if @wrestler.template == true %>
 					<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
 					<!-- TODO: Remove this from the current site. -->
 
-					<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division", class: "wrestler-division grid-line" %>
+					<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division" %>
 
-					<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion", class: "wrestler-promotion grid-line" %>
+					<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion" %>
 				<% end %>
 
 
-				<div class="wrestler-submit-cancel">
+				<div>
 					<div id="submit_button">
 						<%= form.submit %>
 					</div>
@@ -301,8 +301,8 @@
 					</div>
 				</div>
 
-				<p class="r28">Note: original came cards had exactly five "A" rolls.</p>
-				<p class="r29">For Ropes moves with no points, please type "N/A"</p>
+				<p>Note: original came cards had exactly five "A" rolls.</p>
+				<p>For Ropes moves with no points, please type "N/A"</p>
 
 			</div> <!-- End of wrestler-form-wrapper -->
 	
@@ -312,13 +312,14 @@
 
 	<!-- Third Column -->
 	<!-- TODO: DRY stats presentation with show view. -->
-	<div class="wrestler-stats-wrapper">
+	<div>
 		<div>WRESTLER STATS</div>
 		<% if wrestler.errors.any? %>
 	  	<%= render 'shared/form_errors', wrestler: wrestler %>
 	  <% else %>
 	  	<%= render 'shared/form_stats', wrestler: wrestler %>
 	  <% end %> <!-- form-with -->
+	  
 	</div> <!-- End of wrestler-stats-wrapper -->
 
 </div> <!-- End of wrestler-display-container -->

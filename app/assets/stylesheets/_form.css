@@ -1,38 +1,16 @@
 /*This styles the wrestler form into specific rows and columns.*/
-
-.form-container {
-  display: grid;
-  grid-template-columns: 7.5em 7.5em 15em;
-  grid-template-rows: auto;
-  background-color: white;
-  color: black;
-}
-
-
 input {
   line-height: 1em;
 }
 
 
 /*Submit & Cancel Buttons*/
-.submit-cancel-container {
-  display: grid;
-  grid-template-columns: 1em, 1em;
-}
 
-#submit_button {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 #cancel-button {
   background-color: rgb(239, 239, 239);
   border: 1px solid black;
   text-align: center;
-  grid-column-start: 2;
-  grid-column-end: 3;
 }
 
 #cancel-button a {
