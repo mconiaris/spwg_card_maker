@@ -139,21 +139,21 @@
 				</div>
 
 
-				<div class="sub-tag-priority">
-			  	<div class="r24">SUB:</div>
-					<%= form.text_field :subx, class: "r24" %>
-			    <div class="r24 title">-</div>
-					<%= form.text_field :suby, class: "r24" %>
+				<div class="sub-tag-priority r24">
+			  	<div>SUB:</div>
+					<%= form.text_field :subx %>
+			    <div class="title">-</div>
+					<%= form.text_field :suby %>
 				</div>
 
-				<div class="sub-tag-priority">
+				<div class="sub-tag-priority r25">
 			    <div>TAG TEAM:</div>
 					<%= form.text_field :tagx %>
 			    <div class="title">-</div>
 					<%= form.text_field :tagy %>
 				</div>
 
-				<div class="sub-tag-priority">
+				<div class="sub-tag-priority r26">
 					<!-- TODO: Automate Pri-T value based on TT% -->
 			    <div>PRIORITY:</div>
 					<%= form.text_field :prioritys %>
@@ -174,38 +174,47 @@
 					<%= form.label 3 %>
 					<%= form.text_field :oc03 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r4">
 					<%= form.label 4 %>
 					<%= form.text_field :oc04 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r5">
 					<%= form.label 5 %>
 					<%= form.text_field :oc05 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r6">
 					<%= form.label 6 %>
 					<%= form.text_field :oc06 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r7">
 					<%= form.label 7 %>
 					<%= form.text_field :oc07 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r8">
 					<%= form.label 8 %>
 					<%= form.text_field :oc08 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r9">
 					<%= form.label 9 %>
 					<%= form.text_field :oc09 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r10">
 					<%= form.label 10 %>
 					<%= form.text_field :oc10 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r11">
 					<%= form.label 11 %>
 					<%= form.text_field :oc11 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r12">
 					<%= form.label 12 %>
 					<%= form.text_field :oc12 %>
@@ -218,42 +227,52 @@
 					<%= form.label 2 %>
 					<%= form.text_field :ro02 %>
 			  </div>
+
 			  <div class="wrestler-oc-ropes-move r15">
 					<%= form.label 3 %>
 					<%= form.text_field :ro03 %>
 			  </div>
+
 				<div class="wrestler-oc-ropes-move r16">
 					<%= form.label 4 %>
 					<%= form.text_field :ro04 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r17">
 					<%= form.label 5 %>
 					<%= form.text_field :ro05 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r18">
 					<%= form.label 6 %>
 					<%= form.text_field :ro06 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r19">
 					<%= form.label 7 %>
 					<%= form.text_field :ro07 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r20">
 					<%= form.label 8 %>
 					<%= form.text_field :ro08 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r21">
 					<%= form.label 9 %>
 					<%= form.text_field :ro09 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r22">
 					<%= form.label 10 %>
 					<%= form.text_field :ro10 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r23">
 					<%= form.label 11 %>
 					<%= form.text_field :ro11 %>
 				</div>
+
 				<div class="wrestler-oc-ropes-move r24">
 					<%= form.label 12 %>
 					<%= form.text_field :ro12 %>
@@ -265,13 +284,10 @@
 				<% if @wrestler.template == true %>
 					<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
 					<!-- TODO: Remove this from the current site. -->
-					<div class="grid-line">
-						<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division", class: "wrestler-division grid-line" %>
-					</div>
 
-					<div class="grid-line">
-						<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion", class: "wrestler-promotion grid-line" %>
-					</div>
+					<%= form.collection_select :division_id, Division.order(:name), :id, :name, :prompt => "Division", class: "wrestler-division grid-line" %>
+
+					<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, :prompt => "Promotion", class: "wrestler-promotion grid-line" %>
 				<% end %>
 
 
