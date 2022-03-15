@@ -43,6 +43,15 @@
   text-align: center;
 }
 
+.wrestler-gc-header {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  text-align: center;
+}
+
+
+
+
 
 .wrestler-submit-cancel {
   grid-column: 1 / 3;
