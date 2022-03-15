@@ -3,6 +3,19 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 */
 
+
+/*Look and Feel of Wrestler Show & Form*/
+.grid-line {
+  border: 1px solid green;
+}
+
+.grid-line-bold {
+  border: 2px solid green;
+}
+
+
+
+
 /*Form/Show and Stats Layout*/
 .wrestler-display-container {
   display: grid;
@@ -27,11 +40,14 @@
 .wrestler-name {
   grid-column: 1 / 3;
   grid-row: 1;
+  text-align: center;
 }
 
 
-.submit-cancel {
-  grid-row: 28;
+.wrestler-submit-cancel {
+  grid-column: 1 / 3;
+  grid-row: 27;
+  display: inline-flex;
 }
 
 
