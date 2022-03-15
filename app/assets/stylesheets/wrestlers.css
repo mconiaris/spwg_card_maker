@@ -20,6 +20,7 @@
 .wrestler-display-container {
   display: grid;
   grid-template-columns: auto;
+  justify-content: center;
 }
 
 .wrestler-form {
@@ -34,7 +35,7 @@
 /*Wrestler Form Container*/
 .wrestler-form-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 7em 7em 14em;
 }
 
 /*Left Side of Form Container*/
@@ -262,13 +263,19 @@
 }
 
 
-
+/*Buttons and Notes*/
 .wrestler-submit-cancel {
   grid-column: 1 / 3;
   grid-row: 27;
   display: inline-flex;
 }
 
+
+.notes {
+  grid-column: 1 / 4;
+  grid-row: 28;
+}
+004
 
 /*Right Side of Form Container*/
 .wrestler-oc-header {
