@@ -242,6 +242,26 @@
 }
 
 
+/*Sub, Tag & Priority*/
+.sub {
+  grid-column: 1 / 3;
+  grid-row: 24;
+  display: flex;
+}
+
+.tag {
+  grid-column: 1 / 3;
+  grid-row: 25;
+  display: flex;
+}
+
+.priority {
+  grid-column: 1 / 3;
+  grid-row: 26;
+  display: flex;
+}
+
+
 
 .wrestler-submit-cancel {
   grid-column: 1 / 3;

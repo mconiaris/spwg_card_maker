@@ -142,6 +142,29 @@
 				<%= form.text_field :s6 %>
 			</div>
 
+			<!-- Sub, Tag & Priority -->
+			<div class="sub">
+		  	<div>SUB:</div>
+				<%= form.text_field :subx %>
+		    <div>-</div>
+				<%= form.text_field :suby %>
+			</div>
+
+			<div class="tag">
+		    <div>TAG TEAM:</div>
+				<%= form.text_field :tagx %>
+		    <div>-</div>
+				<%= form.text_field :tagy %>
+			</div>
+
+			<div class="priority">
+				<!-- TODO: Automate Pri-T value based on TT% -->
+		    <div>PRIORITY:</div>
+				<%= form.text_field :prioritys %>
+		  	<div>/</div>
+				<%= form.text_field :priorityt %>
+			</div>
+
 
 			<!-- Right Side of Card -->
 	  	<div class="wrestler-oc-header grid-line-bold">OFFENSIVE CARD</div>
