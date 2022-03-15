@@ -2,162 +2,162 @@
 <div class="wrestler-display-container">
 	<%= form_with model: wrestler, class: "wrestler-form",local: true, data: { turbo: false } do |form| %>
 
-		<div class="wrestler-form-container grid-line-bold">
+		<div class="wrestler-form-container">
 			<!-- Left Side of Card -->
 			<%= form.text_field :name, class: "wrestler-name grid-line-bold", placeholder: "Name" %>
 
-			<div class="wrestler-gc-header grid-line-bold">GENERAL CARD</div>
+			<div class="wrestler-gc-header grid-line-bold-left grid-line-bold-bottom">GENERAL CARD</div>
 
 			<!-- Left Side of GC -->
-			<div class="gc2">
+			<div class="gc2 grid-line-bold-left grid-line-bottom">
 				<%= form.label 2 %>
 				<%= form.text_field :gc02 %>
 			</div>
-			<div class="gc3">
+			<div class="gc3 grid-line-bold-left grid-line-bottom">
 				<%= form.label 3 %>
 				<%= form.text_field :gc03 %>
 			</div>
-			<div class="gc4">
+			<div class="gc4 grid-line-bold-left grid-line-bottom">
 				<%= form.label 4 %>
 				<%= form.text_field :gc04 %>
 			</div>
-			<div class="gc5">
+			<div class="gc5 grid-line-bold-left grid-line-bottom">
 				<%= form.label 5 %>
 				<%= form.text_field :gc05 %>
 			</div>
-			<div class="gc6">
+			<div class="gc6 grid-line-bold-left grid-line-bottom">
 				<%= form.label 6 %>
 				<%= form.text_field :gc06 %>
 			</div>
 
 			<!-- Right Side of GC -->
-			<div class="gc7">
+			<div class="gc7 grid-line-bold-right grid-line-bottom">
 				<%= form.label 7 %>
 				<%= form.text_field :gc07 %>
 			</div>
-			<div class="gc8">
+			<div class="gc8 grid-line-bold-right grid-line-bottom">
 				<%= form.label 8 %>
 				<%= form.text_field :gc08 %>
 			</div>
-			<div class="gc9">
+			<div class="gc9 grid-line-bold-right grid-line-bottom">
 				<%= form.label 9 %>
 				<%= form.text_field :gc09 %>
 			</div>
-			<div class="gc10">
+			<div class="gc10 grid-line-bold-right grid-line-bottom">
 				<%= form.label 10 %>
 				<%= form.text_field :gc10 %>
 			</div>
-			<div class="gc11">
+			<div class="gc11 grid-line-bold-right grid-line-bottom">
 				<%= form.label 11 %>
 				<%= form.text_field :gc11 %>
 			</div>
 
 			<!-- Center of General Card -->
-			<div class="gc12">
+			<div class="gc12 grid-line-bold-left grid-line-bold-bottom">
 				<%= form.label 12 %>
 				<%= form.text_field :gc12 %>
 			</div>
 
 
 			<!-- Defensive Card -->
-			<div class="wrestler-dc-header grid-line-bold">DEFENSIVE CARD</div>
+			<div class="wrestler-dc-header grid-line-bold-left grid-line-bold-bottom">DEFENSIVE CARD</div>
 
 		  <!-- Left of Defensive Card -->
-		  <div class="dc2">
+		  <div class="dc2 grid-line-bold-left grid-line-bottom">
 				<%= form.label 2 %>
 				<%= form.text_field :dc02 %>
 		  </div>
-		  <div class="dc3">
+		  <div class="dc3 grid-line-bold-left grid-line-bottom">
 				<%= form.label 3 %>
 				<%= form.text_field :dc03 %>
 		  </div>
-		  <div class="dc4">
+		  <div class="dc4 grid-line-bold-left grid-line-bottom">
 				<%= form.label 4 %>
 				<%= form.text_field :dc04 %>
 		  </div>
-			<div class="dc5">
+			<div class="dc5 grid-line-bold-left grid-line-bottom">
 				<%= form.label 5%>
 				<%= form.text_field :dc05 %>
 			</div>
-			<div class="dc6">
+			<div class="dc6 grid-line-bold-left grid-line-bottom">
 				<%= form.label 6 %>
 				<%= form.text_field :dc06 %>
 			</div>
 
 			<!-- Right of Defensive Card -->
-			<div class="dc7">
+			<div class="dc7 grid-line-bold-right grid-line-bottom">
 				<%= form.label 7 %>
 				<%= form.text_field :dc07 %>
 			</div>
-			<div class="dc8">
+			<div class="dc8 grid-line-bold-right grid-line-bottom">
 				<%= form.label 8 %>
 				<%= form.text_field :dc08 %>
 			</div>
-			<div class="dc9">
+			<div class="dc9 grid-line-bold-right grid-line-bottom">
 				<%= form.label 9 %>
 				<%= form.text_field :dc09 %>
 			</div>
-			<div class="dc10">
+			<div class="dc10 grid-line-bold-right grid-line-bottom">
 				<%= form.label 10 %>
 				<%= form.text_field :dc10 %>
 			</div>
-			<div class="dc11">
+			<div class="dc11 grid-line-bold-right grid-line-bottom">
 				<%= form.label 11 %>
 				<%= form.text_field :dc11 %>
 			</div>
 
 			<!-- Center of Defensive Card -->
-			<div class="dc12">
+			<div class="dc12 grid-line-bold-left grid-line-bold-bottom">
 				<%= form.label 12 %>
 				<%= form.text_field :dc12 %>
 			</div>
 
 
 			<!-- Specialty Card -->
-			<div class="wrestler-specialty-header grid-line-bold">SPECIALTY:</div>
-			<%= form.text_field :specialty, class: "wrestler-specialty-move" %>
+			<div class="wrestler-specialty-header grid-line-bold-left grid-line-bold-bottom">SPECIALTY:</div>
+			<%= form.text_field :specialty, class: "wrestler-specialty-move grid-line-bold-left grid-line-bottom" %>
 
-			<div class="s1">
+			<div class="s1 grid-line-bold-left grid-line-bottom">
 				<%= form.label 1 %>
 				<%= form.text_field :s1 %>
 			</div>	
-			<div class="s2">
+			<div class="s2 grid-line-bold-left grid-line-bottom">
 				<%= form.label 2 %>
 				<%= form.text_field :s2 %>
 			</div>
-			<div class="s3">
+			<div class="s3 grid-line-bold-left grid-line-bottom">
 				<%= form.label 3 %>
 				<%= form.text_field :s3 %>
 			</div>
-			<div class="s4">
+			<div class="s4 grid-line-bold-left grid-line-bottom">
 				<%= form.label 4 %>
 				<%= form.text_field :s4 %>
 			</div>
-			<div class="s5">
+			<div class="s5 grid-line-bold-left grid-line-bottom">
 				<%= form.label 5 %>
 				<%= form.text_field :s5 %>
 			</div>
-			<div class="s6">
+			<div class="s6 grid-line-bold-left grid-line-bold-bottom">
 				<%= form.label 6 %>
 				<%= form.text_field :s6 %>
 			</div>
 
 			<!-- Sub, Tag & Priority -->
-			<div class="sub">
+			<div class="sub grid-line-bold-left grid-line-bottom">
 		  	<div>SUB:</div>
 				<%= form.text_field :subx %>
 		    <div>-</div>
 				<%= form.text_field :suby %>
 			</div>
 
-			<div class="tag">
+			<div class="tag grid-line-bold-left grid-line-bottom">
 		    <div>TAG TEAM:</div>
 				<%= form.text_field :tagx %>
 		    <div>-</div>
 				<%= form.text_field :tagy %>
 			</div>
 
-			<div class="priority">
+			<div class="priority grid-line-bold-left grid-line-bold-bottom">
 				<!-- TODO: Automate Pri-T value based on TT% -->
 		    <div>PRIORITY:</div>
 				<%= form.text_field :prioritys %>
@@ -167,7 +167,7 @@
 
 
 			<!-- Submit and Cancel buttons -->
-			<div class="wrestler-submit-cancel grid-line">
+			<div class="wrestler-submit-cancel">
 				<div>
 					<%= form.submit %>
 				</div>
@@ -179,49 +179,49 @@
 
 
 			<!-- Right Side of Card -->
-	  	<div class="wrestler-oc-header grid-line-bold">OFFENSIVE CARD</div>
+	  	<div class="wrestler-oc-header grid-line-bold-top grid-line-bold-bottom grid-line-bold-right">OFFENSIVE CARD</div>
 
-	  	<div class="oc2">
+	  	<div class="oc2 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 2 %>
 				<%= form.text_field :oc02 %>
 			</div>
-			<div class="oc3">
+			<div class="oc3 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 3 %>
 				<%= form.text_field :oc03 %>
 			</div>
-			<div class="oc4">
+			<div class="oc4 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 4 %>
 				<%= form.text_field :oc04 %>
 			</div>
-			<div class="oc5">
+			<div class="oc5 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 5 %>
 				<%= form.text_field :oc05 %>
 			</div>
-			<div class="oc6">
+			<div class="oc6 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 6 %>
 				<%= form.text_field :oc06 %>
 			</div>
-			<div class="oc7">
+			<div class="oc7 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 7 %>
 				<%= form.text_field :oc07 %>
 			</div>
-			<div class="oc8">
+			<div class="oc8 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 8 %>
 				<%= form.text_field :oc08 %>
 			</div>
-			<div class="oc9">
+			<div class="oc9 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 9 %>
 				<%= form.text_field :oc09 %>
 			</div>
-			<div class="oc10">
+			<div class="oc10 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 10 %>
 				<%= form.text_field :oc10 %>
 			</div>
-			<div class="oc11">
+			<div class="oc11 grid-line-bold-left  grid-line-bold-right  grid-line-bottom">
 				<%= form.label 11 %>
 				<%= form.text_field :oc11 %>
 			</div>
-			<div class="oc12">
+			<div class="oc12 grid-line-bold-left  grid-line-bold-right">
 				<%= form.label 12 %>
 				<%= form.text_field :oc12 %>
 			</div>
@@ -230,62 +230,62 @@
 			<!-- Ropes Card -->
 			<div class="wrestler-ropes-header grid-line-bold">=ROPES=</div>
 
-			<div class="rc2">
+			<div class="rc2 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 2 %>
 				<%= form.text_field :ro02 %>
 		  </div>
-		  <div class="rc3">
+		  <div class="rc3 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 3 %>
 				<%= form.text_field :ro03 %>
 		  </div>
-			<div class="rc4">
+			<div class="rc4 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 4 %>
 				<%= form.text_field :ro04 %>
 			</div>
-			<div class="rc5">
+			<div class="rc5 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 5 %>
 				<%= form.text_field :ro05 %>
 			</div>
-			<div class="rc6">
+			<div class="rc6 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 6 %>
 				<%= form.text_field :ro06 %>
 			</div>
-			<div class="rc7">
+			<div class="rc7 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 7 %>
 				<%= form.text_field :ro07 %>
 			</div>
-			<div class="rc8">
+			<div class="rc8 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 8 %>
 				<%= form.text_field :ro08 %>
 			</div>
-			<div class="rc9">
+			<div class="rc9 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 9 %>
 				<%= form.text_field :ro09 %>
 			</div>
-			<div class="rc10">
+			<div class="rc10 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 10 %>
 				<%= form.text_field :ro10 %>
 			</div>
-			<div class="rc11">
+			<div class="rc11 grid-line-bold-left grid-line-bold-right grid-line-bottom">
 				<%= form.label 11 %>
 				<%= form.text_field :ro11 %>
 			</div>
-			<div class="rc12">
+			<div class="rc12 grid-line-bold-left grid-line-bold-right grid-line-bold-bottom">
 				<%= form.label 12 %>
 				<%= form.text_field :ro12 %>
 			</div>
 
 
 			<!-- Set, Division & Promotion -->
-			<%= form.text_field :set, class: "wrestler-set", placeholder: "Set" %>
+			<%= form.text_field :set, class: "wrestler-set grid-line-bold-left grid-line-bold-right grid-line-bottom", placeholder: "Set" %>
 
 			<% if @wrestler.template == true %>
 				<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
 				<!-- TODO: Remove this from the current site. -->
 
-				<%= form.collection_select :division_id, Division.order(:name), :id, :name, class: "wrestler-division", :prompt => "Division" %>
+				<%= form.collection_select :division_id, Division.order(:name), :id, :name, class: "wrestler-division grid-line-bold-left grid-line-bold-right grid-line-bottom", :prompt => "Division" %>
 
-				<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, class: "wrestler-promotion", :prompt => "Promotion" %>
+				<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, class: "wrestler-promotion grid-line-bold-left grid-line-bold-right grid-line-bottom", :prompt => "Promotion" %>
 			<% end %>
 
 			<div class="notes">

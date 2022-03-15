@@ -5,12 +5,28 @@
 
 
 /*Look and Feel of Wrestler Show & Form*/
-.grid-line {
-  border: 1px solid green;
+.grid-line-bottom {
+  border-bottom: 1px solid green;
 }
 
 .grid-line-bold {
-  border: 2px solid green;
+  border: 3px solid green;
+}
+
+.grid-line-bold-top {
+  border-top: 3px solid green;
+}
+
+.grid-line-bold-bottom {
+  border-bottom: 3px solid green;
+}
+
+.grid-line-bold-left {
+  border-left: 3px solid green;
+}
+
+.grid-line-bold-right {
+  border-right: 3px solid green;
 }
 
 
