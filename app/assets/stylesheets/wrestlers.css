@@ -37,6 +37,7 @@
   grid-template-columns: 1fr 1fr 2fr;
 }
 
+/*Left Side of Form Container*/
 .wrestler-name {
   grid-column: 1 / 3;
   grid-row: 1;
@@ -58,6 +59,16 @@
   grid-row: 27;
   display: inline-flex;
 }
+
+
+/*Right Side of Form Container*/
+.wrestler-oc-header {
+  grid-column: 3 / 4;
+  grid-row: 1;
+  text-align: center;
+}
+
+
 
 
 /*Index View*/
