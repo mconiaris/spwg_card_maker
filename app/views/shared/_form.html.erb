@@ -276,6 +276,19 @@
 			</div>
 
 
+			<!-- Set, Division & Promotion -->
+			<%= form.text_field :set, class: "wrestler-set", placeholder: "Set" %>
+
+			<% if @wrestler.template == true %>
+				<!-- TODO: After creating Admins, add if statment for admin insert form here. -->
+				<!-- TODO: Remove this from the current site. -->
+
+				<%= form.collection_select :division_id, Division.order(:name), :id, :name, class: "wrestler-division", :prompt => "Division" %>
+
+				<%= form.collection_select :promotion_id, Promotion.order(:name), :id, :name, class: "wrestler-promotion", :prompt => "Promotion" %>
+			<% end %>
+
+
 
 		</div> <!-- End of wrestler-form-container -->
 

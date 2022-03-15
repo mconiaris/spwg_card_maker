@@ -356,66 +356,75 @@
   grid-row: 14;
 }
 
-
 .rc3 {
   grid-column: 3 / 4;
   grid-row: 15;
 }
-
 
 .rc4 {
   grid-column: 3 / 4;
   grid-row: 16;
 }
 
-
 .rc5 {
   grid-column: 3 / 4;
   grid-row: 17;
 }
-
 
 .rc6 {
   grid-column: 3 / 4;
   grid-row: 18;
 }
 
-
 .rc7 {
   grid-column: 3 / 4;
   grid-row: 19;
 }
-
 
 .rc8 {
   grid-column: 3 / 4;
   grid-row: 20;
 }
 
-
 .rc9 {
   grid-column: 3 / 4;
   grid-row: 21;
 }
-
 
 .rc10 {
   grid-column: 3 / 4;
   grid-row: 22;
 }
 
-
 .rc11 {
   grid-column: 3 / 4;
   grid-row: 23;
 }
-
 
 .rc12 {
   grid-column: 3 / 4;
   grid-row: 24;
 }
 
+
+/*Set, Division & Promotion*/
+.wrestler-set {
+  grid-column: 3 / 4;
+  grid-row: 25;
+  text-align: center;
+}
+
+.wrestler-division {
+  grid-column: 3 / 4;
+  grid-row: 26;
+  text-align: center;
+}
+
+.wrestler-promotion {
+  grid-column: 3 / 4;
+  grid-row: 27;
+  text-align: center;
+}
 
 /*Index View*/
 /*TODO: Move to it's own CSS document.*/
