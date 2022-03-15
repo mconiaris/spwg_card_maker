@@ -146,6 +146,60 @@
   display: flex;
 }
 
+.oc4 {
+  grid-column: 3 / 4;
+  grid-row: 4;
+  display: flex;
+}
+
+.oc5 {
+  grid-column: 3 / 4;
+  grid-row: 5;
+  display: flex;
+}
+
+.oc6 {
+  grid-column: 3 / 4;
+  grid-row: 6;
+  display: flex;
+}
+
+.oc7 {
+  grid-column: 3 / 4;
+  grid-row: 7;
+  display: flex;
+}
+
+.oc8 {
+  grid-column: 3 / 4;
+  grid-row: 8;
+  display: flex;
+}
+
+.oc9 {
+  grid-column: 3 / 4;
+  grid-row: 9;
+  display: flex;
+}
+
+.oc10 {
+  grid-column: 3 / 4;
+  grid-row: 10;
+  display: flex;
+}
+
+.oc11 {
+  grid-column: 3 / 4;
+  grid-row: 11;
+  display: flex;
+}
+
+.oc12 {
+  grid-column: 3 / 4;
+  grid-row: 12;
+  display: flex;
+}
+
 
 
 
