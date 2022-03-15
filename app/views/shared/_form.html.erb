@@ -2,7 +2,7 @@
 <div class="wrestler-display-container">
 	<%= form_with model: wrestler, class: "wrestler-form",local: true, data: { turbo: false } do |form| %>
 
-		<div class="wrestler-form-container">
+		<div class="wrestler-form-container grid-line-bold">
 			<!-- Left Side of Card -->
 			<%= form.text_field :name, class: "wrestler-name grid-line-bold", placeholder: "Name" %>
 
