@@ -325,10 +325,13 @@
 
 .sub-tag-priority-header {
   width: 6em;
+  color: #3a963a;
+  font-weight: bold;
 }
 
 .sub-tag-priority-input {
   width: 1.2em;
+  color: #0366c6;
 }
 
 /*Buttons and Notes*/
@@ -534,7 +537,7 @@
   grid-column: 3 / 4;
   grid-row: 26;
   text-align: center;
-color: #3a963a;
+  color: #3a963a;
   font-weight: bold;
 }
 
@@ -552,16 +555,18 @@ color: #3a963a;
   width: 1em;
   text-align: right;
   margin-right: 5px;
-  color: #1185f5;
+  color: #0366c6;
+  font-weight: bold;
 }
 
 .gc-dc-input {
   width: 6em;
-  color: #1185f5;
+  color: #0366c6;
 }
 
 .move-input {
   width: 14em;
+  color: #0366c6;
 }
 
 /*Index View*/
