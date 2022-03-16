@@ -75,36 +75,35 @@
   grid-column: 1 / 2;
   grid-row: 3;
   display: flex;
-  justify-content: space-between;
-
+  justify-content: flex-end;
 }
 
 .gc3 {
   grid-column: 1 / 2;
   grid-row: 4;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc4 {
   grid-column: 1 / 2;
   grid-row: 5;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc5 {
   grid-column: 1 / 2;
   grid-row: 6;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc6 {
   grid-column: 1 / 2;
   grid-row: 7;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 
@@ -113,35 +112,35 @@
   grid-column: 2 / 3;
   grid-row: 3;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc8 {
   grid-column: 2 / 3;
   grid-row: 4;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc9 {
   grid-column: 2 / 3;
   grid-row: 5;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc10 {
   grid-column: 2 / 3;
   grid-row: 6;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc11 {
   grid-column: 2 / 3;
   grid-row: 7;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .gc12 {
@@ -167,35 +166,35 @@
   grid-column: 1 / 2;
   grid-row: 10;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc3 {
   grid-column: 1 / 2;
   grid-row: 11;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc4 {
   grid-column: 1 / 2;
   grid-row: 12;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc5 {
   grid-column: 1 / 2;
   grid-row: 13;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc6 {
   grid-column: 1 / 2;
   grid-row: 14;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 /*Right Side of Defensive Card*/
@@ -203,35 +202,35 @@
   grid-column: 2 / 3;
   grid-row: 10;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc8 {
   grid-column: 2 / 3;
   grid-row: 11;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc9 {
   grid-column: 2 / 3;
   grid-row: 12;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc10 {
   grid-column: 2 / 3;
   grid-row: 13;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dc11 {
   grid-column: 2 / 3;
   grid-row: 14;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 
@@ -263,31 +262,43 @@
 .s1 {
   grid-column: 1 / 3;
   grid-row: 18;
+  display: flex;
+  justify-content: space-between;
 }
 
 .s2 {
   grid-column: 1 / 3;
   grid-row: 19;
+  display: flex;
+  justify-content: space-between;
 }
 
 .s3 {
   grid-column: 1 / 3;
   grid-row: 20;
+  display: flex;
+  justify-content: space-between;
 }
 
 .s4 {
   grid-column: 1 / 3;
   grid-row: 21;
+  display: flex;
+  justify-content: space-between;
 }
 
 .s5 {
   grid-column: 1 / 3;
   grid-row: 22;
+  display: flex;
+  justify-content: space-between;
 }
 
 .s6 {
   grid-column: 1 / 3;
   grid-row: 23;
+  display: flex;
+  justify-content: space-between;
 }
 
 
@@ -339,6 +350,7 @@
   grid-column: 3 / 4;
   grid-row: 2;
   display: flex;
+  justify-content: space-between;
 }
 
 .oc3 {
@@ -496,14 +508,18 @@ color: #3a963a;
 
 /*General and Defensive Cards Inline Styling*/
 .roll-number {
-  width: 2em;
+  width: 1em;
   text-align: right;
+  margin-right: 5px;
 
 }
 
 .gc-dc-input {
-  width: 5.6em;
-  margin-left: 5px;
+  width: 6em;
+}
+
+.move-input {
+  width: 14em;
 }
 
 /*Index View*/
