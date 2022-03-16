@@ -165,30 +165,35 @@
   grid-column: 1 / 2;
   grid-row: 10;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc3 {
   grid-column: 1 / 2;
   grid-row: 11;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc4 {
   grid-column: 1 / 2;
   grid-row: 12;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc5 {
   grid-column: 1 / 2;
   grid-row: 13;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc6 {
   grid-column: 1 / 2;
   grid-row: 14;
   display: flex;
+  justify-content: space-between;
 }
 
 /*Right Side of Defensive Card*/
@@ -196,30 +201,35 @@
   grid-column: 2 / 3;
   grid-row: 10;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc8 {
   grid-column: 2 / 3;
   grid-row: 11;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc9 {
   grid-column: 2 / 3;
   grid-row: 12;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc10 {
   grid-column: 2 / 3;
   grid-row: 13;
   display: flex;
+  justify-content: space-between;
 }
 
 .dc11 {
   grid-column: 2 / 3;
   grid-row: 14;
   display: flex;
+  justify-content: space-between;
 }
 
 
@@ -227,7 +237,8 @@
 .dc12 {
   grid-column: 1 / 3;
   grid-row: 15;
-  text-align: center; 
+  display: flex;
+  justify-content: center;
 }
 
 
