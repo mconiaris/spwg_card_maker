@@ -144,25 +144,25 @@
 
 			<!-- Sub, Tag & Priority -->
 			<div class="sub grid-line-bold-left grid-line-bottom">
-		  	<div>SUB:</div>
-				<%= form.text_field :subx %>
+		  	<div class="sub-tag-priority-header">SUB:</div>
+				<%= form.text_field :subx, class: "sub-tag-priority-input" %>
 		    <div>-</div>
-				<%= form.text_field :suby %>
+				<%= form.text_field :suby, class: "sub-tag-priority-input" %>
 			</div>
 
 			<div class="tag grid-line-bold-left grid-line-bottom">
-		    <div>TAG TEAM:</div>
-				<%= form.text_field :tagx %>
+		    <div class="sub-tag-priority-header">TAG TEAM:</div>
+				<%= form.text_field :tagx, class: "sub-tag-priority-input" %>
 		    <div>-</div>
-				<%= form.text_field :tagy %>
+				<%= form.text_field :tagy, class: "sub-tag-priority-input" %>
 			</div>
 
 			<div class="priority grid-line-bold-left grid-line-bold-bottom">
 				<!-- TODO: Automate Pri-T value based on TT% -->
-		    <div>PRIORITY:</div>
-				<%= form.text_field :prioritys %>
+		    <div class="sub-tag-priority-header">PRIORITY:</div>
+				<%= form.text_field :prioritys, class: "sub-tag-priority-input" %>
 		  	<div>/</div>
-				<%= form.text_field :priorityt %>
+				<%= form.text_field :priorityt, class: "sub-tag-priority-input" %>
 			</div>
 
 

@@ -321,6 +321,14 @@
   display: flex;
 }
 
+.sub-tag-priority-header {
+  width: 6em;
+}
+
+.sub-tag-priority-input {
+  width: 1.2em;
+}
+
 
 /*Buttons and Notes*/
 .wrestler-submit-cancel {
