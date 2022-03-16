@@ -41,10 +41,12 @@
 
 .wrestler-form {
   grid-column: 1;
+  background-color: #dad9d9;
 }
 
 .wrestler-stats {
   grid-column: 2;
+  margin-left: 10px;
 }
 
 
@@ -550,11 +552,12 @@ color: #3a963a;
   width: 1em;
   text-align: right;
   margin-right: 5px;
-
+  color: #1185f5;
 }
 
 .gc-dc-input {
   width: 6em;
+  color: #1185f5;
 }
 
 .move-input {
