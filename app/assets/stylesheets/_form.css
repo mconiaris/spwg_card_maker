@@ -4,6 +4,12 @@ input {
 }
 
 
+.wrestler-form {
+  grid-column: 1;
+  background-color: #dad9d9;
+}
+
+
 /*Submit & Cancel Buttons*/
 
 

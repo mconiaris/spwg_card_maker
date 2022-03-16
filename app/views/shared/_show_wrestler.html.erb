@@ -1,82 +1,94 @@
-<!-- TODO: Replace the tabs with better HTML & CSS -->
 <!-- <div class="wrestler_show_wrapper"> -->
-    <p class="left r1 title grid-line"><%= @wrestler.name %></p>
+<div class="wrestler-display-container">
+    <div class="wrestler-show">
+        <div class="wrestler-show-container">
+            <p class="wrestler-name grid-line-bold"><%= @wrestler.name %></p>
 
-    <p class="left r2 title grid-line" >GENERAL CARD</p>
+            <p>GENERAL CARD</p>
 
-    <p class="c1 r3 grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.gc02 %></p>
-    <p class="c1 r4 grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.gc03 %></p>
-    <p class="c1 r5 grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.gc04 %></p>
-    <p class="c1 r6 grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.gc05 %></p>
-    <p class="c1 r7 grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.gc06 %></p>
+            <p>2 <%= @wrestler.gc02 %></p>
+            <p>3 <%= @wrestler.gc03 %></p>
+            <p>4 <%= @wrestler.gc04 %></p>
+            <p>5 <%= @wrestler.gc05 %></p>
+            <p>6 <%= @wrestler.gc06 %></p>
 
-    <p class="c12 r3 grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.gc07 %></p>
-    <p class="c12 r4 grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.gc08 %></p>
-    <p class="c12 r5 grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.gc09 %></p>
-    <p class="c12 r6 grid-line">&nbsp;10&nbsp;<%= @wrestler.gc10 %></p>
-    <p class="c12 r7 grid-line">&nbsp;11&nbsp;<%= @wrestler.gc11 %></p>
+            <p>7 <%= @wrestler.gc07 %></p>
+            <p>8 <%= @wrestler.gc08 %></p>
+            <p>9 <%= @wrestler.gc09 %></p>
+            <p>10 <%= @wrestler.gc10 %></p>
+            <p>11 <%= @wrestler.gc11 %></p>
+            
+            <p>12 <%= @wrestler.gc12 %></p>
+
+            <p>DEFENSIVE CARD</p>
+            <p>2 <%= @wrestler.dc02 %></p>
+            <p>3 <%= @wrestler.dc03 %></p>
+            <p>4 <%= @wrestler.dc04 %></p>
+            <p>5 <%= @wrestler.dc05 %></p>
+            <p>6 <%= @wrestler.dc06 %></p>
+
+            <p>7 <%= @wrestler.dc07 %></p>
+            <p>8 <%= @wrestler.dc08 %></p>
+            <p>9 <%= @wrestler.dc09 %></p>
+            <p>10 <%= @wrestler.dc10 %></p>
+            <p>11 <%= @wrestler.dc11 %></p>
+              
+            <p>12 <%= @wrestler.dc12 %></p>
+
+            <p>SPECIALTY:</p>
+
+            <p><%= @wrestler.specialty %></p>
+
+            <p>1 <%= @wrestler.s1 %></p>
+            <p>2 <%= @wrestler.s2 %></p>
+            <p>3 <%= @wrestler.s3 %></p>
+            <p>4 <%= @wrestler.s4 %></p>
+            <p>5 <%= @wrestler.s5 %></p>
+            <p>6 <%= @wrestler.s6 %></p>
+
+            <p>SUB: <%= sub_and_tag_display(@wrestler.subx, @wrestler.suby) %></p>
+            <p>TAG TEAM: <%= sub_and_tag_display(@wrestler.tagx, @wrestler.tagy) %></p>
+            <p>PRIORITY: <%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
+
+            <!-- Right Side of Card -->
+            <p>OFFENSIVE CARD</p>
+
+            <p>2 <%= @wrestler.oc02 %></p> 
+            <p>3 <%= @wrestler.oc03 %></p>
+            <p>4 <%= @wrestler.oc04 %></p>
+            <p>5 <%= @wrestler.oc05 %></p>
+            <p>6 <%= @wrestler.oc06 %></p>
+            <p>7 <%= @wrestler.oc07 %></p>
+            <p>8 <%= @wrestler.oc08 %></p>
+            <p>9 <%= @wrestler.oc09 %></p>
+            <p>10<%= @wrestler.oc10 %></p>
+            <p>11 <%= @wrestler.oc11 %></p>
+            <p>12<%= @wrestler.oc12 %></p>
+
+            <p>=ROPES=</p>
+
+            <p>2 <%= @wrestler.ro02 %></p>
+            <p>3 <%= @wrestler.ro03 %></p>
+            <p>4 <%= @wrestler.ro04 %></p>
+            <p>5 <%= @wrestler.ro05 %></p>
+            <p>6 <%= @wrestler.ro06 %></p>
+            <p>7 <%= @wrestler.ro07 %></p>
+            <p>8 <%= @wrestler.ro08 %></p>
+            <p>9 <%= @wrestler.ro09 %></p>
+            <p>10 <%= @wrestler.ro10 %></p>
+            <p>11 <%= @wrestler.ro11 %></p>
+            <p>12 <%= @wrestler.ro12 %></p>
+
+            <p><%= @wrestler.set %></p>
+            <p>SPWG Card Maker</p>
+        </div> <!-- End of wrestler-show-container -->
+
+    </div> <!-- End of wrestler-show -->
+
+    <%= render 'shared/form_stats', wrestler: wrestler, class: "wrestler-stats" %>
+</div> <!-- End of wrestler-display-container -->
+
+
+
+
     
-    <p class="left r8 title grid-line">12&nbsp;&nbsp;<%= @wrestler.gc12 %></p>
-
-    <p class="left r9 title grid-line">DEFENSIVE CARD</p>
-    <p class="c1 r10 grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.dc02 %></p>
-    <p class="c1 r11 grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.dc03 %></p>
-    <p class="c1 r12 grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.dc04 %></p>
-    <p class="c1 r13 grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.dc05 %></p>
-    <p class="c1 r14 grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.dc06 %></p>
-
-    <p class="c2 r10 grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.dc07 %></p>
-    <p class="c2 r11 grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.dc08 %></p>
-    <p class="c2 r12 grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.dc09 %></p>
-    <p class="c2 r13 grid-line">&nbsp;10&nbsp;&nbsp;<%= @wrestler.dc10 %></p>
-    <p class="c2 r14 grid-line">&nbsp;11&nbsp;&nbsp;<%= @wrestler.dc11 %></p>
-      
-    <p class="left r15 title grid-line">12&nbsp;&nbsp;<%= @wrestler.dc12 %></p>
-
-    <p class="left title grid-line">SPECIALTY:</p>
-
-    <p class="left title grid-line"><%= @wrestler.specialty %></p>
-
-    <p class="left grid-line">&nbsp;1&nbsp;&nbsp;<%= @wrestler.s1 %></p>
-    <p class="left grid-line">&nbsp;2&nbsp;&nbsp;<%= @wrestler.s2 %></p>
-    <p class="left grid-line">&nbsp;3&nbsp;&nbsp;<%= @wrestler.s3 %></p>
-    <p class="left grid-line">&nbsp;4&nbsp;&nbsp;<%= @wrestler.s4 %></p>
-    <p class="left grid-line">&nbsp;5&nbsp;&nbsp;<%= @wrestler.s5 %></p>
-    <p class="left grid-line">&nbsp;6&nbsp;&nbsp;<%= @wrestler.s6 %></p>
-
-    <p class="left grid-line">&nbsp;SUB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub_and_tag_display(@wrestler.subx, @wrestler.suby) %></p>
-    <p class="left grid-line">&nbsp;TAG TEAM:&nbsp;<%= sub_and_tag_display(@wrestler.tagx, @wrestler.tagy) %></p>
-    <p class="left grid-line">&nbsp;PRIORITY:&nbsp;&nbsp;<%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></p>
-
-    <!-- Right Side of Card -->
-    <p class="right r1 grid-line title">OFFENSIVE CARD</p>
-
-    <p class="c3 r2 grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.oc02 %></p> 
-    <p class="c3 r3 grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.oc03 %></p>
-    <p class="c3 r4 grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.oc04 %></p>
-    <p class="c3 r5 grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.oc05 %></p>
-    <p class="c3 r6 grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.oc06 %></p>
-    <p class="c3 r7 grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.oc07 %></p>
-    <p class="c3 r8 grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.oc08 %></p>
-    <p class="c3 r9 grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.oc09 %></p>
-    <p class="c3 r10 grid-line">&nbsp;10&nbsp;&nbsp;<%= @wrestler.oc10 %></p>
-    <p class="c3 r11 grid-line">&nbsp;11&nbsp;&nbsp;<%= @wrestler.oc11 %></p>
-    <p class="c3 r12 grid-line">&nbsp;12&nbsp;&nbsp;<%= @wrestler.oc12 %></p>
-
-    <p class="right r13 grid-line title">=ROPES=</p>
-
-    <p class="c3 r14 grid-line">&nbsp;2 &nbsp;&nbsp;<%= @wrestler.ro02 %></p>
-    <p class="c3 r15 grid-line">&nbsp;3 &nbsp;&nbsp;<%= @wrestler.ro03 %></p>
-    <p class="c3 r16 grid-line">&nbsp;4 &nbsp;&nbsp;<%= @wrestler.ro04 %></p>
-    <p class="c3 r17 grid-line">&nbsp;5 &nbsp;&nbsp;<%= @wrestler.ro05 %></p>
-    <p class="c3 r18 grid-line">&nbsp;6 &nbsp;&nbsp;<%= @wrestler.ro06 %></p>
-    <p class="c3 r19 grid-line">&nbsp;7 &nbsp;&nbsp;<%= @wrestler.ro07 %></p>
-    <p class="c3 r20 grid-line">&nbsp;8 &nbsp;&nbsp;<%= @wrestler.ro08 %></p>
-    <p class="c3 r21 grid-line">&nbsp;9 &nbsp;&nbsp;<%= @wrestler.ro09 %></p>
-    <p class="c3 r22 grid-line">&nbsp;10&nbsp;&nbsp;<%= @wrestler.ro10 %></p>
-    <p class="c3 r23 grid-line">&nbsp;11&nbsp;&nbsp;<%= @wrestler.ro11 %></p>
-    <p class="c3 r24 grid-line">&nbsp;12&nbsp;&nbsp;<%= @wrestler.ro12 %></p>
-
-    <p class="c3 r25 grid-line title"><%= @wrestler.set %></p>
-    <p class="c3 r26 grid-line title">SPWG Card Maker</p>
-<!-- </div> -->

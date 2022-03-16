@@ -39,9 +39,14 @@
   justify-content: center;
 }
 
-.wrestler-form {
+.wrestler-show {
   grid-column: 1;
-  background-color: #dad9d9;
+}
+
+/*Wrestler Form Container*/
+.wrestler-show-container {
+  display: grid;
+  grid-template-columns: 7em 7em 14em;
 }
 
 
