@@ -1,24 +1,90 @@
 <!-- <div class="wrestler_show_wrapper"> -->
 <div class="wrestler-display-container">
-    <div class="wrestler-show">
-        <div class="wrestler-show-container">
-            <p class="wrestler-name grid-line-bold"><%= @wrestler.name %></p>
+  <div class="wrestler-show">
+    <div class="wrestler-show-container">
+      <!-- Left Side of Card -->
+      <div class="wrestler-name grid-line-bold"><%= @wrestler.name %></div>
 
-            <p>GENERAL CARD</p>
+      <div class="wrestler-gc-header grid-line-bold-left grid-line-bold-right grid-line-bold-bottom">GENERAL CARD</div>
 
-            <p>2 <%= @wrestler.gc02 %></p>
-            <p>3 <%= @wrestler.gc03 %></p>
-            <p>4 <%= @wrestler.gc04 %></p>
-            <p>5 <%= @wrestler.gc05 %></p>
-            <p>6 <%= @wrestler.gc06 %></p>
+      <!-- Left Side of GC -->
+      <div class="gc2 grid-line-bold-left grid-line-bottom">
+        <div class="roll-number">2</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc02 %>
+        </div>
+      </div>
 
-            <p>7 <%= @wrestler.gc07 %></p>
-            <p>8 <%= @wrestler.gc08 %></p>
-            <p>9 <%= @wrestler.gc09 %></p>
-            <p>10 <%= @wrestler.gc10 %></p>
-            <p>11 <%= @wrestler.gc11 %></p>
-            
-            <p>12 <%= @wrestler.gc12 %></p>
+      <div class="gc3 grid-line-bold-left grid-line-bottom">
+        <div class="roll-number">3</div>
+        <div class="gc-dc-input"><%= @wrestler.gc03 %></div>
+      </div>
+
+      <div class="gc4 grid-line-bold-left grid-line-bottom">
+        <div class="roll-number">4</div>
+        <div class="gc-dc-input"><%= @wrestler.gc04 %></div>
+      </div>
+
+      <div class="gc5 grid-line-bold-left grid-line-bottom">
+        <div class="roll-number">5</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc05 %>
+        </div>
+      </div>
+
+      <div class="gc6 grid-line-bold-left grid-line-bottom">
+        <div class="roll-number">6</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc06 %>
+        </div>
+      </div>
+
+      <!-- Right Side of GC -->
+      <div class="gc7 grid-line-left grid-line-bold-right grid-line-bottom">
+        <div class="roll-number">7</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc07 %>
+        </div>
+      </div>
+
+      <div class="gc8 grid-line-left grid-line-bold-right grid-line-bottom">
+        <div class="roll-number">8</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc08 %>
+        </div>
+      </div>
+
+      <div class="gc9 grid-line-left grid-line-bold-right grid-line-bottom">
+        <div class="roll-number">9</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc09 %>
+        </div>
+      </div>
+
+      <div class="gc10 grid-line-left grid-line-bold-right grid-line-bottom">
+        <div class="roll-number">10</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc10 %>
+        </div>
+      </div>
+
+      <div class="gc11 grid-line-left grid-line-bold-right grid-line-bottom">
+        <div class="roll-number">11</div>
+        <div class="gc-dc-input">
+          <%= @wrestler.gc11 %>
+        </div>
+      </div>
+
+      <!-- Center of General Card -->
+      <div class="gc12 grid-line-bold-left grid-line-bold-right grid-line-bold-bottom">
+        <div class="roll-number">12</div>
+        <div>
+          
+        </div class="gc-dc-input">
+          <%= @wrestler.gc12 %>
+        </div>
+
+
 
             <p>DEFENSIVE CARD</p>
             <p>2 <%= @wrestler.dc02 %></p>
