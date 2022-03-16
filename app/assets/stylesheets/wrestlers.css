@@ -44,11 +44,6 @@
   background-color: #dad9d9;
 }
 
-.wrestler-stats {
-  grid-column: 2;
-  margin-left: 10px;
-}
-
 
 /*Wrestler Form Container*/
 .wrestler-form-container {
