@@ -1,12 +1,9 @@
 /*Show Page*/
 
-/*CSS For Pages Loading the show_wrestler partial*/
+/*CSS For Pages Loading the show_wrestler and stats partial*/
 .show-container {
   display: flex;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60em;
 }
 
 .stats {
@@ -47,17 +44,8 @@
 
 
 /* CSS for show wrestler (card) partial itself */
-.wrestler_show_wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  max-width: 33em;
-  color: black;
-  background-color: white;
-}
 
-.wrestler_show_wrapper p {
-  margin: 0px;
-}
+
 
 
 /*Print Version of Wrestler Card*/

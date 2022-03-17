@@ -45,10 +45,9 @@
 
 .wrestler-show {
   grid-column: 1;
-  font-size: 17px;
 }
 
-/*Wrestler Form Container*/
+/*Wrestler Show Container*/
 .wrestler-show-container {
   display: grid;
   grid-template-columns: 7em 7em 14em;
