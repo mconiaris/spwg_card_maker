@@ -9,6 +9,24 @@ input {
   background-color: #dad9d9;
 }
 
+.gc-dc-input {
+  width: 6em;
+  color: #0366c6;
+}
+
+
+.move-input {
+  width: 14em;
+  color: #0366c6;
+}
+
+
+.sub-tag-priority-input {
+  width: 1.2em;
+  color: #0366c6;
+}
+
+
 
 /*Submit & Cancel Buttons*/
 

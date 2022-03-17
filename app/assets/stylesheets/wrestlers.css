@@ -333,8 +333,8 @@
   font-weight: bold;
 }
 
-.sub-tag-priority-input {
-  width: 1.2em;
+.sub-tag-priority-show {
+  width: 2em;
   color: #0366c6;
 }
 
@@ -563,13 +563,15 @@
   font-weight: bold;
 }
 
-.gc-dc-input {
-  width: 6em;
+.gc-dc-show {
+  width: 5em;
+  padding-left: 1em;
   color: #0366c6;
 }
 
-.move-input {
-  width: 14em;
+.move-show {
+  width: 11em;
+  padding-left: 1em;
   color: #0366c6;
 }
 
