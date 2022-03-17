@@ -45,6 +45,7 @@
 
 .wrestler-show {
   grid-column: 1;
+  font-size: 17px;
 }
 
 /*Wrestler Form Container*/
@@ -570,8 +571,8 @@
 }
 
 .move-show {
-  width: 11em;
-  padding-left: 1em;
+  width: 11.5em;
+  padding-left: 0.5em;
   color: #0366c6;
 }
 
