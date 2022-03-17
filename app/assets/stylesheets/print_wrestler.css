@@ -4,9 +4,5 @@
   margin-right: auto;
   margin-top: 2em;
   max-width: 30em;
-}
-
-.print-wrestler p {
-  margin: 0px;
-  padding: 2px;
+  font-size: initial;
 }
