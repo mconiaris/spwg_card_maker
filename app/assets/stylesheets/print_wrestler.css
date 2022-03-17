@@ -1,12 +1,12 @@
 /*Print Version of Wrestler Card*/
-.print_wrestler {
+.print-wrestler {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
   max-width: 30em;
 }
 
-.print_wrestler p {
+.print-wrestler p {
   margin: 0px;
   padding: 2px;
 }

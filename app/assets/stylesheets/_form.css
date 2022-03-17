@@ -71,4 +71,6 @@ input {
 .notes {
   grid-column: 1 / 4;
   grid-row: 28;
+  margin-left: 5px;
+  color: black;
 }
