@@ -147,7 +147,7 @@
     <!-- Specialty Card -->
     <div class="wrestler-specialty-header grid-line-bold-left grid-line-bold-right grid-line-bold-bottom">SPECIALTY:</div>
 
-    <div class="wrestler-specialty-move grid-line-bold-left grid-line-bottom"><%= @wrestler.specialty %></div>
+    <div class="wrestler-specialty-move grid-line-bold-left grid-line-bold-right grid-line-bottom"><%= @wrestler.specialty %></div>
 
     <div class="s1 grid-line-bold-left grid-line-bold-right grid-line-bottom">
       <div class="roll-number">1</div>
@@ -315,8 +315,8 @@
       <div class="move-show"><%= @wrestler.ro12 %></div>
     </div>
 
-    <div><%= @wrestler.set %></div>
-    <div>SPWG Card Maker</div>
+    <div class="wrestler-set grid-line-bold-right grid-line-bold-bottom"><%= @wrestler.set %></div>
+    <div class="grid-line-bold-right grid-line-bold-bottom" id="site-plug">SPWG Card Maker</div>
 
   </div> <!-- End of wrestler-show-container -->
 </div> <!-- End of wrestler-show -->

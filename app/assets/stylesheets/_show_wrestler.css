@@ -1,12 +1,6 @@
 /*Show Page*/
 
 /*CSS For Pages Loading the show_wrestler and stats partial*/
-.show-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
 .wrestler-show {
   grid-column: 1;
 }
@@ -14,10 +8,16 @@
 /*Wrestler Show Container*/
 .wrestler-show-container {
   display: grid;
-  grid-template-columns: 7em 7em 14em;
+  grid-template-columns: 7fr 7fr 14fr;
+  background-color: white;
 }
 
 
+#site-plug {
+  text-align: center;
+  color: #3a963a;
+  font-weight: bold;
+}
 
 
 

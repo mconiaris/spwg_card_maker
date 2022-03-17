@@ -8,7 +8,7 @@
 /*Wrestler Form Container*/
 .wrestler-form-container {
   display: grid;
-  grid-template-columns: 7em 7em 14em;
+  grid-template-columns: 7fr 7fr 14fr;
 }
 
 
