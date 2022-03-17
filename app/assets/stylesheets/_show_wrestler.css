@@ -1,22 +1,43 @@
 /*Show Page*/
 
-/*CSS For Pages Loading the show_wrestler partial*/
-.show-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60em;
+/*CSS For Pages Loading the show_wrestler and stats partial*/
+.wrestler-show {
+  grid-column: 1;
 }
 
-.stats {
-  max-width: 19em;
-  padding-left: 10px;
+/*Wrestler Show Container*/
+.wrestler-show-container {
+  display: grid;
+  grid-template-columns: 7fr 7fr 14fr;
+  background-color: white;
 }
 
-#stats-title {
 
+.gc-dc-show {
+  width: 5em;
+  padding-left: 1em;
+  color: #07529b;
 }
+
+.move-show {
+  width: 12.5em;
+  padding-left: 0.5em;
+  color: #07529b;
+}
+
+
+#site-plug {
+  text-align: center;
+  color: #3a963a;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
 
 /*Download Section in Show Page*/
 #downloads {
@@ -47,32 +68,3 @@
 
 
 /* CSS for show wrestler (card) partial itself */
-.wrestler_show_wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  max-width: 33em;
-  color: black;
-  background-color: white;
-}
-
-.wrestler_show_wrapper p {
-  margin: 0px;
-}
-
-
-/*Print Version of Wrestler Card*/
-.print_wrestler {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  max-width: 32em;
-  color: black;
-  background-color: white;
-}
-
-.print_wrestler p {
-  margin: 0px;
-  padding: 2px;
-}

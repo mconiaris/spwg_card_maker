@@ -1,7 +1,554 @@
-// Place all the styles related to the Wrestlers controller here.
+/*// Place all the styles related to the Wrestlers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*/
 
+/*Form/Show and Stats Layout*/
+.wrestler-display-container {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+}
+
+
+/*Positingng and Styles of Both Wrestler Show & Form*/
+.grid-line-left {
+  border-left: 1px solid #3a963a;
+}
+
+.grid-line-bottom {
+  border-bottom: 1px solid #3a963a;
+}
+
+.grid-line-bold {
+  border: 3px solid #3a963a;
+}
+
+.grid-line-bold-top {
+  border-top: 3px solid #3a963a;
+}
+
+.grid-line-bold-bottom {
+  border-bottom: 3px solid #3a963a;
+}
+
+.grid-line-bold-left {
+  border-left: 3px solid #3a963a;
+}
+
+.grid-line-bold-right {
+  border-right: 3px solid #3a963a;
+}
+
+
+
+
+
+
+/*Left Side of Form Container*/
+.wrestler-name {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  text-align: center;
+  color: #07529b;
+}
+
+.wrestler-gc-header {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  text-align: center;
+  color: #3a963a;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*Left Side of GC*/
+.gc2 {
+  grid-column: 1 / 2;
+  grid-row: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc3 {
+  grid-column: 1 / 2;
+  grid-row: 4;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc4 {
+  grid-column: 1 / 2;
+  grid-row: 5;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc5 {
+  grid-column: 1 / 2;
+  grid-row: 6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc6 {
+  grid-column: 1 / 2;
+  grid-row: 7;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/*Right Side of GC*/
+.gc7 {
+  grid-column: 2 / 3;
+  grid-row: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc8 {
+  grid-column: 2 / 3;
+  grid-row: 4;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc9 {
+  grid-column: 2 / 3;
+  grid-row: 5;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc10 {
+  grid-column: 2 / 3;
+  grid-row: 6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc11 {
+  grid-column: 2 / 3;
+  grid-row: 7;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc12 {
+  grid-column: 1 / 3;
+  grid-row: 8;
+  display: flex;
+  justify-content: center;
+}
+
+
+/*Defensive Card*/
+.wrestler-dc-header {
+  grid-column: 1 / 3;
+  grid-row: 9;
+  text-align: center;
+  color: #3a963a;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*Left Side of Defensive Card*/
+.dc2 {
+  grid-column: 1 / 2;
+  grid-row: 10;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc3 {
+  grid-column: 1 / 2;
+  grid-row: 11;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc4 {
+  grid-column: 1 / 2;
+  grid-row: 12;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc5 {
+  grid-column: 1 / 2;
+  grid-row: 13;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc6 {
+  grid-column: 1 / 2;
+  grid-row: 14;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*Right Side of Defensive Card*/
+.dc7 {
+  grid-column: 2 / 3;
+  grid-row: 10;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc8 {
+  grid-column: 2 / 3;
+  grid-row: 11;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc9 {
+  grid-column: 2 / 3;
+  grid-row: 12;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc10 {
+  grid-column: 2 / 3;
+  grid-row: 13;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dc11 {
+  grid-column: 2 / 3;
+  grid-row: 14;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/*Cemter of Defensive Card*/
+.dc12 {
+  grid-column: 1 / 3;
+  grid-row: 15;
+  display: flex;
+  justify-content: center;
+}
+
+
+/*Specialty Card*/
+.wrestler-specialty-header {
+  grid-column: 1 / 3;
+  grid-row: 16;
+  text-align: center;
+  color: #3a963a;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.wrestler-specialty-move {
+  grid-column: 1 / 3;
+  grid-row: 17;
+  text-align: center;
+  color: #07529b;
+}
+
+.s1 {
+  grid-column: 1 / 3;
+  grid-row: 18;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.s2 {
+  grid-column: 1 / 3;
+  grid-row: 19;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.s3 {
+  grid-column: 1 / 3;
+  grid-row: 20;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.s4 {
+  grid-column: 1 / 3;
+  grid-row: 21;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.s5 {
+  grid-column: 1 / 3;
+  grid-row: 22;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.s6 {
+  grid-column: 1 / 3;
+  grid-row: 23;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/*Sub, Tag & Priority*/
+.sub {
+  grid-column: 1 / 3;
+  grid-row: 24;
+  display: flex;
+}
+
+.tag {
+  grid-column: 1 / 3;
+  grid-row: 25;
+  display: flex;
+}
+
+.priority {
+  grid-column: 1 / 3;
+  grid-row: 26;
+  display: flex;
+}
+
+.sub-tag-priority-header {
+  width: 6em;
+  color: #3a963a;
+  font-weight: bold;
+}
+
+.sub-tag-priority-show {
+  width: 2em;
+  color: #07529b;
+}
+
+/*Buttons and Notes*/
+.wrestler-submit-cancel {
+  grid-column: 1 / 3;
+  grid-row: 27;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.notes {
+  grid-column: 1 / 4;
+  grid-row: 28;
+}
+
+/*Right Side of Form Container*/
+.wrestler-oc-header {
+  grid-column: 3 / 4;
+  grid-row: 1;
+  text-align: center;
+  color: #3a963a;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.oc2 {
+  grid-column: 3 / 4;
+  grid-row: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc3 {
+  grid-column: 3 / 4;
+  grid-row: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc4 {
+  grid-column: 3 / 4;
+  grid-row: 4;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc5 {
+  grid-column: 3 / 4;
+  grid-row: 5;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc6 {
+  grid-column: 3 / 4;
+  grid-row: 6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc7 {
+  grid-column: 3 / 4;
+  grid-row: 7;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc8 {
+  grid-column: 3 / 4;
+  grid-row: 8;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc9 {
+  grid-column: 3 / 4;
+  grid-row: 9;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc10 {
+  grid-column: 3 / 4;
+  grid-row: 10;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc11 {
+  grid-column: 3 / 4;
+  grid-row: 11;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oc12 {
+  grid-column: 3 / 4;
+  grid-row: 12;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/*Ropes Card*/
+.wrestler-ropes-header {
+  grid-column: 3 / 4;
+  grid-row: 13;
+  text-align: center;
+  color: #3a963a;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.rc2 {
+  grid-column: 3 / 4;
+  grid-row: 14;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc3 {
+  grid-column: 3 / 4;
+  grid-row: 15;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc4 {
+  grid-column: 3 / 4;
+  grid-row: 16;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc5 {
+  grid-column: 3 / 4;
+  grid-row: 17;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc6 {
+  grid-column: 3 / 4;
+  grid-row: 18;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc7 {
+  grid-column: 3 / 4;
+  grid-row: 19;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc8 {
+  grid-column: 3 / 4;
+  grid-row: 20;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc9 {
+  grid-column: 3 / 4;
+  grid-row: 21;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc10 {
+  grid-column: 3 / 4;
+  grid-row: 22;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc11 {
+  grid-column: 3 / 4;
+  grid-row: 23;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rc12 {
+  grid-column: 3 / 4;
+  grid-row: 24;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/*Set, Division & Promotion*/
+.wrestler-set {
+  grid-column: 3 / 4;
+  grid-row: 25;
+  text-align: center;
+  color: #3a963a;
+  font-weight: bold;
+}
+
+.wrestler-division {
+  grid-column: 3 / 4;
+  grid-row: 26;
+  text-align: center;
+  color: #3a963a;
+  font-weight: bold;
+}
+
+.wrestler-promotion {
+  grid-column: 3 / 4;
+  grid-row: 27;
+  text-align: center;
+  color: #3a963a;
+  font-weight: bold;
+}
+
+
+/*General and Defensive Cards Inline Styling*/
+.roll-number {
+  width: 1em;
+  text-align: right;
+  margin-right: 5px;
+  color: #07529b;
+  font-weight: bold;
+}
 
 /*Index View*/
 /*TODO: Move to it's own CSS document.*/
@@ -69,190 +616,3 @@ td a {
 }
 
 
-/*Columns and rows for Show and Forms*/
-.grid-line {
-  border: 1px solid green;
-}
-
-.grid-line-bold {
-  border: 2px solid green;
-}
-
-
-.left-grid-line-bold {
-  border: 2px solid green;
-}
-
-.right-grid-line-bold {
-  border: 2px solid green;
-}
-
-.top-grid-line-bold {
-  border: 2px solid green;
-}
-
-.bottom-grid-line-bold {
-  border: 2px solid green;
-}
-
-
-.left {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
-.right {
-  grid-column: 3;
-}
-
-
-/*columns*/
-.c1 {
-  grid-column: 1;
-}
-
-.c2 {
-  grid-column: 2;
-}
-
-.c3 {
-  grid-column: 3;
-}
-
-.c4 {
-  grid-column: 4;
-}
-
-.c5 {
-  grid-column: 5;
-}
-
-.c6 {
-  grid-column: 6;
-}
-
-.c7 {
-  grid-column: 7;
-}
-
-
-/*Grid rows*/
-.r1 {
-  grid-row: 1;
-}
-
-.r2 {
-  grid-row: 2;
-}
-
-.r3 {
-  grid-row: 3;
-}
-
-.r4 {
-  grid-row: 4;
-}
-
-.r5 {
-  grid-row: 5;
-}
-
-.r6 {
-  grid-row: 6;
-}
-
-.r7 {
-  grid-row: 7;
-}
-
-.r8 {
-  grid-row: 8;
-}
-
-.r9 {
-  grid-row: 9;
-}
-
-.r10 {
-  grid-row: 10;
-}
-
-.r11 {
-  grid-row: 11;
-}
-
-.r12 {
-  grid-row: 12;
-}
-
-.r13 {
-  grid-row: 13;
-}
-
-.r14 {
-  grid-row: 14;
-}
-
-.r15 {
-  grid-row: 15;
-}
-
-.r16 {
-  grid-row: 16;
-}
-
-.r17 {
-  grid-row: 17;
-}
-
-.r18 {
-  grid-row: 18;
-}
-
-.r19 {
-  grid-row: 19;
-}
-
-.r20 {
-  grid-row: 20;
-}
-
-.r21 {
-  grid-row: 21;
-}
-
-.r22 {
-  grid-row: 22;
-}
-
-.r23 {
-  grid-row: 23;
-}
-
-.r24 {
-  grid-row: 24;
-}
-
-.r25 {
-  grid-row: 25;
-}
-
-.r26 {
-  grid-row: 26;
-}
-
-.r27 {
-  grid-row: 27;
-}
-
-.r28 {
-  grid-row: 28;
-}
-
-.r29 {
-  grid-row: 29;
-}
-
-.r30 {
-  grid-row: 30;
-}
