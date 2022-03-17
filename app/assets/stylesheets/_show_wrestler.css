@@ -6,14 +6,25 @@
   flex-wrap: wrap;
 }
 
-.stats {
-  max-width: 19em;
-  padding-left: 10px;
+
+.wrestler-show {
+  grid-column: 1;
 }
 
-#stats-title {
-
+/*Wrestler Show Container*/
+.wrestler-show-container {
+  display: grid;
+  grid-template-columns: 7em 7em 14em;
 }
+
+
+
+
+
+
+
+
+
 
 /*Download Section in Show Page*/
 #downloads {

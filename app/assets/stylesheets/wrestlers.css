@@ -3,8 +3,15 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 */
 
+/*Form/Show and Stats Layout*/
+.wrestler-display-container {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+}
 
-/*Look and Feel of Wrestler Show & Form*/
+
+/*Positingng and Styles of Both Wrestler Show & Form*/
 .grid-line-left {
   border-left: 1px solid #3a963a;
 }
@@ -36,29 +43,7 @@
 
 
 
-/*Form/Show and Stats Layout*/
-.wrestler-display-container {
-  display: grid;
-  grid-template-columns: auto;
-  justify-content: center;
-}
 
-.wrestler-show {
-  grid-column: 1;
-}
-
-/*Wrestler Show Container*/
-.wrestler-show-container {
-  display: grid;
-  grid-template-columns: 7em 7em 14em;
-}
-
-
-/*Wrestler Form Container*/
-.wrestler-form-container {
-  display: grid;
-  grid-template-columns: 7em 7em 14em;
-}
 
 /*Left Side of Form Container*/
 .wrestler-name {

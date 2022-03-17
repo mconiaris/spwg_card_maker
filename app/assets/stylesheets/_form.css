@@ -1,13 +1,24 @@
 /*This styles the wrestler form into specific rows and columns.*/
-input {
-  line-height: 1em;
-}
-
-
 .wrestler-form {
   grid-column: 1;
   background-color: #dad9d9;
 }
+
+
+/*Wrestler Form Container*/
+.wrestler-form-container {
+  display: grid;
+  grid-template-columns: 7em 7em 14em;
+}
+
+
+
+/*Styling Unique to Wrestler Form*/
+
+input {
+  line-height: 1em;
+}
+
 
 .gc-dc-input {
   width: 6em;
@@ -29,19 +40,10 @@ input {
 
 
 /*Submit & Cancel Buttons*/
-
-
-/*Buttons and Notes*/
 .wrestler-submit-cancel {
   grid-column: 1 / 3;
   grid-row: 27;
   display: inline-flex;
-}
-
-
-.notes {
-  grid-column: 1 / 4;
-  grid-row: 28;
 }
 
 #cancel-button {
@@ -61,4 +63,12 @@ input {
 #cancel-button a:hover {
   /*background-color: grey;*/
   background-color: #e9e3e3;
+}
+
+
+
+/*Buttons and Notes*/
+.notes {
+  grid-column: 1 / 4;
+  grid-row: 28;
 }
