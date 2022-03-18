@@ -8,8 +8,9 @@
 /*Wrestler Show Container*/
 .wrestler-show-container {
   display: grid;
-  grid-template-columns: 7fr 7fr 14fr;
+  grid-template-columns: 8em 8em 16em;
   background-color: white;
+  font-size: 13px;
 }
 
 
@@ -20,7 +21,7 @@
 }
 
 .move-show {
-  width: 12.5em;
+  width: 13.5em;
   padding-left: 0.5em;
   color: #07529b;
 }
