@@ -155,22 +155,25 @@ class WrestlerTemplatesController < ApplicationController
 
 
   def get_initial_wrestler_values(hash)
-    wrestler_values = get_gc_values
+    wrestler_values = get_base_values
 
     return wrestler_values.merge(hash, get_midcard_dc_values)
   end
 
   def get_initial_jobber_values(hash)
-    wrestler_values = get_gc_values
+    wrestler_values = get_base_values
 
     return wrestler_values.merge(hash, get_jobber_dc_values)
   end
 
 
-  def get_gc_values
+  # TODO: Add separate method to determine OC Prob
+  def get_base_values
     gc_values = { gc02: "DC", gc03: "DC", gc04: "DC", 
       gc05: "DC", gc06: "DC", gc07: "DC", gc08: "DC", 
-      gc09: "DC", gc10: "DC", gc11: "DC", gc12: "DC" 
+      gc09: "DC", gc10: "DC", gc11: "DC", gc12: "DC",
+      card_rating: 0, total_points: 0, dq_prob: 0,
+      pa_prob: 0, sub_prob: 0
     }
   end
 

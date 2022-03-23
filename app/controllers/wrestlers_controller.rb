@@ -12,6 +12,7 @@ class WrestlersController < ApplicationController
 
   def show
     @wrestler = Wrestler.find(params[:id])
+    @wrestler.generate_wrestler_stats(@wrestler)
 
     respond_to do |format|
       format.html
@@ -31,7 +32,10 @@ class WrestlersController < ApplicationController
   end
 
   def new
-    @wrestler = Wrestler.new
+    @wrestler = Wrestler.new({
+      card_rating: 0, total_points: 0, dq_prob: 0, 
+      pa_prob: 0, sub_prob: 0
+    })
   end
 
   def create
