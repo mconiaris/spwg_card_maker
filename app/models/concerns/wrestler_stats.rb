@@ -26,18 +26,4 @@ module WrestlerStats
     wrestler.save
   end
 
-  def initial_stats(wrestler)
-    wrestler.tt = 0
-    wrestler.card_rating = 0
-    wrestler.oc_prob = 0
-    wrestler.total_points = 0
-    wrestler.dq_prob = 0
-    wrestler.pa_prob = 0
-    wrestler.sub_prob = 0
-    wrestler.xx_prob = 0
-    wrestler.submission = 0
-    wrestler.tag_team_save = 0
-  end
-
-  
 end
