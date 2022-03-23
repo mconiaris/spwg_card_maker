@@ -5,9 +5,9 @@ class TagTeamWrestlersController < ApplicationController
   # TODO: Explore how this works and make it cleaner.
   def index
     if params[:sort] == nil
-      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 42.0).order(tag_team_save: :desc)
+      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 41.0).order(tag_team_save: :desc)
     else
-      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 42.0)
+      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 41.0)
       @wrestlers = sort_wrestler_index
     end
   end
@@ -17,10 +17,10 @@ class TagTeamWrestlersController < ApplicationController
   def sort_wrestler_index
     if @@sort_order == "ASC"
       @@sort_order = "DESC"
-      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 42.0).order(params[:sort])
+      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 41.0).order(params[:sort])
     else
       @@sort_order = "ASC"
-      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 42.0).order("#{params[:sort]} DESC")
+      @wrestlers = Wrestler.where("tt > ? or tag_team_save > ?", 13.0, 41.0).order("#{params[:sort]} DESC")
     end
   end
 end
