@@ -173,8 +173,8 @@ module WrestlerInitialValues
   def get_base_values
     gc_values = { gc02: "DC", gc03: "DC", gc04: "DC", 
       gc05: "DC", gc06: "DC", gc07: "DC", gc08: "DC", 
-      gc09: "DC", gc10: "DC", gc11: "DC", gc12: "DC",
-      card_rating: 0, total_points: 0, dq_prob: 0,
+      gc09: "DC", gc10: "DC", gc11: "DC", gc12: "DC", 
+      card_rating: 0, total_points: 0, dq_prob: 0, 
       pa_prob: 0, sub_prob: 0
     }
   end
@@ -182,7 +182,9 @@ module WrestlerInitialValues
   def get_jobber_dc_values
     dc_values = { dc02: "Reverse", dc03: "A", dc04: "A", 
       dc05: "B", dc06: "B", dc07: "B", dc08: "B", 
-      dc09: "A", dc10: "A", dc11: "A", dc12: "C" 
+      dc09: "A", dc10: "A", dc11: "A", dc12: "C",
+      subx: 2, suby: 12, tagx: 2, tagy: 0, prioritys: 1,
+      priorityt: 1
     }
   end
 
