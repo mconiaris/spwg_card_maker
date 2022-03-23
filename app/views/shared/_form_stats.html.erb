@@ -1,7 +1,4 @@
 <!-- TODO: Research Turbo (see development notes) to see if this can be presented using it asynchronously. -->
-<% if !wrestler.new_record? %>
-	<% generate_wrestler_stats(wrestler) %>
-<% end %>
 <h3>WRESTLER STATS</h3>
 <p>Tag Team %: <%= number_to_percentage((wrestler.tt.to_f), precision: 0) %></p>
 <p>Overall Card Rating: <%= "%.1f" % wrestler.card_rating %></p>
