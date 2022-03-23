@@ -1,6 +1,5 @@
 class WrestlersController < ApplicationController
-
-  @@sort_order = "ASC"
+  include SortWrestlers
 
   def index
     if params[:sort] == nil
@@ -100,16 +99,6 @@ class WrestlersController < ApplicationController
       :priorityt, :oc02, :oc03, :oc04, :oc05, :oc06, :oc07, :oc08, :oc09, :oc10, 
       :oc11, :oc12, :ro02, :ro03, :ro04, :ro05, :ro06, :ro07, :ro08, :ro09, :ro10,
       :ro11, :ro12, :division_id, :promotion_id)
-  end
-
-  def sort_wrestler_index
-    if @@sort_order == "ASC"
-      @@sort_order = "DESC"
-      Wrestler.order(params[:sort])
-    else
-      @@sort_order = "ASC"
-      Wrestler.order("#{params[:sort]} DESC")
-    end
   end
 
 end

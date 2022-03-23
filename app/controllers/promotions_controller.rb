@@ -1,8 +1,5 @@
 class PromotionsController < ApplicationController
-
-  # TODO: Dry up sorting in all controllers.
-  @@sort_order = "ASC"
-
+  include SortWrestlers
 
 	def index
     @promotions = Promotion.all
@@ -63,13 +60,4 @@ class PromotionsController < ApplicationController
     @wrestlers.select { |w| w.promotion == promotion }
   end
 
-  def sort_wrestler_index
-    if @@sort_order == "ASC"
-      @@sort_order = "DESC"
-      Wrestler.order(params[:sort])
-    else
-      @@sort_order = "ASC"
-      Wrestler.order("#{params[:sort]} DESC")
-    end
-  end
 end

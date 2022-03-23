@@ -1,7 +1,5 @@
 class DivisionsController < ApplicationController
-
-  # DRY This among controllers. Concern?
-  @@sort_order = "ASC"
+  include SortWrestlers
 
 	def index
     @divisions = Division.all
@@ -62,13 +60,4 @@ class DivisionsController < ApplicationController
     @wrestlers.select { |w| w.division == division }
   end
 
-  def sort_wrestler_index
-    if @@sort_order == "ASC"
-      @@sort_order = "DESC"
-      Wrestler.order(params[:sort])
-    else
-      @@sort_order = "ASC"
-      Wrestler.order("#{params[:sort]} DESC")
-    end
-  end
 end
