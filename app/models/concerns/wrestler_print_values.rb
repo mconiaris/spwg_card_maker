@@ -1,3 +1,4 @@
+# Move this to helper method because it relates to a view?
 module WrestlerPrintValues
 	attr_accessor :card
 
