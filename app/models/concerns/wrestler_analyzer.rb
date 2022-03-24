@@ -1,5 +1,7 @@
 module WrestlerAnalyzer
 	
+	# TODO: Replace code with getters and setters.
+	# TODO: Make sure OC_prob is available to controller.
 	attr_accessor :statistics
 	
 	# Constants for Dice Rolls
