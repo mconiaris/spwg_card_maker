@@ -8,7 +8,7 @@ module WrestlerStats
   end
 
 
-  def generate_wrestler_stats
+  def set_wrestler_stats
 
     stats = self.analyze
 
@@ -23,7 +23,6 @@ module WrestlerStats
     self.submission = stats[:submission]
     self.tag_team_save = stats[:tag_team_save]
 
-    # self.save
   end
 
 end

@@ -40,7 +40,6 @@ class WrestlersController < ApplicationController
     @wrestler = Wrestler.new(wrestler_params)
 
     if @wrestler.save
-      # @wrestler.generate_wrestler_stats
       redirect_to @wrestler
     else
       render :new
@@ -55,7 +54,6 @@ class WrestlersController < ApplicationController
     @wrestler = Wrestler.find(params[:id])
                                   
     if @wrestler.update(wrestler_params)
-      # @wrestler.generate_wrestler_stats
       redirect_to @wrestler
     else
       render :edit
