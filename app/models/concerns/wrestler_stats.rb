@@ -23,7 +23,7 @@ module WrestlerStats
     self.submission = stats[:submission]
     self.tag_team_save = stats[:tag_team_save]
 
-    self.save
+    # self.save
   end
 
 end
