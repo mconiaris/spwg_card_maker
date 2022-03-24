@@ -11,7 +11,7 @@ class WrestlersController < ApplicationController
 
   def show
     @wrestler = Wrestler.find(params[:id])
-    @wrestler.generate_wrestler_stats(@wrestler)
+    @wrestler.generate_wrestler_stats
 
     respond_to do |format|
       format.html

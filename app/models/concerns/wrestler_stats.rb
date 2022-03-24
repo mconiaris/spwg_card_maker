@@ -8,22 +8,22 @@ module WrestlerStats
   end
 
 
-  def generate_wrestler_stats(wrestler)
+  def generate_wrestler_stats
 
-    stats = wrestler.analyze
+    stats = self.analyze
 
-    wrestler.tt = stats[:tt_probability]
-    wrestler.card_rating = stats[:total_card_rating]
-    wrestler.oc_prob = stats[:oc_probability]
-    wrestler.total_points = stats[:total_card_points_per_round]
-    wrestler.dq_prob = stats[:dq_probability_per_round]
-    wrestler.pa_prob = stats[:pa_probability_per_round]
-    wrestler.sub_prob = stats[:sub_probability_per_round]
-    wrestler.xx_prob = stats[:xx_probability_per_round]
-    wrestler.submission = stats[:submission]
-    wrestler.tag_team_save = stats[:tag_team_save]
+    self.tt = stats[:tt_probability]
+    self.card_rating = stats[:total_card_rating]
+    self.oc_prob = stats[:oc_probability]
+    self.total_points = stats[:total_card_points_per_round]
+    self.dq_prob = stats[:dq_probability_per_round]
+    self.pa_prob = stats[:pa_probability_per_round]
+    self.sub_prob = stats[:sub_probability_per_round]
+    self.xx_prob = stats[:xx_probability_per_round]
+    self.submission = stats[:submission]
+    self.tag_team_save = stats[:tag_team_save]
 
-    wrestler.save
+    self.save
   end
 
 end
