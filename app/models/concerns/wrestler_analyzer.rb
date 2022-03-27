@@ -90,12 +90,10 @@ module WrestlerAnalyzer
 		points = Hash.new
 
 		gc_hash = attributes
+		oc_roll_hash(gc_hash)
 
 		binding.pry
 
-
-		# Replace
-		# gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
 		# Replace
 		# oc_hash = gc_hash.select { |k,v| v.include?('OC') }
 
@@ -392,6 +390,7 @@ module WrestlerAnalyzer
 
 	# Sets oc_hash from the GC Hash
 	def oc_roll_hash=(gc_hash)
+		binding.pry
 		@oc_roll_hash = gc_hash.select { |k,v| v.include?('OC') }
 	end
 
