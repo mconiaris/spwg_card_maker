@@ -1,7 +1,5 @@
 module WrestlerAnalyzer
 	
-	# TODO: Replace code with getters and setters.
-	# TODO: Make sure OC_prob is available to controller.
 	attr_accessor :statistics
 	
 	# Constants for Dice Rolls
@@ -28,43 +26,23 @@ module WrestlerAnalyzer
 	
 	module InstanceMethods
 
-	# ==============
-	# GETTER METHODS
-	# ==============
-
-	# attr_accessor: :tt
-	# attr_accessor: :card_rating
-	attr_reader :oc_prob
-	# attr_accessor: :total_points
-	# attr_accessor: :dq_prob
-	# attr_accessor: :pa_prob
-	# attr_accessor: :sub_prob
-	# attr_accessor: :xx_prob
-	# attr_accessor: :submission
-	# attr_accessor: :tag_team_save
-
-
 	# ===================
 	# GENERATE STATISTICS
 	# ===================
 
 	# TODO: DRY it up.
-	# TODO: Most of this method relating to the statistics 
-	# variable can be made redundant through getter methods.
 	# TODO: Create variables for hashes so that individual methods no 
 	# 	longer have to create them.
 	def analyze
 		@statistics = Hash.new
 
-		# Call move_points method to set variables
-		move_points
+		mv_points = move_points
 
-
-		# TODO: I'm not sure what this does. Delete?
+		# TODO: Refactor calculate_total_card_rating to work with this app.
 		card_points_per_round = calculate_total_card_rating(mv_points)
 
 		# Add values to wrestler's hash
-		@statistics[:oc_probability] = (oc_prob * 100)
+		@statistics[:oc_probability] = (mv_points[:oc_probability] * 100)
 		@statistics[:dc_probability] = (mv_points[:DC] * 100)
 		@statistics[:tt_probability] = (mv_points[:GC_TT_Roll].to_f * 100)
 
@@ -89,26 +67,19 @@ module WrestlerAnalyzer
 
 		points = Hash.new
 
-		gc_hash = attributes
-		oc_roll_hash(gc_hash)
-
-		binding.pry
-
-		# Replace
-		# oc_hash = gc_hash.select { |k,v| v.include?('OC') }
+		gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
+		oc_hash = gc_hash.select { |k,v| v.include?('OC') }
 
 		# Calculate OC count to calculate probablity.
-		# Replace
-		# points[:OC_enumerator] = prob_points(oc_hash)
+		points[:OC_enumerator] = prob_points(oc_hash)
 
-		# Replace
-		# points[:oc_probability] = return_rational(points[:OC_enumerator]).to_f
+
+		points[:oc_probability] = return_rational(points[:OC_enumerator]).to_f
 		points[:DC] = calculate_gc_dc_roll_probability(points[:OC_enumerator])
 
 		# Calculate TT Roll in GC
 		points[:GC_TT_Enumerator] = calculate_gc_tt_roll_probability(hash)
-		# Temporarily Blank Out
-		# points[:GC_TT_Roll] = return_rational(calculate_gc_tt_roll_probability(hash))
+		points[:GC_TT_Roll] = return_rational(calculate_gc_tt_roll_probability(hash))
 		
 		# Create Symbols for Points
 		for i in 2..12 do
@@ -311,152 +282,12 @@ module WrestlerAnalyzer
 	end
 
 
-
-
-
-
-
-
-
-
 	private
 
-	# ======================
-	# PRIVATE GETTER METHODS
-	# ======================
 
-	# Gets gc_hash
-	def gc_hash
-		@gc_hash
-	end
-
-	# Gets oc_hash
-	def oc_roll_hash
-		@oc_roll_hash
-	end
-
-	# Gets oc_enumerator
-	def oc_enumerator
-		@oc_enumerator
-	end
-
-
-	# ======================
-	# PRIVATE SETTER METHODS
-	# ======================
-
-	# total_card_rating
-	def calculate_total_card_rating(move_points)
-		points_per_round = calculate_card_points_per_round(move_points)
-		dq_probability_per_round = calculate_dq_probability_per_round(move_points)
-		pa_probability_per_round = calculate_pa_probability_per_round(move_points)
-		sub_probability_per_round = calculate_sub_probability_per_round(move_points)
-		xx_probability_per_round = calculate_xx_probability_per_round(move_points)
-		
-		# Double P/A per round and divide XX per round for total card value
-		# to increase relative value of pin attempts.
-		total_card_points = points_per_round + 
-			dq_probability_per_round + (pa_probability_per_round * 2) +
-				sub_probability_per_round + (xx_probability_per_round / 2)
-
-		singles_priority = move_points[:prioritys]
-		submission_loss_probabilty = move_points[:Sub_prob]
-
-		total_card_rating = total_card_points + 
-			singles_priority - submission_loss_probabilty
-
-
-		@statistics[:total_card_rating] = total_card_rating
-		@statistics[:total_card_points] = total_card_points
-		@statistics[:total_card_points_per_round] = points_per_round
-		@statistics[:dq_probability_per_round] = dq_probability_per_round * 100
-		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
-		@statistics[:sub_probability_per_round] = sub_probability_per_round * 100
-		@statistics[:xx_probability_per_round] = xx_probability_per_round * 100
-
-		return total_card_rating
-	end
-
-	
-
-
-
-
-	# Sets gc_hash from the entire wrestler
-	def gc_hash=
-		binding.pry
-		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
-	end
-
-	# Sets oc_hash from the GC Hash
-	def oc_roll_hash=(gc_hash)
-		binding.pry
-		@oc_roll_hash = gc_hash.select { |k,v| v.include?('OC') }
-	end
-
-	# Sets oc_enumerator
-	def oc_enumerator=(oc_roll_hash)
-		@oc_enumerator = prob_points(oc_roll_hash)
-	end
-
-
-	# Sets oc_prob
-	# Sets the Probability of an OC Roll in GC
-	# points[:oc_probability] = return_rational(points[:OC_enumerator]).to_f
-	def oc_prob=(oc_hash)
-			@oc_prob = return_rational(oc_enumerator).to_f
-	end
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Legacy Code
-
-	# ============
-	# GENERAL CARD
-	# ============
-
-	# Takes in probability of an OC roll and uses it to
-	# determine the probability of a DC roll.
-	def calculate_gc_dc_roll_probability(oc_roll_probability)
-		return 36/36.to_r - return_rational(oc_roll_probability)
-	end
-
-
-	# Takes in wrestler card hash and searches for OC/TT
-	# rolls and then calculates their probability.
-	def calculate_gc_tt_roll_probability(wrestler_hash)
-		wrestler_hash = attributes
-
-		h = wrestler_hash.select { |k,v| v == 'OC/TT' }
-		prob = 0
-
-		h.each_key {
-			|k| prob += calculate_probability(symbol_to_integer(k))
-		}
-
-		return prob
-	end
-
-
-
-
-
-
-	# ===============
-	# UTILITY METHODS
-	# ===============
+	# ==============================
+	# METHODS TO GENERATE STATISTICS
+	# ==============================
 
 	def symbol_to_integer(key)
 		key[-2..-1].to_i
@@ -518,9 +349,7 @@ module WrestlerAnalyzer
 	end
 
 
-	# Was def prob_points
 	def prob_points(move)
-		binding.pry
 		# Calculate OC count to calculate probablity.
 		count = 0
 		move.each_key { |k|
@@ -600,9 +429,42 @@ module WrestlerAnalyzer
 
 	
 
-	# ===================
-	# CARD RATING METHODS
-	# ===================
+	# ==========================
+	# GENERATE TOTAL CARD RATING
+	# ==========================
+
+	# total_card_rating
+	def calculate_total_card_rating(move_points)
+		points_per_round = calculate_card_points_per_round(move_points)
+		dq_probability_per_round = calculate_dq_probability_per_round(move_points)
+		pa_probability_per_round = calculate_pa_probability_per_round(move_points)
+		sub_probability_per_round = calculate_sub_probability_per_round(move_points)
+		xx_probability_per_round = calculate_xx_probability_per_round(move_points)
+		
+		# Double P/A per round and divide XX per round for total card value
+		# to increase relative value of pin attempts.
+		total_card_points = points_per_round + 
+			dq_probability_per_round + (pa_probability_per_round * 2) +
+				sub_probability_per_round + (xx_probability_per_round / 2)
+
+		singles_priority = move_points[:prioritys]
+		submission_loss_probabilty = move_points[:Sub_prob]
+
+		total_card_rating = total_card_points + 
+			singles_priority - submission_loss_probabilty
+
+
+		@statistics[:total_card_rating] = total_card_rating
+		@statistics[:total_card_points] = total_card_points
+		@statistics[:total_card_points_per_round] = points_per_round
+		@statistics[:dq_probability_per_round] = dq_probability_per_round * 100
+		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
+		@statistics[:sub_probability_per_round] = sub_probability_per_round * 100
+		@statistics[:xx_probability_per_round] = xx_probability_per_round * 100
+
+		return total_card_rating
+	end
+
 
 	# card_points_per_round
 	def calculate_card_points_per_round(wrestler)
@@ -672,6 +534,31 @@ module WrestlerAnalyzer
 	end
 
 
+	# ============
+	# GENERAL CARD
+	# ============
+
+	# Takes in probability of an OC roll and uses it to
+	# determine the probability of a DC roll.
+	def calculate_gc_dc_roll_probability(oc_roll_probability)
+		return 36/36.to_r - return_rational(oc_roll_probability)
+	end
+
+
+	# Takes in wrestler card hash and searches for OC/TT
+	# rolls and then calculates their probability.
+	def calculate_gc_tt_roll_probability(wrestler_hash)
+		wrestler_hash = attributes
+
+		h = wrestler_hash.select { |k,v| v == 'OC/TT' }
+		prob = 0
+
+		h.each_key {
+			|k| prob += calculate_probability(symbol_to_integer(k))
+		}
+
+		return prob
+	end
 
 
 	# ==============
