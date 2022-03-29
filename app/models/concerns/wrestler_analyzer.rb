@@ -1,6 +1,8 @@
 module WrestlerAnalyzer
 	
 	attr_accessor :statistics
+	attr_reader :gc_hash
+	attr_reader :oc_hash
 	
 	# Constants for Dice Rolls
 	TWO_TWELVE = 1
@@ -67,8 +69,8 @@ module WrestlerAnalyzer
 
 		points = Hash.new
 
-		gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
-		oc_hash = gc_hash.select { |k,v| v.include?('OC') }
+		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
+		@oc_hash = gc_hash.select { |k,v| v.include?('OC') }
 
 		# Calculate OC count to calculate probablity.
 		points[:OC_enumerator] = prob_points(oc_hash)
