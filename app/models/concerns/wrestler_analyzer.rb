@@ -13,7 +13,10 @@ module WrestlerAnalyzer
 	attr_reader :oc_roll_probability
 	attr_reader :dc_roll_probability
 	attr_reader :points_per_round
-
+	attr_reader :dq_probability_per_round
+	attr_reader :pa_probability_per_round
+	attr_reader :sub_probability_per_round
+	attr_reader :xx_probability_per_round
 	attr_reader :submission_loss_probabilty
 	attr_reader :tag_team_save_probabilty
 
@@ -57,14 +60,17 @@ module WrestlerAnalyzer
 		# TODO: Refactor calculate_total_card_rating to work with this app.
 		card_points_per_round = calculate_total_card_rating(mv_points)
 
-		# TODO: Replace these with getters.
 		# Add values to wrestler's hash
-    self.oc_prob = oc_roll_probability
 		self.tt = tt_roll_probability
+		self.card_rating = total_card_rating
+    self.oc_prob = oc_roll_probability
+		self.total_points = points_per_round
+		self.dq_prob = dq_probability_per_round
+		self.pa_prob = pa_probability_per_round
+		self.sub_prob = sub_probability_per_round
+		self.xx_prob = xx_probability_per_round
 		self.submission = submission_loss_probabilty
 		self.tag_team_save = tag_team_save_probabilty
-
-		self.card_rating = total_card_rating
 		
 		# Check for Problems in :Set attribute of hash.
 		if attributes[:set] == nil
@@ -459,10 +465,10 @@ module WrestlerAnalyzer
 	# total_card_rating
 	def calculate_total_card_rating(move_points)
 		@points_per_round = calculate_card_points_per_round(move_points)
-		dq_probability_per_round = calculate_dq_probability_per_round(move_points)
-		pa_probability_per_round = calculate_pa_probability_per_round(move_points)
-		sub_probability_per_round = calculate_sub_probability_per_round(move_points)
-		xx_probability_per_round = calculate_xx_probability_per_round(move_points)
+		@dq_probability_per_round = calculate_dq_probability_per_round(move_points)
+		@pa_probability_per_round = calculate_pa_probability_per_round(move_points)
+		@sub_probability_per_round = calculate_sub_probability_per_round(move_points)
+		@xx_probability_per_round = calculate_xx_probability_per_round(move_points)
 		
 		# Double P/A per round and divide XX per round for total card value
 		# to increase relative value of pin attempts.
@@ -474,12 +480,6 @@ module WrestlerAnalyzer
 
 		@total_card_rating = total_card_values + 
 			singles_priority - submission_loss_probabilty
-
-
-		@statistics[:dq_probability_per_round] = dq_probability_per_round * 100
-		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
-		@statistics[:sub_probability_per_round] = sub_probability_per_round * 100
-		@statistics[:xx_probability_per_round] = xx_probability_per_round * 100
 
 		return total_card_rating
 	end
