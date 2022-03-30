@@ -9,6 +9,7 @@ module WrestlerAnalyzer
 	attr_reader :dc_roll_probability
 	attr_reader :tt_roll_probability
 	attr_reader :submission_loss_probabilty
+	attr_reader :tag_team_save_probabilty
 
 	
 	# Constants for Dice Rolls
@@ -54,11 +55,9 @@ module WrestlerAnalyzer
 		# Add values to wrestler's hash
     self.oc_prob = oc_roll_probability
 		self.tt = tt_roll_probability
-		# @statistics[:submission] = (mv_points[:Sub_prob].to_f * 100)
 		self.submission = submission_loss_probabilty
+		self.tag_team_save = tag_team_save_probabilty
 		
-		@statistics[:tag_team_save] = (mv_points[:Tag_prob].to_f * 100)
-
 		# Check for Problems in :Set attribute of hash.
 		if attributes[:set] == nil
 			attributes[:set] = 'Special'
@@ -292,8 +291,7 @@ module WrestlerAnalyzer
  		points[:tag_save_numerator] = sub_tag_numerator(attributes["tagx"], attributes["tagy"])
 
  		@submission_loss_probabilty = return_rational(points[:sub_numerator]).to_f
-
- 		points[:Tag_prob] = return_rational(points[:tag_save_numerator]).to_f
+ 		@tag_team_save_probabilty = return_rational(points[:tag_save_numerator]).to_f
 
 		return points
 	end
