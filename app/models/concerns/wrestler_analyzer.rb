@@ -6,6 +6,8 @@ module WrestlerAnalyzer
 	attr_reader :oc_enumerator
 	attr_reader :oc_probability
 	attr_reader :dc_roll_probability
+	attr_reader :tt_roll_probability
+
 	
 	# Constants for Dice Rolls
 	TWO_TWELVE = 1
@@ -49,8 +51,8 @@ module WrestlerAnalyzer
 		# TODO: Replace these with getters.
 		# Add values to wrestler's hash
     self.oc_prob = oc_probability
-		# @statistics[:dc_probability] = (mv_points[:DC] * 100)
-		@statistics[:tt_probability] = (mv_points[:GC_TT_Roll].to_f * 100)
+		# @statistics[:tt_probability] = (mv_points[:GC_TT_Roll].to_f * 100)
+		self.tt = tt_roll_probability
 
 		@statistics[:submission] = (mv_points[:Sub_prob].to_f * 100)
 		@statistics[:tag_team_save] = (mv_points[:Tag_prob].to_f * 100)
@@ -90,7 +92,8 @@ module WrestlerAnalyzer
 
 		# Calculate TT Roll in GC
 		points[:GC_TT_Enumerator] = calculate_gc_tt_roll_probability(hash)
-		points[:GC_TT_Roll] = return_rational(calculate_gc_tt_roll_probability(hash))
+		# points[:GC_TT_Roll] = return_rational(calculate_gc_tt_roll_probability(hash))
+		@tt_roll_probability = return_rational(calculate_gc_tt_roll_probability(hash))
 		
 		# Create Symbols for Points
 		for i in 2..12 do

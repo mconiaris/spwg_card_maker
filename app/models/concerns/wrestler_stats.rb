@@ -14,7 +14,7 @@ module WrestlerStats
 
     # self.tt = stats[:tt_probability]
     # self.card_rating = stats[:total_card_rating]
-    self.oc_prob = oc_probability
+    # self.oc_prob = oc_probability
     # self.total_points = stats[:total_card_points_per_round]
     # self.dq_prob = stats[:dq_probability_per_round]
     # self.pa_prob = stats[:pa_probability_per_round]
