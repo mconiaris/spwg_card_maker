@@ -47,7 +47,7 @@ module WrestlerAnalyzer
 
 		# TODO: Replace these with getters.
 		# Add values to wrestler's hash
-		# @statistics[:oc_probability] = (mv_points[:oc_probability] * 100)
+    self.oc_prob = oc_probability
 		@statistics[:dc_probability] = (mv_points[:DC] * 100)
 		@statistics[:tt_probability] = (mv_points[:GC_TT_Roll].to_f * 100)
 
@@ -62,6 +62,16 @@ module WrestlerAnalyzer
 		return @statistics
 	end
 
+	def calculate_oc_probability
+		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
+		@oc_hash = gc_hash.select { |k,v| v.include?('OC') }
+
+		# Calculate OC count to calculate probablity.
+		@oc_enumerator = prob_points(oc_hash)
+
+		@oc_probability = (return_rational(oc_enumerator).to_f)
+	end 
+
 
 	# ======================
 	# MOVE VALUES TO NUMBERS
@@ -72,13 +82,7 @@ module WrestlerAnalyzer
 
 		points = Hash.new
 
-		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
-		@oc_hash = gc_hash.select { |k,v| v.include?('OC') }
-
-		# Calculate OC count to calculate probablity.
-		@oc_enumerator = prob_points(oc_hash)
-
-		@oc_probability = (return_rational(oc_enumerator).to_f)
+		calculate_oc_probability
 
 		points[:DC] = calculate_gc_dc_roll_probability(oc_enumerator)
 
