@@ -5,6 +5,7 @@ module WrestlerAnalyzer
 	attr_reader :oc_hash
 	attr_reader :oc_enumerator
 	attr_reader :oc_probability
+	attr_reader :dc_roll_probability
 	
 	# Constants for Dice Rolls
 	TWO_TWELVE = 1
@@ -48,7 +49,7 @@ module WrestlerAnalyzer
 		# TODO: Replace these with getters.
 		# Add values to wrestler's hash
     self.oc_prob = oc_probability
-		@statistics[:dc_probability] = (mv_points[:DC] * 100)
+		# @statistics[:dc_probability] = (mv_points[:DC] * 100)
 		@statistics[:tt_probability] = (mv_points[:GC_TT_Roll].to_f * 100)
 
 		@statistics[:submission] = (mv_points[:Sub_prob].to_f * 100)
@@ -84,7 +85,8 @@ module WrestlerAnalyzer
 
 		calculate_oc_probability
 
-		points[:DC] = calculate_gc_dc_roll_probability(oc_enumerator)
+		# points[:DC] = calculate_gc_dc_roll_probability(oc_enumerator)
+		@dc_roll_probability = calculate_gc_dc_roll_probability(oc_enumerator)
 
 		# Calculate TT Roll in GC
 		points[:GC_TT_Enumerator] = calculate_gc_tt_roll_probability(hash)
@@ -582,7 +584,7 @@ module WrestlerAnalyzer
 		
 		dc_points_per_round_subtotal = 
 			calculate_dc_points_per_round_subtotal(
-				dc_hash, wrestler[:DC])
+				dc_hash, dc_roll_probability)
 
 		# TODO: replace hard coded number with
 		# total points variable
@@ -629,7 +631,7 @@ module WrestlerAnalyzer
 	# DC Roll Probability * Reverse Roll in DC Probabiity *
 	# Total OC Points Per Round
 	def calculate_reverse_points(wrestler, oc_sub_total)
-		reverse_points = wrestler[:DC] * 
+		reverse_points = dc_roll_probability * 
 			return_rational(wrestler[:Reverse]) * oc_sub_total
 
 		return reverse_points
