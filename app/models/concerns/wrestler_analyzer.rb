@@ -53,8 +53,6 @@ module WrestlerAnalyzer
 	# TODO: Create variables for hashes so that individual methods no 
 	# 	longer have to create them.
 	def analyze
-		@statistics = Hash.new
-
 		mv_points = move_points
 
 		# TODO: Refactor calculate_total_card_rating to work with this app.
@@ -78,8 +76,6 @@ module WrestlerAnalyzer
 		else
 			self.set = attributes[:set]
 		end
-
-		return @statistics
 	end
 
 	def calculate_oc_roll_probability
