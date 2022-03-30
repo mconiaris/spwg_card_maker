@@ -2,7 +2,7 @@
 <h3>WRESTLER STATS</h3>
 <p>Tag Team %: <%= number_to_percentage((wrestler.tt.to_f), precision: 0) %></p>
 <p>Overall Card Rating: <%= "%.1f" % wrestler.card_rating %></p>
-<p>OC Probability: <%= number_to_percentage((wrestler.oc_prob.to_f), precision: 0) %></p>
+<p>OC Probability: <%= number_to_percentage((wrestler.oc_prob.to_f * 100), precision: 0) %></p>
 <p>Total Points Per Round: <%= "%.1f" % wrestler.total_points %></p>
 <p>DQ Probability Per Round: <%= number_to_percentage((wrestler.dq_prob.to_f), precision: 0) %></p>
 <p>P/A Probability Per Round: <%= number_to_percentage((wrestler.pa_prob.to_f), precision: 0) %></p>
