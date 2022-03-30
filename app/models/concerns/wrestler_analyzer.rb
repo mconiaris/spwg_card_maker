@@ -5,6 +5,8 @@ module WrestlerAnalyzer
 	attr_reader :oc_hash
 	attr_reader :oc_enumerator
 	attr_reader :tt_enumerator
+	attr_reader :total_card_rating
+
 
 	attr_reader :oc_roll_probability
 	attr_reader :dc_roll_probability
@@ -58,6 +60,8 @@ module WrestlerAnalyzer
 		self.tt = tt_roll_probability
 		self.submission = submission_loss_probabilty
 		self.tag_team_save = tag_team_save_probabilty
+
+		self.card_rating = total_card_rating
 		
 		# Check for Problems in :Set attribute of hash.
 		if attributes[:set] == nil
@@ -465,11 +469,10 @@ module WrestlerAnalyzer
 
 		singles_priority = move_points[:prioritys]
 
-		total_card_rating = total_card_points + 
+		@total_card_rating = total_card_points + 
 			singles_priority - submission_loss_probabilty
 
 
-		@statistics[:total_card_rating] = total_card_rating
 		@statistics[:total_card_points] = total_card_points
 		@statistics[:total_card_points_per_round] = points_per_round
 		@statistics[:dq_probability_per_round] = dq_probability_per_round * 100
