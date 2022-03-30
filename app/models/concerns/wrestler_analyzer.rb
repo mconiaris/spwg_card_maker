@@ -5,13 +5,15 @@ module WrestlerAnalyzer
 	attr_reader :oc_hash
 	attr_reader :oc_enumerator
 	attr_reader :tt_enumerator
-	attr_reader :total_card_rating
 	attr_reader :total_card_values
 
 
+	attr_reader :tt_roll_probability
+	attr_reader :total_card_rating
 	attr_reader :oc_roll_probability
 	attr_reader :dc_roll_probability
-	attr_reader :tt_roll_probability
+	attr_reader :points_per_round
+
 	attr_reader :submission_loss_probabilty
 	attr_reader :tag_team_save_probabilty
 
@@ -456,7 +458,7 @@ module WrestlerAnalyzer
 
 	# total_card_rating
 	def calculate_total_card_rating(move_points)
-		points_per_round = calculate_card_points_per_round(move_points)
+		@points_per_round = calculate_card_points_per_round(move_points)
 		dq_probability_per_round = calculate_dq_probability_per_round(move_points)
 		pa_probability_per_round = calculate_pa_probability_per_round(move_points)
 		sub_probability_per_round = calculate_sub_probability_per_round(move_points)
@@ -474,7 +476,6 @@ module WrestlerAnalyzer
 			singles_priority - submission_loss_probabilty
 
 
-		@statistics[:total_card_points_per_round] = points_per_round
 		@statistics[:dq_probability_per_round] = dq_probability_per_round * 100
 		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
 		@statistics[:sub_probability_per_round] = sub_probability_per_round * 100
