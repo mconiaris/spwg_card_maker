@@ -4,6 +4,7 @@ module WrestlerAnalyzer
 	attr_reader :gc_hash
 	attr_reader :oc_hash
 	attr_reader :oc_enumerator
+	attr_reader :tt_enumerator
 
 	attr_reader :oc_roll_probability
 	attr_reader :dc_roll_probability
@@ -90,13 +91,11 @@ module WrestlerAnalyzer
 
 		calculate_oc_roll_probability
 
-		# points[:DC] = calculate_gc_dc_roll_probability(oc_enumerator)
 		@dc_roll_probability = calculate_gc_dc_roll_probability(oc_enumerator)
 
 		# Calculate TT Roll in GC
-		points[:GC_TT_Enumerator] = calculate_gc_tt_roll_probability(hash)
-		# points[:GC_TT_Roll] = return_rational(calculate_gc_tt_roll_probability(hash))
-		@tt_roll_probability = return_rational(calculate_gc_tt_roll_probability(hash))
+		@tt_enumerator = calculate_tt_enumerator(gc_hash)
+		@tt_roll_probability = calculate_gc_tt_roll_probability(tt_enumerator)
 		
 		# Create Symbols for Points
 		for i in 2..12 do
@@ -561,10 +560,7 @@ module WrestlerAnalyzer
 	end
 
 
-	# Takes in wrestler card hash and searches for OC/TT
-	# rolls and then calculates their probability.
-	def calculate_gc_tt_roll_probability(wrestler_hash)
-		wrestler_hash = attributes
+	def calculate_tt_enumerator(wrestler_hash)
 
 		h = wrestler_hash.select { |k,v| v == 'OC/TT' }
 		prob = 0
@@ -574,6 +570,13 @@ module WrestlerAnalyzer
 		}
 
 		return prob
+	end
+
+
+	# Takes in wrestler card hash and searches for OC/TT
+	# rolls and then calculates their probability.
+	def calculate_gc_tt_roll_probability(tt_enum)
+		return_rational(tt_enum)
 	end
 
 
