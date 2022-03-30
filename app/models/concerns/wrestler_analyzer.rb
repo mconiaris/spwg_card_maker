@@ -4,9 +4,11 @@ module WrestlerAnalyzer
 	attr_reader :gc_hash
 	attr_reader :oc_hash
 	attr_reader :oc_enumerator
+
 	attr_reader :oc_roll_probability
 	attr_reader :dc_roll_probability
 	attr_reader :tt_roll_probability
+	attr_reader :submission_loss_probabilty
 
 	
 	# Constants for Dice Rolls
@@ -52,8 +54,9 @@ module WrestlerAnalyzer
 		# Add values to wrestler's hash
     self.oc_prob = oc_roll_probability
 		self.tt = tt_roll_probability
-
-		@statistics[:submission] = (mv_points[:Sub_prob].to_f * 100)
+		# @statistics[:submission] = (mv_points[:Sub_prob].to_f * 100)
+		self.submission = submission_loss_probabilty
+		
 		@statistics[:tag_team_save] = (mv_points[:Tag_prob].to_f * 100)
 
 		# Check for Problems in :Set attribute of hash.
@@ -288,7 +291,8 @@ module WrestlerAnalyzer
  		points[:sub_numerator] = sub_tag_numerator(attributes["subx"], attributes["suby"])
  		points[:tag_save_numerator] = sub_tag_numerator(attributes["tagx"], attributes["tagy"])
 
- 		points[:Sub_prob] = return_rational(points[:sub_numerator]).to_f
+ 		@submission_loss_probabilty = return_rational(points[:sub_numerator]).to_f
+
  		points[:Tag_prob] = return_rational(points[:tag_save_numerator]).to_f
 
 		return points
@@ -461,7 +465,6 @@ module WrestlerAnalyzer
 				sub_probability_per_round + (xx_probability_per_round / 2)
 
 		singles_priority = move_points[:prioritys]
-		submission_loss_probabilty = move_points[:Sub_prob]
 
 		total_card_rating = total_card_points + 
 			singles_priority - submission_loss_probabilty
