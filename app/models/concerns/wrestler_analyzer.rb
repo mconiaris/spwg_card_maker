@@ -78,7 +78,7 @@ module WrestlerAnalyzer
 		# Calculate OC count to calculate probablity.
 		@oc_enumerator = prob_points(oc_hash)
 
-		@oc_probability = (return_rational(oc_enumerator).to_f) * 100
+		@oc_probability = (return_rational(oc_enumerator).to_f)
 
 		points[:DC] = calculate_gc_dc_roll_probability(oc_enumerator)
 
