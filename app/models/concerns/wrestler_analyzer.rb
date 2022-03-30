@@ -6,6 +6,7 @@ module WrestlerAnalyzer
 	attr_reader :oc_enumerator
 	attr_reader :tt_enumerator
 	attr_reader :total_card_rating
+	attr_reader :total_card_values
 
 
 	attr_reader :oc_roll_probability
@@ -463,17 +464,16 @@ module WrestlerAnalyzer
 		
 		# Double P/A per round and divide XX per round for total card value
 		# to increase relative value of pin attempts.
-		total_card_points = points_per_round + 
+		@total_card_values = points_per_round + 
 			dq_probability_per_round + (pa_probability_per_round * 2) +
 				sub_probability_per_round + (xx_probability_per_round / 2)
 
 		singles_priority = move_points[:prioritys]
 
-		@total_card_rating = total_card_points + 
+		@total_card_rating = total_card_values + 
 			singles_priority - submission_loss_probabilty
 
 
-		@statistics[:total_card_points] = total_card_points
 		@statistics[:total_card_points_per_round] = points_per_round
 		@statistics[:dq_probability_per_round] = dq_probability_per_round * 100
 		@statistics[:pa_probability_per_round] = pa_probability_per_round * 100
