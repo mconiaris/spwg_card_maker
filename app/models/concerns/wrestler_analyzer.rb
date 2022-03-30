@@ -60,7 +60,9 @@ module WrestlerAnalyzer
 		
 		# Check for Problems in :Set attribute of hash.
 		if attributes[:set] == nil
-			attributes[:set] = 'Special'
+			self.set = 'Special'
+		else
+			self.set = attributes[:set]
 		end
 
 		return @statistics
