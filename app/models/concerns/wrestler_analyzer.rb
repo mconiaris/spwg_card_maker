@@ -6,6 +6,8 @@ module WrestlerAnalyzer
 	attr_reader :oc_enumerator
 	attr_reader :tt_enumerator
 	attr_reader :total_card_values
+	attr_reader :singles_priority
+	attr_reader :tag_team_priority
 
 
 	attr_reader :tt_roll_probability
@@ -295,8 +297,9 @@ module WrestlerAnalyzer
  		ropes_s_hash = attributes.select { |k,v| k[0..1].include?("ro") && v.include?('(S)') }
  		points[:Ropes_S_Roll_Probability] = prob_points(ropes_s_hash)
 
- 		points[:prioritys] = attributes["prioritys"].to_i
- 		points[:priorityt] = attributes["priorityt"].to_i
+ 		@singles_priority = attributes["prioritys"].to_i
+ 		@tag_team_priority = attributes["priorityt"].to_i
+
  		points[:sub_numerator] = sub_tag_numerator(attributes["subx"], attributes["suby"])
  		points[:tag_save_numerator] = sub_tag_numerator(attributes["tagx"], attributes["tagy"])
 
@@ -471,8 +474,6 @@ module WrestlerAnalyzer
 		@total_card_values = points_per_round + 
 			dq_probability_per_round + (pa_probability_per_round * 2) +
 				sub_probability_per_round + (xx_probability_per_round / 2)
-
-		singles_priority = move_points[:prioritys]
 
 		@total_card_rating = total_card_values + 
 			singles_priority - submission_loss_probabilty
