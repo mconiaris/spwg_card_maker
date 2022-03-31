@@ -86,7 +86,6 @@ module WrestlerAnalyzer
 	# MOVE VALUES TO NUMBERS
 	# ======================
 	
-	# Done, but needs refactoring.
 	def move_points
 
 		# Various methods will take text values and convert 
@@ -209,25 +208,10 @@ module WrestlerAnalyzer
  		uc_xx_hash = create_value_hash(attributes, "(XX)")
  		xx_hash = lc_xx_hash.merge(uc_xx_hash)
 
- 		dq_hash.each { |k,v| 
- 			key = k.to_s + "_dq"
- 			points[key.to_sym] = 1
- 		}
-
-		pa_hash.each { |k,v| 
- 			key = k.to_s + "_pa"
- 			points[key.to_sym] = 1
- 		} 	
-
- 		sub_hash.each { |k,v| 
- 			key = k.to_s + "_sub"
- 			points[key.to_sym] = 1
- 		}
-
- 		xx_hash.each { |k,v| 
- 			key = k.to_s + "_xx"
- 			points[key.to_sym] = 1
- 		}
+ 		add_values_to_points_hash(points, dq_hash, "dq")
+ 		add_values_to_points_hash(points, pa_hash, "pa")
+ 		add_values_to_points_hash(points, sub_hash, "sub")
+ 		add_values_to_points_hash(points, xx_hash, "xx")
 
  		# Determine Ropes Roll Enumerator
  		oc_ropes_hash = attributes.select { |k,v| v == 'Ropes' }
@@ -257,7 +241,17 @@ module WrestlerAnalyzer
 			move_hash[move_key.to_sym] = 0
 			i += 1
 		end
+		move_hash
 	end
+
+	def add_values_to_points_hash(points_hash, move_hash, move)
+		move_hash.each { |k,v| 
+	 			key = k.to_s + "_#{move}"
+	 			points_hash[key.to_sym] = 1
+	 		}
+		points_hash
+	end
+
 
 
 	def calculate_oc_roll_probability
