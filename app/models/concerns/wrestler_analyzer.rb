@@ -80,15 +80,6 @@ module WrestlerAnalyzer
 		end
 	end
 
-	def calculate_oc_roll_probability
-		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
-		@oc_hash = gc_hash.select { |k,v| v.include?('OC') }
-
-		# Calculate OC count to calculate probablity.
-		@oc_enumerator = prob_points(oc_hash)
-
-		@oc_roll_probability = (return_rational(oc_enumerator).to_f)
-	end 
 
 
 	# ======================
@@ -310,6 +301,17 @@ module WrestlerAnalyzer
 	end
 
 
+	def calculate_oc_roll_probability
+		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
+		@oc_hash = gc_hash.select { |k,v| v.include?('OC') }
+
+		# Calculate OC count to calculate probablity.
+		@oc_enumerator = prob_points(oc_hash)
+
+		@oc_roll_probability = (return_rational(oc_enumerator).to_f)
+	end
+
+	
 	private
 
 
