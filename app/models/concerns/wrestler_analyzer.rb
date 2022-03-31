@@ -235,25 +235,6 @@ module WrestlerAnalyzer
 	end
 
 
-	def make_blank_points_hash(move_hash, card, move)
-		for i in 2..12 do
-			move_key = "#{card}%02d_#{move}" % i
-			move_hash[move_key.to_sym] = 0
-			i += 1
-		end
-		move_hash
-	end
-
-	def add_values_to_points_hash(points_hash, move_hash, move)
-		move_hash.each { |k,v| 
-	 			key = k.to_s + "_#{move}"
-	 			points_hash[key.to_sym] = 1
-	 		}
-		points_hash
-	end
-
-
-
 	def calculate_oc_roll_probability
 		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
 		@oc_hash = gc_hash.select { |k,v| v.include?('OC') }
@@ -408,6 +389,26 @@ module WrestlerAnalyzer
 			x = 0			
 		end
 	end
+
+	def make_blank_points_hash(move_hash, card, move)
+		for i in 2..12 do
+			move_key = "#{card}%02d_#{move}" % i
+			move_hash[move_key.to_sym] = 0
+			i += 1
+		end
+		move_hash
+	end
+
+	def add_values_to_points_hash(points_hash, move_hash, move)
+		move_hash.each { |k,v| 
+	 			key = k.to_s + "_#{move}"
+	 			points_hash[key.to_sym] = 1
+	 		}
+		points_hash
+	end
+
+
+	
 
 
 	
