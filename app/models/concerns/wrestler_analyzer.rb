@@ -89,6 +89,10 @@ module WrestlerAnalyzer
 	# Done, but needs refactoring.
 	def move_points
 
+		# Various methods will take text values and convert 
+		# them into numbers so that statistics can be 
+		# generated. This hash is the container for those 
+		# numbers.
 		points = Hash.new
 
 		calculate_oc_roll_probability
@@ -98,17 +102,17 @@ module WrestlerAnalyzer
 		# Calculate TT Roll in GC
 		@tt_enumerator = calculate_tt_enumerator(gc_hash)
 		@tt_roll_probability = calculate_gc_tt_roll_probability(tt_enumerator)
+
 		
-		# Create Symbols for Points
-		for i in 2..12 do
-			dc_points = "dc%02d_points" % i
-			points[dc_points.to_sym] = 0
-			i += 1
-		end
-		
+		# ==================================
+		# MAKE POINTS HASH WITH ALL 0 VALUES
+		# ==================================
+		make_blank_points_hash(points, "dc", "points")
+
 		points[:Reverse] = 0
 		points[:Specialty_Roll_Probability_in_OC] = 0
 
+		# Creating of Blank Specialty Hash Is Unique
  		for i in 1..6 do
 			s_points = "s#{i}_points"
 			points[s_points.to_sym] = 0
@@ -120,81 +124,27 @@ module WrestlerAnalyzer
 		points[:s_roll_prob_sub] = 0
 		points[:s_roll_prob_xx] = 0
 
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			oc_points = "oc%02d_points" % i
-			points[oc_points.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			oc_dq = "oc%02d_dq" % i
-			points[oc_dq.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			oc_pa = "oc%02d_pa" % i
-			points[oc_pa.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			oc_sub = "oc%02d_sub" % i
-			points[oc_sub.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			oc_xx = "oc%02d_xx" % i
-			points[oc_xx.to_sym] = 0
-			i += 1
-		end
+		make_blank_points_hash(points, "oc", "points")
+		make_blank_points_hash(points, "oc", "dq")
+		make_blank_points_hash(points, "oc", "pa")
+		make_blank_points_hash(points, "oc", "sub")
+		make_blank_points_hash(points, "oc", "xx")
 		
  		points[:OC_Ropes_Roll_Probability] = 0
  		points[:Ropes_S_Roll_Probability] = 0
-
- 		# TODO: Refactor this into one method
- 		for i in 2..12 do
-			r_points = "ro%02d_points" % i
-			points[r_points.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			r_dq = "ro%02d_dq" % i
-			points[r_dq.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			r_pa = "ro%02d_pa" % i
-			points[r_pa.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			r_sub = "ro%02d_sub" % i
-			points[r_sub.to_sym] = 0
-			i += 1
-		end
-
-		# TODO: Refactor this into one method
-		for i in 2..12 do
-			r_xx = "ro%02d_xx" % i
-			points[r_xx.to_sym] = 0
-			i += 1
-		end
+ 		
+ 		make_blank_points_hash(points, "ro", "points")
+		make_blank_points_hash(points, "ro", "dq")
+		make_blank_points_hash(points, "ro", "pa")
+		make_blank_points_hash(points, "ro", "sub")
+		make_blank_points_hash(points, "ro", "xx")
 
 		points[:sub_numerator] = 0
 		points[:tag_save_numerator] = 0
+
+		# =========================
+		# ADD VALUES TO POINTS HASH
+		# =========================
 
 		# Determine Points for DC Rolls
 		dc_hash = attributes.select { |k,v| k.to_s.include?('dc') }
@@ -301,6 +251,15 @@ module WrestlerAnalyzer
 	end
 
 
+	def make_blank_points_hash(move_hash, card, move)
+		for i in 2..12 do
+			move_key = "#{card}%02d_#{move}" % i
+			move_hash[move_key.to_sym] = 0
+			i += 1
+		end
+	end
+
+
 	def calculate_oc_roll_probability
 		@gc_hash = attributes.select { |k,v| k.to_s.include?('gc') }
 		@oc_hash = gc_hash.select { |k,v| v.include?('OC') }
@@ -311,7 +270,7 @@ module WrestlerAnalyzer
 		@oc_roll_probability = (return_rational(oc_enumerator).to_f)
 	end
 
-	
+
 	private
 
 
