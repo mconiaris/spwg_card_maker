@@ -51,13 +51,9 @@ module WrestlerAnalyzer
 	# GENERATE STATISTICS
 	# ===================
 
-	# TODO: DRY it up.
-	# TODO: Create variables for hashes so that individual methods no 
-	# 	longer have to create them.
 	def analyze
 		mv_points = move_points
 
-		# TODO: Refactor calculate_total_card_rating to work with this app.
 		card_points_per_round = calculate_total_card_rating(mv_points)
 
 		# Add values to wrestler's hash
@@ -72,7 +68,7 @@ module WrestlerAnalyzer
 		self.submission = submission_loss_probabilty
 		self.tag_team_save = tag_team_save_probabilty
 		
-		# Check for Problems in :Set attribute of hash.
+		# Check for Problems in :set attribute of hash.
 		if attributes[:set] == nil
 			self.set = 'Special'
 		else
@@ -408,11 +404,6 @@ module WrestlerAnalyzer
 	end
 
 
-	
-
-
-	
-
 	# ==========================
 	# GENERATE TOTAL CARD RATING
 	# ==========================
@@ -438,9 +429,10 @@ module WrestlerAnalyzer
 	end
 
 
+	# TODO: Refactor methods below into one method with
+	# less information being passed into it.
 	# card_points_per_round
 	def calculate_card_points_per_round(wrestler)
-
 
 		oc_points_per_round_total = 
 			calculate_oc_points_per_round_total(wrestler)
