@@ -11,7 +11,6 @@ class WrestlersController < ApplicationController
 
   def show
     @wrestler = Wrestler.find(params[:id])
-    @wrestler.generate_wrestler_stats(@wrestler)
 
     respond_to do |format|
       format.html
@@ -75,6 +74,7 @@ class WrestlersController < ApplicationController
     @wrestler.name = "New Wrestler"
     @wrestler.set = "Your Set Name Here"
     @wrestler.template = false
+    # Promotion and division ids are assigned but the user is not given a link to them.
     @wrestler.promotion_id = 7
     @wrestler.division_id = 4
 

@@ -1,12 +1,13 @@
 <!-- TODO: Research Turbo (see development notes) to see if this can be presented using it asynchronously. -->
+<!-- TODO: Factor out to a helper or call it somewhere else. -->
 <h3>WRESTLER STATS</h3>
-<p>Tag Team %: <%= number_to_percentage((wrestler.tt.to_f), precision: 0) %></p>
+<p>Tag Team %: <%= number_to_percentage((wrestler.tt.to_f * 100), precision: 0) %></p>
 <p>Overall Card Rating: <%= "%.1f" % wrestler.card_rating %></p>
-<p>OC Probability: <%= number_to_percentage((wrestler.oc_prob.to_f), precision: 0) %></p>
+<p>OC Probability: <%= number_to_percentage((wrestler.oc_prob.to_f * 100), precision: 0) %></p>
 <p>Total Points Per Round: <%= "%.1f" % wrestler.total_points %></p>
-<p>DQ Probability Per Round: <%= number_to_percentage((wrestler.dq_prob.to_f), precision: 0) %></p>
-<p>P/A Probability Per Round: <%= number_to_percentage((wrestler.pa_prob.to_f), precision: 0) %></p>
-<p>Submission Move Probability Per Round: <%= number_to_percentage((wrestler.sub_prob.to_f), precision: 0) %></p>
-<p>XX Roll Probability Per Round: <%= number_to_percentage((wrestler.xx_prob.to_f), precision: 0) %></p>
-<p>Submission Loss Probability: <%= number_to_percentage((wrestler.submission.to_f), precision: 0) %></p>
-<p>Tag Save Probability: <%= number_to_percentage((wrestler.tag_team_save.to_f), precision: 0) %></p>
+<p>DQ Probability Per Round: <%= number_to_percentage((wrestler.dq_prob.to_f * 100), precision: 0) %></p>
+<p>P/A Probability Per Round: <%= number_to_percentage((wrestler.pa_prob.to_f * 100), precision: 0) %></p>
+<p>Submission Move Probability Per Round: <%= number_to_percentage((wrestler.sub_prob.to_f * 100), precision: 0) %></p>
+<p>XX Roll Probability Per Round: <%= number_to_percentage((wrestler.xx_prob.to_f * 100), precision: 0) %></p>
+<p>Submission Loss Probability: <%= number_to_percentage((wrestler.submission.to_f * 100), precision: 0) %></p>
+<p>Tag Save Probability: <%= number_to_percentage((wrestler.tag_team_save.to_f * 100), precision: 0) %></p>

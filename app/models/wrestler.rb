@@ -47,4 +47,6 @@ class Wrestler < ApplicationRecord
 		message: "of %{value} is out of range. It can only be 1 to 5 or 5+/6"
 	}
 
+	before_save :set_wrestler_stats
+
 end
