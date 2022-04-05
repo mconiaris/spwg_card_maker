@@ -66,5 +66,9 @@
 }
 
 
-
-/* CSS for show wrestler (card) partial itself */
+/*Mobile Only Styles*/
+@media only screen and (max-width: 700px) {
+  .wrestler-show-container {
+    font-size: 14px;
+  }
+}
