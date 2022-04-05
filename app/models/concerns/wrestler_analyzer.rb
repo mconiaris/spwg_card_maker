@@ -69,10 +69,10 @@ module WrestlerAnalyzer
 		self.tag_team_save = tag_team_save_probabilty
 		
 		# Check for Problems in :set attribute of hash.
-		if attributes[:set] == nil
+		if attributes["set"] == nil
 			self.set = 'Special'
 		else
-			self.set = attributes[:set]
+			self.set = attributes["set"]
 		end
 	end
 
