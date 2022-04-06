@@ -195,7 +195,7 @@
     <div class="priority grid-line-bold-left grid-line-bold-right grid-line-bold-bottom">
       <!-- TODO: Automate Pri-T value based on TT% -->
       <div class="sub-tag-priority-header">PRIORITY:</div>
-      <div class="sub-tag-priority-show"><%= @wrestler.prioritys %> / <%= @wrestler.priorityt %></div>
+      <div class="sub-tag-priority-show"><%= priority_factor_display(@wrestler.prioritys, @wrestler.priorityt) %></div>
     </div>
 
 
