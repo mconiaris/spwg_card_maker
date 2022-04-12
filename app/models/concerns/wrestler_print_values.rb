@@ -94,6 +94,19 @@ module WrestlerPrintValues
 
 		end
 
+		def print_wrestler_hash
+			wrestler_card_hash = self.attributes
+
+			wrestler_card_hash.delete("created_at")
+			wrestler_card_hash.delete("updated_at")
+			wrestler_card_hash.delete("template")
+			wrestler_card_hash.delete("id")
+			wrestler_card_hash.delete("division_id")
+			wrestler_card_hash.delete("promotion_id")
+
+			wrestler_card_hash
+		end
+
 	end
 		private
 
