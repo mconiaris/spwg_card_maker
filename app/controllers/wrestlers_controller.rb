@@ -26,6 +26,10 @@ class WrestlersController < ApplicationController
         send_data @wrestler.print_card_values,
         filename: "#{@wrestler.name.gsub("\'","")} #{@wrestler.set}.csv"
       }
+      format.hash {
+        send_data @wrestler.print_wrestler_hash,
+        filename: "#{@wrestler.name.gsub("\'","")} #{@wrestler.set} hash.txt"
+      }
     end
   end
 
