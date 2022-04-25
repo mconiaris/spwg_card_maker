@@ -550,66 +550,7 @@
   font-weight: bold;
 }
 
-/*Index View*/
-/*TODO: Move to it's own CSS document.*/
 
-/*TODO: this empty CSS section needs to be here even though it's blank. I have no idea why.*/
-.wrestler-list {
-
-}
-
-.wrestler-list {
-  max-height: 30em;
-  overflow-x:auto;
-  overflow-y: scroll;
-
-  max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#wrestlers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  font-size: 15px;
-}
-
-th {
-  position: sticky;
-  top: 0;
-}
-
-#wrestlers td, #wrestlers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  color: black;
-}
-
-th a {
-  color: white;
-}
-
-td a {
-  color: blue;
-}
-
-#wrestlers tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-#wrestlers tr:nth-child(odd) {
-  background-color: #a2a2cd;
-}
-
-#wrestlers tr:hover {background-color: #ddd;}
-
-#wrestlers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #2383d5;
-  color: white;
-}
 
 .value {
 	text-align: right;
