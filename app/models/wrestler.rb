@@ -45,7 +45,7 @@ class Wrestler < ApplicationRecord
 
 		validates :oc02, :oc03, :oc04, :oc05, :oc06, :oc07, :oc08, :oc09, :oc10, 
 		:oc11, :oc12, :ro02, :ro03, :ro04, :ro05, :ro06, :ro07, :ro08, :ro09, 
-		:ro10, :ro11, :ro12, length: { maximum: 30 }
+		:ro10, :ro11, :ro12, length: { maximum: 31 }
 
 	validates :prioritys, inclusion: { in: %w(1 2 3 4 5 5+ 6), 
 		message: "of %{value} is out of range. It can only be 1 to 5 or 5+/6"
