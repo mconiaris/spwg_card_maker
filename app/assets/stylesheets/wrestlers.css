@@ -318,6 +318,7 @@
   width: 6em;
   color: #3a963a;
   font-weight: bold;
+  padding-left: 5px;
 }
 
 .sub-tag-priority-show {
@@ -529,7 +530,7 @@
   grid-row: 26;
   text-align: center;
   color: #3a963a;
-  font-weight: bold;
+  font-weight: bold
 }
 
 .wrestler-promotion {

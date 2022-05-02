@@ -8,19 +8,23 @@
 /*Wrestler Show Container*/
 .wrestler-show-container {
   display: grid;
-  grid-template-columns: 8em 8em 16em;
+  grid-template-columns: 9em 9em 18em;
   background-color: white;
+}
+
+.grid-height {
+  padding-top: 3px;
 }
 
 
 .gc-dc-show {
-  width: 5em;
+  width: 6em;
   padding-left: 1em;
   color: #07529b;
 }
 
 .move-show {
-  width: 13.5em;
+  width: 15.5em;
   padding-left: 0.5em;
   color: #07529b;
 }
