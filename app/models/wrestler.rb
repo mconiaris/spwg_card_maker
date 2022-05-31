@@ -8,7 +8,9 @@ class Wrestler < ApplicationRecord
 	belongs_to :division, optional: true
 	belongs_to :promotion, optional: true
 
-	validates_with WrestlersTagValidator
+	# Removing this for the time being.
+	# It is not always envforced in the original cards.
+	# validates_with WrestlersTagValidator
 
 	# TODO: Figure out name and wrestler moves maximum character limit.
 
@@ -49,6 +51,10 @@ class Wrestler < ApplicationRecord
 
 	validates :prioritys, inclusion: { in: %w(1 2 3 4 5 5+ 6), 
 		message: "of %{value} is out of range. It can only be 1 to 5 or 5+/6"
+	}
+
+	validates :priorityt, inclusion: { in: %w(1 2 3 3+ 4), 
+		message: "of %{value} is out of range. It can only be 1 to 3 or 3+/4"
 	}
 
 	before_save :set_wrestler_stats
