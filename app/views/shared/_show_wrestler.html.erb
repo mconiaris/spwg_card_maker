@@ -198,6 +198,9 @@
       <div class="sub-tag-priority-show"><%= priority_factor_display(@wrestler.prioritys, @wrestler.priorityt) %></div>
     </div>
 
+    <% if wrestler.notes %>
+      <div class="show-wrestler-notes"><%= wrestler.notes %></div>
+    <% end %>
 
     <!-- Right Side of Card -->
     <div class="wrestler-oc-header grid-line-bold-top grid-line-bold-bottom grid-line-bold-right grid-height">OFFENSIVE CARD</div>
