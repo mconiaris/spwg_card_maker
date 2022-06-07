@@ -344,6 +344,7 @@
 .show-wrestler-notes {
   grid-column: 1 / 4;
   grid-row: 29;
+  font-size: 14px;
 }
 
 
