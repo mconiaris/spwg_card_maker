@@ -1,5 +1,5 @@
 module WrestlerAnalyzer
-	# TODO: Export this to it's own Github?*
+	# TODO: Export this to it's own Github?
 	attr_accessor :statistics
 	attr_reader :gc_hash
 	attr_reader :oc_hash

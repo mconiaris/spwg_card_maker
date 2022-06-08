@@ -90,6 +90,8 @@ module WrestlerPrintValues
  				csv << [ "ro11", "#{self.ro11}"]
  				csv << [ "ro12", "#{self.ro12}"]
 
+ 				csv << [ "notes", "#{self.notes}"]
+
 			end
 
 		end

@@ -31,6 +31,10 @@ input {
   color: #0366c6;
 }
 
+.notes-input {
+  width: 28em;
+}
+
 
 .sub-tag-priority-input {
   width: 1.2em;
