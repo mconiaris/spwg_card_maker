@@ -12,7 +12,6 @@
 }
 
 
-
 /*Styling Unique to Wrestler Form*/
 
 input {
@@ -34,6 +33,9 @@ input {
 .notes-input {
   width: 28em;
 }
+
+
+
 
 
 .sub-tag-priority-input {
@@ -68,7 +70,6 @@ input {
   /*background-color: grey;*/
   background-color: #e9e3e3;
 }
-
 
 
 /*Buttons and Notes*/
