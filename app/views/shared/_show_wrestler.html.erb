@@ -320,7 +320,13 @@
     </div>
 
     <div class="wrestler-set grid-line-bold-right grid-line-bold-bottom grid-height"><%= @wrestler.set %></div>
-    <div class="grid-line-bold-right grid-line-bold-bottom" id="site-plug grid-height">SPWG Card Maker</div>
+    
+    <% if wrestler.personal_info %>
+      <div class="personal-info grid-line-bold-right grid-line-bold-bottom" id="site-plug grid-height"><%= @wrestler.personal_info %></div>
+    <% else %>
+      <div class="card-maker_text grid-line-bold-right grid-line-bold-bottom" id="site-plug grid-height">SPWG Card Maker</div>
+    <% end %>
+
 
   </div> <!-- End of wrestler-show-container -->
 </div> <!-- End of wrestler-show -->

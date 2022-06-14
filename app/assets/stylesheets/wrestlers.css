@@ -550,6 +550,22 @@
 }
 
 
+.personal-info {
+  grid-column: 3 / 4;
+  grid-row: 26;
+  text-align: center;
+  color: #07529b;
+}
+
+.card-maker_text {
+  grid-column: 3 / 4;
+  grid-row: 26;
+  text-align: center;
+  color: #3a963a;
+  font-weight: bold;
+}
+
+
 /*General and Defensive Cards Inline Styling*/
 .roll-number {
   width: 1em;
