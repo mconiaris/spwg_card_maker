@@ -59,7 +59,7 @@ module WrestlerPyGenerator
 			"\n" + 
 			"Sub = (#{check_sub_tag_value(self[:subx])}, #{check_sub_tag_value(self[:suby])})\n" +
 			"TagTeam = (#{check_sub_tag_value(self[:tagx])}, #{check_sub_tag_value(self[:tagy])})\n" +
-			"Priority = (#{self[:prioritys]}, #{self[:priorityt]})\n" +
+			"Priority = (#{py_singles_priority}, #{py_tag_priority})\n" +
 			"nameSet = \"#{self[:set]}\""
 		end
 
@@ -248,6 +248,22 @@ module WrestlerPyGenerator
 			return " "
 		else
 			return value
+		end
+	end
+
+	def py_singles_priority
+		if self[:prioritys] == "6" || self[:prioritys] == "5+"
+		"5.5"
+		else
+		self[:prioritys]
+		end
+	end
+
+	def py_tag_priority
+		if self[:priorityt] == "4" || self[:prioritys] == "3+"
+		"3.5"
+		else
+			self[:priorityt]
 		end
 	end
 
