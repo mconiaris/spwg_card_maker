@@ -47,7 +47,7 @@
                 <div class="dropdown-content">
                     <%=link_to "ALL WRESTLERS", wrestlers_path %>
                   <a href="<%= division_path (Division.find_by name: 'Cruiserweight').id %>">Cruiserweights</a>
-                  <a href="<%= division_path (Division.find_by name: 'Fake Wrestlers').id %>">Fake Wrestlers</a>
+                  <a href="<%= division_path (Division.find_by name: 'Fake Wrestler').id %>">Fake Wrestlers</a>
                   <a href="<%= division_path (Division.find_by name: 'Super Heavyweight').id %>">Super Heavyweights</a>
                   <a href="<%= tag_team_wrestlers_index_path %>">Team Team Experts</a>
                   <a href="<%= division_path (Division.find_by name: 'Veteran').id %>">Veterans</a>
