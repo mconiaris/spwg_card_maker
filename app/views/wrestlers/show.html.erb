@@ -25,8 +25,12 @@
         <%= render 'shared/form_stats', wrestler: @wrestler %>
     <!-- TODO: Why does division need an if statement and not promotion? -->
     <% if @wrestler.template == true %>
+        <p>***</p>
         <p>Division: <%= @wrestler.division.name %></p>
         <p>Promotion: <%= @wrestler.promotion.name %></p>
+        <p>Set Era: <%= @wrestler.era %></p>
+        <p>Set Year: <%= @wrestler.year %></p>
+        <p>Card Position: <%= @wrestler.position %></p>
     <% end %>
     </div>
 </div> <!-- End of wrestler-display-container -->
