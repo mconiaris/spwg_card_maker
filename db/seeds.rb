@@ -1,5 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# This file should contain all the record creation needed to seed the database with its default values.
 #
 # Examples:
 #
@@ -12,15 +12,13 @@ Promotion.destroy_all
 Wrestler.destroy_all
 
 promotions = [ "AWA", "Florida", "Georgia", "Memphis", "Mid Atlantic", 
-  "Mid South", "None", "NWA", "Southwest", "World Class", "Women", "WWC", 
-  "WWF" ]
+  "Mid South", "Misc", "None", "NWA", "Southwest", "World Class", "WWF" ]
 
 promotions.each { |p| Promotion.create(name: p) }
 
 
-divisions = [ "Cruiserweight", "Legend", "Midcard", "None", "Preliminary",
-  "Regional Champion", "Super Heavyweight", "Veteran", "Women",
-  "World Champion", "Young Star" ]
+divisions = [ "Cruiserweight", "Fake Wrestlers", 
+  "Super Heavyweight", "Veteran", "Women", "Young Star" ]
 
 divisions.each { |d| Division.create(name: d) }
 
