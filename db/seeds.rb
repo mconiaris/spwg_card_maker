@@ -17,7 +17,7 @@ promotions = [ "AWA", "Florida", "Georgia", "Memphis", "Mid Atlantic",
 promotions.each { |p| Promotion.create(name: p) }
 
 
-divisions = [ "Cruiserweight", "Fake", 
+divisions = [ "Cruiserweight", "Fake", "Heavyweight"
   "Super Heavyweight", "Veteran", "Women", "Young Star" ]
 
 divisions.each { |d| Division.create(name: d) }
