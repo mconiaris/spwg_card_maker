@@ -47,15 +47,11 @@
                 <div class="dropdown-content">
                     <%=link_to "ALL WRESTLERS", wrestlers_path %>
                   <a href="<%= division_path (Division.find_by name: 'Cruiserweight').id %>">Cruiserweights</a>
-                  <a href="<%= division_path (Division.find_by name: 'Legend').id %>">Legends</a>
-                  <a href="<%= division_path (Division.find_by name: 'Midcard').id %>">Midcarders</a>
-                  <a href="<%= division_path (Division.find_by name: 'Preliminary').id %>">Jobbers</a>
-                  <a href="<%= division_path (Division.find_by name: 'Regional Champion').id %>">Regional Champions</a>
+                  <a href="<%= division_path (Division.find_by name: 'Fake Wrestlers').id %>">Fake Wrestlers</a>
                   <a href="<%= division_path (Division.find_by name: 'Super Heavyweight').id %>">Super Heavyweights</a>
                   <a href="<%= tag_team_wrestlers_index_path %>">Team Team Experts</a>
                   <a href="<%= division_path (Division.find_by name: 'Veteran').id %>">Veterans</a>
                   <a href="<%= division_path (Division.find_by name: 'Women').id %>">Women</a>
-                  <a href="<%= division_path (Division.find_by name: 'World Champion').id %>">World Champions</a>
                   <a href="<%= division_path (Division.find_by name: 'Young Star').id %>">Young Stars</a>
                 </div>
               </div>
@@ -73,11 +69,10 @@
                   <a href="<%= promotion_path (Promotion.find_by name: 'Memphis').id %>">Memphis</a>
                   <a href="<%= promotion_path (Promotion.find_by name: 'Mid Atlantic').id %>">Mid Atlantic</a>
                   <a href="<%= promotion_path (Promotion.find_by name: 'Mid South').id %>">Mid South</a>
+                  <a href="<%= promotion_path (Promotion.find_by name: 'Misc').id %>">Misc.</a>
                   <a href="<%= promotion_path (Promotion.find_by name: 'NWA').id %>">NWA</a>
                   <a href="<%= promotion_path (Promotion.find_by name: 'Southwest').id %>">Southwest</a>
                   <a href="<%= promotion_path (Promotion.find_by name: 'World Class').id %>">World Class</a>
-                  <a href="<%= promotion_path (Promotion.find_by name: 'Women').id %>">Women</a>
-                  <a href="<%= promotion_path (Promotion.find_by name: 'WWC').id %>">WWC</a>
                   <a href="<%= promotion_path (Promotion.find_by name: 'WWF').id %>">WWF</a>
                 </div>
               </div>
