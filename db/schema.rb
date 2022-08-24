@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_14_133336) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_24_154945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -103,6 +103,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_133336) do
     t.boolean "template"
     t.text "notes"
     t.string "personal_info"
+    t.string "full_name"
+    t.string "era"
+    t.integer "year"
+    t.string "position"
     t.index ["division_id"], name: "index_wrestlers_on_division_id"
     t.index ["promotion_id"], name: "index_wrestlers_on_promotion_id"
   end
