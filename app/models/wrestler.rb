@@ -8,12 +8,6 @@ class Wrestler < ApplicationRecord
 	belongs_to :division, optional: true
 	belongs_to :promotion, optional: true
 
-	# Removing this for the time being.
-	# It is not always envforced in the original cards.
-	# validates_with WrestlersTagValidator
-
-	# TODO: Figure out name and wrestler moves maximum character limit.
-
 	validates :name, :set, :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08,
 		:gc09, :gc10, :gc11, :gc12, :dc02, :dc03, :dc04, :dc05, :dc06, :dc07, 
 		:dc08, :dc09, :dc10, :dc11, :dc12, 
