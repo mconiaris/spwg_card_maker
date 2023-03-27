@@ -156,7 +156,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    reline (0.3.2)
+    reline (0.3.3)
       io-console (~> 0.5)
     rspec-core (3.12.1)
       rspec-support (~> 3.12.0)
