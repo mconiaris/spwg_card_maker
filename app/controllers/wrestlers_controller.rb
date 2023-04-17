@@ -75,8 +75,8 @@ class WrestlersController < ApplicationController
   # https://stackoverflow.com/questions/48266905/duplicate-an-entry-in-rails-from-show-page
   def dup_wrestler
     @wrestler = Wrestler.find(params[:id]).dup
-    @wrestler.name = "New Wrestler"
-    @wrestler.set = "Your Set Name Here"
+    @wrestler.name = ""
+    @wrestler.set = ""
     @wrestler.template = false
     # Promotion and division ids are assigned but the user is not given a link to them.
     @wrestler.promotion_id = 7
