@@ -81,7 +81,7 @@ class WrestlersController < ApplicationController
     # Promotion and division ids are assigned but the user is not given a link to them.
     @wrestler.promotion_id = 7
     @wrestler.division_id = 4
-    @wrestler.sort_name: "Custom Card"
+    @wrestler.sort_name = "Custom Card"
 
     render :new
   end
