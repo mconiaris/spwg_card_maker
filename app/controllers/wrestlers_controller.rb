@@ -36,7 +36,7 @@ class WrestlersController < ApplicationController
   def new
     @wrestler = Wrestler.new({
       card_rating: 0, total_points: 0, dq_prob: 0, 
-      pa_prob: 0, sub_prob: 0
+      pa_prob: 0, sub_prob: 0, sort_name: "Custom Card"
     })
   end
 
@@ -81,6 +81,7 @@ class WrestlersController < ApplicationController
     # Promotion and division ids are assigned but the user is not given a link to them.
     @wrestler.promotion_id = 7
     @wrestler.division_id = 4
+    @wrestler.sort_name: "Custom Card"
 
     render :new
   end
