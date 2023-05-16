@@ -12,4 +12,8 @@ module WrestlerStats
     self.analyze
   end
 
+  def set_default_sort_name
+    self.sort_name ||= "Custom Card"
+  end
+
 end

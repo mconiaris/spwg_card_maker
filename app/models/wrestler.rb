@@ -51,6 +51,6 @@ class Wrestler < ApplicationRecord
 		message: "of %{value} is out of range. It can only be 1 to 3 or 3+/4"
 	}
 
-	before_save :set_wrestler_stats
+	before_save :set_wrestler_stats, :set_default_sort_name
 
 end
