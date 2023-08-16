@@ -57,6 +57,14 @@ module WrestlerAnalyzer
 		card_points_per_round = calculate_total_card_rating(mv_points)
 
 		# Add values to wrestler's hash
+		# Total Points is the points per round multiplied by the OC probability, 
+		# which gives a picture of what a wrestler card will score on average 
+		# in each round.
+		# TODO: oc_points is the average points a wrestler will score when on 
+		# offense. The math is imprecise (took a short cut) because it includes 
+		# DC points but it is good enough for now. To be more precise you would 
+		# have to remove the DC points from the number and that would require 
+		# another method.
 		self.tt = tt_roll_probability
 		self.card_rating = total_card_rating
     self.oc_prob = oc_roll_probability
