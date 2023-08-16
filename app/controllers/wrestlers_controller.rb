@@ -104,7 +104,7 @@ class WrestlersController < ApplicationController
       :priorityt, :oc02, :oc03, :oc04, :oc05, :oc06, :oc07, :oc08, :oc09, :oc10, 
       :oc11, :oc12, :ro02, :ro03, :ro04, :ro05, :ro06, :ro07, :ro08, :ro09, :ro10,
       :ro11, :ro12, :division_id, :promotion_id, :notes, :personal_info, 
-      :full_name, :era, :year, :position )
+      :full_name, :era, :year, :position, :oc_points )
   end
 
 end
