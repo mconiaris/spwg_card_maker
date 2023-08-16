@@ -61,6 +61,7 @@ module WrestlerAnalyzer
 		self.card_rating = total_card_rating
     self.oc_prob = oc_roll_probability
 		self.total_points = points_per_round
+		self.oc_points = points_per_round / oc_roll_probability
 		self.dq_prob = dq_probability_per_round
 		self.pa_prob = pa_probability_per_round
 		self.sub_prob = sub_probability_per_round
