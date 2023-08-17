@@ -15,6 +15,7 @@ module WrestlerAnalyzer
 	attr_reader :oc_roll_probability
 	attr_reader :dc_roll_probability
 	attr_reader :points_per_round
+	attr_reader :points_without_oc_prob
 	attr_reader :dq_probability_per_round
 	attr_reader :pa_probability_per_round
 	attr_reader :sub_probability_per_round
@@ -61,13 +62,13 @@ module WrestlerAnalyzer
 		self.card_rating = total_card_rating
     self.oc_prob = oc_roll_probability
 		self.total_points = points_per_round
+		self.card_move_points = points_without_oc_prob
 		self.dq_prob = dq_probability_per_round
 		self.pa_prob = pa_probability_per_round
 		self.sub_prob = sub_probability_per_round
 		self.xx_prob = xx_probability_per_round
 		self.submission = submission_loss_probabilty
 		self.tag_team_save = tag_team_save_probabilty
-		
 		# Check for Problems in :set attribute of hash.
 		if attributes["set"] == nil
 			self.set = 'Special'
@@ -411,6 +412,7 @@ module WrestlerAnalyzer
 	# total_card_rating
 	def calculate_total_card_rating(move_points)
 		@points_per_round = calculate_card_points_per_round(move_points)
+		@points_without_oc_prob = calculate_points_without_oc_prob
 		@dq_probability_per_round = calculate_dq_probability_per_round(move_points)
 		@pa_probability_per_round = calculate_pa_probability_per_round(move_points)
 		@sub_probability_per_round = calculate_sub_probability_per_round(move_points)
@@ -442,6 +444,10 @@ module WrestlerAnalyzer
 
 		return dc_points_per_round_total + 
 			oc_points_per_round_total
+	end
+
+	def calculate_points_without_oc_prob
+		@calculate_points_without_oc_prob = total_points / oc_prob
 	end
 
 	# dq_probability_per_round
