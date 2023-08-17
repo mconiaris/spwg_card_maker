@@ -11,6 +11,7 @@
       <th><%= link_to "Card Rating", :sort => "card_rating" %></th>
       <th><%= link_to "OC Prob", :sort => "oc_prob" %></th>
       <th><%= link_to "Points Per Round", :sort => "total_points" %></th>
+      <th><%= link_to "Points on OC", :sort => "card_move_points" %></th>
       <th><%= link_to "DQ Prob", :sort => "dq_prob" %></th>
       <th><%= link_to "P/A Prob", :sort => "pa_prob" %></th>
       <th><%= link_to "Sub Prob", :sort => "sub_prob" %></th>
@@ -30,6 +31,7 @@
           <td class="value"><%= "%.1f" % wrestler.card_rating %></td>
           <td class="value"><%= "%.0f" % (wrestler.oc_prob * 100) %>%</td>
           <td class="value"><%= "%.3f" % wrestler.total_points %></td>
+          <td class="value"><%= "%.3f" % wrestler.card_move_points %></td>
           <td class="value"><%= "%.0f" % (wrestler.dq_prob * 100) %>%</td>
           <td class="value"><%= "%.0f" % (wrestler.pa_prob * 100) %>%</td>
           <td class="value"><%= "%.0f" % (wrestler.sub_prob * 100) %>%</td>
