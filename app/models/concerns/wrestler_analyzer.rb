@@ -546,8 +546,7 @@ module WrestlerAnalyzer
 		dc_hash = get_dc_card_hash(wrestler)
 		
 		dc_points_per_round_subtotal = 
-			calculate_dc_points_per_round_subtotal(
-				dc_hash, dc_roll_probability)
+			calculate_dc_points_per_round_subtotal(dc_hash)
 
 		# TODO: replace hard coded number with
 		# total points variable
@@ -577,7 +576,7 @@ module WrestlerAnalyzer
 
 
 	# Multiplies DC roll point by probabiliy of rolling it.
-	def calculate_dc_points_per_round_subtotal(hash, dc_prob)
+	def calculate_dc_points_per_round_subtotal(hash)
 			
 			# Return sum of points per roll in DC
 			x = 0
@@ -587,7 +586,7 @@ module WrestlerAnalyzer
 			}
 
 			# Return Points per DC Roll * DC Roll Probability
-			return x * dc_prob
+			return x
 	end
 
 
