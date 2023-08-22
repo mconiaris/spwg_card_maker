@@ -422,9 +422,9 @@ module WrestlerAnalyzer
 		# to increase relative value of pin attempts.
 		@total_card_values = points_per_round + 
 			(oc_roll_probability * 10) +
-			(dq_probability_per_round * 10) + 
+			(dq_probability_per_round * 5) + 
 			(pa_probability_per_round * 20) +
-			(sub_probability_per_round * 15) + 
+			(sub_probability_per_round * 10) + 
 			(xx_probability_per_round * 5)
 
 		@total_card_rating = total_card_values + 
