@@ -420,7 +420,7 @@ module WrestlerAnalyzer
 		
 		# Double P/A per round and divide XX per round for total card value
 		# to increase relative value of pin attempts.
-		@total_card_values = points_per_round + 
+		@total_card_values = (points_per_round / 2) + 
 			(oc_roll_probability * 10) +
 			(dq_probability_per_round * 5) + 
 			(pa_probability_per_round * 20) +
@@ -428,7 +428,7 @@ module WrestlerAnalyzer
 			(xx_probability_per_round * 5)
 
 		@total_card_rating = total_card_values + 
-			singles_priority - (submission_loss_probabilty * 10)
+			singles_priority - (submission_loss_probabilty * 5)
 
 		return total_card_rating
 	end
