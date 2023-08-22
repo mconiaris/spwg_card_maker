@@ -412,7 +412,7 @@ module WrestlerAnalyzer
 	# total_card_rating
 	def calculate_total_card_rating(move_points)
 		@points_per_round = calculate_card_points_per_round(move_points)
-		@points_without_oc_prob = calculate_points_without_oc_prob(points_per_round, oc_roll_probability)
+		@points_without_oc_prob = calculate_points_without_oc_prob(points_per_round)
 		@dq_probability_per_round = calculate_dq_probability_per_round(move_points)
 		@pa_probability_per_round = calculate_pa_probability_per_round(move_points)
 		@sub_probability_per_round = calculate_sub_probability_per_round(move_points)
@@ -449,9 +449,9 @@ module WrestlerAnalyzer
 			oc_points_per_round_total
 	end
 
-	def calculate_points_without_oc_prob(total_points, oc_prob)
+	def calculate_points_without_oc_prob(total_points)
 		@calculate_points_without_oc_prob = 
-			calculate_oc_points_per_round_total(wrestler)
+			calculate_oc_points_per_round_total(total_points)
 	end
 
 	# dq_probability_per_round
