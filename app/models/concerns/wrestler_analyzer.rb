@@ -450,7 +450,8 @@ module WrestlerAnalyzer
 	end
 
 	def calculate_points_without_oc_prob(total_points, oc_prob)
-		@calculate_points_without_oc_prob = total_points / oc_prob
+		@calculate_points_without_oc_prob = 
+			calculate_oc_points_per_round_total(wrestler)
 	end
 
 	# dq_probability_per_round
