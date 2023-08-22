@@ -427,8 +427,8 @@ module WrestlerAnalyzer
 			(sub_probability_per_round * 10) + 
 			(xx_probability_per_round * 5)
 
-		@total_card_rating = total_card_values + 
-			singles_priority - (submission_loss_probabilty * 5)
+		@total_card_rating = total_card_values + 5 +
+			singles_priority - (submission_loss_probabilty * 10)
 
 		return total_card_rating
 	end
