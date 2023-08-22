@@ -756,7 +756,7 @@ module WrestlerAnalyzer
 		dq_hash = return_attribute_hash(wrestler, "_dq")
 		oc_dq_hash = return_attribute_hash(dq_hash, "oc")
 
-		return calculate_dq_subtotal(oc_dq_hash, oc_roll_probability)
+		return calculate_dq_subtotal(oc_dq_hash)
 	end
 
 	def calculate_oc_pa_subtotal(wrestler)
@@ -764,7 +764,7 @@ module WrestlerAnalyzer
 		pa_hash = return_attribute_hash(wrestler, "_pa")
 		oc_pa_hash = return_attribute_hash(pa_hash, "oc")
 
-		pa_subtotal = calculate_pa_subtotal(oc_pa_hash, oc_roll_probability)
+		pa_subtotal = calculate_pa_subtotal(oc_pa_hash)
 
 		return pa_subtotal
 	end
@@ -776,7 +776,7 @@ module WrestlerAnalyzer
 
 		oc_sub_hash = return_attribute_hash(sub_hash, "oc")
 
-		sub_subtotal = calculate_sub_subtotal(oc_sub_hash, oc_roll_probability)
+		sub_subtotal = calculate_sub_subtotal(oc_sub_hash)
 
 		return sub_subtotal
 	end
@@ -787,7 +787,7 @@ module WrestlerAnalyzer
 
 		oc_xx_hash = return_attribute_hash(xx_hash, "oc")
 
-		xx_subtotal = calculate_xx_subtotal(oc_xx_hash, oc_roll_probability)
+		xx_subtotal = calculate_xx_subtotal(oc_xx_hash)
 
 		return xx_subtotal
 	end
@@ -1032,7 +1032,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_dq_av = calculate_specialty_dq_average(wrestler)
 		
-		s_dq = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_dq = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_dq_av
 
 		return s_dq
@@ -1044,7 +1044,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_pa_av = calculate_specialty_pa_average(wrestler)
 		
-		s_pa = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_pa = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_pa_av
 
 		return s_pa
@@ -1056,7 +1056,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_sub_av = calculate_specialty_sub_average(wrestler)
 		
-		s_sub = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_sub = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_sub_av
 		return s_sub
 	end
@@ -1067,7 +1067,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_xx_av = calculate_specialty_xx_average(wrestler)
 		
-		s_xx = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_xx = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_xx_av
 		return s_xx
 	end
