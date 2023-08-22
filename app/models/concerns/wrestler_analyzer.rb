@@ -825,7 +825,7 @@ module WrestlerAnalyzer
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_dq_subtotal(wrestler, oc_prob)
+	def calculate_dq_subtotal(wrestler)
 		# Sum up points per roll * probability
 		dq_points = 0
 		wrestler.each { |k,v| 
@@ -834,12 +834,12 @@ module WrestlerAnalyzer
 			dq_points += v * prob
 		}
 
-		dq_points_subtotal = oc_prob * dq_points
+		dq_points_subtotal = dq_points
 		return dq_points_subtotal
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_pa_subtotal(wrestler, oc_prob)
+	def calculate_pa_subtotal(wrestler)
 		# Sum up points per roll * probability
 		pa_points = 0
 		wrestler.each { |k,v| 
@@ -848,12 +848,12 @@ module WrestlerAnalyzer
 			pa_points += v * prob
 		}
 
-		pa_points_subtotal = oc_prob * pa_points
+		pa_points_subtotal = pa_points
 		return pa_points_subtotal
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_sub_subtotal(wrestler, oc_prob)
+	def calculate_sub_subtotal(wrestler)
 		# Sum up points per roll * probability
 		sub_points = 0
 		wrestler.each { |k,v| 
@@ -862,12 +862,12 @@ module WrestlerAnalyzer
 			sub_points += v * prob
 		}
 
-		sub_points_subtotal = oc_prob * sub_points
+		sub_points_subtotal = sub_points
 		return sub_points_subtotal
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_xx_subtotal(wrestler, oc_prob)
+	def calculate_xx_subtotal(wrestler)
 		# Sum up points per roll * probability
 		xx_points = 0
 		wrestler.each { |k,v| 
@@ -876,7 +876,7 @@ module WrestlerAnalyzer
 			xx_points += v * prob
 		}
 
-		xx_points_subtotal = oc_prob * xx_points
+		xx_points_subtotal = xx_points
 		return xx_points_subtotal
 	end
 
