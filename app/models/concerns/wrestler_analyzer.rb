@@ -743,7 +743,7 @@ module WrestlerAnalyzer
 		oc_hash = get_oc_hash(move_points)
 
 		oc_points_hash = oc_hash.select { |k,v| k.to_s.include?("points") }
-		
+
 		return calculate_oc_subtotal(oc_points_hash)
 	end
 
