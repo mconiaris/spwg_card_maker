@@ -15,7 +15,6 @@ module WrestlerAnalyzer
 	attr_reader :oc_roll_probability
 	attr_reader :dc_roll_probability
 	attr_reader :points_per_round
-	attr_reader :points_without_oc_prob
 	attr_reader :dq_probability_per_round
 	attr_reader :pa_probability_per_round
 	attr_reader :sub_probability_per_round
@@ -62,7 +61,6 @@ module WrestlerAnalyzer
 		self.card_rating = total_card_rating
     self.oc_prob = oc_roll_probability
 		self.total_points = points_per_round
-		self.card_move_points = points_without_oc_prob
 		self.dq_prob = dq_probability_per_round
 		self.pa_prob = pa_probability_per_round
 		self.sub_prob = sub_probability_per_round
@@ -412,7 +410,6 @@ module WrestlerAnalyzer
 	# total_card_rating
 	def calculate_total_card_rating(move_points)
 		@points_per_round = calculate_card_points_per_round(move_points)
-		@points_without_oc_prob = calculate_points_without_oc_prob(points_per_round, oc_roll_probability)
 		@dq_probability_per_round = calculate_dq_probability_per_round(move_points)
 		@pa_probability_per_round = calculate_pa_probability_per_round(move_points)
 		@sub_probability_per_round = calculate_sub_probability_per_round(move_points)
@@ -420,12 +417,15 @@ module WrestlerAnalyzer
 		
 		# Double P/A per round and divide XX per round for total card value
 		# to increase relative value of pin attempts.
-		@total_card_values = points_per_round + 
-			dq_probability_per_round + (pa_probability_per_round * 2) +
-				sub_probability_per_round + (xx_probability_per_round / 2)
+		@total_card_values = (points_per_round / 2) + 
+			(oc_roll_probability * 10) +
+			(dq_probability_per_round * 5) + 
+			(pa_probability_per_round * 20) +
+			(sub_probability_per_round * 10) + 
+			(xx_probability_per_round * 5)
 
-		@total_card_rating = total_card_values + 
-			singles_priority - submission_loss_probabilty
+		@total_card_rating = total_card_values + 10 +
+			singles_priority - (submission_loss_probabilty * 10)
 
 		return total_card_rating
 	end
@@ -444,10 +444,6 @@ module WrestlerAnalyzer
 
 		return dc_points_per_round_total + 
 			oc_points_per_round_total
-	end
-
-	def calculate_points_without_oc_prob(total_points, oc_prob)
-		@calculate_points_without_oc_prob = total_points / oc_prob
 	end
 
 	# dq_probability_per_round
@@ -546,8 +542,7 @@ module WrestlerAnalyzer
 		dc_hash = get_dc_card_hash(wrestler)
 		
 		dc_points_per_round_subtotal = 
-			calculate_dc_points_per_round_subtotal(
-				dc_hash, dc_roll_probability)
+			calculate_dc_points_per_round_subtotal(dc_hash)
 
 		# TODO: replace hard coded number with
 		# total points variable
@@ -577,7 +572,7 @@ module WrestlerAnalyzer
 
 
 	# Multiplies DC roll point by probabiliy of rolling it.
-	def calculate_dc_points_per_round_subtotal(hash, dc_prob)
+	def calculate_dc_points_per_round_subtotal(hash)
 			
 			# Return sum of points per roll in DC
 			x = 0
@@ -587,7 +582,7 @@ module WrestlerAnalyzer
 			}
 
 			# Return Points per DC Roll * DC Roll Probability
-			return x * dc_prob
+			return x
 	end
 
 
@@ -748,8 +743,8 @@ module WrestlerAnalyzer
 		oc_hash = get_oc_hash(move_points)
 
 		oc_points_hash = oc_hash.select { |k,v| k.to_s.include?("points") }
-		
-		return calculate_oc_subtotal(oc_points_hash, oc_roll_probability)
+
+		return calculate_oc_subtotal(oc_points_hash)
 	end
 
 	def calculate_oc_dq_subtotal(wrestler)
@@ -757,7 +752,7 @@ module WrestlerAnalyzer
 		dq_hash = return_attribute_hash(wrestler, "_dq")
 		oc_dq_hash = return_attribute_hash(dq_hash, "oc")
 
-		return calculate_dq_subtotal(oc_dq_hash, oc_roll_probability)
+		return calculate_dq_subtotal(oc_dq_hash)
 	end
 
 	def calculate_oc_pa_subtotal(wrestler)
@@ -765,7 +760,7 @@ module WrestlerAnalyzer
 		pa_hash = return_attribute_hash(wrestler, "_pa")
 		oc_pa_hash = return_attribute_hash(pa_hash, "oc")
 
-		pa_subtotal = calculate_pa_subtotal(oc_pa_hash, oc_roll_probability)
+		pa_subtotal = calculate_pa_subtotal(oc_pa_hash)
 
 		return pa_subtotal
 	end
@@ -777,7 +772,7 @@ module WrestlerAnalyzer
 
 		oc_sub_hash = return_attribute_hash(sub_hash, "oc")
 
-		sub_subtotal = calculate_sub_subtotal(oc_sub_hash, oc_roll_probability)
+		sub_subtotal = calculate_sub_subtotal(oc_sub_hash)
 
 		return sub_subtotal
 	end
@@ -788,7 +783,7 @@ module WrestlerAnalyzer
 
 		oc_xx_hash = return_attribute_hash(xx_hash, "oc")
 
-		xx_subtotal = calculate_xx_subtotal(oc_xx_hash, oc_roll_probability)
+		xx_subtotal = calculate_xx_subtotal(oc_xx_hash)
 
 		return xx_subtotal
 	end
@@ -802,7 +797,7 @@ module WrestlerAnalyzer
 		specialty_roll_prob = 
 			wrestler[:Specialty_Roll_Probability_in_OC]
 
-		oc_specialty_points_per_round = oc_roll_probability *
+		oc_specialty_points_per_round = 
 			attribute * specialty_roll_prob 
 
 		return oc_specialty_points_per_round
@@ -811,7 +806,7 @@ module WrestlerAnalyzer
 	# TODO: Delete oc from parameter list and use getter
 	# Takes in points, P/A, sub, etc. and 
 	# Calculates the probability in the OC card.
-	def calculate_oc_subtotal(wrestler, oc_prob)
+	def calculate_oc_subtotal(wrestler)
 		
 		# Sum up points per roll * probability
 		oc_points = 0
@@ -821,12 +816,12 @@ module WrestlerAnalyzer
 			oc_points += v * prob
 		}
 
-		oc_points_subtotal = oc_prob * oc_points
+		oc_points_subtotal = oc_points
 		return oc_points_subtotal
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_dq_subtotal(wrestler, oc_prob)
+	def calculate_dq_subtotal(wrestler)
 		# Sum up points per roll * probability
 		dq_points = 0
 		wrestler.each { |k,v| 
@@ -835,12 +830,12 @@ module WrestlerAnalyzer
 			dq_points += v * prob
 		}
 
-		dq_points_subtotal = oc_prob * dq_points
+		dq_points_subtotal = dq_points
 		return dq_points_subtotal
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_pa_subtotal(wrestler, oc_prob)
+	def calculate_pa_subtotal(wrestler)
 		# Sum up points per roll * probability
 		pa_points = 0
 		wrestler.each { |k,v| 
@@ -849,12 +844,12 @@ module WrestlerAnalyzer
 			pa_points += v * prob
 		}
 
-		pa_points_subtotal = oc_prob * pa_points
+		pa_points_subtotal = pa_points
 		return pa_points_subtotal
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_sub_subtotal(wrestler, oc_prob)
+	def calculate_sub_subtotal(wrestler)
 		# Sum up points per roll * probability
 		sub_points = 0
 		wrestler.each { |k,v| 
@@ -863,12 +858,12 @@ module WrestlerAnalyzer
 			sub_points += v * prob
 		}
 
-		sub_points_subtotal = oc_prob * sub_points
+		sub_points_subtotal = sub_points
 		return sub_points_subtotal
 	end
 
 	# TODO: Delete oc from parameter list and use getter
-	def calculate_xx_subtotal(wrestler, oc_prob)
+	def calculate_xx_subtotal(wrestler)
 		# Sum up points per roll * probability
 		xx_points = 0
 		wrestler.each { |k,v| 
@@ -877,7 +872,7 @@ module WrestlerAnalyzer
 			xx_points += v * prob
 		}
 
-		xx_points_subtotal = oc_prob * xx_points
+		xx_points_subtotal = xx_points
 		return xx_points_subtotal
 	end
 
@@ -1008,7 +1003,7 @@ module WrestlerAnalyzer
 
 		ropes_roll_prob = return_rational(wrestler[:OC_Ropes_Roll_Probability]).to_f
 
-		r_points_subtotal = oc_roll_probability * r_points * 
+		r_points_subtotal = r_points * 
 			ropes_roll_prob
 
 		return r_points_subtotal
@@ -1021,7 +1016,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_points_av = calculate_specialty_points_average(wrestler)
 		
-		s_points = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_points = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_points_av
 
 		return s_points
@@ -1033,7 +1028,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_dq_av = calculate_specialty_dq_average(wrestler)
 		
-		s_dq = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_dq = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_dq_av
 
 		return s_dq
@@ -1045,7 +1040,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_pa_av = calculate_specialty_pa_average(wrestler)
 		
-		s_pa = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_pa = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_pa_av
 
 		return s_pa
@@ -1057,7 +1052,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_sub_av = calculate_specialty_sub_average(wrestler)
 		
-		s_sub = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_sub = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_sub_av
 		return s_sub
 	end
@@ -1068,7 +1063,7 @@ module WrestlerAnalyzer
 		ropes_s_roll_prob = return_rational(wrestler[:Ropes_S_Roll_Probability])
 		s_xx_av = calculate_specialty_xx_average(wrestler)
 		
-		s_xx = ropes_roll_prob.to_f * oc_roll_probability * 
+		s_xx = ropes_roll_prob.to_f * 
 			ropes_s_roll_prob * s_xx_av
 		return s_xx
 	end

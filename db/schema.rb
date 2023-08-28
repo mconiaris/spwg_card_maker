@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_17_173500) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_22_190631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -108,7 +108,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_173500) do
     t.string "position"
     t.string "sort_name"
     t.string "card_number"
-    t.float "card_move_points"
     t.index ["division_id"], name: "index_wrestlers_on_division_id"
     t.index ["promotion_id"], name: "index_wrestlers_on_promotion_id"
   end
