@@ -16,7 +16,7 @@ module WrestlerPrintValues
 			CSV.generate do |csv|
  			
 	 			csv << [ "Name", "Set", "PRI-S", "PRI-TT", "TT%", "Card Rating", "OC Prob", "Total Points Per Round", "DQ Prob", "P/A Prob", "Sub Prob", "XX Prob",	"Sumission Loss",	"Tag Team Save"	]
-				csv << [ "#{self.name}", "#{self.set}", "#{self.prioritys}", "#{self.priorityt}", "#{self.tt}", "#{self.card_rating}", "#{self.oc_prob}", "#{self.dq_prob}", "#{self.pa_prob}", "#{self.sub_prob}", "#{self.xx_prob}", "#{self.submission}", "#{self.tag_team_save}" ]
+				csv << [ "#{self.name}", "#{self.set}", "#{self.prioritys}", "#{self.priorityt}", "#{self.tt}", "#{self.card_rating}", "#{self.oc_prob}", "#{self.total_points}", "#{self.dq_prob}", "#{self.pa_prob}", "#{self.sub_prob}", "#{self.xx_prob}", "#{self.submission}", "#{self.tag_team_save}" ]
 				csv << [ "" ]
 				
 				csv << ["Name:", "#{self.name}"]
