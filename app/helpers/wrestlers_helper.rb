@@ -38,4 +38,12 @@ module WrestlersHelper
 		return t
 	end
 
+	def sort_name_display(wn, cn)
+		if wn == "Custom Card"
+			return cn
+		else
+			return wn
+		end
+	end
+
 end

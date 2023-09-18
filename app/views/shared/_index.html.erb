@@ -20,7 +20,7 @@
     </tr>
     <% @wrestlers.each do |wrestler| %>
       <tr>
-          <td><%= link_to wrestler.sort_name, wrestler %></td>
+          <td><%= link_to sort_name_display(wrestler.sort_name, wrestler.name), wrestler %></td>
           <td><%= wrestler.name %></td>
           <td><%= wrestler.set %></td>
           <td><%= wrestler.card_number %></td>
