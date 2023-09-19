@@ -105,7 +105,13 @@ module WrestlerPrintValues
 			wrestler_card_hash.delete("id")
 			wrestler_card_hash.delete("division_id")
 			wrestler_card_hash.delete("promotion_id")
-
+			wrestler_card_hash.delete("era")
+			wrestler_card_hash.delete("year")
+			wrestler_card_hash.delete("position")
+			wrestler_card_hash.delete("sort_name")
+			wrestler_card_hash.delete("card_name")
+			wrestler_card_hash.delete("card_number")
+			
 			wrestler_card_hash
 		end
 
