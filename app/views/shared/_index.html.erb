@@ -23,7 +23,7 @@
           <td><%= link_to sort_name_display(wrestler.sort_name, wrestler.name), wrestler %></td>
           <td><%= wrestler.name %></td>
           <td><%= wrestler.set %></td>
-          <td><%= wrestler.card_number %></td>
+          <td><%= wrestler.card_number || wrestler.id %></td>
           <td><%= singles_priority_display(wrestler.prioritys) %></td>
           <td><%= tag_team_priority_display(wrestler.priorityt) %></td>
           <td class="value"><%= "%.0f" % (wrestler.tt * 100) %>%</td>
