@@ -47,7 +47,14 @@ module WrestlersHelper
 	end
 
 	def show_wrestler_overview(w)
-		return "#{w.set} (#{w.card_rating} / #{w.oc_prob} / #{w.total_points} / #{w.pa_prob} / #{w.sub_prob})"
+		card_set = w.set
+		card_rating = "%.1f" % w.card_rating
+		card_oc_prob = number_to_percentage((w.oc_prob.to_f * 100), precision: 0)
+		card_points = "%.1f" % w.total_points
+		card_pin_prob = number_to_percentage((w.pa_prob.to_f * 100), precision: 0)
+		card_sub_prob = number_to_percentage((w.sub_prob.to_f * 100), precision: 0)
+
+		return "#{card_set} (#{card_rating} / #{card_oc_prob} / #{card_points} / #{card_pin_prob} / #{card_sub_prob})"
 	end
 
 end
