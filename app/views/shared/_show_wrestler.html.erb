@@ -198,6 +198,10 @@
       <div class="sub-tag-priority-show"><%= priority_factor_display(@wrestler.prioritys, @wrestler.priorityt) %></div>
     </div>
 
+    <div class="show-wrestler-notes-set">
+      <p><%= show_wrestler_overview(wrestler) %>)</p>
+    </div>
+
     <% if wrestler.notes %>
       <div class="show-wrestler-notes"><%= wrestler.notes %></div>
     <% end %>

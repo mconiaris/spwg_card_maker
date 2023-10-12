@@ -341,9 +341,16 @@
   grid-row: 28;
 }
 
-.show-wrestler-notes {
+.show-wrestler-notes-set {
   grid-column: 1 / 4;
   grid-row: 29;
+  font-size: 14px;
+  color: black;
+}
+
+.show-wrestler-notes {
+  grid-column: 1 / 4;
+  grid-row: 30;
   font-size: 14px;
 }
 

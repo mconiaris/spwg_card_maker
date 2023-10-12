@@ -46,4 +46,8 @@ module WrestlersHelper
 		end
 	end
 
+	def show_wrestler_overview(w)
+		return "#{w.set} (#{w.card_rating} / #{w.oc_prob} / #{w.total_points} / #{w.pa_prob} / #{w.sub_prob})"
+	end
+
 end
