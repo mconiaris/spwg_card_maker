@@ -348,6 +348,10 @@
   color: black;
 }
 
+.show-wrestler-notes-set p {
+  margin: 5px;  
+}
+
 .show-wrestler-notes {
   grid-column: 1 / 4;
   grid-row: 30;
